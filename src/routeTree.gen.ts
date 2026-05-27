@@ -17,6 +17,7 @@ import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FaqIndexRouteImport } from './routes/faq.index'
 import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -58,6 +59,11 @@ const FaqSlugRoute = FaqSlugRouteImport.update({
   path: '/faq/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/como-funciona': typeof ComoFuncionaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/faq/': typeof FaqIndexRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/como-funciona': typeof ComoFuncionaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/faq': typeof FaqIndexRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/como-funciona': typeof ComoFuncionaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/faq/': typeof FaqIndexRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/o-que-e-sicaf'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/faq/$slug'
     | '/faq/'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/o-que-e-sicaf'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/faq/$slug'
     | '/faq'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/o-que-e-sicaf'
     | '/sitemap.xml'
+    | '/api/contact'
     | '/faq/$slug'
     | '/faq/'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   OQueESicafRoute: typeof OQueESicafRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiContactRoute: typeof ApiContactRoute
   FaqSlugRoute: typeof FaqSlugRoute
   FaqIndexRoute: typeof FaqIndexRoute
 }
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoFuncionaRoute: ComoFuncionaRoute,
   OQueESicafRoute: OQueESicafRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiContactRoute: ApiContactRoute,
   FaqSlugRoute: FaqSlugRoute,
   FaqIndexRoute: FaqIndexRoute,
 }

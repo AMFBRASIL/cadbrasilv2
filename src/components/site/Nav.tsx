@@ -54,6 +54,12 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
+            <a
+              href="#contato"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-accent transition"
+            >
+              Contato
+            </a>
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
@@ -97,6 +103,13 @@ export function Nav() {
                   {l.label}
                 </Link>
               ))}
+              <a
+                href="#contato"
+                onClick={() => setOpen(false)}
+                className="px-3 py-3 rounded-lg hover:bg-accent text-sm font-medium"
+              >
+                Contato
+              </a>
               <a
                 href={CADASTRO_URL}
                 target="_blank"

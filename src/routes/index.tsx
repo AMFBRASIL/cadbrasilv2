@@ -7,6 +7,7 @@ import {
   ComparisonSection, Assistant, Benefits, Stats, Testimonials, StartIn2Minutes, FinalCTA,
 } from "@/components/site/Sections";
 import { Faq } from "@/components/site/Faq";
+import { ContactSection } from "@/components/site/ContactSection";
 import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
 
@@ -148,6 +149,7 @@ function Index() {
         <StartIn2Minutes />
         <FinalCTA />
         <Faq />
+        <ContactSection />
       </main>
       <Footer />
       <FloatingCta />

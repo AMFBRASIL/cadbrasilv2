@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
+import { ContactSection } from "@/components/site/ContactSection";
 
 export const CADASTRO_URL = "https://cadastro.cadbrasil.com.br";
 export const WHATSAPP_URL = "https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo.";
@@ -44,6 +45,7 @@ export function PageShell({
           </div>
         )}
         {children}
+        <ContactSection />
       </main>
       <Footer />
       <FloatingCta />
