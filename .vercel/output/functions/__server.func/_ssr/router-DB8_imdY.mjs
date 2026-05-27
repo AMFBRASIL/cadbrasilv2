@@ -547,7 +547,7 @@ function Footer() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-2 text-sm text-muted-foreground", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#contato", className: "hover:text-foreground", children: "Formulário de contato" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo.", className: "hover:text-foreground", children: "WhatsApp" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:contato@cadbrasil.com.br", className: "hover:text-foreground", children: "contato@cadbrasil.com.br" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:documentos@fornecedordigital.com.br", className: "hover:text-foreground", children: "documentos@fornecedordigital.com.br" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Atendimento Seg–Sex · 8h às 18h" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Brasil · 100% remoto" })
         ] })
@@ -664,6 +664,7 @@ function ContactSection() {
   const [form, setForm] = reactExports.useState(initialForm);
   const [status, setStatus] = reactExports.useState("idle");
   const [errorMessage, setErrorMessage] = reactExports.useState("");
+  const [successEmail, setSuccessEmail] = reactExports.useState("");
   const update = (key, value) => {
     setForm((s) => ({ ...s, [key]: value }));
     if (status !== "loading") {
@@ -686,6 +687,9 @@ function ContactSection() {
         throw new Error(data.error ?? "Falha ao enviar mensagem");
       }
       setStatus("success");
+      setErrorMessage("");
+      const sentTo = data.clientEmail ?? form.email.trim();
+      setSuccessEmail(sentTo);
       setForm(initialForm);
     } catch (err) {
       setStatus("error");
@@ -728,13 +732,13 @@ function ContactSection() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "a",
               {
-                href: "mailto:contato@cadbrasil.com.br",
+                href: "mailto:documentos@fornecedordigital.com.br",
                 className: "flex items-center gap-3 text-muted-foreground hover:text-foreground transition",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-9 w-9 rounded-xl bg-brand/10 text-brand grid place-items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "h-4 w-4" }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block font-medium text-foreground", children: "E-mail" }),
-                    "contato@cadbrasil.com.br"
+                    "documentos@fornecedordigital.com.br"
                   ] })
                 ]
               }
@@ -882,7 +886,12 @@ function ContactSection() {
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Seus dados são usados apenas para retorno do contato (LGPD)." })
             ] }),
-            status === "success" && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-success font-medium rounded-xl bg-success/10 border border-success/20 px-4 py-3", children: "Mensagem enviada com sucesso! Nossa equipe retornará em breve no seu e-mail ou WhatsApp." }),
+            status === "success" && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-success font-medium rounded-xl bg-success/10 border border-success/20 px-4 py-3", children: [
+              "Mensagem enviada com sucesso! Enviamos uma cópia de confirmação para",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: successEmail }),
+              ". Verifique também a caixa de spam. Nossa equipe retornará em breve."
+            ] }),
             status === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-destructive font-medium rounded-xl bg-destructive/10 border border-destructive/20 px-4 py-3", children: errorMessage })
           ]
         }
@@ -1067,7 +1076,7 @@ function faqJsonLd(items) {
     }))
   };
 }
-const $$splitComponentImporter$6 = () => import("./o-que-e-sicaf-C0S7oYGS.mjs");
+const $$splitComponentImporter$6 = () => import("./o-que-e-sicaf-CChZ0d3q.mjs");
 const ORIGIN$6 = "https://cadbrasil.com.br";
 const Route$7 = createFileRoute("/o-que-e-sicaf")({
   head: () => ({
@@ -1167,7 +1176,7 @@ const steps = [{
   d: "Monitoramos automaticamente vencimentos de certidões. Antes de qualquer prazo, renovamos. Suporte humano por WhatsApp e AnyDesk.",
   time: "Permanente"
 }];
-const $$splitComponentImporter$5 = () => import("./como-funciona-CVIhCJ9D.mjs");
+const $$splitComponentImporter$5 = () => import("./como-funciona-B0tUiWbz.mjs");
 const ORIGIN$5 = "https://cadbrasil.com.br";
 const Route$6 = createFileRoute("/como-funciona")({
   head: () => ({
@@ -1224,7 +1233,7 @@ const Route$6 = createFileRoute("/como-funciona")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-const $$splitComponentImporter$4 = () => import("./beneficios-Bs8MSkxL.mjs");
+const $$splitComponentImporter$4 = () => import("./beneficios-C8JX6XDs.mjs");
 const ORIGIN$4 = "https://cadbrasil.com.br";
 const Route$5 = createFileRoute("/beneficios")({
   head: () => ({
@@ -1266,7 +1275,7 @@ const Route$5 = createFileRoute("/beneficios")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-const $$splitComponentImporter$3 = () => import("./assistente-DH4z30HY.mjs");
+const $$splitComponentImporter$3 = () => import("./assistente-DT-eIuWd.mjs");
 const ORIGIN$3 = "https://cadbrasil.com.br";
 const Route$4 = createFileRoute("/assistente")({
   head: () => ({
@@ -1327,7 +1336,7 @@ const Route$4 = createFileRoute("/assistente")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-DTMhLcSd.mjs");
+const $$splitComponentImporter$2 = () => import("./index-h1Hn7c0X.mjs");
 const ORIGIN$2 = "https://cadbrasil.com.br";
 const SOCIAL_PREVIEW_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7c46af53-295b-4a74-8239-56f32ba6ed77/id-preview-d78bce4c--3b6f7a39-c5c1-4555-ad8d-dccb06150a62.lovable.app-1779886304111.png";
 const Route$3 = createFileRoute("/")({
@@ -1384,7 +1393,7 @@ const Route$3 = createFileRoute("/")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./faq.index-BljTUptV.mjs");
+const $$splitComponentImporter$1 = () => import("./faq.index-BijZcCP8.mjs");
 const ORIGIN$1 = "https://cadbrasil.com.br";
 const Route$2 = createFileRoute("/faq/")({
   head: () => ({
@@ -1441,8 +1450,8 @@ const Route$2 = createFileRoute("/faq/")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("./faq._slug-CGn4XJ0N.mjs");
-const $$splitNotFoundComponentImporter = () => import("./faq._slug-pHwzPye_.mjs");
+const $$splitComponentImporter = () => import("./faq._slug-D6eYmJUv.mjs");
+const $$splitNotFoundComponentImporter = () => import("./faq._slug-CSX1PoEW.mjs");
 const ORIGIN = "https://cadbrasil.com.br";
 const Route$1 = createFileRoute("/faq/$slug")({
   loader: ({
@@ -1523,7 +1532,7 @@ const CONTACT_TYPES = [
 ];
 const contactPayloadSchema = objectType({
   nome: stringType().trim().min(2, "Informe seu nome"),
-  email: stringType().trim().email("E-mail inválido"),
+  email: stringType().trim().email("E-mail inválido").transform((v) => v.toLowerCase()),
   telefone: stringType().trim().min(8, "Informe um telefone válido"),
   empresa: stringType().trim().optional(),
   tipo: enumType(["cliente", "parceria", "projeto", "servico", "trabalho", "outro"]),
@@ -1551,39 +1560,92 @@ function formatContactEmailBody(data) {
     `Enviado em: ${(/* @__PURE__ */ new Date()).toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}`
   ].filter(Boolean).join("\n");
 }
+function formatClientConfirmationBody(data) {
+  const tipo = contactTypeLabel(data.tipo);
+  return [
+    `Olá, ${data.nome}!`,
+    "",
+    "Recebemos sua mensagem pelo site da CADBRASIL com sucesso.",
+    "Nossa equipe já foi notificada e retornará em breve no e-mail ou WhatsApp informado.",
+    "",
+    "Resumo do seu contato:",
+    `Motivo: ${tipo}`,
+    data.empresa ? `Empresa: ${data.empresa}` : null,
+    `Telefone/WhatsApp: ${data.telefone}`,
+    "",
+    "Sua mensagem:",
+    data.mensagem,
+    "",
+    "---",
+    "CADBRASIL · Especialistas em SICAF",
+    "https://cadbrasil.com.br",
+    "documentos@fornecedordigital.com.br"
+  ].filter(Boolean).join("\n");
+}
+function formatClientConfirmationHtml(data) {
+  const tipo = contactTypeLabel(data.tipo);
+  const empresa = data.empresa ? `<p><strong>Empresa:</strong> ${escapeHtml(data.empresa)}</p>` : "";
+  return `
+    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1a2c66;max-width:560px">
+      <p>Olá, <strong>${escapeHtml(data.nome)}</strong>!</p>
+      <p>Recebemos sua mensagem pelo site da <strong>CADBRASIL</strong> com sucesso.</p>
+      <p>Nossa equipe já foi notificada e retornará em breve no e-mail ou WhatsApp informado.</p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0" />
+      <p><strong>Resumo do seu contato</strong></p>
+      <p><strong>Motivo:</strong> ${escapeHtml(tipo)}</p>
+      ${empresa}
+      <p><strong>Telefone/WhatsApp:</strong> ${escapeHtml(data.telefone)}</p>
+      <p><strong>Sua mensagem:</strong></p>
+      <p style="background:#f4f6fb;padding:12px;border-radius:8px">${escapeHtml(data.mensagem)}</p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0" />
+      <p style="font-size:12px;color:#6b7280">
+        CADBRASIL · Especialistas em SICAF<br />
+        <a href="https://cadbrasil.com.br">cadbrasil.com.br</a>
+      </p>
+    </div>
+  `.trim();
+}
+function escapeHtml(value) {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+const CONTACT_INBOX_EMAIL = "documentos@fornecedordigital.com.br";
 function getMailgunConfig() {
   const apiKey = process.env.MAILGUN_API_KEY;
   const domain = process.env.MAILGUN_DOMAIN;
   const fromEmail = process.env.MAILGUN_FROM_EMAIL;
   const fromName = process.env.MAILGUN_FROM_NAME;
-  const toEmail = process.env.MAILGUN_TO_EMAIL;
+  const toEmail = process.env.MAILGUN_TO_EMAIL?.trim() || CONTACT_INBOX_EMAIL;
   const apiUrl = process.env.MAILGUN_API_URL ?? "https://api.mailgun.net";
-  if (!apiKey || !domain || !fromEmail || !fromName || !toEmail) {
+  if (!apiKey || !domain || !fromEmail || !fromName) {
     return null;
   }
   return { apiKey, domain, fromEmail, fromName, toEmail, apiUrl };
 }
-async function sendContactEmail(data) {
-  const config = getMailgunConfig();
-  if (!config) {
-    throw new Error("MAILGUN_NOT_CONFIGURED");
+function formatRecipient(name, email) {
+  const safeName = name.replace(/[<>"]/g, "").trim();
+  const safeEmail = email.trim().toLowerCase();
+  return safeName ? `${safeName} <${safeEmail}>` : safeEmail;
+}
+async function sendMailgunMessage(config, options) {
+  const body = new URLSearchParams();
+  body.set("from", `${config.fromName} <${config.fromEmail}>`);
+  body.set("to", options.to);
+  body.set("subject", options.subject);
+  body.set("text", options.text);
+  if (options.html) {
+    body.set("html", options.html);
   }
-  const tipo = contactTypeLabel(data.tipo);
-  const subject = `[Site CADBRASIL] Contato: ${tipo} — ${data.nome}`;
-  const body = formatContactEmailBody(data);
-  const form = new FormData();
-  form.append("from", `${config.fromName} <${config.fromEmail}>`);
-  form.append("to", config.toEmail);
-  form.append("subject", subject);
-  form.append("text", body);
-  form.append("h:Reply-To", `${data.nome} <${data.email}>`);
+  if (options.replyTo) {
+    body.set("h:Reply-To", options.replyTo);
+  }
   const endpoint = `${config.apiUrl.replace(/\/$/, "")}/v3/${config.domain}/messages`;
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
-      Authorization: `Basic ${Buffer.from(`api:${config.apiKey}`).toString("base64")}`
+      Authorization: `Basic ${Buffer.from(`api:${config.apiKey}`).toString("base64")}`,
+      "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: form
+    body: body.toString()
   });
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
@@ -1591,6 +1653,38 @@ async function sendContactEmail(data) {
     throw new Error(`MAILGUN_SEND_FAILED: ${detail}`);
   }
   return { id: payload.id, message: payload.message };
+}
+async function sendContactEmail(data) {
+  const config = getMailgunConfig();
+  if (!config) {
+    throw new Error("MAILGUN_NOT_CONFIGURED");
+  }
+  const clientEmail = data.email.trim().toLowerCase();
+  const tipo = contactTypeLabel(data.tipo);
+  const teamSubject = `[Site CADBRASIL] Contato: ${tipo} — ${data.nome}`;
+  const teamBody = formatContactEmailBody(data);
+  const clientSubject = "Recebemos sua mensagem — CADBRASIL";
+  const clientText = formatClientConfirmationBody(data);
+  const clientHtml = formatClientConfirmationHtml(data);
+  const [teamResult, clientResult] = await Promise.all([
+    sendMailgunMessage(config, {
+      to: config.toEmail,
+      subject: teamSubject,
+      text: teamBody,
+      replyTo: formatRecipient(data.nome, clientEmail)
+    }),
+    sendMailgunMessage(config, {
+      to: formatRecipient(data.nome, clientEmail),
+      subject: clientSubject,
+      text: clientText,
+      html: clientHtml
+    })
+  ]);
+  return {
+    team: teamResult,
+    client: clientResult,
+    clientEmail
+  };
 }
 const Route = createFileRoute("/api/contact")({
   server: {
@@ -1612,8 +1706,12 @@ const Route = createFileRoute("/api/contact")({
           if (parsed.data.website) {
             return Response.json({ ok: true });
           }
-          await sendContactEmail(parsed.data);
-          return Response.json({ ok: true, message: "Mensagem enviada com sucesso." });
+          const result = await sendContactEmail(parsed.data);
+          return Response.json({
+            ok: true,
+            message: "Mensagem enviada com sucesso.",
+            clientEmail: result.clientEmail
+          });
         } catch (error) {
           console.error("[api/contact]", error);
           if (error instanceof Error && error.message === "MAILGUN_NOT_CONFIGURED") {
@@ -1622,8 +1720,12 @@ const Route = createFileRoute("/api/contact")({
               { status: 503 }
             );
           }
+          const detail = error instanceof Error && error.message.includes("MAILGUN_SEND_FAILED") ? error.message.replace("MAILGUN_SEND_FAILED: ", "") : null;
           return Response.json(
-            { ok: false, error: "Não foi possível enviar sua mensagem. Tente novamente em instantes." },
+            {
+              ok: false,
+              error: detail ? `Falha ao enviar e-mail: ${detail}` : "Não foi possível enviar sua mensagem. Tente novamente em instantes."
+            },
             { status: 502 }
           );
         }

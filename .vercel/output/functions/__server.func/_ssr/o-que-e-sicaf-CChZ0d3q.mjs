@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { c as PageShell, P as PageHero, C as CADASTRO_URL, m as miniFaq, I as InlineCta } from "./router-NQo8MWL3.mjs";
+import { c as PageShell, P as PageHero, C as CADASTRO_URL, m as miniFaq, I as InlineCta } from "./router-DB8_imdY.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { C as CircleCheck, L as Landmark, e as Building2, j as Gavel, S as Scale, h as FileText, w as TriangleAlert, a as ArrowRight } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";

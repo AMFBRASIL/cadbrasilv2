@@ -51,6 +51,7 @@ export function ContactSection() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [successEmail, setSuccessEmail] = useState("");
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((s) => ({ ...s, [key]: value }));
@@ -75,6 +76,7 @@ export function ContactSection() {
       const data = (await response.json().catch(() => ({}))) as {
         ok?: boolean;
         error?: string;
+        clientEmail?: string;
       };
 
       if (!response.ok || !data.ok) {
@@ -82,6 +84,9 @@ export function ContactSection() {
       }
 
       setStatus("success");
+      setErrorMessage("");
+      const sentTo = data.clientEmail ?? form.email.trim();
+      setSuccessEmail(sentTo);
       setForm(initialForm);
     } catch (err) {
       setStatus("error");
@@ -286,7 +291,8 @@ export function ContactSection() {
 
             {status === "success" && (
               <p className="text-sm text-success font-medium rounded-xl bg-success/10 border border-success/20 px-4 py-3">
-                Mensagem enviada com sucesso! Enviamos uma cópia de confirmação para o seu e-mail. Nossa equipe retornará em breve.
+                Mensagem enviada com sucesso! Enviamos uma cópia de confirmação para{" "}
+                <strong>{successEmail}</strong>. Verifique também a caixa de spam. Nossa equipe retornará em breve.
               </p>
             )}
             {status === "error" && (

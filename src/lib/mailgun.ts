@@ -2,6 +2,7 @@ import type { ContactPayload } from "@/lib/contact";
 import {
   contactTypeLabel,
   formatClientConfirmationBody,
+  formatClientConfirmationHtml,
   formatContactEmailBody,
 } from "@/lib/contact";
 
@@ -32,22 +33,32 @@ function getMailgunConfig(): MailgunConfig | null {
   return { apiKey, domain, fromEmail, fromName, toEmail, apiUrl };
 }
 
+function formatRecipient(name: string, email: string) {
+  const safeName = name.replace(/[<>"]/g, "").trim();
+  const safeEmail = email.trim().toLowerCase();
+  return safeName ? `${safeName} <${safeEmail}>` : safeEmail;
+}
+
 async function sendMailgunMessage(
   config: MailgunConfig,
   options: {
     to: string;
     subject: string;
     text: string;
+    html?: string;
     replyTo?: string;
   },
 ) {
-  const form = new FormData();
-  form.append("from", `${config.fromName} <${config.fromEmail}>`);
-  form.append("to", options.to);
-  form.append("subject", options.subject);
-  form.append("text", options.text);
+  const body = new URLSearchParams();
+  body.set("from", `${config.fromName} <${config.fromEmail}>`);
+  body.set("to", options.to);
+  body.set("subject", options.subject);
+  body.set("text", options.text);
+  if (options.html) {
+    body.set("html", options.html);
+  }
   if (options.replyTo) {
-    form.append("h:Reply-To", options.replyTo);
+    body.set("h:Reply-To", options.replyTo);
   }
 
   const endpoint = `${config.apiUrl.replace(/\/$/, "")}/v3/${config.domain}/messages`;
@@ -55,8 +66,9 @@ async function sendMailgunMessage(
     method: "POST",
     headers: {
       Authorization: `Basic ${Buffer.from(`api:${config.apiKey}`).toString("base64")}`,
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: form,
+    body: body.toString(),
   });
 
   const payload = (await response.json().catch(() => ({}))) as {
@@ -78,26 +90,32 @@ export async function sendContactEmail(data: ContactPayload) {
     throw new Error("MAILGUN_NOT_CONFIGURED");
   }
 
+  const clientEmail = data.email.trim().toLowerCase();
   const tipo = contactTypeLabel(data.tipo);
   const teamSubject = `[Site CADBRASIL] Contato: ${tipo} — ${data.nome}`;
   const teamBody = formatContactEmailBody(data);
+  const clientSubject = "Recebemos sua mensagem — CADBRASIL";
+  const clientText = formatClientConfirmationBody(data);
+  const clientHtml = formatClientConfirmationHtml(data);
 
-  const teamResult = await sendMailgunMessage(config, {
-    to: config.toEmail,
-    subject: teamSubject,
-    text: teamBody,
-    replyTo: `${data.nome} <${data.email}>`,
-  });
+  const [teamResult, clientResult] = await Promise.all([
+    sendMailgunMessage(config, {
+      to: config.toEmail,
+      subject: teamSubject,
+      text: teamBody,
+      replyTo: formatRecipient(data.nome, clientEmail),
+    }),
+    sendMailgunMessage(config, {
+      to: formatRecipient(data.nome, clientEmail),
+      subject: clientSubject,
+      text: clientText,
+      html: clientHtml,
+    }),
+  ]);
 
-  try {
-    await sendMailgunMessage(config, {
-      to: data.email,
-      subject: "Recebemos sua mensagem — CADBRASIL",
-      text: formatClientConfirmationBody(data),
-    });
-  } catch (error) {
-    console.error("[mailgun] Falha ao enviar confirmação ao cliente:", error);
-  }
-
-  return teamResult;
+  return {
+    team: teamResult,
+    client: clientResult,
+    clientEmail,
+  };
 }

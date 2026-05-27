@@ -26,9 +26,13 @@ export const Route = createFileRoute("/api/contact")({
             return Response.json({ ok: true });
           }
 
-          await sendContactEmail(parsed.data);
+          const result = await sendContactEmail(parsed.data);
 
-          return Response.json({ ok: true, message: "Mensagem enviada com sucesso." });
+          return Response.json({
+            ok: true,
+            message: "Mensagem enviada com sucesso.",
+            clientEmail: result.clientEmail,
+          });
         } catch (error) {
           console.error("[api/contact]", error);
 
@@ -39,8 +43,18 @@ export const Route = createFileRoute("/api/contact")({
             );
           }
 
+          const detail =
+            error instanceof Error && error.message.includes("MAILGUN_SEND_FAILED")
+              ? error.message.replace("MAILGUN_SEND_FAILED: ", "")
+              : null;
+
           return Response.json(
-            { ok: false, error: "Não foi possível enviar sua mensagem. Tente novamente em instantes." },
+            {
+              ok: false,
+              error: detail
+                ? `Falha ao enviar e-mail: ${detail}`
+                : "Não foi possível enviar sua mensagem. Tente novamente em instantes.",
+            },
             { status: 502 },
           );
         }

@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { c as PageShell, P as PageHero, C as CADASTRO_URL, I as InlineCta } from "./router-NQo8MWL3.mjs";
+import { c as PageShell, P as PageHero, C as CADASTRO_URL, I as InlineCta } from "./router-DB8_imdY.mjs";
 import { v as Sparkles, D as Download, c as Bot, R as RefreshCw, w as TriangleAlert, k as Headphones, q as MonitorSmartphone, m as Lock, C as CircleCheck, u as ShieldCheck } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";
 import "../_libs/tanstack__react-query.mjs";
