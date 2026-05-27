@@ -1,8 +1,25 @@
 import {
   ShieldCheck, Sparkles, Headphones, Gauge, FileCheck2, Workflow,
   Bot, Download, MonitorSmartphone, RefreshCw, FolderSync, AlertTriangle,
-  CheckCircle2, ArrowRight, Building2, Award, Clock, Users,
+  CheckCircle2, ArrowRight, Building2, Award, Clock, Users, Search, Lock, BadgeCheck,
 } from "lucide-react";
+import { useMemo, useState } from "react";
+
+const WHATSAPP_URL = "https://wa.me/551121220202";
+
+export function ServiceStatusBar() {
+  return (
+    <section className="border-y border-border bg-card/50">
+      <div className="mx-auto max-w-7xl px-4 py-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm">
+        <span className="inline-flex items-center gap-2 text-success font-semibold">
+          <span className="h-2 w-2 rounded-full bg-success pulse-ring" /> Atendimento online agora
+        </span>
+        <span className="text-muted-foreground">Tempo médio de resposta: <strong className="text-foreground">3 minutos</strong></span>
+        <span className="text-muted-foreground">Último SICAF regularizado: <strong className="text-foreground">há 18 minutos</strong></span>
+      </div>
+    </section>
+  );
+}
 
 export function LogosBar() {
   return (
@@ -103,6 +120,204 @@ export function Process() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ReadinessCalculator() {
+  const [answers, setAnswers] = useState({
+    cadastro: "nao",
+    certidoes: "nao",
+    urgencia: "7d",
+    experiencia: "baixa",
+    volume: "1-2",
+  });
+
+  const score = useMemo(() => {
+    let base = 0;
+    base += answers.cadastro === "sim" ? 25 : 0;
+    base += answers.certidoes === "sim" ? 25 : 0;
+    base += answers.urgencia === "24h" ? 10 : answers.urgencia === "7d" ? 20 : 25;
+    base += answers.experiencia === "alta" ? 20 : answers.experiencia === "media" ? 14 : 8;
+    base += answers.volume === "5+" ? 20 : answers.volume === "3-4" ? 14 : 8;
+    return Math.min(100, base);
+  }, [answers]);
+
+  const readinessLabel = score >= 75 ? "Pronto para licitar" : score >= 45 ? "Precisa de ajustes" : "Risco alto sem suporte";
+  const readinessHint = score >= 75
+    ? "Seu cenário está avançado. Podemos acelerar o fechamento em até 24h."
+    : score >= 45
+      ? "Com alguns ajustes de documentação e certidões, sua empresa pode disputar editais rapidamente."
+      : "Há pontos críticos no seu cadastro atual. Recomendamos diagnóstico com especialista.";
+
+  return (
+    <section className="py-24 sm:py-32 bg-accent/20">
+      <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-brand bg-brand/10 px-3 py-1.5 rounded-full">
+            <Gauge className="h-3.5 w-3.5" /> Calculadora SICAF
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold leading-[1.05] text-balance">
+            Descubra seu nível de prontidão em 1 minuto.
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-xl">
+            Responda 5 perguntas rápidas e veja o risco atual da sua empresa para vender ao governo.
+          </p>
+        </div>
+
+        <div className="rounded-3xl bg-card border border-border p-6 sm:p-8 shadow-card">
+          <div className="grid gap-4 text-sm">
+            <Question
+              label="Sua empresa já possui cadastro ativo no SICAF?"
+              value={answers.cadastro}
+              onChange={(v) => setAnswers((s) => ({ ...s, cadastro: v }))}
+              options={[{ value: "sim", label: "Sim" }, { value: "nao", label: "Não" }]}
+            />
+            <Question
+              label="As principais certidões estão válidas hoje?"
+              value={answers.certidoes}
+              onChange={(v) => setAnswers((s) => ({ ...s, certidoes: v }))}
+              options={[{ value: "sim", label: "Sim" }, { value: "nao", label: "Não / Não sei" }]}
+            />
+            <Question
+              label="Qual a sua urgência para começar a licitar?"
+              value={answers.urgencia}
+              onChange={(v) => setAnswers((s) => ({ ...s, urgencia: v }))}
+              options={[{ value: "24h", label: "Até 24h" }, { value: "7d", label: "Até 7 dias" }, { value: "30d", label: "Até 30 dias" }]}
+            />
+            <Question
+              label="Seu time tem experiência com habilitação em licitações?"
+              value={answers.experiencia}
+              onChange={(v) => setAnswers((s) => ({ ...s, experiencia: v }))}
+              options={[{ value: "baixa", label: "Baixa" }, { value: "media", label: "Média" }, { value: "alta", label: "Alta" }]}
+            />
+            <Question
+              label="Quantos editais/mês pretendem disputar?"
+              value={answers.volume}
+              onChange={(v) => setAnswers((s) => ({ ...s, volume: v }))}
+              options={[{ value: "1-2", label: "1 a 2" }, { value: "3-4", label: "3 a 4" }, { value: "5+", label: "5+" }]}
+            />
+          </div>
+
+          <div className="mt-6 rounded-2xl bg-accent border border-border p-5">
+            <div className="text-xs uppercase tracking-wider text-muted-foreground">Nível de prontidão</div>
+            <div className="mt-1 text-2xl font-bold">{score}%</div>
+            <div className="mt-1 font-semibold text-brand">{readinessLabel}</div>
+            <p className="mt-2 text-sm text-muted-foreground">{readinessHint}</p>
+            <a
+              href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Quero diagnóstico SICAF. Meu score foi ${score}%.`)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold"
+            >
+              Receber diagnóstico no WhatsApp <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Question({
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: { value: string; label: string }[];
+}) {
+  return (
+    <label className="block">
+      <div className="mb-2 font-medium text-foreground">{label}</div>
+      <div className="grid grid-cols-3 gap-2">
+        {options.map((opt) => (
+          <button
+            key={opt.value}
+            type="button"
+            onClick={() => onChange(opt.value)}
+            className={`rounded-xl border px-3 py-2 text-xs sm:text-sm transition ${
+              value === opt.value
+                ? "bg-brand text-brand-foreground border-brand"
+                : "bg-background border-border hover:bg-accent"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
+    </label>
+  );
+}
+
+export function DocumentChecklist() {
+  const docs = [
+    "Contrato social atualizado",
+    "Cartão CNPJ",
+    "RG e CPF dos sócios",
+    "Comprovante de endereço",
+    "CND Federal",
+    "FGTS",
+    "CNDT",
+    "Balanço patrimonial (quando aplicável)",
+  ];
+
+  const [checked, setChecked] = useState<boolean[]>(docs.map(() => false));
+  const missing = checked.filter((x) => !x).length;
+
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+        <div>
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-brand bg-brand/10 px-3 py-1.5 rounded-full">
+            <FileCheck2 className="h-3.5 w-3.5" /> Checklist interativo
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold leading-[1.05] text-balance">
+            Veja em segundos o que falta para seu SICAF.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Marque os documentos que você já possui. Nós cuidamos de organizar o restante e acelerar a regularização.
+          </p>
+        </div>
+
+        <div className="rounded-3xl bg-card border border-border p-6 shadow-card">
+          <div className="space-y-2">
+            {docs.map((doc, idx) => (
+              <label key={doc} className="flex items-center gap-3 rounded-xl border border-border px-3 py-2.5 hover:bg-accent">
+                <input
+                  type="checkbox"
+                  checked={checked[idx]}
+                  onChange={() =>
+                    setChecked((state) => state.map((v, i) => (i === idx ? !v : v)))
+                  }
+                  className="h-4 w-4 accent-[oklch(0.53_0.13_258)]"
+                />
+                <span className="text-sm">{doc}</span>
+              </label>
+            ))}
+          </div>
+          <div className="mt-5 rounded-2xl bg-accent border border-border p-4">
+            <div className="text-sm">
+              {missing === 0 ? (
+                <span className="font-semibold text-success">Checklist completa. Você está pronto para avançar.</span>
+              ) : (
+                <span><strong>{missing}</strong> documento(s) pendente(s). Enviamos a lista personalizada no WhatsApp.</span>
+              )}
+            </div>
+            <a
+              href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Quero minha checklist SICAF personalizada. Faltam ${missing} documentos.`)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand"
+            >
+              Receber checklist personalizada <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -284,9 +499,9 @@ export function Stats() {
 
 export function Testimonials() {
   const items = [
-    { q: "Em 18 horas tudo estava regularizado. A equipe é absurdamente rápida e técnica.", a: "Carla M.", r: "Diretora · Construtora ML" },
-    { q: "O Assistente CADBRASIL mudou tudo. Não me preocupo mais com vencimento de certidão.", a: "Roberto S.", r: "Sócio · Tech Supply" },
-    { q: "Já fechei 4 contratos com órgãos públicos depois que a CADBRASIL cuidou do meu SICAF.", a: "Patrícia L.", r: "CEO · Alimentar SP" },
+    { q: "Em 18 horas tudo estava regularizado. Entramos no pregão da prefeitura no dia seguinte.", a: "Carla M.", r: "Diretora · Construtora ML · SP", kpi: "SICAF regularizado em 18h" },
+    { q: "O Assistente CADBRASIL mudou tudo. Não me preocupo mais com vencimento de certidão.", a: "Roberto S.", r: "Sócio · Tech Supply · PR", kpi: "0 certidões vencidas em 9 meses" },
+    { q: "Já fechei 4 contratos com órgãos públicos depois que a CADBRASIL cuidou do meu SICAF.", a: "Patrícia L.", r: "CEO · Alimentar SP · SP", kpi: "4 contratos após regularização" },
   ];
   return (
     <section className="py-24 sm:py-32">
@@ -313,6 +528,9 @@ export function Testimonials() {
                   <div className="text-xs text-muted-foreground">{t.r}</div>
                 </div>
               </figcaption>
+              <div className="mt-4 text-xs font-semibold text-brand bg-brand/10 rounded-lg px-3 py-2">
+                {t.kpi}
+              </div>
             </figure>
           ))}
         </div>
@@ -321,7 +539,89 @@ export function Testimonials() {
   );
 }
 
+export function ComparisonSection() {
+  const rows = [
+    { feature: "Tempo para regularização", cadbrasil: "Até 24h", semApoio: "1 a 4 semanas" },
+    { feature: "Risco de desclassificação", cadbrasil: "Baixo (monitoramento ativo)", semApoio: "Alto (controle manual)" },
+    { feature: "Renovação de certidões", cadbrasil: "Automática 24/7", semApoio: "Lembretes manuais" },
+    { feature: "Acompanhamento", cadbrasil: "Painel + especialistas", semApoio: "Planilha/e-mail" },
+  ];
+
+  return (
+    <section className="py-24 sm:py-32 bg-accent/20">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-brand bg-brand/10 px-3 py-1.5 rounded-full">
+            <Search className="h-3.5 w-3.5" /> Comparativo prático
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold leading-[1.05] text-balance">
+            Com CADBRASIL vs. sem suporte especializado.
+          </h2>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card">
+          <table className="w-full text-sm">
+            <thead className="bg-accent/60">
+              <tr className="text-left">
+                <th className="p-4">Critério</th>
+                <th className="p-4 text-brand">Com CADBRASIL</th>
+                <th className="p-4">Sem suporte</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr key={row.feature} className="border-t border-border">
+                  <td className="p-4 font-medium">{row.feature}</td>
+                  <td className="p-4 text-brand font-semibold">{row.cadbrasil}</td>
+                  <td className="p-4 text-muted-foreground">{row.semApoio}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function StartIn2Minutes() {
+  const steps = [
+    "Informe seu CNPJ e WhatsApp",
+    "Receba checklist e diagnóstico inicial",
+    "Envie os documentos e acompanhe no painel",
+  ];
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="rounded-3xl border border-border bg-card p-8 sm:p-10 shadow-card">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-brand bg-brand/10 px-3 py-1.5 rounded-full">
+            <Clock className="h-3.5 w-3.5" /> Comece em 2 minutos
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold leading-tight">
+            Processo rápido para sair do zero e começar a licitar.
+          </h2>
+          <div className="mt-6 grid sm:grid-cols-3 gap-3">
+            {steps.map((step, idx) => (
+              <div key={step} className="rounded-2xl border border-border p-4">
+                <div className="text-xs font-bold text-brand">PASSO {idx + 1}</div>
+                <div className="mt-2 text-sm text-muted-foreground">{step}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FinalCTA() {
+  const [lead, setLead] = useState({ nome: "", whatsapp: "", cnpj: "" });
+  const leadMessage = encodeURIComponent(
+    `Olá! Quero iniciar meu SICAF com a CADBRASIL.\n` +
+    `Nome: ${lead.nome || "não informado"}\n` +
+    `WhatsApp: ${lead.whatsapp || "não informado"}\n` +
+    `CNPJ: ${lead.cnpj || "não informado"}`,
+  );
+
   return (
     <section id="cta" className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4">
@@ -336,9 +636,30 @@ export function FinalCTA() {
               Nossa equipe especializada e nossa tecnologia inteligente ajudam você
               a participar de licitações sem dores de cabeça.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-9 grid lg:grid-cols-[1fr_auto] gap-6 items-end">
+              <div className="grid sm:grid-cols-3 gap-3">
+                <input
+                  value={lead.nome}
+                  onChange={(e) => setLead((s) => ({ ...s, nome: e.target.value }))}
+                  placeholder="Seu nome"
+                  className="rounded-xl px-4 py-3 bg-white text-foreground placeholder:text-muted-foreground"
+                />
+                <input
+                  value={lead.whatsapp}
+                  onChange={(e) => setLead((s) => ({ ...s, whatsapp: e.target.value }))}
+                  placeholder="WhatsApp"
+                  className="rounded-xl px-4 py-3 bg-white text-foreground placeholder:text-muted-foreground"
+                />
+                <input
+                  value={lead.cnpj}
+                  onChange={(e) => setLead((s) => ({ ...s, cnpj: e.target.value }))}
+                  placeholder="CNPJ"
+                  className="rounded-xl px-4 py-3 bg-white text-foreground placeholder:text-muted-foreground"
+                />
+              </div>
+              <div className="flex flex-wrap gap-3">
               <a
-                href="https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo."
+                href={`https://wa.me/551121220202?text=${leadMessage}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition"
@@ -353,9 +674,21 @@ export function FinalCTA() {
               >
                 💬 Atendimento Imediato
               </a>
+              </div>
             </div>
             <div className="mt-6 text-sm text-white/70">
               Sem letras miúdas. Sem amarras. Pague apenas pelo serviço contratado.
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs">
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1">
+                <Lock className="h-3.5 w-3.5" /> Dados protegidos (LGPD)
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1">
+                <BadgeCheck className="h-3.5 w-3.5" /> Atendimento com especialistas
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1">
+                <ShieldCheck className="h-3.5 w-3.5" /> Sem compromisso na análise inicial
+              </span>
             </div>
           </div>
         </div>

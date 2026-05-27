@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
@@ -119,6 +119,39 @@ export function InlineCta({
   title?: string;
   subtitle?: string;
 }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  const contextual = (() => {
+    if (pathname.includes("beneficios")) {
+      return {
+        primary: "Quero reduzir risco fiscal",
+        secondary: "Comparar meu cenário no WhatsApp",
+      };
+    }
+    if (pathname.includes("assistente")) {
+      return {
+        primary: "Quero monitoramento automático",
+        secondary: "Ver instalação guiada",
+      };
+    }
+    if (pathname.includes("faq")) {
+      return {
+        primary: "Falar com especialista agora",
+        secondary: "Receber checklist por WhatsApp",
+      };
+    }
+    if (pathname.includes("como-funciona")) {
+      return {
+        primary: "Iniciar meu processo em 24h",
+        secondary: "Tirar dúvidas sobre etapas",
+      };
+    }
+    return {
+      primary: "🚀 Fazer Cadastro",
+      secondary: "💬 WhatsApp",
+    };
+  })();
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-5xl px-4">
@@ -137,7 +170,7 @@ export function InlineCta({
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition whitespace-nowrap"
               >
-                🚀 Fazer Cadastro
+                {contextual.primary}
               </a>
               <a
                 href={WHATSAPP_URL}
@@ -145,7 +178,7 @@ export function InlineCta({
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition whitespace-nowrap"
               >
-                💬 WhatsApp
+                {contextual.secondary}
               </a>
             </div>
           </div>

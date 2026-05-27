@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Plus, Minus, Search } from "lucide-react";
 
 const items = [
   { q: "O que é o SICAF e por que minha empresa precisa?", a: "SICAF é o Sistema de Cadastramento Unificado de Fornecedores. Ele habilita sua empresa a participar de licitações públicas em todo o Brasil. Sem cadastro ativo e regular, você fica de fora dos pregões e dispensas." },
@@ -12,6 +12,16 @@ const items = [
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
+  const [query, setQuery] = useState("");
+
+  const filteredItems = useMemo(() => {
+    const normalized = query.trim().toLowerCase();
+    if (!normalized) return items;
+    return items.filter((it) =>
+      `${it.q} ${it.a}`.toLowerCase().includes(normalized),
+    );
+  }, [query]);
+
   return (
     <section id="faq" className="py-24 sm:py-32 bg-accent/30">
       <div className="mx-auto max-w-4xl px-4">
@@ -23,8 +33,19 @@ export function Faq() {
             Perguntas frequentes.
           </h2>
         </div>
+        <div className="mt-8 relative">
+          <Search className="h-4 w-4 text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Digite sua dúvida (cadastro, custos, regularização...)"
+            className="w-full rounded-2xl bg-card border border-border pl-11 pr-4 py-3 text-sm outline-none ring-0 focus:border-brand/50"
+            aria-label="Buscar perguntas frequentes"
+          />
+        </div>
         <div className="mt-12 space-y-3">
-          {items.map((it, i) => {
+          {filteredItems.map((it, i) => {
             const isOpen = open === i;
             return (
               <div key={it.q} className="rounded-2xl bg-card border border-border overflow-hidden">
@@ -46,6 +67,11 @@ export function Faq() {
               </div>
             );
           })}
+          {filteredItems.length === 0 && (
+            <div className="rounded-2xl bg-card border border-border p-6 text-sm text-muted-foreground text-center">
+              Nenhum resultado encontrado. Fale com nossa equipe no WhatsApp para um diagnóstico gratuito.
+            </div>
+          )}
         </div>
       </div>
     </section>

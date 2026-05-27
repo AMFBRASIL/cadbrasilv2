@@ -3,7 +3,8 @@ import { ArrowRight, Download, MessageCircle, ShieldCheck } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { HeroDashboard } from "@/components/site/HeroDashboard";
 import {
-  LogosBar, WhatIsSicaf, Process, Benefits, Assistant, Stats, Testimonials, FinalCTA,
+  ServiceStatusBar, LogosBar, WhatIsSicaf, Process, ReadinessCalculator, DocumentChecklist,
+  ComparisonSection, Assistant, Benefits, Stats, Testimonials, StartIn2Minutes, FinalCTA,
 } from "@/components/site/Sections";
 import { Faq } from "@/components/site/Faq";
 import { Footer } from "@/components/site/Footer";
@@ -133,13 +134,18 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <ServiceStatusBar />
         <LogosBar />
         <WhatIsSicaf />
         <Process />
+        <ReadinessCalculator />
+        <DocumentChecklist />
+        <ComparisonSection />
         <Assistant />
         <Benefits />
         <Stats />
         <Testimonials />
+        <StartIn2Minutes />
         <FinalCTA />
         <Faq />
       </main>

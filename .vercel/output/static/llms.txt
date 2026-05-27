@@ -1,0 +1,37 @@
+# CADBRASIL
+
+> CADBRASIL é especialista em SICAF (Sistema de Cadastramento Unificado de Fornecedores): cadastro, regularização, atualização e renovação para empresas que querem vender ao governo. Marca da CADBRASIL.
+
+A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e suporte humano. Atendemos MEI, ME, EPP, LTDA, S/A e EIRELI em todo o Brasil.
+
+## Pages
+
+- [Início](/): Visão geral da CADBRASIL, serviços SICAF e contato.
+- [O que é SICAF](/o-que-e-sicaf): Guia completo sobre o SICAF, níveis de habilitação e obrigatoriedade.
+- [Como funciona](/como-funciona): Processo CADBRASIL em 5 passos para cadastro e regularização SICAF.
+- [Assistente CADBRASIL](/assistente): Aplicativo com IA para monitorar e renovar SICAF automaticamente.
+- [Benefícios](/beneficios): Comparativo entre a CADBRASIL e despachantes tradicionais.
+- [FAQ](/faq): Central de perguntas frequentes sobre SICAF e licitações.
+
+## FAQ por tema
+
+- [Cadastro SICAF](/faq/cadastro-sicaf): Documentos, prazos, custos e níveis.
+- [Regularização SICAF](/faq/regularizacao-sicaf): Pendências, certidões vencidas e desbloqueio.
+- [Atualização SICAF](/faq/atualizacao-sicaf): Renovação automática e monitoramento de certidões.
+- [Assistente CADBRASIL](/faq/assistente-cadbrasil): Instalação, segurança e funcionalidades.
+- [Licitações Públicas](/faq/licitacoes-publicas): Lei 14.133/2021, pregão eletrônico e dispensa.
+
+## Canonical and machine-readable endpoints
+
+- Canonical host: https://cadbrasil.com.br
+- Sitemap: https://cadbrasil.com.br/sitemap.xml
+- Robots: https://cadbrasil.com.br/robots.txt
+- LLM index: https://cadbrasil.com.br/llms.txt
+
+## Entity profile
+
+- Organization: CADBRASIL
+- Brand: CADBRASIL
+- Market: Brasil
+- Core services: Cadastro SICAF, Regularização SICAF, Atualização SICAF, Renovação SICAF
+- Human support channel: WhatsApp + equipe especializada
