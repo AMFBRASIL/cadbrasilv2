@@ -100,34 +100,68 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "alternate", hrefLang: "x-default", href: `${ORIGIN}/` },
       { rel: "stylesheet", href: appCss },
     ],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": `${ORIGIN}/#organization`,
-            name: "CADBRASIL",
-            alternateName: "CADBRASIL",
-            url: ORIGIN,
-            logo: SOCIAL_PREVIEW_IMAGE,
-            description: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
-            areaServed: "BR",
-            knowsAbout: ["SICAF", "Licitações públicas", "Compras.gov.br"],
-            sameAs: ["https://cadastro.cadbrasil.com.br"],
-          },
-          {
-            "@type": "WebSite",
-            "@id": `${ORIGIN}/#website`,
-            url: ORIGIN,
-            name: "CADBRASIL",
-            inLanguage: "pt-BR",
-            publisher: { "@id": `${ORIGIN}/#organization` },
-          },
-        ],
-      }),
-    }],
+    scripts: [
+      {
+        children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TRVTMS6M');`,
+      },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=AW-16460586067",
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-16460586067');
+gtag('config', 'GT-KTPDP2TV');`,
+      },
+      {
+        children: `(function(w,d,t,r,u){
+  var f,n,i;
+  w[u]=w[u]||[],f=function(){
+    var o={ti:"343231769", enableAutoSpaTracking: true};
+    o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad");
+  },
+  n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){
+    var s=this.readyState;
+    s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null);
+  },
+  i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);
+})(window,document,"script","https://bat.bing.com/bat.js","uetq");`,
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${ORIGIN}/#organization`,
+              name: "CADBRASIL",
+              alternateName: "CADBRASIL",
+              url: ORIGIN,
+              logo: SOCIAL_PREVIEW_IMAGE,
+              description: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
+              areaServed: "BR",
+              knowsAbout: ["SICAF", "Licitações públicas", "Compras.gov.br"],
+              sameAs: ["https://cadastro.cadbrasil.com.br"],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${ORIGIN}/#website`,
+              url: ORIGIN,
+              name: "CADBRASIL",
+              inLanguage: "pt-BR",
+              publisher: { "@id": `${ORIGIN}/#organization` },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
