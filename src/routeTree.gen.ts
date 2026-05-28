@@ -16,6 +16,7 @@ import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FaqIndexRouteImport } from './routes/faq.index'
+import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/cadastro-sicaf-passo-passo'
 import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 
@@ -54,6 +55,12 @@ const FaqIndexRoute = FaqIndexRouteImport.update({
   path: '/faq/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuiaCadastroSicafPassoPassoRoute =
+  GuiaCadastroSicafPassoPassoRouteImport.update({
+    id: '/guia/cadastro-sicaf-passo-passo',
+    path: '/guia/cadastro-sicaf-passo-passo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FaqSlugRoute = FaqSlugRouteImport.update({
   id: '/faq/$slug',
   path: '/faq/$slug',
@@ -74,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
+  '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq/': typeof FaqIndexRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +93,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
+  '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq': typeof FaqIndexRoute
 }
 export interface FileRoutesById {
@@ -97,6 +106,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
+  '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq/': typeof FaqIndexRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/api/contact'
     | '/faq/$slug'
+    | '/guia/cadastro-sicaf-passo-passo'
     | '/faq/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/api/contact'
     | '/faq/$slug'
+    | '/guia/cadastro-sicaf-passo-passo'
     | '/faq'
   id:
     | '__root__'
@@ -132,6 +144,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/api/contact'
     | '/faq/$slug'
+    | '/guia/cadastro-sicaf-passo-passo'
     | '/faq/'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +157,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiContactRoute: typeof ApiContactRoute
   FaqSlugRoute: typeof FaqSlugRoute
+  GuiaCadastroSicafPassoPassoRoute: typeof GuiaCadastroSicafPassoPassoRoute
   FaqIndexRoute: typeof FaqIndexRoute
 }
 
@@ -198,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guia/cadastro-sicaf-passo-passo': {
+      id: '/guia/cadastro-sicaf-passo-passo'
+      path: '/guia/cadastro-sicaf-passo-passo'
+      fullPath: '/guia/cadastro-sicaf-passo-passo'
+      preLoaderRoute: typeof GuiaCadastroSicafPassoPassoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq/$slug': {
       id: '/faq/$slug'
       path: '/faq/$slug'
@@ -224,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiContactRoute: ApiContactRoute,
   FaqSlugRoute: FaqSlugRoute,
+  GuiaCadastroSicafPassoPassoRoute: GuiaCadastroSicafPassoPassoRoute,
   FaqIndexRoute: FaqIndexRoute,
 }
 export const routeTree = rootRouteImport

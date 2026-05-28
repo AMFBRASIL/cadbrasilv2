@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="CADBRASIL">
+  <defs>
+    <linearGradient id="brand" x1="24" y1="24" x2="156" y2="156" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3d6fc4"/>
+      <stop offset="100%" stop-color="#1a2c66"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#brand)"/>
+  <text
+    x="90"
+    y="118"
+    font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
+    font-size="96"
+    font-weight="700"
+    fill="#ffffff"
+    text-anchor="middle"
+  >C</text>
+</svg>

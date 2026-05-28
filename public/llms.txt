@@ -7,6 +7,7 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 ## Pages
 
 - [Início](/): Visão geral da CADBRASIL, serviços SICAF e contato.
+- [Cadastro SICAF passo a passo](/guia/cadastro-sicaf-passo-passo): Tutorial completo 2026 — documentos, níveis I a VI, certificado digital, prazos, renovação e FAQ.
 - [O que é SICAF](/o-que-e-sicaf): Guia completo sobre o SICAF, níveis de habilitação e obrigatoriedade.
 - [Como funciona](/como-funciona): Processo CADBRASIL em 5 passos para cadastro e regularização SICAF.
 - [Assistente CADBRASIL](/assistente): Aplicativo com IA para monitorar e renovar SICAF automaticamente.

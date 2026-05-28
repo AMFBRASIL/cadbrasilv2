@@ -88,6 +88,16 @@ function OQueESicaf() {
         <p className="text-lg text-muted-foreground leading-relaxed mt-4">
           Sem SICAF ativo e regular, sua empresa <strong className="text-foreground">não consegue assinar contratos públicos</strong>, mesmo que vença a licitação. Por isso ele é o primeiro passo de qualquer estratégia de venda ao governo.
         </p>
+        <div className="mt-8 rounded-2xl border border-brand/30 bg-brand/5 p-6 not-prose">
+          <p className="font-semibold text-foreground">Quer o passo a passo prático?</p>
+          <p className="mt-2 text-muted-foreground text-base">
+            Veja nosso tutorial completo com documentos, prazos, níveis I a VI e FAQ —{" "}
+            <Link to="/guia/cadastro-sicaf-passo-passo" className="text-brand font-medium underline underline-offset-4">
+              Cadastro SICAF passo a passo 2026
+            </Link>
+            .
+          </p>
+        </div>
       </article>
 
       <section className="py-16 bg-accent/30">

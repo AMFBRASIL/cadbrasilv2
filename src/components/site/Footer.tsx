@@ -15,6 +15,7 @@ export function Footer() {
         <div>
           <div className="text-sm font-semibold mb-3">Serviços</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
+            <li><a href="/guia/cadastro-sicaf-passo-passo" className="hover:text-foreground">Guia Cadastro SICAF</a></li>
             <li><a href="#cta" className="hover:text-foreground">Cadastro SICAF</a></li>
             <li><a href="#cta" className="hover:text-foreground">Regularização SICAF</a></li>
             <li><a href="#cta" className="hover:text-foreground">Atualização SICAF</a></li>
