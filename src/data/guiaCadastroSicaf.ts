@@ -8,8 +8,17 @@ export const guiaCadastroSicafMeta = {
     "cadastro sicaf, como cadastrar sicaf, sicaf passo a passo, documentos sicaf, niveis sicaf, habilitacao sicaf, compras.gov.br sicaf, certificado digital sicaf, crc sicaf, regularizar sicaf, atualizar sicaf, sicaf 2026, fornecedor governo, licitacoes publicas sicaf, cadastro fornecedor federal, sicaf mei, sicaf epp, renovacao sicaf, custo sicaf",
 };
 
+export const quemPrecisaSicaf = [
+  "Empresas (LTDA, SA, EIRELI) que participam ou pretendem participar de licitações federais",
+  "MEI quando o edital permitir participação",
+  "ME e EPP em programas com tratamento diferenciado (LC 123/2006)",
+  "Fornecedores que precisam renovar certidões ou níveis de habilitação",
+  "Empresas que passam a disputar contratos públicos pela primeira vez",
+];
+
 export const guiaToc = [
   { id: "o-que-e", label: "O que é SICAF" },
+  { id: "quem-precisa", label: "Quem precisa" },
   { id: "obrigatoriedade", label: "É obrigatório?" },
   { id: "passo-a-passo", label: "Passo a passo oficial" },
   { id: "niveis", label: "Níveis I a VI" },

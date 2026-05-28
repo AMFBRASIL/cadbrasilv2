@@ -46,6 +46,7 @@
 
   --gradient-brand: linear-gradient(135deg, oklch(0.42 0.16 258) 0%, oklch(0.32 0.18 268) 100%);
   --gradient-radial: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.92 0.05 250 / 0.7), transparent 60%);
+
   --gradient-success: linear-gradient(135deg, oklch(0.72 0.18 155), oklch(0.62 0.18 165));
 }
 
@@ -141,4 +142,12 @@
     to { opacity: 1; transform: translateY(0) }
   }
   .animate-fade-up { animation: fade-up 0.7s ease-out both; }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }

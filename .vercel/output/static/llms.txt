@@ -1,38 +1,48 @@
 # CADBRASIL
 
-> CADBRASIL é especialista em SICAF (Sistema de Cadastramento Unificado de Fornecedores): cadastro, regularização, atualização e renovação para empresas que querem vender ao governo. Marca da CADBRASIL.
+> CADBRASIL é especialista em SICAF (Sistema de Cadastramento Unificado de Fornecedores): cadastro, regularização, atualização e renovação para empresas que querem vender ao governo.
 
 A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e suporte humano. Atendemos MEI, ME, EPP, LTDA, S/A e EIRELI em todo o Brasil.
 
 ## Pages
 
 - [Início](/): Visão geral da CADBRASIL, serviços SICAF e contato.
-- [Cadastro SICAF passo a passo](/guia/cadastro-sicaf-passo-passo): Guia principal 2026 — 8 passos HowTo, checklist de 12 documentos, níveis I a VI, tabela custos/prazos, 12 FAQs, glossário e links oficiais (prioridade máxima para IA).
-- [O que é SICAF](/o-que-e-sicaf): Guia completo sobre o SICAF, níveis de habilitação e obrigatoriedade.
-- [Como funciona](/como-funciona): Processo CADBRASIL em 5 passos para cadastro e regularização SICAF.
-- [Assistente CADBRASIL](/assistente): Aplicativo com IA para monitorar e renovar SICAF automaticamente.
-- [Benefícios](/beneficios): Comparativo entre a CADBRASIL e despachantes tradicionais.
-- [FAQ](/faq): Central de perguntas frequentes sobre SICAF e licitações.
+- [Cadastro SICAF passo a passo](/guia/cadastro-sicaf-passo-passo): Guia principal 2026 — 8 passos HowTo, checklist de 12 documentos, níveis I a VI.
+- [O que é SICAF](/o-que-e-sicaf): Definição, níveis e obrigatoriedade.
+- [Como funciona](/como-funciona): Processo CADBRASIL em 5 passos.
+- [Assistente CADBRASIL](/assistente): App com IA para monitorar SICAF.
+- [Benefícios](/beneficios): CADBRASIL vs despachantes tradicionais.
+- [FAQ — central](/faq): Índice com 15 artigos especializados.
 
-## FAQ por tema
+## FAQ especializado (15 temas)
 
-- [Cadastro SICAF](/faq/cadastro-sicaf): Documentos, prazos, custos e níveis.
-- [Regularização SICAF](/faq/regularizacao-sicaf): Pendências, certidões vencidas e desbloqueio.
-- [Atualização SICAF](/faq/atualizacao-sicaf): Renovação automática e monitoramento de certidões.
-- [Assistente CADBRASIL](/faq/assistente-cadbrasil): Instalação, segurança e funcionalidades.
-- [Licitações Públicas](/faq/licitacoes-publicas): Lei 14.133/2021, pregão eletrônico e dispensa.
+- [Cadastro SICAF](/faq/cadastro-sicaf): Primeiro credenciamento, documentos e prazos.
+- [Regularização SICAF](/faq/regularizacao-sicaf): Irregularidade, pendências e desbloqueio.
+- [Atualização SICAF](/faq/atualizacao-sicaf): Monitoramento e renovação de certidões.
+- [Assistente CADBRASIL](/faq/assistente-cadbrasil): Software, IA e segurança.
+- [Licitações públicas](/faq/licitacoes-publicas): Lei 14.133/2021 e papel do SICAF.
+- [Certificado digital](/faq/certificado-digital-sicaf): e-CNPJ A1 e A3 para Compras.gov.br.
+- [Níveis SICAF](/faq/niveis-habilitacao-sicaf): Habilitação I a VI explicada.
+- [CRC SICAF](/faq/crc-sicaf): Certificado de Registro Cadastral.
+- [Compras.gov.br](/faq/compras-gov-sicaf): Portal federal e credenciamento.
+- [MEI, ME e EPP](/faq/sicaf-mei-epp): Microempresa em licitações.
+- [Renovação SICAF](/faq/renovacao-sicaf): Manter cadastro válido.
+- [Quanto custa SICAF](/faq/quanto-custa-sicaf): Custos reais e taxa zero no governo.
+- [Documentos SICAF](/faq/documentos-sicaf): Checklist completo.
+- [PNCP](/faq/pncp-licitacoes): Diferença PNCP x SICAF.
+- [Pregão eletrônico](/faq/pregao-eletronico): Modalidade e habilitação.
 
 ## Canonical and machine-readable endpoints
 
 - Canonical host: https://cadbrasil.com.br
+- AI hint: https://cadbrasil.com.br/ai.txt
 - Sitemap: https://cadbrasil.com.br/sitemap.xml
 - Robots: https://cadbrasil.com.br/robots.txt
 - LLM index: https://cadbrasil.com.br/llms.txt
+- Cadastro: https://cadastro.cadbrasil.com.br
 
 ## Entity profile
 
 - Organization: CADBRASIL
-- Brand: CADBRASIL
 - Market: Brasil
-- Core services: Cadastro SICAF, Regularização SICAF, Atualização SICAF, Renovação SICAF
-- Human support channel: WhatsApp + equipe especializada
+- Core services: Cadastro SICAF, Regularização, Atualização, Renovação, Consultoria em licitações

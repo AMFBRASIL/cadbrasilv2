@@ -21,11 +21,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/como-funciona", changefreq: "monthly", priority: "0.9" },
           { path: "/assistente", changefreq: "monthly", priority: "0.9" },
           { path: "/beneficios", changefreq: "monthly", priority: "0.8" },
-          { path: "/faq", changefreq: "weekly", priority: "0.8" },
+          { path: "/faq", changefreq: "weekly", priority: "0.85" },
           ...faqCategories.map((c) => ({
             path: `/faq/${c.slug}`,
-            changefreq: "monthly" as const,
-            priority: "0.7",
+            changefreq: "weekly" as const,
+            priority: "0.8",
           })),
         ];
         const nowIso = new Date().toISOString();
