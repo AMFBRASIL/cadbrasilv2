@@ -13,6 +13,15 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Assistente CADBRASIL](/assistente): App com IA para monitorar SICAF.
 - [Benefícios](/beneficios): CADBRASIL vs despachantes tradicionais.
 - [FAQ — central](/faq): Índice com 15 artigos especializados.
+- [Credenciamento SICAF](/credenciamento): Processo de credenciamento oficial para fornecedores federais.
+- [Renovação SICAF](/renovacao-sicaf): Gestão de certidões e regularidade contínua.
+- [Como fazer cadastro no SICAF](/como-fazer-cadastro-no-sicaf): Passo a passo prático com níveis e documentos.
+- [Plataforma digital SICAF](/plataforma-digital): Painel para gestão de cadastro, certidões e pendências.
+- [Como cadastrar empresa no SICAF](/como-cadastrar-empresa-sicaf): Guia para CNPJ (MEI, ME, EPP e demais portes).
+- [Autoatendimento SICAF](/autoatendimento-sicaf): Fluxo self-service assistido com validação por IA.
+- [SICAF Digital](/sicaf-digital): Operação 100% online para cadastro e regularização.
+- [SICAF Cadastro Unificado de Fornecedores](/sicaf-cadastro-unificado-de-fornecedores): Página de referência conceitual e operacional.
+- [Credenciamento SICAF Digital](/credenciamento-sicaf-digital): Credenciamento online com rastreabilidade documental.
 
 ## FAQ especializado (15 temas)
 
