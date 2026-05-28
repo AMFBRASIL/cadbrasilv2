@@ -3,11 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { FaqCategoryRichPage } from "@/components/site/FaqCategoryRichPage";
 import { getFaqCategory } from "@/data/faq/pages";
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
-
-const ORIGIN = "https://cadbrasil.com.br";
-const PUBLISHED = "2026-01-15T08:00:00-03:00";
-const MODIFIED = "2026-05-28T12:00:00-03:00";
-const OG_IMAGE = `${ORIGIN}/og-image.jpg`;
+import { OG_IMAGE, ROBOTS_INDEX, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq/$slug")({
   loader: ({ params }) => {
@@ -18,7 +14,7 @@ export const Route = createFileRoute("/faq/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "FAQ — CADBRASIL" }] };
     const c = loaderData.category;
-    const canonical = `${ORIGIN}/faq/${c.slug}`;
+    const canonical = `${SITE_ORIGIN}/faq/${c.slug}`;
 
     return {
       meta: [
@@ -26,14 +22,8 @@ export const Route = createFileRoute("/faq/$slug")({
         { name: "description", content: c.metaDescription },
         { name: "keywords", content: c.keywords },
         { name: "author", content: "CADBRASIL" },
-        {
-          name: "robots",
-          content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-        },
-        {
-          name: "googlebot",
-          content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-        },
+        { name: "robots", content: ROBOTS_INDEX },
+        { name: "googlebot", content: ROBOTS_INDEX },
         { property: "og:type", content: "article" },
         { property: "og:locale", content: "pt_BR" },
         { property: "og:site_name", content: "CADBRASIL" },
@@ -41,8 +31,8 @@ export const Route = createFileRoute("/faq/$slug")({
         { property: "og:description", content: c.metaDescription },
         { property: "og:url", content: canonical },
         { property: "og:image", content: OG_IMAGE },
-        { property: "article:published_time", content: PUBLISHED },
-        { property: "article:modified_time", content: MODIFIED },
+        { property: "article:published_time", content: SEO_PUBLISHED },
+        { property: "article:modified_time", content: SEO_MODIFIED },
         { property: "article:section", content: "FAQ SICAF" },
         { property: "article:tag", content: "SICAF" },
         { property: "article:tag", content: c.shortTitle },
@@ -65,14 +55,14 @@ export const Route = createFileRoute("/faq/$slug")({
             headline: c.title,
             description: c.metaDescription,
             image: OG_IMAGE,
-            author: { "@type": "Organization", name: "CADBRASIL", url: ORIGIN },
-            publisher: { "@type": "Organization", name: "CADBRASIL", url: ORIGIN },
+            author: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
+            publisher: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
             mainEntityOfPage: canonical,
             articleSection: "FAQ SICAF",
             keywords: c.keywords,
             inLanguage: "pt-BR",
-            datePublished: PUBLISHED,
-            dateModified: MODIFIED,
+            datePublished: SEO_PUBLISHED,
+            dateModified: SEO_MODIFIED,
           }),
         },
         {
@@ -83,8 +73,8 @@ export const Route = createFileRoute("/faq/$slug")({
           type: "application/ld+json",
           children: JSON.stringify(
             breadcrumbJsonLd([
-              { name: "Início", url: `${ORIGIN}/` },
-              { name: "FAQ", url: `${ORIGIN}/faq` },
+              { name: "Início", url: `${SITE_ORIGIN}/` },
+              { name: "FAQ", url: `${SITE_ORIGIN}/faq` },
               { name: c.shortTitle, url: canonical },
             ]),
           ),
@@ -98,8 +88,8 @@ export const Route = createFileRoute("/faq/$slug")({
             description: c.metaDescription,
             url: canonical,
             inLanguage: "pt-BR",
-            datePublished: PUBLISHED,
-            dateModified: MODIFIED,
+            datePublished: SEO_PUBLISHED,
+            dateModified: SEO_MODIFIED,
             about: {
               "@type": "Thing",
               name: c.shortTitle,

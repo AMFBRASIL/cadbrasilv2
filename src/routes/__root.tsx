@@ -9,10 +9,16 @@ import {
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 
+import { AnalyticsPageView } from "@/components/site/AnalyticsPageView";
+import { BING_UET_SCRIPT, GTAG_AW_ID, GTM_ID, GTM_SCRIPT, GTAG_INIT_SCRIPT } from "@/lib/analytics";
+import { OG_IMAGE, ROBOTS_INDEX, SITE_ORIGIN } from "@/lib/seo";
+
 import appCss from "../styles.css?url";
 
-const ORIGIN = "https://cadbrasil.com.br";
-const SOCIAL_PREVIEW_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7c46af53-295b-4a74-8239-56f32ba6ed77/id-preview-d78bce4c--3b6f7a39-c5c1-4555-ad8d-dccb06150a62.lovable.app-1779886304111.png";
+const BRAND_THEME_COLOR = "#1a2c66";
+const DEFAULT_TITLE = "CADBRASIL - Cadastro SICAF e Consultoria em Licitações";
+const DEFAULT_DESCRIPTION =
+  "Cadastre sua empresa no SICAF em até 24 horas. Especialistas em cadastramento, regularização e consultoria em licitações públicas.";
 
 function NotFoundComponent() {
   useEffect(() => {
@@ -76,23 +82,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CADBRASIL · SICAF sem complicação" },
-      { name: "description", content: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas." },
+      { title: DEFAULT_TITLE },
+      { name: "description", content: DEFAULT_DESCRIPTION },
       { name: "author", content: "CADBRASIL" },
-      { name: "theme-color", content: "#1a2c66" },
-      { name: "robots", content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" },
-      { name: "googlebot", content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" },
+      { name: "language", content: "pt-BR" },
+      { name: "geo.region", content: "BR" },
+      { name: "theme-color", content: BRAND_THEME_COLOR },
+      { name: "msapplication-TileColor", content: BRAND_THEME_COLOR },
+      { name: "robots", content: ROBOTS_INDEX },
+      { name: "googlebot", content: ROBOTS_INDEX },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: `${ORIGIN}/` },
+      { property: "og:url", content: `${SITE_ORIGIN}/` },
+      { property: "og:title", content: DEFAULT_TITLE },
+      { property: "og:description", content: DEFAULT_DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "CADBRASIL · SICAF sem complicação" },
-      { name: "twitter:title", content: "CADBRASIL · SICAF sem complicação" },
-      { property: "og:description", content: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas." },
-      { name: "twitter:description", content: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas." },
-      { property: "og:image", content: SOCIAL_PREVIEW_IMAGE },
-      { name: "twitter:image", content: SOCIAL_PREVIEW_IMAGE },
+      { name: "twitter:site", content: "@cadbrasil" },
+      { name: "twitter:title", content: "CADBRASIL - Cadastro SICAF" },
+      { name: "twitter:description", content: DEFAULT_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
@@ -100,45 +112,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/icon-512.png", type: "image/png", sizes: "512x512" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
       { rel: "manifest", href: "/site.webmanifest" },
-      { rel: "canonical", href: `${ORIGIN}/` },
-      { rel: "sitemap", href: `${ORIGIN}/sitemap.xml`, type: "application/xml" },
-      { rel: "alternate", hrefLang: "pt-BR", href: `${ORIGIN}/` },
-      { rel: "alternate", hrefLang: "x-default", href: `${ORIGIN}/` },
+      { rel: "canonical", href: `${SITE_ORIGIN}/` },
+      { rel: "sitemap", href: `${SITE_ORIGIN}/sitemap.xml`, type: "application/xml" },
+      { rel: "alternate", hrefLang: "pt-BR", href: `${SITE_ORIGIN}/` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_ORIGIN}/` },
       { rel: "stylesheet", href: appCss },
     ],
     scripts: [
+      { children: GTM_SCRIPT },
       {
-        children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TRVTMS6M');`,
-      },
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=AW-16460586067",
+        src: `https://www.googletagmanager.com/gtag/js?id=${GTAG_AW_ID}`,
         async: true,
       },
-      {
-        children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-16460586067');
-gtag('config', 'GT-KTPDP2TV');`,
-      },
-      {
-        children: `(function(w,d,t,r,u){
-  var f,n,i;
-  w[u]=w[u]||[],f=function(){
-    var o={ti:"343231769", enableAutoSpaTracking: true};
-    o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad");
-  },
-  n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){
-    var s=this.readyState;
-    s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null);
-  },
-  i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);
-})(window,document,"script","https://bat.bing.com/bat.js","uetq");`,
-      },
+      { children: GTAG_INIT_SCRIPT },
+      { children: BING_UET_SCRIPT },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -146,11 +133,11 @@ gtag('config', 'GT-KTPDP2TV');`,
           "@graph": [
             {
               "@type": "Organization",
-              "@id": `${ORIGIN}/#organization`,
+              "@id": `${SITE_ORIGIN}/#organization`,
               name: "CADBRASIL",
               alternateName: "CADBRASIL",
-              url: ORIGIN,
-              logo: SOCIAL_PREVIEW_IMAGE,
+              url: SITE_ORIGIN,
+              logo: OG_IMAGE,
               description: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
               areaServed: "BR",
               knowsAbout: ["SICAF", "Licitações públicas", "Compras.gov.br"],
@@ -158,11 +145,11 @@ gtag('config', 'GT-KTPDP2TV');`,
             },
             {
               "@type": "WebSite",
-              "@id": `${ORIGIN}/#website`,
-              url: ORIGIN,
+              "@id": `${SITE_ORIGIN}/#website`,
+              url: SITE_ORIGIN,
               name: "CADBRASIL",
               inLanguage: "pt-BR",
-              publisher: { "@id": `${ORIGIN}/#organization` },
+              publisher: { "@id": `${SITE_ORIGIN}/#organization` },
             },
           ],
         }),
@@ -182,6 +169,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -194,7 +190,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <AnalyticsPageView />
       <Outlet />
     </QueryClientProvider>
   );
