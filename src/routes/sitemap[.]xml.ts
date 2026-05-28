@@ -17,8 +17,12 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/guia/cadastro-sicaf-passo-passo", changefreq: "weekly", priority: "0.95" },
+          { path: "/cadastro-sicaf", changefreq: "weekly", priority: "0.92" },
           { path: "/credenciamento", changefreq: "weekly", priority: "0.9" },
           { path: "/renovacao-sicaf", changefreq: "weekly", priority: "0.9" },
+          { path: "/empresa-inapta", changefreq: "weekly", priority: "0.86" },
+          { path: "/emitir-crc", changefreq: "weekly", priority: "0.9" },
+          { path: "/regularidade-fiscal", changefreq: "weekly", priority: "0.9" },
           { path: "/como-fazer-cadastro-no-sicaf", changefreq: "weekly", priority: "0.9" },
           { path: "/plataforma-digital", changefreq: "weekly", priority: "0.85" },
           { path: "/como-cadastrar-empresa-sicaf", changefreq: "weekly", priority: "0.9" },

@@ -41,6 +41,46 @@ const baseFaqs: LandingFaq[] = [
 ];
 
 export const landingPages: Record<string, LandingPageData> = {
+  "/cadastro-sicaf": {
+    path: "/cadastro-sicaf",
+    shortTitle: "Cadastro SICAF",
+    metaTitle: "Cadastro SICAF 2026 — Guia Completo para Fornecedores | CADBRASIL",
+    metaDescription:
+      "Cadastro SICAF completo para empresas: documentos, níveis de habilitação, certificado digital, prazo e emissão de CRC para licitações federais.",
+    keywords:
+      "cadastro sicaf, cadastrar no sicaf, credenciamento sicaf 2026, documentos sicaf, fornecedor governo federal, compras.gov.br",
+    eyebrow: "Cadastro oficial",
+    title: "Cadastro SICAF",
+    highlight: "do zero ao CRC",
+    description:
+      "Fluxo completo para cadastrar sua empresa no SICAF com segurança jurídica, validação documental e acompanhamento até habilitação regular.",
+    quickAnswer:
+      "O cadastro SICAF habilita sua empresa para participar de licitações federais. Exige e-CNPJ, dados societários consistentes e certidões válidas por nível.",
+    sections: [
+      {
+        id: "etapas-cadastro",
+        title: "Etapas críticas do cadastro",
+        paragraphs: [
+          "O processo correto envolve credenciamento inicial, habilitação jurídica, regularidade fiscal/trabalhista e validação econômico-financeira/técnica conforme o edital.",
+          "Erros de estrutura documental ou escolha incompleta de níveis costumam gerar indeferimento e atraso em oportunidades de compra pública.",
+        ],
+        bullets: [
+          "Onboarding com checklist por CNPJ",
+          "Validação por nível de habilitação",
+          "Correção de pendências antes do envio oficial",
+          "Emissão de CRC com cadastro regular",
+        ],
+      },
+      {
+        id: "tempo-risco",
+        title: "Prazo, risco e desempenho em licitações",
+        paragraphs: [
+          "Empresas que tratam o SICAF como projeto estratégico reduzem perdas por inabilitação e melhoram taxa de aproveitamento em pregões.",
+        ],
+      },
+    ],
+    faqs: baseFaqs,
+  },
   "/credenciamento": {
     path: "/credenciamento",
     shortTitle: "Credenciamento SICAF",
@@ -119,6 +159,173 @@ export const landingPages: Record<string, LandingPageData> = {
       },
     ],
     faqs: baseFaqs,
+  },
+  "/empresa-inapta": {
+    path: "/empresa-inapta",
+    shortTitle: "Empresa Inapta",
+    metaTitle: "Empresa Inapta no SICAF — Como Regularizar e Voltar a Licitar | CADBRASIL",
+    metaDescription:
+      "Entenda o status de empresa inapta, impactos no SICAF e como regularizar situação fiscal/cadastral para retomar participação em licitações.",
+    keywords:
+      "empresa inapta sicaf, cnpj inapto licitacao, regularizar empresa inapta, bloquear licitacao sicaf, cnpj inapto receita",
+    eyebrow: "Status crítico",
+    title: "Empresa inapta",
+    highlight: "como recuperar elegibilidade",
+    description:
+      "Diagnóstico e plano de ação para sair do status inapto, regularizar documentação e restabelecer habilitação para contratos públicos.",
+    quickAnswer:
+      "Empresa inapta geralmente indica irregularidade cadastral/fiscal grave no CNPJ. Sem regularização, o SICAF não mantém habilitação válida para licitações.",
+    sections: [
+      {
+        id: "o-que-significa",
+        title: "O que significa empresa inapta",
+        paragraphs: [
+          "Na prática, o CNPJ inapto compromete toda a cadeia de habilitação: emissão de certidões, consistência cadastral e aceitação no processo licitatório.",
+          "É um problema de compliance que precisa ser tratado na origem para evitar bloqueios recorrentes.",
+        ],
+      },
+      {
+        id: "rota-regularizacao",
+        title: "Rota de regularização",
+        paragraphs: [
+          "Mapeamos causa raiz (fiscal, societária ou trabalhista), priorizamos documentos críticos e executamos a revalidação do cadastro após normalização.",
+        ],
+        bullets: [
+          "Diagnóstico técnico de inconsistências",
+          "Regularização junto aos órgãos competentes",
+          "Revisão documental para novo envio",
+          "Reativação da trilha de habilitação SICAF",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Empresa inapta pode participar de licitação?",
+        answer:
+          "Não de forma segura. O status inapto costuma inviabilizar certidões e comprometer a habilitação, levando à desclassificação.",
+      },
+      {
+        question: "Quanto tempo leva para regularizar empresa inapta?",
+        answer:
+          "Depende da causa. Casos simples podem ser resolvidos em poucos dias; pendências estruturais exigem plano fiscal/societário mais amplo.",
+      },
+      {
+        question: "Depois de regularizar, preciso atualizar o SICAF?",
+        answer:
+          "Sim. Após normalizar o CNPJ, é necessário atualizar dados e certidões no SICAF para recuperar status de habilitação.",
+      },
+    ],
+  },
+  "/emitir-crc": {
+    path: "/emitir-crc",
+    shortTitle: "Emitir CRC",
+    metaTitle: "Emitir CRC no SICAF — Certificado de Registro Cadastral | CADBRASIL",
+    metaDescription:
+      "Aprenda como emitir CRC no SICAF, requisitos de regularidade e como usar o Certificado de Registro Cadastral em licitações públicas.",
+    keywords:
+      "emitir crc sicaf, certificado registro cadastral, crc fornecedor governo, como tirar crc, comprovante sicaf",
+    eyebrow: "Comprovação de cadastro",
+    title: "Emitir CRC",
+    highlight: "com cadastro regular",
+    description:
+      "Passo a passo para emissão do Certificado de Registro Cadastral e validação da situação da empresa antes de disputar editais.",
+    quickAnswer:
+      "O CRC no SICAF comprova a situação cadastral da empresa. Para emitir com valor prático em licitações, os níveis e certidões devem estar atualizados.",
+    sections: [
+      {
+        id: "crc-na-pratica",
+        title: "CRC na prática",
+        paragraphs: [
+          "O CRC é o retrato do cadastro no momento da emissão. Se documentos vencerem depois, a empresa pode voltar a ficar irregular, mesmo com CRC antigo.",
+          "Por isso, emissão de CRC e gestão contínua de certidões precisam caminhar juntas.",
+        ],
+      },
+      {
+        id: "requisitos-emissao",
+        title: "Requisitos para emitir sem risco",
+        paragraphs: [
+          "Antes de gerar o certificado, valide níveis exigidos no edital, certidões vigentes e consistência de dados societários.",
+        ],
+        bullets: [
+          "Níveis de habilitação compatíveis com o edital",
+          "Certidões fiscais e trabalhistas válidas",
+          "Dados cadastrais atualizados",
+          "Conferência final antes da sessão de pregão",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "CRC substitui todos os documentos do edital?",
+        answer:
+          "Não necessariamente. Muitos editais ainda exigem documentos complementares além da consulta ao SICAF/CRC.",
+      },
+      {
+        question: "Qual validade do CRC?",
+        answer:
+          "Ele reflete a situação do momento da emissão. A regularidade depende do vencimento contínuo das certidões.",
+      },
+      {
+        question: "Posso emitir CRC com pendência fiscal?",
+        answer:
+          "Em geral, não com status regular. Pendências afetam a utilidade do certificado na habilitação.",
+      },
+    ],
+  },
+  "/regularidade-fiscal": {
+    path: "/regularidade-fiscal",
+    shortTitle: "Regularidade Fiscal",
+    metaTitle: "Regularidade Fiscal no SICAF — CND, FGTS e CNDT em Dia | CADBRASIL",
+    metaDescription:
+      "Garanta regularidade fiscal no SICAF: certidões federais, FGTS, CNDT e estratégia para manter habilitação ativa em licitações.",
+    keywords:
+      "regularidade fiscal sicaf, cnd federal sicaf, fgts sicaf, cndt licitacao, certidoes fornecedor governo",
+    eyebrow: "Compliance fiscal",
+    title: "Regularidade fiscal",
+    highlight: "para licitar sem bloqueio",
+    description:
+      "Gestão de certidões e pendências fiscais para manter sua empresa apta em pregões e contratos com o poder público.",
+    quickAnswer:
+      "Regularidade fiscal é requisito central de habilitação no SICAF. Sem certidões válidas (federal, FGTS, CNDT e outras), a empresa é desclassificada.",
+    sections: [
+      {
+        id: "documentos-fiscais",
+        title: "Certidões que sustentam a habilitação",
+        paragraphs: [
+          "A robustez do cadastro depende de um ciclo contínuo de emissão, conferência e renovação de certidões. Não é tarefa pontual, é rotina de compliance.",
+        ],
+        bullets: [
+          "CND Federal (RFB/PGFN)",
+          "CRF/FGTS",
+          "CNDT",
+          "Certidões estaduais e municipais (quando exigidas)",
+        ],
+      },
+      {
+        id: "gestao-continuada",
+        title: "Como evitar queda de regularidade",
+        paragraphs: [
+          "Antecipar vencimentos e tratar pendências rapidamente evita que a empresa fique inapta no momento mais crítico: abertura de propostas e habilitação.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Uma certidão vencida já bloqueia licitação?",
+        answer:
+          "Sim, pode bloquear a habilitação conforme exigência do edital e consultas automáticas de regularidade.",
+      },
+      {
+        question: "Com parcelamento ativo eu fico regular?",
+        answer:
+          "Depende da situação fiscal e da emissão das certidões correspondentes. É necessário validar caso a caso.",
+      },
+      {
+        question: "A CADBRASIL emite as certidões para minha empresa?",
+        answer:
+          "Sim, no escopo contratado, com monitoramento contínuo e alerta de pendências para manter o cadastro estável.",
+      },
+    ],
   },
   "/como-fazer-cadastro-no-sicaf": {
     path: "/como-fazer-cadastro-no-sicaf",

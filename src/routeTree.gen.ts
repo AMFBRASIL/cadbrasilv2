@@ -13,13 +13,17 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
 import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
 import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
+import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
+import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
+import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
 import { Route as CredenciamentoSicafDigitalRouteImport } from './routes/credenciamento-sicaf-digital'
 import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
 import { Route as ComoFazerCadastroNoSicafRouteImport } from './routes/como-fazer-cadastro-no-sicaf'
 import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
+import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
 import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
 import { Route as AssistenteRouteImport } from './routes/assistente'
@@ -50,6 +54,11 @@ const RenovacaoSicafRoute = RenovacaoSicafRouteImport.update({
   path: '/renovacao-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegularidadeFiscalRoute = RegularidadeFiscalRouteImport.update({
+  id: '/regularidade-fiscal',
+  path: '/regularidade-fiscal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
   id: '/plataforma-digital',
   path: '/plataforma-digital',
@@ -58,6 +67,16 @@ const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
 const OQueESicafRoute = OQueESicafRouteImport.update({
   id: '/o-que-e-sicaf',
   path: '/o-que-e-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmpresaInaptaRoute = EmpresaInaptaRouteImport.update({
+  id: '/empresa-inapta',
+  path: '/empresa-inapta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmitirCrcRoute = EmitirCrcRouteImport.update({
+  id: '/emitir-crc',
+  path: '/emitir-crc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CredenciamentoSicafDigitalRoute =
@@ -88,6 +107,11 @@ const ComoCadastrarEmpresaSicafRoute =
     path: '/como-cadastrar-empresa-sicaf',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CadastroSicafRoute = CadastroSicafRouteImport.update({
+  id: '/cadastro-sicaf',
+  path: '/cadastro-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BeneficiosRoute = BeneficiosRouteImport.update({
   id: '/beneficios',
   path: '/beneficios',
@@ -135,13 +159,17 @@ export interface FileRoutesByFullPath {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/cadastro-sicaf': typeof CadastroSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
+  '/emitir-crc': typeof EmitirCrcRoute
+  '/empresa-inapta': typeof EmpresaInaptaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
+  '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
@@ -156,13 +184,17 @@ export interface FileRoutesByTo {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/cadastro-sicaf': typeof CadastroSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
+  '/emitir-crc': typeof EmitirCrcRoute
+  '/empresa-inapta': typeof EmpresaInaptaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
+  '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
@@ -178,13 +210,17 @@ export interface FileRoutesById {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/cadastro-sicaf': typeof CadastroSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
+  '/emitir-crc': typeof EmitirCrcRoute
+  '/empresa-inapta': typeof EmpresaInaptaRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
+  '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
@@ -201,13 +237,17 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/cadastro-sicaf'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
+    | '/emitir-crc'
+    | '/empresa-inapta'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
+    | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
@@ -222,13 +262,17 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/cadastro-sicaf'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
+    | '/emitir-crc'
+    | '/empresa-inapta'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
+    | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
@@ -243,13 +287,17 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/cadastro-sicaf'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
+    | '/emitir-crc'
+    | '/empresa-inapta'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
+    | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
@@ -265,13 +313,17 @@ export interface RootRouteChildren {
   AssistenteRoute: typeof AssistenteRoute
   AutoatendimentoSicafRoute: typeof AutoatendimentoSicafRoute
   BeneficiosRoute: typeof BeneficiosRoute
+  CadastroSicafRoute: typeof CadastroSicafRoute
   ComoCadastrarEmpresaSicafRoute: typeof ComoCadastrarEmpresaSicafRoute
   ComoFazerCadastroNoSicafRoute: typeof ComoFazerCadastroNoSicafRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   CredenciamentoRoute: typeof CredenciamentoRoute
   CredenciamentoSicafDigitalRoute: typeof CredenciamentoSicafDigitalRoute
+  EmitirCrcRoute: typeof EmitirCrcRoute
+  EmpresaInaptaRoute: typeof EmpresaInaptaRoute
   OQueESicafRoute: typeof OQueESicafRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
+  RegularidadeFiscalRoute: typeof RegularidadeFiscalRoute
   RenovacaoSicafRoute: typeof RenovacaoSicafRoute
   SicafCadastroUnificadoDeFornecedoresRoute: typeof SicafCadastroUnificadoDeFornecedoresRoute
   SicafDigitalRoute: typeof SicafDigitalRoute
@@ -312,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RenovacaoSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/regularidade-fiscal': {
+      id: '/regularidade-fiscal'
+      path: '/regularidade-fiscal'
+      fullPath: '/regularidade-fiscal'
+      preLoaderRoute: typeof RegularidadeFiscalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plataforma-digital': {
       id: '/plataforma-digital'
       path: '/plataforma-digital'
@@ -324,6 +383,20 @@ declare module '@tanstack/react-router' {
       path: '/o-que-e-sicaf'
       fullPath: '/o-que-e-sicaf'
       preLoaderRoute: typeof OQueESicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/empresa-inapta': {
+      id: '/empresa-inapta'
+      path: '/empresa-inapta'
+      fullPath: '/empresa-inapta'
+      preLoaderRoute: typeof EmpresaInaptaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emitir-crc': {
+      id: '/emitir-crc'
+      path: '/emitir-crc'
+      fullPath: '/emitir-crc'
+      preLoaderRoute: typeof EmitirCrcRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/credenciamento-sicaf-digital': {
@@ -359,6 +432,13 @@ declare module '@tanstack/react-router' {
       path: '/como-cadastrar-empresa-sicaf'
       fullPath: '/como-cadastrar-empresa-sicaf'
       preLoaderRoute: typeof ComoCadastrarEmpresaSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro-sicaf': {
+      id: '/cadastro-sicaf'
+      path: '/cadastro-sicaf'
+      fullPath: '/cadastro-sicaf'
+      preLoaderRoute: typeof CadastroSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/beneficios': {
@@ -425,13 +505,17 @@ const rootRouteChildren: RootRouteChildren = {
   AssistenteRoute: AssistenteRoute,
   AutoatendimentoSicafRoute: AutoatendimentoSicafRoute,
   BeneficiosRoute: BeneficiosRoute,
+  CadastroSicafRoute: CadastroSicafRoute,
   ComoCadastrarEmpresaSicafRoute: ComoCadastrarEmpresaSicafRoute,
   ComoFazerCadastroNoSicafRoute: ComoFazerCadastroNoSicafRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
   CredenciamentoRoute: CredenciamentoRoute,
   CredenciamentoSicafDigitalRoute: CredenciamentoSicafDigitalRoute,
+  EmitirCrcRoute: EmitirCrcRoute,
+  EmpresaInaptaRoute: EmpresaInaptaRoute,
   OQueESicafRoute: OQueESicafRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
+  RegularidadeFiscalRoute: RegularidadeFiscalRoute,
   RenovacaoSicafRoute: RenovacaoSicafRoute,
   SicafCadastroUnificadoDeFornecedoresRoute:
     SicafCadastroUnificadoDeFornecedoresRoute,

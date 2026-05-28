@@ -14,7 +14,11 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Benefícios](/beneficios): CADBRASIL vs despachantes tradicionais.
 - [FAQ — central](/faq): Índice com 15 artigos especializados.
 - [Credenciamento SICAF](/credenciamento): Processo de credenciamento oficial para fornecedores federais.
+- [Cadastro SICAF](/cadastro-sicaf): Cadastro completo do zero ao CRC com níveis de habilitação.
 - [Renovação SICAF](/renovacao-sicaf): Gestão de certidões e regularidade contínua.
+- [Empresa inapta](/empresa-inapta): Como regularizar CNPJ inapto e recuperar elegibilidade em licitações.
+- [Emitir CRC](/emitir-crc): Como gerar o Certificado de Registro Cadastral com status regular.
+- [Regularidade fiscal](/regularidade-fiscal): CND, FGTS e CNDT em dia para evitar desclassificação.
 - [Como fazer cadastro no SICAF](/como-fazer-cadastro-no-sicaf): Passo a passo prático com níveis e documentos.
 - [Plataforma digital SICAF](/plataforma-digital): Painel para gestão de cadastro, certidões e pendências.
 - [Como cadastrar empresa no SICAF](/como-cadastrar-empresa-sicaf): Guia para CNPJ (MEI, ME, EPP e demais portes).
