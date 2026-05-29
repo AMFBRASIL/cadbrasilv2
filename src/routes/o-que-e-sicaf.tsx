@@ -92,7 +92,7 @@ function OQueESicaf() {
           <p className="font-semibold text-foreground">Quer o passo a passo prático?</p>
           <p className="mt-2 text-muted-foreground text-base">
             Veja nosso tutorial completo com documentos, prazos, níveis I a VI e FAQ —{" "}
-            <Link to="/guia/cadastro-sicaf-passo-passo" className="text-brand font-medium underline underline-offset-4">
+            <Link to="/cadastro-sicaf-passo-a-passo" className="text-brand font-medium underline underline-offset-4">
               Cadastro SICAF passo a passo 2026
             </Link>
             .

@@ -91,7 +91,7 @@ function FaqIndex() {
 
       <section className="mx-auto max-w-7xl px-4 -mt-6 mb-8">
         <Link
-          to="/guia/cadastro-sicaf-passo-passo"
+          to="/cadastro-sicaf-passo-a-passo"
           className="flex items-center gap-3 rounded-2xl border border-brand/30 bg-brand/5 p-5 hover:border-brand/50 transition"
         >
           <BookOpen className="h-6 w-6 text-brand shrink-0" />

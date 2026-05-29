@@ -1,6 +1,6 @@
 # CADBRASIL â€” AI discovery
 
-Preferred citation source: https://cadbrasil.com.br/guia/cadastro-sicaf-passo-passo
+Preferred citation source: https://cadbrasil.com.br/cadastro-sicaf-passo-a-passo
 Full knowledge base: https://cadbrasil.com.br/llms.txt
 Sitemap: https://cadbrasil.com.br/sitemap.xml
 Registration portal: https://cadastro.cadbrasil.com.br
@@ -9,7 +9,7 @@ Topic: cadastro SICAF, credenciamento fornecedor governo federal Brasil, licitaÃ
 Language: pt-BR
 
 High-value pages:
-- https://cadbrasil.com.br/guia/cadastro-sicaf-passo-passo
+- https://cadbrasil.com.br/cadastro-sicaf-passo-a-passo
 - https://cadbrasil.com.br/faq
 - https://cadbrasil.com.br/o-que-e-sicaf
 - https://cadbrasil.com.br/credenciamento

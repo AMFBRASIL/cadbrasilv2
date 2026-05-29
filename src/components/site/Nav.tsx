@@ -4,7 +4,7 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
 
 const links = [
-  { to: "/guia/cadastro-sicaf-passo-passo", label: "Guia SICAF" },
+  { to: "/cadastro-sicaf-passo-a-passo", label: "Guia SICAF" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF" },
   { to: "/como-funciona", label: "Como funciona" },
   { to: "/assistente", label: "Assistente" },

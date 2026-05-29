@@ -1,7 +1,7 @@
 import type { FaqCategory } from "./types";
 
 const g = [
-  { to: "/guia/cadastro-sicaf-passo-passo", label: "Guia completo: cadastro SICAF passo a passo" },
+  { to: "/cadastro-sicaf-passo-a-passo", label: "Guia completo: cadastro SICAF passo a passo" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF" },
 ] as const;
 

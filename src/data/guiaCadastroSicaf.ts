@@ -1,4 +1,6 @@
 export const GUIA_CADASTRO_SICAF_PATH = "/guia/cadastro-sicaf-passo-passo";
+/** URL canônica principal do guia (alias comercial) */
+export const CADASTRO_SICAF_PASSO_A_PASSO_PATH = "/cadastro-sicaf-passo-a-passo";
 
 export const guiaCadastroSicafMeta = {
   title: "Cadastro SICAF 2026 | Passo a Passo Completo — Guia CADBRASIL",
@@ -26,6 +28,8 @@ export const guiaToc = [
   { id: "certificado-digital", label: "Certificado digital" },
   { id: "custos-prazos", label: "Custos e prazos" },
   { id: "renovacao", label: "Renovação" },
+  { id: "glossario", label: "Glossário SICAF" },
+  { id: "comparativo", label: "Sozinho vs CADBRASIL" },
   { id: "erros-comuns", label: "Erros comuns" },
   { id: "cadbrasil", label: "Cadastro com CADBRASIL" },
   { id: "faq", label: "Perguntas frequentes" },
@@ -116,62 +120,113 @@ export const errosComuns = [
 
 export const guiaFaqs = [
   {
-    question: "O SICAF é obrigatório para licitar?",
+    question: "O SICAF é obrigatório para licitar no Brasil?",
     answer:
-      "Para licitações e contratos do Governo Federal, sim. Muitos estados e municípios também exigem SICAF ativo ou consultam a mesma base de regularidade do fornecedor.",
+      "Para licitações e contratos do Governo Federal, sim. Muitos estados e municípios também exigem SICAF ativo ou consultam a regularidade do fornecedor no processo de habilitação.",
   },
   {
-    question: "Quanto custa fazer o cadastro no SICAF?",
+    question: "Qual a diferença entre cadastro, credenciamento e habilitação no SICAF?",
     answer:
-      "O credenciamento no portal oficial é gratuito. Os custos reais costumam ser o certificado digital, tempo da equipe e eventual regularização de pendências fiscais.",
+      "Cadastro é o ato de inserir a empresa no sistema. Credenciamento é o Nível I (dados básicos). Habilitação é o conjunto de níveis II a VI exigidos conforme o edital e o objeto da contratação.",
   },
   {
-    question: "Quanto tempo leva o cadastro SICAF?",
+    question: "Quanto custa fazer cadastro no SICAF?",
     answer:
-      "Sem apoio especializado, pode levar de uma a quatro semanas por pendências e retrabalho. Com a CADBRASIL e documentação completa, a habilitação pode ocorrer em até 24 horas.",
+      "O credenciamento oficial no portal do governo é gratuito. Os custos reais costumam ser certificado digital e-CNPJ, emissão/atualização de certidões e eventual assessoria especializada.",
   },
   {
-    question: "MEI pode se cadastrar no SICAF?",
+    question: "Quanto tempo leva para concluir o cadastro SICAF?",
     answer:
-      "Sim. MEI, ME, EPP, LTDA, S/A e EIRELI podem se credenciar, desde que atendam aos requisitos documentais e de regularidade exigidos para cada nível.",
+      "Sem apoio especializado, o prazo costuma variar de 7 a 20 dias úteis. Com documentação organizada e assessoria CADBRASIL, a habilitação pode ser concluída em até 24 horas.",
+  },
+  {
+    question: "MEI, ME e EPP podem se cadastrar no SICAF?",
+    answer:
+      "Sim. MEI, ME, EPP, LTDA, S/A e EIRELI podem se credenciar, desde que atendam requisitos documentais e de regularidade para os níveis exigidos.",
+  },
+  {
+    question: "Preciso de certificado digital para cadastrar no SICAF?",
+    answer:
+      "Sim. Para pessoa jurídica, o certificado digital e-CNPJ (A1 ou A3) é praticamente indispensável para acessar o Compras.gov.br.",
+  },
+  {
+    question: "O que é o CRC e quando emitir?",
+    answer:
+      "CRC é o Certificado de Registro Cadastral. Emita quando o cadastro estiver regular nos níveis exigidos — especialmente antes de disputar pregões que exigem comprovação de habilitação.",
+  },
+  {
+    question: "Posso participar de licitação com SICAF irregular?",
+    answer:
+      "Não de forma segura. Mesmo vencendo o pregão, a empresa tende a ser desclassificada na fase de habilitação se houver pendência cadastral ou documental.",
+  },
+  {
+    question: "Com que frequência devo atualizar o SICAF?",
+    answer:
+      "Não existe uma data única de renovação anual. O cadastro depende do vencimento de certidões (muitas a cada 180 dias). Monitoramento contínuo evita bloqueios.",
   },
   {
     question: "Qual a diferença entre SICAF e PNCP?",
     answer:
-      "O SICAF é o cadastro/habilitação do fornecedor. O PNCP (Portal Nacional de Contratações Públicas) centraliza informações de licitações; são sistemas complementares no ecossistema de compras públicas.",
+      "SICAF é o cadastro/habilitação do fornecedor. O PNCP centraliza informações de contratações públicas; são sistemas complementares no ecossistema de compras.",
   },
   {
-    question: "O que é o CRC no SICAF?",
+    question: "Quais os erros mais comuns no cadastro SICAF?",
     answer:
-      "CRC é o Certificado de Registro Cadastral, comprovante de que a empresa está cadastrada e, quando aplicável, em situação regular para fornecer ao governo.",
+      "Certidão vencida, divergência de razão social, níveis incompletos, certificado digital inválido, CNAE incompatível com o edital e ausência de renovação de certidões.",
   },
   {
-    question: "Com que frequência preciso atualizar o SICAF?",
+    question: "A CADBRASIL faz o cadastro SICAF para minha empresa?",
     answer:
-      "Não há data fixa única: depende do vencimento de cada certidão. CND Federal e FGTS costumam vencer em 180 dias; por isso o monitoramento contínuo é essencial.",
+      "Sim. Fazemos credenciamento, regularização, atualização de certidões, emissão de CRC e monitoramento com IA e equipe especializada — com entrega em até 24 horas quando a documentação está completa.",
   },
   {
-    question: "Posso participar de pregão com SICAF irregular?",
+    question: "Cadastro SICAF passo a passo: por onde começar?",
     answer:
-      "Não. Mesmo vencendo a disputa, a empresa é desclassificada na habilitação se houver irregularidade cadastral ou documental no momento da análise.",
-  },
-  {
-    question: "Preciso de certificado digital para o SICAF?",
-    answer:
-      "Sim. O e-CNPJ é praticamente indispensável para acessar o Compras.gov.br e concluir credenciamento e manutenção do cadastro.",
-  },
-  {
-    question: "A CADBRASIL faz o cadastro por mim?",
-    answer:
-      "Sim. Cuidamos do credenciamento, regularização, atualização de certidões e monitoramento com tecnologia, IA e especialistas — entrega em até 24h quando a documentação está disponível.",
+      "Comece validando CNPJ e certificado digital, depois acesse Compras.gov.br, conclua o Nível I e avance nos demais níveis conforme seu edital-alvo.",
   },
 ];
 
+export const glossarioSicaf = [
+  {
+    term: "SICAF",
+    def: "Sistema de Cadastramento Unificado de Fornecedores — cadastro obrigatório para fornecer ao Governo Federal.",
+  },
+  {
+    term: "CRC",
+    def: "Certificado de Registro Cadastral — comprova situação cadastral da empresa no SICAF.",
+  },
+  {
+    term: "Compras.gov.br",
+    def: "Portal oficial de compras públicas onde o credenciamento SICAF é realizado.",
+  },
+  {
+    term: "Nível de habilitação",
+    def: "Conjunto documental (I a VI) exigido conforme edital e objeto licitado.",
+  },
+  {
+    term: "CATMAT / CATSER",
+    def: "Catálogos de materiais e serviços para linhas de fornecimento (Nível VI).",
+  },
+  {
+    term: "CND",
+    def: "Certidão Negativa de Débitos — comprova regularidade fiscal perante a Receita Federal.",
+  },
+];
+
+export const comparativoCadastro = [
+  { aspecto: "Prazo médio", sozinho: "7 a 20 dias úteis", cadbrasil: "Até 24 horas*" },
+  { aspecto: "Risco de erro", sozinho: "Alto (certidões, níveis)", cadbrasil: "Baixo (revisão especializada)" },
+  { aspecto: "Monitoramento", sozinho: "Manual", cadbrasil: "IA + alertas de vencimento" },
+  { aspecto: "Suporte", sozinho: "Fóruns e tutoriais", cadbrasil: "Especialistas + WhatsApp" },
+];
+
 export const relatedGuides = [
+  { to: "/cadastro-sicaf", label: "Cadastro SICAF — página comercial" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF — guia completo" },
-  { to: "/como-funciona", label: "Como funciona o processo CADBRASIL" },
+  { to: "/como-fazer-cadastro-no-sicaf", label: "Como fazer cadastro no SICAF" },
+  { to: "/emitir-crc", label: "Emitir CRC SICAF" },
+  { to: "/regularidade-fiscal", label: "Regularidade fiscal SICAF" },
   { to: "/faq/cadastro-sicaf", label: "FAQ Cadastro SICAF" },
-  { to: "/beneficios", label: "Benefícios da assessoria CADBRASIL" },
   { to: "/assistente", label: "Assistente CADBRASIL com IA" },
 ];
 

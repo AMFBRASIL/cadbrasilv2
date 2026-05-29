@@ -81,7 +81,7 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
             Continue explorando
           </h3>
           <div className="mt-4 grid sm:grid-cols-2 gap-2">
-            <Link to="/guia/cadastro-sicaf-passo-passo" className="text-brand text-sm font-medium hover:underline">
+            <Link to="/cadastro-sicaf-passo-a-passo" className="text-brand text-sm font-medium hover:underline">
               Guia completo: cadastro SICAF passo a passo →
             </Link>
             <Link to="/faq" className="text-brand text-sm font-medium hover:underline">

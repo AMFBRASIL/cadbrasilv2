@@ -23,6 +23,7 @@ import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
 import { Route as ComoFazerCadastroNoSicafRouteImport } from './routes/como-fazer-cadastro-no-sicaf'
 import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
+import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-sicaf-passo-a-passo'
 import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
 import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
@@ -107,6 +108,12 @@ const ComoCadastrarEmpresaSicafRoute =
     path: '/como-cadastrar-empresa-sicaf',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CadastroSicafPassoAPassoRoute =
+  CadastroSicafPassoAPassoRouteImport.update({
+    id: '/cadastro-sicaf-passo-a-passo',
+    path: '/cadastro-sicaf-passo-a-passo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CadastroSicafRoute = CadastroSicafRouteImport.update({
   id: '/cadastro-sicaf',
   path: '/cadastro-sicaf',
@@ -160,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
+  '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
@@ -185,6 +193,7 @@ export interface FileRoutesByTo {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
+  '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
@@ -211,6 +220,7 @@ export interface FileRoutesById {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
+  '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
@@ -238,6 +248,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastro-sicaf'
+    | '/cadastro-sicaf-passo-a-passo'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
@@ -263,6 +274,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastro-sicaf'
+    | '/cadastro-sicaf-passo-a-passo'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
@@ -288,6 +300,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastro-sicaf'
+    | '/cadastro-sicaf-passo-a-passo'
     | '/como-cadastrar-empresa-sicaf'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
@@ -314,6 +327,7 @@ export interface RootRouteChildren {
   AutoatendimentoSicafRoute: typeof AutoatendimentoSicafRoute
   BeneficiosRoute: typeof BeneficiosRoute
   CadastroSicafRoute: typeof CadastroSicafRoute
+  CadastroSicafPassoAPassoRoute: typeof CadastroSicafPassoAPassoRoute
   ComoCadastrarEmpresaSicafRoute: typeof ComoCadastrarEmpresaSicafRoute
   ComoFazerCadastroNoSicafRoute: typeof ComoFazerCadastroNoSicafRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
@@ -434,6 +448,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoCadastrarEmpresaSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastro-sicaf-passo-a-passo': {
+      id: '/cadastro-sicaf-passo-a-passo'
+      path: '/cadastro-sicaf-passo-a-passo'
+      fullPath: '/cadastro-sicaf-passo-a-passo'
+      preLoaderRoute: typeof CadastroSicafPassoAPassoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cadastro-sicaf': {
       id: '/cadastro-sicaf'
       path: '/cadastro-sicaf'
@@ -506,6 +527,7 @@ const rootRouteChildren: RootRouteChildren = {
   AutoatendimentoSicafRoute: AutoatendimentoSicafRoute,
   BeneficiosRoute: BeneficiosRoute,
   CadastroSicafRoute: CadastroSicafRoute,
+  CadastroSicafPassoAPassoRoute: CadastroSicafPassoAPassoRoute,
   ComoCadastrarEmpresaSicafRoute: ComoCadastrarEmpresaSicafRoute,
   ComoFazerCadastroNoSicafRoute: ComoFazerCadastroNoSicafRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,

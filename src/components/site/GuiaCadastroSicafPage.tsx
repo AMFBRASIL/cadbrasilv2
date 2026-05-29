@@ -15,8 +15,10 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import {
+  comparativoCadastro,
   documentosSicaf,
   errosComuns,
+  glossarioSicaf,
   guiaFaqs,
   guiaToc,
   niveisSicaf,
@@ -414,8 +416,55 @@ export function GuiaCadastroSicafPage() {
                 A CADBRASIL monitora vencimentos com IA pelo{" "}
                 <Link to="/assistente" className="text-brand font-medium underline underline-offset-4">
                   Assistente CADBRASIL
+                </Link>{" "}
+                e na página de{" "}
+                <Link to="/renovacao-sicaf" className="text-brand font-medium underline underline-offset-4">
+                  renovação SICAF
                 </Link>
                 .
+              </p>
+            </section>
+
+            <section id="glossario" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Glossário SICAF</h2>
+              <p className="text-muted-foreground mb-6 max-w-3xl">
+                Termos essenciais para entender o cadastro passo a passo — útil para buscas em Google,
+                Bing e assistentes de IA.
+              </p>
+              <dl className="grid sm:grid-cols-2 gap-4">
+                {glossarioSicaf.map((g) => (
+                  <div key={g.term} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <dt className="font-semibold text-foreground">{g.term}</dt>
+                    <dd className="mt-2 text-sm text-muted-foreground leading-relaxed">{g.def}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            <section id="comparativo" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Cadastro sozinho vs com CADBRASIL</h2>
+              <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-card">
+                <table className="w-full text-sm min-w-[480px]">
+                  <thead className="bg-accent/60 text-left">
+                    <tr>
+                      <th className="p-4 font-semibold">Aspecto</th>
+                      <th className="p-4 font-semibold">Por conta própria</th>
+                      <th className="p-4 font-semibold text-brand">Com CADBRASIL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparativoCadastro.map((row) => (
+                      <tr key={row.aspecto} className="border-t border-border">
+                        <td className="p-4 font-medium">{row.aspecto}</td>
+                        <td className="p-4 text-muted-foreground">{row.sozinho}</td>
+                        <td className="p-4 text-brand font-medium">{row.cadbrasil}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                * Prazo de 24 horas com documentação completa e sem bloqueios fiscais complexos.
               </p>
             </section>
 
