@@ -26,6 +26,22 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
 
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-4 space-y-10">
+          {page.itemList && page.itemList.length > 0 && (
+            <article id="checklist-documentos" className="scroll-mt-28">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Checklist de documentos</h2>
+              <ol className="space-y-2 rounded-2xl border border-border bg-card p-5 shadow-card">
+                {page.itemList.map((item, i) => (
+                  <li key={item} className="flex gap-3 text-sm text-muted-foreground">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand/10 text-brand font-semibold text-xs">
+                      {i + 1}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ol>
+            </article>
+          )}
+
           {page.sections.map((section) => (
             <article key={section.id} id={section.id} className="scroll-mt-28">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">{section.title}</h2>
@@ -46,6 +62,51 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
               )}
             </article>
           ))}
+
+          {page.howToSteps && page.howToSteps.length > 0 && (
+            <article id="passo-a-passo" className="scroll-mt-28">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Passo a passo</h2>
+              <ol className="space-y-3">
+                {page.howToSteps.map((step, i) => (
+                  <li
+                    key={step.name}
+                    id={`passo-${i + 1}`}
+                    className="scroll-mt-28 rounded-2xl border border-border bg-card p-5 flex gap-4 shadow-card"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-brand-foreground font-bold text-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold">{step.name}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </article>
+          )}
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="rounded-2xl bg-gradient-brand p-6 sm:p-8 text-brand-foreground shadow-glow flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <p className="font-bold text-lg">Cadastre sua empresa no SICAF com a CADBRASIL</p>
+              <p className="mt-1 text-sm text-white/85">
+                Habilitação em até 24h · Validação com IA · Especialistas em licitações
+              </p>
+            </div>
+            <a
+              href={CADASTRO_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-brand font-bold shrink-0 hover:scale-[1.02] transition"
+            >
+              Iniciar cadastro SICAF
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
 

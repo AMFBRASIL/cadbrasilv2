@@ -26,6 +26,10 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [SICAF Digital](/sicaf-digital): Operação 100% online para cadastro e regularização.
 - [SICAF Cadastro Unificado de Fornecedores](/sicaf-cadastro-unificado-de-fornecedores): Página de referência conceitual e operacional.
 - [Credenciamento SICAF Digital](/credenciamento-sicaf-digital): Credenciamento online com rastreabilidade documental.
+- [Como regularizar SICAF da empresa](/como-regularizar-sicaf-empresa): Diagnóstico, correção de pendências e reativação de níveis — HowTo com 6 passos.
+- [Cadastro SICAF para licitação pública](/cadastro-sicaf-licitacao-publica): Habilitação por edital, níveis I–VI e fluxo até o pregão.
+- [Documentos necessários cadastro SICAF](/documentos-necessarios-cadastro-sicaf): Checklist por nível com ItemList schema (12 documentos).
+- [Como atualizar certificados no SICAF](/como-atualizar-certificados-sicaf): Renovação CND, FGTS, CNDT — HowTo com 6 passos.
 
 ## FAQ especializado (15 temas)
 

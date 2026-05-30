@@ -20,6 +20,10 @@ export type LandingPageData = {
   quickAnswer: string;
   sections: LandingSection[];
   faqs: LandingFaq[];
+  /** Lista para schema ItemList (ex.: documentos) */
+  itemList?: string[];
+  /** Passos para schema HowTo */
+  howToSteps?: { name: string; text: string }[];
 };
 
 const baseFaqs: LandingFaq[] = [
@@ -584,6 +588,581 @@ export const landingPages: Record<string, LandingPageData> = {
       },
     ],
     faqs: baseFaqs,
+  },
+  "/como-regularizar-sicaf-empresa": {
+    path: "/como-regularizar-sicaf-empresa",
+    shortTitle: "Regularizar SICAF",
+    metaTitle: "Como Regularizar o SICAF da Empresa 2026 — Guia Completo | CADBRASIL",
+    metaDescription:
+      "Aprenda como regularizar o SICAF da empresa: identificar irregularidades, corrigir certidões vencidas, reativar níveis e voltar a licitar com assessoria CADBRASIL em até 24h.",
+    keywords:
+      "regularizar sicaf, sicaf irregular, como regularizar sicaf empresa, desbloquear sicaf, pendencia sicaf, regularizacao sicaf 2026, sicaf inapto, corrigir sicaf, habilitacao sicaf",
+    eyebrow: "Regularização SICAF",
+    title: "Como regularizar o SICAF",
+    highlight: "da sua empresa",
+    description:
+      "Diagnóstico completo de pendências, correção documental e reativação de níveis para sua empresa voltar a participar de licitações com cadastro regular.",
+    quickAnswer:
+      "Para regularizar o SICAF da empresa, identifique pendências no Compras.gov.br, renove certidões vencidas (CND, FGTS, CNDT), corrija divergências cadastrais e revalide os níveis de habilitação exigidos.",
+    howToSteps: [
+      {
+        name: "Diagnosticar situação cadastral",
+        text: "Acesse o Compras.gov.br com e-CNPJ e verifique status de cada nível e motivo de irregularidade.",
+      },
+      {
+        name: "Mapear certidões vencidas ou pendentes",
+        text: "Liste CND Federal, FGTS, CNDT e certidões estaduais/municipais com validade expirada.",
+      },
+      {
+        name: "Regularizar débitos fiscais e trabalhistas",
+        text: "Quite ou parcela pendências que impedem emissão de certidões negativas válidas.",
+      },
+      {
+        name: "Atualizar documentos societários",
+        text: "Alinhe contrato social, razão social e representante legal ao cadastro no portal.",
+      },
+      {
+        name: "Reenviar documentos nos níveis afetados",
+        text: "Faça upload das certidões novas nos níveis II a VI conforme exigência do sistema.",
+      },
+      {
+        name: "Validar status Regular e emitir CRC",
+        text: "Confirme situação regular no painel e emita o Certificado de Registro Cadastral.",
+      },
+    ],
+    sections: [
+      {
+        id: "sinais-irregularidade",
+        title: "Sinais de que seu SICAF está irregular",
+        paragraphs: [
+          "Empresas com SICAF irregular costumam descobrir o problema apenas na fase de habilitação de um pregão — quando já investiram tempo e recursos na disputa.",
+          "Os indicadores mais comuns são certidão vencida, nível incompleto, divergência de razão social entre documentos ou bloqueio por pendência fiscal não resolvida.",
+        ],
+        bullets: [
+          "Status diferente de Regular no painel do fornecedor",
+          "CRC não disponível ou com ressalvas",
+          "Certidões com validade expirada (muitas a cada 180 dias)",
+          "Nível III, IV ou V incompleto para o edital pretendido",
+          "Mensagens de pendência no Compras.gov.br",
+        ],
+      },
+      {
+        id: "causas-frequentes",
+        title: "Principais causas de irregularidade no SICAF",
+        paragraphs: [
+          "A maioria das irregularidades não surge de erro grave — são falhas operacionais: esquecimento de renovação, alteração societária não refletida no cadastro ou envio incompleto de níveis.",
+          "Empresas que licitam esporadicamente são as mais vulneráveis, pois não mantêm rotina de monitoramento documental.",
+        ],
+        bullets: [
+          "CND Federal, FGTS ou CNDT vencidas",
+          "Alteração de contrato social sem atualização no SICAF",
+          "Cadastro apenas no Nível I sem habilitação completa",
+          "Débitos fiscais estaduais ou municipais em aberto",
+          "Certificado digital e-CNPJ expirado ou revogado",
+        ],
+      },
+      {
+        id: "passo-a-passo-regularizacao",
+        title: "Passo a passo para regularizar o SICAF",
+        paragraphs: [
+          "A regularização segue uma sequência lógica: diagnóstico → correção de pendências → reenvio documental → validação de níveis → emissão de CRC.",
+          "Tentar licitar antes de concluir a regularização aumenta o risco de desclassificação e mancha o histórico da empresa perante órgãos licitantes.",
+        ],
+        bullets: [
+          "Acesso com e-CNPJ ao Compras.gov.br",
+          "Levantamento de pendências por nível",
+          "Emissão e upload de certidões atualizadas",
+          "Correção de dados societários divergentes",
+          "Validação final e emissão de CRC regular",
+        ],
+      },
+      {
+        id: "prazo-riscos",
+        title: "Prazos, riscos e impacto em licitações",
+        paragraphs: [
+          "Sem assessoria, a regularização pode levar de 5 a 30 dias úteis, dependendo da complexidade fiscal. Com documentação organizada, a CADBRASIL conclui em até 24 horas.",
+          "Participar de pregão com SICAF irregular resulta em desclassificação na habilitação, mesmo após vencer a disputa de preços.",
+        ],
+      },
+      {
+        id: "cadbrasil-regularizacao",
+        title: "Regularização com a CADBRASIL",
+        paragraphs: [
+          "Nossa equipe faz diagnóstico automatizado com IA, corrige pendências documentais, reativa níveis e monitora vencimentos para evitar nova irregularidade.",
+          "Você acompanha cada etapa pelo painel e recebe alertas antes que certidões expirem.",
+        ],
+        bullets: [
+          "Diagnóstico completo por CNPJ",
+          "Correção de certidões e níveis",
+          "Entrega em até 24h com docs completos",
+          "Monitoramento contínuo pós-regularização",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Como saber se meu SICAF está irregular?",
+        answer:
+          "Acesse o Compras.gov.br com certificado e-CNPJ, entre no painel do fornecedor e verifique o status de cada nível. Situação diferente de Regular indica pendência.",
+      },
+      {
+        question: "Quanto tempo leva para regularizar o SICAF?",
+        answer:
+          "Depende das pendências. Certidões simples podem ser resolvidas em 1 a 3 dias. Débitos fiscais complexos exigem mais tempo. Com a CADBRASIL e documentação pronta, até 24 horas.",
+      },
+      {
+        question: "Posso licitar enquanto regularizo o SICAF?",
+        answer:
+          "Não é recomendado. Mesmo vencendo o pregão, a empresa tende a ser desclassificada na habilitação se o cadastro estiver irregular no momento da análise.",
+      },
+      {
+        question: "SICAF irregular impede receber de contratos antigos?",
+        answer:
+          "Sim. Irregularidade cadastral pode bloquear pagamentos e renovações contratuais em órgãos que exigem fornecedor regular.",
+      },
+      {
+        question: "Preciso refazer todo o cadastro para regularizar?",
+        answer:
+          "Na maioria dos casos, não. Basta corrigir os níveis pendentes e reenviar certidões válidas. Refazer do zero só ocorre em casos extremos de inconsistência cadastral.",
+      },
+      {
+        question: "A CADBRASIL regulariza SICAF de qualquer empresa?",
+        answer:
+          "Sim. Atendemos MEI, ME, EPP, LTDA, S/A e EIRELI em todo o Brasil, com foco em regularização rápida e monitoramento contínuo.",
+      },
+      {
+        question: "Quanto custa regularizar o SICAF?",
+        answer:
+          "O portal oficial não cobra taxa. Custos envolvem emissão de certidões, certificado digital e eventual assessoria especializada como a CADBRASIL.",
+      },
+      {
+        question: "Regularizar SICAF resolve empresa inapta na Receita?",
+        answer:
+          "São problemas distintos. CNPJ inapto precisa ser regularizado na Receita Federal antes. Veja também nossa página sobre empresa inapta.",
+      },
+    ],
+  },
+  "/cadastro-sicaf-licitacao-publica": {
+    path: "/cadastro-sicaf-licitacao-publica",
+    shortTitle: "SICAF para Licitação",
+    metaTitle: "Cadastro SICAF para Licitação Pública 2026 — Habilitação Completa | CADBRASIL",
+    metaDescription:
+      "Cadastro SICAF para licitação pública: requisitos de habilitação, níveis exigidos, documentos, CRC e como participar de pregões federais com a CADBRASIL.",
+    keywords:
+      "cadastro sicaf licitacao, sicaf licitacao publica, habilitacao licitacao sicaf, pregão sicaf, fornecedor licitacao federal, sicaf leilao publico, cadastro fornecedor governo licitacao",
+    eyebrow: "Licitações públicas",
+    title: "Cadastro SICAF para",
+    highlight: "licitação pública",
+    description:
+      "Habilite sua empresa corretamente para disputar pregões, concorrências e dispensas no Governo Federal — com níveis alinhados ao edital e CRC regular.",
+    quickAnswer:
+      "O cadastro SICAF para licitação pública exige credenciamento no Compras.gov.br, níveis de habilitação compatíveis com o edital (I a VI), certidões válidas e CRC com status Regular.",
+    sections: [
+      {
+        id: "por-que-sicaf-licitacao",
+        title: "Por que o SICAF é obrigatório em licitações",
+        paragraphs: [
+          "A Lei 14.133/2021 consolidou o ecossistema de compras públicas. Para contratos do Governo Federal, o SICAF é a base de verificação de regularidade do fornecedor na fase de habilitação.",
+          "Sem cadastro regular, a empresa não conclui a habilitação — independentemente de ter a melhor proposta de preço.",
+        ],
+        bullets: [
+          "Verificação automática de regularidade fiscal",
+          "Consulta de níveis de habilitação por edital",
+          "Emissão de CRC como comprovante cadastral",
+          "Integração com Compras.gov.br e PNCP",
+        ],
+      },
+      {
+        id: "niveis-edital",
+        title: "Níveis de habilitação exigidos por edital",
+        paragraphs: [
+          "Cada edital define quais níveis são necessários conforme objeto, valor e complexidade. Cadastrar só o Nível I é erro clássico que leva à desclassificação.",
+          "Antes de disputar um pregão, valide se sua empresa possui todos os níveis exigidos ativos e regulares.",
+        ],
+        bullets: [
+          "Nível I — Credenciamento (obrigatório)",
+          "Nível II — Habilitação jurídica",
+          "Nível III — Regularidade fiscal e trabalhista",
+          "Nível IV — Qualificação técnica",
+          "Nível V — Qualificação econômico-financeira",
+          "Nível VI — Linhas de fornecimento (CATMAT/CATSER)",
+        ],
+      },
+      {
+        id: "fluxo-habilitacao",
+        title: "Fluxo: do cadastro SICAF à habilitação no pregão",
+        paragraphs: [
+          "O fluxo ideal começa semanas antes do edital: credenciamento, habilitação completa, emissão de CRC e monitoramento de vencimentos.",
+          "Empresas que cadastram no SICAF apenas quando o edital abre perdem oportunidades por prazo insuficiente para regularizar pendências.",
+        ],
+        bullets: [
+          "Credenciamento com e-CNPJ no Compras.gov.br",
+          "Upload documental por nível exigido",
+          "Emissão de CRC com status Regular",
+          "Participação no pregão com habilitação pré-validada",
+          "Manutenção contínua entre editais",
+        ],
+      },
+      {
+        id: "modalidades",
+        title: "Modalidades de licitação e exigência SICAF",
+        paragraphs: [
+          "Pregão eletrônico, concorrência, tomada de preços, dispensa e inexigibilidade — em contratações federais, a verificação cadastral via SICAF é praticamente universal na habilitação.",
+          "Estados e municípios também consultam o SICAF ou exigem cadastro equivalente em muitos processos.",
+        ],
+      },
+      {
+        id: "cadbrasil-licitacao",
+        title: "CADBRASIL: cadastro SICAF pronto para licitar",
+        paragraphs: [
+          "Preparamos sua empresa com checklist por edital-alvo, validação documental com IA e entrega em até 24 horas quando a documentação está completa.",
+          "Você disputa pregões com confiança de que a habilitação não será o ponto de falha.",
+        ],
+        bullets: [
+          "Checklist personalizado por segmento",
+          "Validação de níveis antes do pregão",
+          "Monitoramento de certidões entre editais",
+          "Suporte especializado em habilitação",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Preciso de SICAF para participar de pregão eletrônico?",
+        answer:
+          "Para pregões federais no Compras.gov.br, sim. O SICAF regular é verificado na fase de habilitação após a disputa de preços.",
+      },
+      {
+        question: "Quais níveis do SICAF são exigidos em licitações?",
+        answer:
+          "Varia por edital. Mínimo é Nível I (credenciamento). A maioria exige Nível III (fiscal/trabalhista). Objetos complexos exigem IV, V e VI.",
+      },
+      {
+        question: "Posso me cadastrar no SICAF depois de abrir o edital?",
+        answer:
+          "Tecnicamente sim, mas é arriscado. Certidões, validações e correções podem levar dias ou semanas. O ideal é cadastro prévio e regular.",
+      },
+      {
+        question: "O CRC substitui o SICAF na licitação?",
+        answer:
+          "Não. O CRC comprova situação cadastral no SICAF. O cadastro completo com níveis regulares continua sendo a base.",
+      },
+      {
+        question: "MEI e ME podem licitar com SICAF?",
+        answer:
+          "Sim, quando o edital permitir e a empresa atender requisitos documentais. ME e EPP têm tratamento diferenciado na Lei Complementar 123/2006.",
+      },
+      {
+        question: "SICAF serve para licitações estaduais e municipais?",
+        answer:
+          "Muitos entes consultam o SICAF ou exigem cadastro próprio. Ter SICAF federal regular facilita e acelera processos em outros níveis.",
+      },
+      {
+        question: "Quanto tempo antes do pregão devo ter o SICAF pronto?",
+        answer:
+          "Recomendamos pelo menos 15 dias úteis de antecedência. Com a CADBRASIL e docs completos, a habilitação pode sair em até 24 horas.",
+      },
+      {
+        question: "A CADBRASIL prepara SICAF específico para meu edital?",
+        answer:
+          "Sim. Analisamos o edital-alvo, identificamos níveis exigidos e preparamos documentação compatível antes da disputa.",
+      },
+    ],
+  },
+  "/documentos-necessarios-cadastro-sicaf": {
+    path: "/documentos-necessarios-cadastro-sicaf",
+    shortTitle: "Documentos SICAF",
+    metaTitle: "Documentos Necessários para Cadastro no SICAF 2026 — Checklist | CADBRASIL",
+    metaDescription:
+      "Lista completa de documentos para cadastro no SICAF: por nível de habilitação, validade, certificado digital e checklist para MEI, ME, EPP e demais portes.",
+    keywords:
+      "documentos sicaf, documentos cadastro sicaf, checklist sicaf, documentos habilitacao sicaf, certidoes sicaf, contrato social sicaf, documentos fornecedor governo",
+    eyebrow: "Checklist documental",
+    title: "Documentos necessários para",
+    highlight: "cadastro no SICAF",
+    description:
+      "Checklist completo organizado por nível de habilitação, com validade de cada certidão e orientações para evitar indeferimento no credenciamento.",
+    quickAnswer:
+      "Os documentos para cadastro no SICAF incluem cartão CNPJ, contrato social, certidões fiscais (CND Federal, FGTS, CNDT), comprovante de endereço, certificado e-CNPJ e documentos técnicos/financeiros conforme o nível exigido.",
+    itemList: [
+      "Certificado digital e-CNPJ (A1 ou A3)",
+      "Cartão CNPJ atualizado",
+      "Contrato social ou estatuto com alterações",
+      "RG e CPF dos administradores",
+      "Comprovante de endereço da sede",
+      "Certidão Negativa de Débitos — RFB (CND Federal)",
+      "Certificado de Regularidade FGTS (CRF)",
+      "Certidão Negativa de Débitos Trabalhistas (CNDT)",
+      "CND estadual e municipal",
+      "Balanço patrimonial do último exercício",
+      "Atestados de capacidade técnica",
+      "Procuração do representante legal (se aplicável)",
+    ],
+    sections: [
+      {
+        id: "documentos-acesso",
+        title: "Documentos de acesso ao portal",
+        paragraphs: [
+          "Antes de qualquer upload, você precisa do certificado digital e-CNPJ válido vinculado ao CNPJ da empresa. Sem ele, não há acesso ao Compras.gov.br.",
+        ],
+        bullets: [
+          "Certificado digital e-CNPJ A1 (arquivo) ou A3 (token/cartão)",
+          "Validade entre 1 e 3 anos conforme tipo",
+          "Vinculado ao CNPJ correto da empresa",
+        ],
+      },
+      {
+        id: "nivel-i-ii",
+        title: "Níveis I e II — Credenciamento e habilitação jurídica",
+        paragraphs: [
+          "O Nível I exige dados cadastrais básicos. O Nível II comprova existência jurídica regular da empresa e poderes do representante legal.",
+        ],
+        bullets: [
+          "Cartão CNPJ emitido pela Receita Federal",
+          "Contrato social ou estatuto + alterações consolidadas",
+          "Atas de eleição/nomeação de administradores (S/A)",
+          "RG e CPF de todos os sócios/administradores",
+          "Comprovante de endereço da sede (até 90 dias)",
+          "Procuração com poderes específicos (se representante não for sócio)",
+        ],
+      },
+      {
+        id: "nivel-iii",
+        title: "Nível III — Regularidade fiscal e trabalhista",
+        paragraphs: [
+          "É o nível mais crítico para licitações. Certidões vencidas são a principal causa de irregularidade e desclassificação em pregões.",
+        ],
+        bullets: [
+          "CND Federal (RFB/PGFN) — validade 90 a 180 dias",
+          "CRF — Certificado de Regularidade FGTS — 180 dias",
+          "CNDT — Certidão Negativa de Débitos Trabalhistas — 180 dias",
+          "CND estadual — prazo varia por UF",
+          "CND municipal — prazo varia por município",
+        ],
+      },
+      {
+        id: "nivel-iv-v-vi",
+        title: "Níveis IV, V e VI — Técnico, financeiro e catálogo",
+        paragraphs: [
+          "Exigidos conforme objeto e valor do edital. Empresas que pretendem licitar bens ou serviços específicos precisam destes níveis ativos.",
+        ],
+        bullets: [
+          "Nível IV: atestados de capacidade técnica compatíveis com o objeto",
+          "Nível V: balanço patrimonial, DRE e índices financeiros",
+          "Nível VI: cadastro em CATMAT (materiais) ou CATSER (serviços)",
+        ],
+      },
+      {
+        id: "validade-monitoramento",
+        title: "Validade e monitoramento de documentos",
+        paragraphs: [
+          "A maioria das certidões fiscais vence em 180 dias. Sem monitoramento, a empresa fica irregular sem perceber até ser desclassificada em um pregão.",
+          "A CADBRASIL monitora vencimentos automaticamente e alerta antes da expiração.",
+        ],
+      },
+      {
+        id: "cadbrasil-documentos",
+        title: "Validação documental com a CADBRASIL",
+        paragraphs: [
+          "Nossa IA confere cada documento antes do envio oficial: validade, coerência de CNPJ/razão social e compatibilidade com níveis exigidos.",
+          "Evite retrabalho e indeferimento com checklist validado por especialistas.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Quais documentos são obrigatórios para cadastro no SICAF?",
+        answer:
+          "Mínimo: e-CNPJ, cartão CNPJ, contrato social, RG/CPF dos administradores e comprovante de endereço. Para licitar, certidões fiscais (Nível III) são praticamente sempre exigidas.",
+      },
+      {
+        question: "Qual a validade das certidões para o SICAF?",
+        answer:
+          "CND Federal: 90 a 180 dias. FGTS e CNDT: 180 dias. Estadual e municipal: varia. Monitore vencimentos continuamente.",
+      },
+      {
+        question: "MEI precisa de todos os documentos?",
+        answer:
+          "MEI envia documentos simplificados (CCMEI, certidões), mas ainda precisa de e-CNPJ e certidões fiscais válidas para habilitação.",
+      },
+      {
+        question: "Contrato social desatualizado impede cadastro?",
+        answer:
+          "Sim. Divergência entre contrato social e dados no SICAF gera pendência ou indeferimento. Atualize antes de enviar.",
+      },
+      {
+        question: "Preciso de balanço para cadastro inicial?",
+        answer:
+          "Só se o edital ou nível V exigir qualificação econômico-financeira. Cadastro básico (Níveis I a III) não exige balanço.",
+      },
+      {
+        question: "Como enviar documentos no SICAF?",
+        answer:
+          "Pelo Compras.gov.br, autenticado com e-CNPJ, no módulo de fornecedores. Cada documento vai anexado ao nível correspondente.",
+      },
+      {
+        question: "A CADBRASIL valida meus documentos antes do envio?",
+        answer:
+          "Sim. Conferimos validade, coerência cadastral e compatibilidade com níveis exigidos — com IA e revisão humana.",
+      },
+      {
+        question: "Onde vejo a lista oficial de documentos?",
+        answer:
+          "No Compras.gov.br, na área do fornecedor, por nível de habilitação. Este guia CADBRASIL consolida a lista prática para 2026.",
+      },
+    ],
+  },
+  "/como-atualizar-certificados-sicaf": {
+    path: "/como-atualizar-certificados-sicaf",
+    shortTitle: "Atualizar Certificados",
+    metaTitle: "Como Atualizar Certificados no SICAF 2026 — Renovação e Validade | CADBRASIL",
+    metaDescription:
+      "Saiba como atualizar certificados e certidões no SICAF: CND, FGTS, CNDT, prazos de validade, passo a passo no Compras.gov.br e monitoramento CADBRASIL.",
+    keywords:
+      "atualizar certificados sicaf, renovar certidoes sicaf, atualizar sicaf, certidao vencida sicaf, renovacao certidoes sicaf, atualizar cnd sicaf, manter sicaf regular",
+    eyebrow: "Atualização documental",
+    title: "Como atualizar certificados",
+    highlight: "no SICAF",
+    description:
+      "Renove certidões fiscais e trabalhistas antes do vencimento, reenvie no portal e mantenha seu cadastro regular para não perder licitações.",
+    quickAnswer:
+      "Para atualizar certificados no SICAF, emita novas certidões (CND Federal, FGTS, CNDT e demais) antes do vencimento, acesse o Compras.gov.br com e-CNPJ e faça upload nos níveis correspondentes.",
+    howToSteps: [
+      {
+        name: "Verificar vencimentos no painel",
+        text: "Acesse Compras.gov.br e confira validade de cada certidão nos níveis de habilitação.",
+      },
+      {
+        name: "Emitir novas certidões",
+        text: "Gere CND Federal, CRF/FGTS, CNDT e certidões estaduais/municipais nos sites oficiais.",
+      },
+      {
+        name: "Conferir coerência cadastral",
+        text: "Valide que razão social e CNPJ nas certidões coincidem com o cadastro no SICAF.",
+      },
+      {
+        name: "Fazer upload no nível correto",
+        text: "Anexe cada certidão nova no Nível III (ou nível específico) no portal do fornecedor.",
+      },
+      {
+        name: "Aguardar validação do sistema",
+        text: "O Compras.gov.br cruza dados automaticamente. Pendências aparecem no painel.",
+      },
+      {
+        name: "Confirmar status Regular",
+        text: "Verifique situação regular e, se necessário, reemita o CRC atualizado.",
+      },
+    ],
+    sections: [
+      {
+        id: "por-que-atualizar",
+        title: "Por que atualizar certificados no SICAF",
+        paragraphs: [
+          "Certidões vencidas transformam cadastro regular em irregular instantaneamente — sem aviso prévio do sistema até a próxima consulta ou tentativa de licitação.",
+          "A atualização proativa é a diferença entre empresas que licitam com consistência e as que perdem pregões por erro evitável.",
+        ],
+        bullets: [
+          "Certidões vencidas bloqueiam habilitação em pregões",
+          "Status muda de Regular para Irregular automaticamente",
+          "CRC deixa de refletir situação válida",
+          "Renovação tardia pode exigir regularização de débitos",
+        ],
+      },
+      {
+        id: "certidoes-principais",
+        title: "Certidões que mais precisam de atualização",
+        paragraphs: [
+          "Cada certidão tem prazo de validade próprio. O monitoramento deve ser contínuo, não apenas antes de editais.",
+        ],
+        bullets: [
+          "CND Federal (RFB/PGFN) — 90 a 180 dias",
+          "CRF/FGTS — 180 dias",
+          "CNDT (trabalhista) — 180 dias",
+          "CND estadual — varia por estado",
+          "CND municipal — varia por município",
+          "Certificado digital e-CNPJ — 1 a 3 anos",
+        ],
+      },
+      {
+        id: "passo-atualizacao",
+        title: "Passo a passo para atualizar no Compras.gov.br",
+        paragraphs: [
+          "O processo é manual no portal oficial: emitir certidão nova → acessar com e-CNPJ → anexar no nível → aguardar validação.",
+          "Erros comuns: anexar certidão vencida, CNPJ divergente ou upload no nível errado.",
+        ],
+        bullets: [
+          "Login com certificado e-CNPJ válido",
+          "Navegar até níveis de habilitação",
+          "Substituir certidões vencidas por novas",
+          "Salvar e verificar status de processamento",
+          "Reemitir CRC após confirmação de regularidade",
+        ],
+      },
+      {
+        id: "automacao-monitoramento",
+        title: "Monitoramento automático vs atualização manual",
+        paragraphs: [
+          "Atualizar manualmente funciona para empresas com poucos editais. Quem licita com frequência precisa de alertas automáticos e rotina de renovação.",
+          "O Assistente CADBRASIL e a plataforma digital enviam alertas com antecedência configurável.",
+        ],
+      },
+      {
+        id: "cadbrasil-atualizacao",
+        title: "Atualização de certificados com a CADBRASIL",
+        paragraphs: [
+          "Cuidamos da emissão, validação e upload de certidões no SICAF, com monitoramento contínuo para sua empresa nunca licitar irregular.",
+          "Entrega em até 24 horas quando certidões estão disponíveis para emissão.",
+        ],
+        bullets: [
+          "Alertas de vencimento com antecedência",
+          "Emissão e upload no portal oficial",
+          "Validação de coerência cadastral",
+          "Histórico documental rastreável",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Com que frequência devo atualizar certificados no SICAF?",
+        answer:
+          "Não há data fixa única — depende do vencimento de cada certidão. CND, FGTS e CNDT costumam vencer a cada 180 dias. Monitore continuamente.",
+      },
+      {
+        question: "O que acontece se uma certidão vencer?",
+        answer:
+          "O SICAF fica irregular. A empresa é desclassificada na habilitação de qualquer pregão até renovar e revalidar os níveis afetados.",
+      },
+      {
+        question: "Posso atualizar certificados sem assessoria?",
+        answer:
+          "Sim, pelo Compras.gov.br. Porém erros de upload, validade ou divergência cadastral são frequentes. A CADBRASIL reduz esse risco.",
+      },
+      {
+        question: "Preciso atualizar o CRC após renovar certidões?",
+        answer:
+          "Recomendado. O CRC reflete a situação cadastral no momento da emissão. Após atualizar certidões, reemita para ter comprovante atual.",
+      },
+      {
+        question: "Certificado digital também precisa ser atualizado?",
+        answer:
+          "Sim. e-CNPJ vencido impede acesso ao Compras.gov.br. Renove com 30 a 60 dias de antecedência.",
+      },
+      {
+        question: "A CADBRASIL atualiza certificados automaticamente?",
+        answer:
+          "Monitoramos vencimentos e executamos renovação/upload conforme plano contratado, com alertas e validação antes de cada edital.",
+      },
+      {
+        question: "Quanto tempo leva para o sistema validar certidão nova?",
+        answer:
+          "Geralmente de minutos a 24 horas úteis, dependendo do cruzamento automático com bases da Receita, FGTS e Justiça do Trabalho.",
+      },
+      {
+        question: "Atualizar certificados é diferente de regularizar SICAF?",
+        answer:
+          "Atualização é preventiva (renovar antes de vencer). Regularização é corretiva (corrigir cadastro já irregular). Ambos exigem certidões válidas.",
+      },
+    ],
   },
 };
 
