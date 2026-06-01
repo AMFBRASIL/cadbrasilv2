@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import type { ContactTypeId } from "@/lib/contact";
 
-const WHATSAPP_NUMBER = "551121220202";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const CONTACT_TYPE_UI = [
   { id: "cliente" as const, label: "Cliente / SICAF", icon: User, description: "Cadastro, regularização e suporte" },
@@ -123,10 +123,8 @@ export function ContactSection() {
               <h3 className="font-display font-semibold text-lg">Canais diretos</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 <li>
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                    target="_blank"
-                    rel="noreferrer"
+                  <WhatsAppLink
+                    intent="Quero falar pela seção de contato do site."
                     className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition"
                   >
                     <span className="h-9 w-9 rounded-xl bg-success/10 text-success grid place-items-center">
@@ -136,7 +134,7 @@ export function ContactSection() {
                       <span className="block font-medium text-foreground">WhatsApp</span>
                       (11) 2122-0202
                     </span>
-                  </a>
+                  </WhatsAppLink>
                 </li>
                 <li>
                   <a
@@ -167,14 +165,12 @@ export function ContactSection() {
             <p className="text-xs text-muted-foreground px-1">
               O formulário envia sua mensagem por e-mail para nossa equipe. Resposta média em até 3 minutos em horário comercial.
             </p>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Prefiro atendimento por WhatsApp em vez do formulário."
               className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline px-1"
             >
               Prefere WhatsApp? Fale agora <ArrowRight className="h-4 w-4" />
-            </a>
+            </WhatsAppLink>
           </aside>
 
           <form

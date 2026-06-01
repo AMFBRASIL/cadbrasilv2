@@ -1,4 +1,5 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 export function Footer() {
   return (
@@ -26,7 +27,11 @@ export function Footer() {
           <div className="text-sm font-semibold mb-3">Contato</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><a href="#contato" className="hover:text-foreground">Formulário de contato</a></li>
-            <li><a href="https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo." className="hover:text-foreground">WhatsApp</a></li>
+            <li>
+              <WhatsAppLink intent="Contato pelo rodapé do site." className="hover:text-foreground">
+                WhatsApp
+              </WhatsAppLink>
+            </li>
             <li><a href="mailto:documentos@fornecedordigital.com.br" className="hover:text-foreground">documentos@fornecedordigital.com.br</a></li>
             <li>Atendimento Seg–Sex · 8h às 18h</li>
             <li>Brasil · 100% remoto</li>

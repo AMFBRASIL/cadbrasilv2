@@ -4,8 +4,8 @@ import {
   CheckCircle2, ArrowRight, Building2, Award, Clock, Users, Search, Lock, BadgeCheck,
 } from "lucide-react";
 import { useMemo, useState } from "react";
-
-const WHATSAPP_URL = "https://wa.me/551121220202";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 export function ServiceStatusBar() {
   return (
@@ -206,14 +206,13 @@ export function ReadinessCalculator() {
             <div className="mt-1 text-2xl font-bold">{score}%</div>
             <div className="mt-1 font-semibold text-brand">{readinessLabel}</div>
             <p className="mt-2 text-sm text-muted-foreground">{readinessHint}</p>
-            <a
-              href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Quero diagnóstico SICAF. Meu score foi ${score}%.`)}`}
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Quero receber diagnóstico de prontidão SICAF."
+              detail={`Nível de prontidão no simulador: ${score}% (${readinessLabel}).`}
               className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold"
             >
               Receber diagnóstico no WhatsApp <ArrowRight className="h-4 w-4" />
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </div>
@@ -309,14 +308,17 @@ export function DocumentChecklist() {
                 <span><strong>{missing}</strong> documento(s) pendente(s). Enviamos a lista personalizada no WhatsApp.</span>
               )}
             </div>
-            <a
-              href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Quero minha checklist SICAF personalizada. Faltam ${missing} documentos.`)}`}
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Quero minha checklist SICAF personalizada."
+              detail={
+                missing === 0
+                  ? "Checklist interativa: todos os documentos marcados como OK."
+                  : `Checklist interativa: faltam ${missing} documento(s) na lista.`
+              }
               className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand"
             >
               Receber checklist personalizada <ArrowRight className="h-4 w-4" />
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </div>
@@ -401,14 +403,12 @@ export function Assistant() {
             >
               <Download className="h-4 w-4" /> Instalar Assistente Agora
             </a>
-            <a
-              href="https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo."
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Quero saber mais sobre o Assistente CADBRASIL."
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 text-white font-semibold border border-white/20 backdrop-blur hover:bg-white/20 transition"
             >
               Falar com especialista
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -615,12 +615,23 @@ export function StartIn2Minutes() {
 
 export function FinalCTA() {
   const [lead, setLead] = useState({ nome: "", whatsapp: "", cnpj: "" });
-  const leadMessage = encodeURIComponent(
-    `Olá! Quero iniciar meu SICAF com a CADBRASIL.\n` +
-    `Nome: ${lead.nome || "não informado"}\n` +
-    `WhatsApp: ${lead.whatsapp || "não informado"}\n` +
-    `CNPJ: ${lead.cnpj || "não informado"}`,
-  );
+
+  const openLeadWhatsApp = () => {
+    openWhatsApp({
+      intent: "Quero iniciar cadastro ou regularização SICAF (formulário da home).",
+      detail: [
+        `Nome: ${lead.nome || "não informado"}`,
+        `Telefone informado: ${lead.whatsapp || "não informado"}`,
+        `CNPJ: ${lead.cnpj || "não informado"}`,
+      ].join("\n"),
+    });
+  };
+
+  const openGeneralWhatsApp = () => {
+    openWhatsApp({
+      intent: "Preciso de atendimento imediato sobre SICAF (CTA final da home).",
+    });
+  };
 
   return (
     <section id="cta" className="py-24 sm:py-32">
@@ -658,22 +669,20 @@ export function FinalCTA() {
                 />
               </div>
               <div className="flex flex-wrap gap-3">
-              <a
-                href={`https://wa.me/551121220202?text=${leadMessage}`}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                type="button"
+                onClick={openLeadWhatsApp}
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition"
               >
                 🚀 Começar Agora
-              </a>
-              <a
-                href="https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo."
-                target="_blank"
-                rel="noreferrer"
+              </button>
+              <button
+                type="button"
+                onClick={openGeneralWhatsApp}
                 className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition"
               >
                 💬 Atendimento Imediato
-              </a>
+              </button>
               </div>
             </div>
             <div className="mt-6 text-sm text-white/70">

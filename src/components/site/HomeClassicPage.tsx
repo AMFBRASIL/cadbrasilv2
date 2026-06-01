@@ -20,6 +20,7 @@ import { Faq } from "@/components/site/Faq";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 function Hero() {
   return (
@@ -57,14 +58,12 @@ function Hero() {
             >
               🚀 Fazer Cadastro SICAF
             </a>
-            <a
-              href="https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo."
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Quero tirar dúvidas sobre SICAF (layout clássico)."
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-card border border-border font-semibold hover:bg-accent transition"
             >
               <MessageCircle className="h-4 w-4 text-success" /> Falar no WhatsApp
-            </a>
+            </WhatsAppLink>
             <a
               href="#assistente"
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-foreground text-background font-semibold hover:opacity-90 transition"

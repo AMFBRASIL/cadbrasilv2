@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
-import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL } from "@/components/site/PageShell";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const links = [
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia SICAF" },
@@ -58,14 +59,12 @@ export function Nav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              intent="Quero tirar dúvidas sobre SICAF pelo menu do site."
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-foreground border border-border hover:bg-accent transition"
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
+            </WhatsAppLink>
             <a
               href={CADASTRO_URL}
               target="_blank"

@@ -1,3 +1,5 @@
+"use client";
+
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
@@ -5,9 +7,11 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
 import { ContactSection } from "@/components/site/ContactSection";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { getDefaultIntent } from "@/lib/whatsapp";
 
 export const CADASTRO_URL = "https://cadastro.cadbrasil.com.br";
-export const WHATSAPP_URL = "https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo.";
+export { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function PageShell({
   children,
@@ -66,8 +70,11 @@ export function PageHero({
   highlight?: string;
   description: string;
   primaryCta?: { label: string; href: string; external?: boolean };
-  secondaryCta?: { label: string; href: string; external?: boolean };
+  secondaryCta?:
+    | { label: string; href: string; external?: boolean }
+    | { label: string; whatsapp: true; intent?: string; detail?: string; pageLabel?: string };
 }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <section className="relative pt-10 sm:pt-16 pb-16 sm:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid" aria-hidden />
@@ -97,16 +104,26 @@ export function PageHero({
                 {primaryCta.label} <ArrowRight className="h-4 w-4" />
               </a>
             )}
-            {secondaryCta && (
-              <a
-                href={secondaryCta.href}
-                target={secondaryCta.external ? "_blank" : undefined}
-                rel={secondaryCta.external ? "noreferrer" : undefined}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-card border border-border font-semibold hover:bg-accent transition"
-              >
-                <MessageCircle className="h-4 w-4 text-success" /> {secondaryCta.label}
-              </a>
-            )}
+            {secondaryCta &&
+              ("whatsapp" in secondaryCta && secondaryCta.whatsapp ? (
+                <WhatsAppLink
+                  intent={secondaryCta.intent ?? getDefaultIntent(pathname)}
+                  pageLabel={secondaryCta.pageLabel}
+                  detail={secondaryCta.detail}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-card border border-border font-semibold hover:bg-accent transition"
+                >
+                  <MessageCircle className="h-4 w-4 text-success" /> {secondaryCta.label}
+                </WhatsAppLink>
+              ) : (
+                <a
+                  href={secondaryCta.href}
+                  target={secondaryCta.external ? "_blank" : undefined}
+                  rel={secondaryCta.external ? "noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-card border border-border font-semibold hover:bg-accent transition"
+                >
+                  <MessageCircle className="h-4 w-4 text-success" /> {secondaryCta.label}
+                </a>
+              ))}
           </div>
         )}
       </div>
@@ -174,14 +191,12 @@ export function InlineCta({
               >
                 {contextual.primary}
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
+              <WhatsAppLink
+                intent={getDefaultIntent(pathname)}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition whitespace-nowrap"
               >
                 {contextual.secondary}
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

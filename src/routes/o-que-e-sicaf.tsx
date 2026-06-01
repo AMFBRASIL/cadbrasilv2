@@ -79,7 +79,11 @@ function OQueESicaf() {
         highlight="SICAF?"
         description="O Sistema de Cadastramento Unificado de Fornecedores é o registro nacional obrigatório que habilita sua empresa a vender para órgãos públicos federais, estaduais e municipais."
         primaryCta={{ label: "Fazer Cadastro SICAF Agora", href: CADASTRO_URL, external: true }}
-        secondaryCta={{ label: "Falar com Especialista", href: "https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo.", external: true }}
+        secondaryCta={{
+          label: "Falar com Especialista",
+          whatsapp: true,
+          intent: "Quero entender melhor o que é o SICAF e como me cadastrar.",
+        }}
       />
 
       <article className="mx-auto max-w-3xl px-4 py-12 prose prose-lg prose-neutral">

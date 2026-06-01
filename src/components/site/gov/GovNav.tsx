@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, MessageCircle, ExternalLink } from "lucide-react";
-import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { BrandLogo } from "@/components/site/BrandLogo";
+import { CADASTRO_URL } from "@/components/site/PageShell";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
+/** Mesmos itens do menu da versão anterior (Nav.tsx). */
 const links = [
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia SICAF" },
+  { to: "/o-que-e-sicaf", label: "O que é SICAF" },
   { to: "/como-funciona", label: "Como funciona" },
-  { to: "/faq", label: "FAQ" },
   { to: "/assistente", label: "Assistente" },
+  { to: "/beneficios", label: "Benefícios" },
+  { to: "/faq", label: "FAQ" },
 ] as const;
 
 export function GovNav() {
@@ -32,45 +37,36 @@ export function GovNav() {
       >
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-between py-3">
-            <Link to="/" className="flex items-center gap-2 [&_.text-brand]:text-[#b8e6c8] [&_span]:text-white">
-              <span className="grid h-9 w-9 place-items-center rounded-md bg-white/15 text-white font-bold text-sm border border-white/20">
-                C
-              </span>
-              <span className="font-display font-bold text-lg text-white tracking-tight">
-                CAD <span className="text-white/50 font-normal mx-1">|</span>{" "}
-                <span className="text-[#b8e6c8]">BRASIL</span>
-              </span>
-            </Link>
+            <BrandLogo
+              asLink
+              className="text-white [&_.text-brand]:text-[#b8e6c8] [&_.text-muted-foreground]:text-white/50 [&_span.grid]:rounded-md [&_span.grid]:bg-white/15 [&_span.grid]:border [&_span.grid]:border-white/20 [&_span.grid]:shadow-none"
+            />
 
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center min-w-0 mx-2">
               {links.map((l) => (
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md transition"
+                  className="px-2 py-2 text-[13px] xl:text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md transition whitespace-nowrap"
                 >
                   {l.label}
                 </Link>
               ))}
               <a
-                href="https://www.gov.br/compras"
-                target="_blank"
-                rel="noreferrer"
-                className="px-3 py-2 text-sm font-medium text-white/80 hover:text-white inline-flex items-center gap-1"
+                href="#contato"
+                className="px-2 py-2 text-[13px] xl:text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md transition whitespace-nowrap"
               >
-                Compras.gov.br <ExternalLink className="h-3 w-3" />
+                Contato
               </a>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-2">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
+            <div className="hidden lg:flex items-center gap-2 shrink-0">
+              <WhatsAppLink
+                intent="Quero tirar dúvidas sobre SICAF pelo menu do site."
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold text-[#0a4d2c] bg-white hover:bg-[#f0f7f2] transition"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
+              </WhatsAppLink>
               <a
                 href={CADASTRO_URL}
                 target="_blank"
@@ -105,12 +101,27 @@ export function GovNav() {
                   </Link>
                 ))}
                 <a
+                  href="#contato"
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3 rounded-md text-white/95 hover:bg-white/10 text-sm font-medium"
+                >
+                  Contato
+                </a>
+                <WhatsAppLink
+                  intent="Quero tirar dúvidas sobre SICAF pelo menu mobile."
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3 rounded-md text-white/95 hover:bg-white/10 text-sm font-medium inline-flex items-center gap-2"
+                >
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </WhatsAppLink>
+                <a
                   href={CADASTRO_URL}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => setOpen(false)}
                   className="mt-2 text-center px-4 py-3 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-semibold"
                 >
-                  Fazer Cadastro SICAF
+                  Fazer Cadastro
                 </a>
               </div>
             </div>

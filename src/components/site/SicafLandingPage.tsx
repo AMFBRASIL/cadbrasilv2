@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, FileText, HelpCircle } from "lucide-react";
-import { CADASTRO_URL, InlineCta, PageHero, PageShell, WHATSAPP_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL, InlineCta, PageHero, PageShell } from "@/components/site/PageShell";
 import type { LandingPageData } from "@/data/sicafLandingPages";
 
 export function SicafLandingPage({ page }: { page: LandingPageData }) {
@@ -12,7 +12,11 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
         highlight={page.highlight}
         description={page.description}
         primaryCta={{ label: "Iniciar cadastro SICAF", href: CADASTRO_URL, external: true }}
-        secondaryCta={{ label: "Falar com especialista", href: WHATSAPP_URL, external: true }}
+        secondaryCta={{
+          label: "Falar com especialista",
+          whatsapp: true,
+          pageLabel: page.shortTitle,
+        }}
       />
 
       <section className="pb-4">

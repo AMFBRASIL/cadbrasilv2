@@ -96,7 +96,11 @@ function ComoFunciona() {
         highlight="do início ao fim."
         description="Um processo desenhado para quem não tem tempo a perder. Você nos passa as informações, nós cuidamos do resto. Em 24h sua empresa está pronta para licitar."
         primaryCta={{ label: "Começar Agora", href: CADASTRO_URL, external: true }}
-        secondaryCta={{ label: "Tirar Dúvidas", href: "https://wa.me/551121220202?text=Ola%2C%20estou%20na%20pagina%20da%20cadbrasil%20e%20gostaria%20de%20tirar%20duvidas%20sobre%20o%20processo.", external: true }}
+        secondaryCta={{
+          label: "Tirar Dúvidas",
+          whatsapp: true,
+          intent: "Tenho dúvidas sobre como funciona o processo CADBRASIL.",
+        }}
       />
 
       <section className="py-16">

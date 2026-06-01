@@ -10,6 +10,7 @@ import {
 import { useEffect } from "react";
 
 import { AnalyticsPageView } from "@/components/site/AnalyticsPageView";
+import { UtmCapture } from "@/components/site/UtmCapture";
 import { BING_UET_SCRIPT, GTAG_AW_ID, GTM_ID, GTM_SCRIPT, GTAG_INIT_SCRIPT } from "@/lib/analytics";
 import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
 
@@ -189,6 +190,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <UtmCapture />
       <AnalyticsPageView />
       <Outlet />
     </QueryClientProvider>

@@ -1,7 +1,8 @@
 import { ArrowRight, Download, MessageCircle, ShieldCheck, Building2, FileCheck } from "lucide-react";
 import { GovHeroDashboard } from "@/components/site/gov/GovHeroDashboard";
 import { Link } from "@tanstack/react-router";
-import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL } from "@/components/site/PageShell";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 export function GovHero() {
   return (
@@ -57,14 +58,12 @@ export function GovHero() {
                 Iniciar cadastro SICAF
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
+              <WhatsAppLink
+                intent="Quero credenciar ou regularizar minha empresa no SICAF (hero da home)."
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md bg-white text-[#0a4d2c] font-semibold hover:bg-[#f0f7f2] transition"
               >
                 <MessageCircle className="h-4 w-4" /> Falar com especialista
-              </a>
+              </WhatsAppLink>
               <Link
                 to="/assistente"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition"

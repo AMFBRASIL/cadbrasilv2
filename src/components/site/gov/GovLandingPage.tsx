@@ -4,7 +4,9 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL } from "@/components/site/PageShell";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { getDefaultIntent } from "@/lib/whatsapp";
 import type { LandingPageData } from "@/data/sicafLandingPages";
 
 const RELATED_LINKS = [
@@ -68,14 +70,13 @@ export function GovLandingPage({ page }: { page: LandingPageData }) {
                 Iniciar cadastro SICAF
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
+              <WhatsAppLink
+                pageLabel={page.shortTitle}
+                intent={getDefaultIntent(page.path)}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md bg-white text-[#0a4d2c] font-semibold hover:bg-[#f0f7f2] transition"
               >
                 <MessageCircle className="h-4 w-4" /> Falar com especialista
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </section>

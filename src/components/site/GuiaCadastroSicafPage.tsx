@@ -27,7 +27,8 @@ import {
   relatedGuides,
   usefulLinks,
 } from "@/data/guiaCadastroSicaf";
-import { PageShell, InlineCta, CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
+import { PageShell, InlineCta, CADASTRO_URL } from "@/components/site/PageShell";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const PUBLISHED = "15 jan 2026";
 const MODIFIED = "27 mai 2026";
@@ -107,15 +108,14 @@ export function GuiaCadastroSicafPage() {
                   Fazer cadastro SICAF
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <WhatsAppLink
+                  pageLabel="Guia cadastro SICAF passo a passo"
+                  intent="Estou no guia passo a passo e preciso de ajuda com meu cadastro SICAF."
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Falar com especialista
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
 

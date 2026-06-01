@@ -1,1 +1,0 @@
-import{s as o,U as t}from"./index-B7v9v8T3.js";import{G as p}from"./GovLandingPage-CJKTsr2M.js";import"./GovNav-D34N0AVN.js";import"./external-link-BZp2a-dH.js";import"./circle-check-zOiFFURW.js";import"./circle-question-mark-E2TQSU0U.js";import"./file-text-CP4TD9Pa.js";const x=()=>o.jsx(p,{page:t});export{x as component};
