@@ -1164,6 +1164,417 @@ export const landingPages: Record<string, LandingPageData> = {
       },
     ],
   },
+  "/como-participar-de-licitacao": {
+    path: "/como-participar-de-licitacao",
+    shortTitle: "Como participar de licitação",
+    metaTitle: "Como Participar de Licitação Pública 2026 — Guia Completo | CADBRASIL",
+    metaDescription:
+      "Aprenda como participar de licitação pública no Brasil: SICAF, Compras.gov.br, habilitação, documentos, pregão eletrônico e cadastro de fornecedor com a CADBRASIL.",
+    keywords:
+      "como participar de licitacao, participar licitacao publica, licitacao governo federal, sicaf licitacao, fornecedor governo, habilitacao licitacao",
+    eyebrow: "Licitações públicas",
+    title: "Como participar de",
+    highlight: "licitação pública",
+    description:
+      "Guia prático para empresas que querem vender ao governo: do cadastro SICAF à habilitação no pregão, com requisitos claros e suporte CADBRASIL.",
+    quickAnswer:
+      "Para participar de licitação federal, cadastre-se no SICAF (Compras.gov.br), mantenha certidões e níveis de habilitação regulares, leia o edital e envie proposta no portal indicado — a habilitação é verificada após a disputa.",
+    howToSteps: [
+      {
+        name: "Regularize o CNPJ e o SICAF",
+        text: "CNPJ ativo na Receita e cadastro SICAF regular são pré-requisitos. Sem isso, a empresa é desclassificada na habilitação.",
+      },
+      {
+        name: "Identifique oportunidades",
+        text: "Consulte editais no Compras.gov.br e PNCP. Filtre por objeto, região e exigências de habilitação compatíveis com seu porte.",
+      },
+      {
+        name: "Analise o edital",
+        text: "Verifique níveis SICAF exigidos, documentos, prazos, critério de julgamento e exigências técnicas antes de investir na proposta.",
+      },
+      {
+        name: "Prepare a proposta",
+        text: "Monte preço, planilhas, declarações e anexos conforme o edital. Erros formais eliminam a empresa ainda na fase de habilitação.",
+      },
+      {
+        name: "Cadastre-se no pregão",
+        text: "No pregão eletrônico, inscreva-se na sessão, envie lances dentro das regras e acompanhe fases de disputa e julgamento.",
+      },
+      {
+        name: "Conclua a habilitação",
+        text: "Se vencedora, apresente documentos de habilitação. O órgão cruza dados com SICAF e certidões — irregularidade gera desclassificação.",
+      },
+    ],
+    sections: [
+      {
+        id: "requisitos-basicos",
+        title: "Requisitos básicos para licitar",
+        paragraphs: [
+          "Empresas de qualquer porte (MEI, ME, EPP, LTDA etc.) podem participar, desde que atendam ao edital e estejam regularmente cadastradas.",
+          "No âmbito federal, o SICAF concentra a verificação cadastral. Estados e municípios podem exigir cadastros próprios ou consultar bases nacionais.",
+        ],
+        bullets: [
+          "CNPJ ativo e regular na Receita Federal",
+          "SICAF regular no Compras.gov.br",
+          "Certificado digital e-CNPJ válido",
+          "Certidões fiscais e trabalhistas dentro do prazo",
+          "Capacidade técnica e financeira quando exigida",
+        ],
+      },
+      {
+        id: "sicaf-licitar",
+        title: "Papel do SICAF na participação",
+        paragraphs: [
+          "O SICAF não substitui a leitura do edital, mas é a porta de entrada para habilitação em contratações federais.",
+          "Níveis de habilitação (I a VI) devem estar completos conforme o objeto licitado — credenciamento sozinho raramente basta.",
+        ],
+      },
+      {
+        id: "erros-comuns",
+        title: "Erros que impedem a participação",
+        paragraphs: [
+          "Cadastro feito às pressas após abertura do edital, certidão vencida no dia da habilitação e divergência entre contrato social e representante legal são causas frequentes de desclassificação.",
+        ],
+        bullets: [
+          "SICAF irregular ou incompleto",
+          "Proposta com valor abaixo do permitido ou fora do formato",
+          "Documentos de habilitação desatualizados",
+          "Inabilitação por impedimento legal não declarado",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Preciso de SICAF para participar de licitação?",
+        answer:
+          "Para a maioria das licitações federais no Compras.gov.br, sim. O cadastro regular é verificado na habilitação.",
+      },
+      {
+        question: "MEI pode participar de licitação?",
+        answer:
+          "Sim, quando o edital não restringe porte e a MEI atende requisitos técnicos, fiscais e de habilitação.",
+      },
+      {
+        question: "Quanto custa participar de uma licitação?",
+        answer:
+          "Não há taxa federal só para participar. Custos incluem certificado digital, certidões, tempo de equipe e eventual assessoria.",
+      },
+      {
+        question: "Posso participar de várias licitações ao mesmo tempo?",
+        answer:
+          "Sim, desde que sua empresa suporte operacionalmente e mantenha SICAF e certidões regulares em todas.",
+      },
+      {
+        question: "O que é fase de habilitação?",
+        answer:
+          "É quando o órgão verifica se o licitante vencedor cumpre requisitos jurídicos, fiscais, trabalhistas e técnicos do edital.",
+      },
+      {
+        question: "A CADBRASIL ajuda em todo o processo?",
+        answer:
+          "Sim: cadastro SICAF, regularização, documentação, monitoramento de certidões e orientação para habilitação em pregões.",
+      },
+    ],
+  },
+  "/cadastro-fornecedor-governo": {
+    path: "/cadastro-fornecedor-governo",
+    shortTitle: "Cadastro fornecedor governo",
+    metaTitle: "Cadastro de Fornecedor do Governo 2026 — SICAF e Compras.gov.br | CADBRASIL",
+    metaDescription:
+      "Cadastro de fornecedor do governo federal: SICAF, Compras.gov.br, níveis de habilitação, e-CNPJ, certidões e CRC. Assessoria CADBRASIL em até 24h.",
+    keywords:
+      "cadastro fornecedor governo, fornecedor governo federal, cadastro sicaf, compras gov fornecedor, credenciamento fornecedor publico, habilitacao fornecedor",
+    eyebrow: "Fornecedor público",
+    title: "Cadastro de fornecedor",
+    highlight: "do governo",
+    description:
+      "Credencie sua empresa como fornecedora do Governo Federal com cadastro SICAF estruturado, documentação validada e acompanhamento até o CRC regular.",
+    quickAnswer:
+      "O cadastro de fornecedor do governo federal é feito no SICAF (Compras.gov.br) com certificado e-CNPJ, dados da empresa, níveis de habilitação e certidões válidas. O CRC comprova situação regular.",
+    sections: [
+      {
+        id: "o-que-e-cadastro",
+        title: "O que é o cadastro de fornecedor",
+        paragraphs: [
+          "É o registro oficial que permite à administração pública verificar identidade, regularidade e capacidade da empresa antes de contratar.",
+          "No Governo Federal, o Sistema de Cadastramento Unificado de Fornecedores (SICAF) centraliza essa informação.",
+        ],
+      },
+      {
+        id: "portal-compras",
+        title: "Compras.gov.br e certificado digital",
+        paragraphs: [
+          "O acesso ao credenciamento exige certificado digital e-CNPJ (A1 ou A3) do representante legal.",
+          "Dados societários devem coincidir com Receita Federal, contrato social e procurações — divergências geram indeferimento.",
+        ],
+        bullets: [
+          "Acesso com e-CNPJ no portal oficial",
+          "Preenchimento do Nível I (credenciamento)",
+          "Envio documental dos níveis II a VI conforme atuação",
+          "Validação automática e manual pelo sistema",
+        ],
+      },
+      {
+        id: "niveis-habilitacao",
+        title: "Níveis de habilitação do fornecedor",
+        paragraphs: [
+          "Cada nível agrega exigências: jurídica, fiscal, técnica, econômico-financeira e linhas de fornecimento (CATMAT/CATSER).",
+          "Fornecedores que licitam com frequência mantêm todos os níveis relevantes ativos e monitorados.",
+        ],
+        bullets: [
+          "Nível I — Credenciamento (obrigatório)",
+          "Nível II — Habilitação jurídica",
+          "Nível III — Regularidade fiscal e trabalhista",
+          "Níveis IV a VI — Qualificação técnica, financeira e itens",
+        ],
+      },
+      {
+        id: "cadbrasil-fornecedor",
+        title: "Cadastro com a CADBRASIL",
+        paragraphs: [
+          "Estruturamos o cadastro de fornecedor com checklist por CNPJ, validação documental e entrega em até 24 horas quando não há pendências graves.",
+          "Inclui emissão de CRC, orientação sobre níveis e monitoramento para evitar bloqueios entre editais.",
+        ],
+      },
+    ],
+    faqs: [
+      ...baseFaqs,
+      {
+        question: "Cadastro de fornecedor é o mesmo que SICAF?",
+        answer:
+          "No âmbito federal, o cadastro de fornecedor é realizado via SICAF no Compras.gov.br. Estados podem ter cadastros próprios.",
+      },
+      {
+        question: "Quanto tempo demora o cadastro de fornecedor?",
+        answer:
+          "Com documentação completa, o fluxo assistido pode ser concluído em até 24 horas. Pendências fiscais ou cadastrais estendem o prazo.",
+      },
+      {
+        question: "Preciso renovar o cadastro de fornecedor?",
+        answer:
+          "Certidões e níveis exigem atualização contínua. O CRC deve ser reemitido quando a situação cadastral mudar.",
+      },
+    ],
+  },
+  "/pregao-eletronico": {
+    path: "/pregao-eletronico",
+    shortTitle: "Pregão eletrônico",
+    metaTitle: "Pregão Eletrônico 2026 — Como Participar e Habilitação SICAF | CADBRASIL",
+    metaDescription:
+      "Guia de pregão eletrônico: como funciona, SICAF, lances, habilitação, documentos e cadastro de fornecedor no Compras.gov.br com suporte CADBRASIL.",
+    keywords:
+      "pregao eletronico, como participar pregao eletronico, pregao compras gov, sicaf pregao, licitacao pregao federal, fornecedor pregao eletronico",
+    eyebrow: "Modalidade licitatória",
+    title: "Pregão eletrônico",
+    highlight: "passo a passo",
+    description:
+      "Entenda como disputar pregões eletrônicos federais com SICAF regular, proposta correta e habilitação sem surpresas — com assessoria especializada.",
+    quickAnswer:
+      "No pregão eletrônico federal, empresas credenciadas no Compras.gov.br enviam lances em sessão pública; após a classificação, o vencedor passa por habilitação com verificação SICAF e documentos do edital.",
+    howToSteps: [
+      {
+        name: "Tenha SICAF e e-CNPJ válidos",
+        text: "Antes do pregão, confirme cadastro regular, níveis exigidos pelo edital e certificado digital dentro da validade.",
+      },
+      {
+        name: "Leia o edital e o termo de referência",
+        text: "Objeto, especificações, prazo de entrega, critérios de julgamento e exigências de habilitação definem sua estratégia de lance.",
+      },
+      {
+        name: "Cadastre proposta inicial",
+        text: "Alguns pregões exigem proposta fechada antes dos lances. Verifique formato, anexos e valor de referência.",
+      },
+      {
+        name: "Participe da sessão de lances",
+        text: "Acesse a sala eletrônica no horário do edital. Lance dentro dos decrementos mínimos e regras de desempate.",
+      },
+      {
+        name: "Aguarde classificação e intenção de recurso",
+        text: "Após encerramento, há fase de manifestação e recursos. Mantenha documentação pronta para habilitação imediata.",
+      },
+      {
+        name: "Apresente habilitação",
+        text: "Envie documentos solicitados. O órgão valida SICAF, certidões e requisitos técnicos — irregularidade desclassifica.",
+      },
+    ],
+    sections: [
+      {
+        id: "como-funciona-pregao",
+        title: "Como funciona o pregão eletrônico",
+        paragraphs: [
+          "É modalidade para aquisição de bens e serviços comuns, com disputa de preços em ambiente eletrônico.",
+          "A Lei 14.133/2021 manteve o pregão como ferramenta central de compras públicas eficientes.",
+        ],
+        bullets: [
+          "Fase interna: planejamento e edital",
+          "Sessão pública de lances",
+          "Julgamento e ranking de propostas",
+          "Habilitação do melhor classificado",
+          "Homologação e contrato",
+        ],
+      },
+      {
+        id: "sicaf-pregao",
+        title: "SICAF no pregão eletrônico",
+        paragraphs: [
+          "A habilitação cruza automaticamente situação cadastral no SICAF. Certidões vencidas ou níveis incompletos impedem contratação.",
+          "Emitir CRC antes do pregão ajuda a antecipar pendências, mas não substitui cadastro completo e regular.",
+        ],
+      },
+      {
+        id: "dicas-praticas",
+        title: "Boas práticas para vencer pregões",
+        paragraphs: [
+          "Empresas preparadas cadastram-se no SICAF com antecedência, simulam margem de lance e mantêm equipe treinada no portal.",
+        ],
+        bullets: [
+          "Monitorar editais do seu segmento",
+          "Validar CATMAT/CATSER no Nível VI quando aplicável",
+          "Manter certidões com 30+ dias de folga",
+          "Ter procuração e contrato social atualizados",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "O que é pregão eletrônico?",
+        answer:
+          "Modalidade de licitação em que fornecedores disputam preços em sistema eletrônico, com regras de lances e habilitação definidas no edital.",
+      },
+      {
+        question: "Preciso de SICAF para pregão federal?",
+        answer:
+          "Sim. A habilitação verifica regularidade no SICAF para contratações no Compras.gov.br.",
+      },
+      {
+        question: "Qual a diferença entre pregão e concorrência?",
+        answer:
+          "Pregão é voltado a bens e serviços comuns com disputa de lances. Concorrência atende objetos mais complexos, com regras distintas de julgamento.",
+      },
+      {
+        question: "Posso desistir após vencer o pregão?",
+        answer:
+          "Desistência injustificada pode gerar sanções administrativas e impedimento de licitar. Avalie capacidade antes de lançar.",
+      },
+      {
+        question: "Como treinar minha equipe no pregão?",
+        answer:
+          "Use simuladores do portal, acompanhe sessões como observador e conte com assessoria CADBRASIL para primeiros editais.",
+      },
+      {
+        question: "A CADBRASIL acompanha pregões específicos?",
+        answer:
+          "Orientamos habilitação e documentação. O envio de lances é responsabilidade da empresa, com suporte consultivo quando contratado.",
+      },
+    ],
+  },
+  "/documentacao-licitacao": {
+    path: "/documentacao-licitacao",
+    shortTitle: "Documentação licitação",
+    metaTitle: "Documentação para Licitação 2026 — Checklist SICAF e Habilitação | CADBRASIL",
+    metaDescription:
+      "Documentação para licitação pública: checklist completo, certidões, SICAF, procuração, habilitação jurídica e fiscal. Organize tudo com a CADBRASIL.",
+    keywords:
+      "documentacao licitacao, documentos licitacao publica, documentos habilitacao licitacao, certidoes licitacao, documentos sicaf, checklist licitacao",
+    eyebrow: "Habilitação",
+    title: "Documentação para",
+    highlight: "licitação",
+    description:
+      "Checklist completo de documentos para habilitação em licitações: jurídicos, fiscais, trabalhistas, técnicos e cadastrais no SICAF.",
+    quickAnswer:
+      "A documentação para licitação inclui contrato social, procurações, certidões (CND, FGTS, CNDT), comprovações técnicas e econômico-financeiras conforme o edital, além de cadastro SICAF regular no Compras.gov.br.",
+    itemList: [
+      "Certificado digital e-CNPJ A1 ou A3",
+      "Contrato social ou estatuto consolidado",
+      "Cartão CNPJ e comprovante de inscrição",
+      "Documentos do representante legal e procuração",
+      "Certidão negativa de débitos federais (CND)",
+      "Certificado de regularidade FGTS (CRF)",
+      "Certidão negativa de débitos trabalhistas (CNDT)",
+      "Certidões estaduais e municipais quando exigidas",
+      "Balanço patrimonial e demonstrações (Nível V)",
+      "Atestados de capacidade técnica (Nível IV)",
+      "Declarações do edital (menores, ME/EPP, integridade)",
+      "CRC SICAF com status Regular",
+    ],
+    sections: [
+      {
+        id: "documentos-juridicos",
+        title: "Documentos jurídicos e cadastrais",
+        paragraphs: [
+          "O órgão licitante verifica se a empresa existe legalmente, quem a representa e se há impedimentos.",
+          "Divergência entre CNPJ, contrato social e SICAF é uma das principais causas de inabilitação.",
+        ],
+        bullets: [
+          "Contrato social com última alteração",
+          "Ata de eleição de administradores (S/A)",
+          "Procuração com poderes específicos",
+          "Declaração de cumprimento do art. 7º da Lei 14.133",
+        ],
+      },
+      {
+        id: "documentos-fiscais",
+        title: "Certidões fiscais e trabalhistas",
+        paragraphs: [
+          "Regularidade fiscal e trabalhista é verificada no SICAF (Nível III) e pode ser exigida novamente na habilitação do edital.",
+          "Prazo de validade costuma ser de 180 dias — planeje renovação com antecedência.",
+        ],
+      },
+      {
+        id: "documentos-tecnicos",
+        title: "Qualificação técnica e econômico-financeira",
+        paragraphs: [
+          "Editais de maior complexidade exigem atestados, registros profissionais, índices contábeis e garantias.",
+          "Cada edital lista documentos na seção de habilitação — use como checklist mestre.",
+        ],
+      },
+      {
+        id: "organizacao-cadbrasil",
+        title: "Organize documentação com a CADBRASIL",
+        paragraphs: [
+          "Centralizamos emissão, validação e upload no SICAF, com alertas de vencimento e revisão antes de cada pregão.",
+        ],
+        bullets: [
+          "Checklist por edital e por nível SICAF",
+          "Validação cruzada com IA",
+          "Histórico documental seguro",
+          "Suporte na fase de habilitação",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Quais documentos são obrigatórios em toda licitação?",
+        answer:
+          "Varia por edital. Mínimo federal inclui regularidade no SICAF; o edital detalha declarações e anexos adicionais.",
+      },
+      {
+        question: "Documentação do SICAF substitui a do edital?",
+        answer:
+          "Não totalmente. O SICAF cobre base cadastral; o edital pode exigir documentos específicos na habilitação.",
+      },
+      {
+        question: "Com que antecedência devo preparar documentos?",
+        answer:
+          "Idealmente semanas antes do pregão. Certidões e correções cadastrais podem levar dias.",
+      },
+      {
+        question: "Posso enviar documentos vencidos?",
+        answer:
+          "Não. Documentos fora da validade levam à desclassificação ou inabilitação.",
+      },
+      {
+        question: "ME/EPP tem documentação diferenciada?",
+        answer:
+          "Sim. Há declarações e regras de preferência específicas previstas em lei e no edital.",
+      },
+      {
+        question: "A CADBRASIL guarda minha documentação?",
+        answer:
+          "Organizamos e validamos conforme contrato, com foco em conformidade e segurança no fluxo SICAF.",
+      },
+    ],
+  },
 };
 
 export function getLandingPage(path: string): LandingPageData {
