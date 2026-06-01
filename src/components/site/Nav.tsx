@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { CADASTRO_URL, WHATSAPP_URL } from "@/components/site/PageShell";
 
 const links = [
@@ -35,14 +36,7 @@ export function Nav() {
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="flex items-center gap-2 font-display font-bold text-lg">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-brand text-brand-foreground shadow-glow">
-              C
-            </span>
-            <span className="tracking-tight">
-              CAD<span className="text-brand">BRASIL</span>
-            </span>
-          </Link>
+          <BrandLogo asLink />
 
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((l) => (

@@ -5,7 +5,7 @@ import { renderErrorPage } from "./lib/error-page";
 // Add legacy URLs from Search Console / analytics here.
 // Keep values as destination paths in this new site.
 const LEGACY_REDIRECTS: Record<string, string> = {
-  // "/old-page": "/new-page",
+  "/versao2": "/",
 };
 
 function normalizePathname(pathname: string) {

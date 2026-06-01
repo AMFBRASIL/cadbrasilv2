@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Versao2RouteImport } from './routes/versao2'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
 import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
@@ -16,6 +17,7 @@ import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
 import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
+import { Route as LayoutClassicoRouteImport } from './routes/layout-classico'
 import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
 import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
 import { Route as DocumentosNecessariosCadastroSicafRouteImport } from './routes/documentos-necessarios-cadastro-sicaf'
@@ -38,6 +40,11 @@ import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/c
 import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 
+const Versao2Route = Versao2RouteImport.update({
+  id: '/versao2',
+  path: '/versao2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -72,6 +79,11 @@ const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
 const OQueESicafRoute = OQueESicafRouteImport.update({
   id: '/o-que-e-sicaf',
   path: '/o-que-e-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoutClassicoRoute = LayoutClassicoRouteImport.update({
+  id: '/layout-classico',
+  path: '/layout-classico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmpresaInaptaRoute = EmpresaInaptaRouteImport.update({
@@ -207,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
+  '/layout-classico': typeof LayoutClassicoRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -214,6 +227,7 @@ export interface FileRoutesByFullPath {
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
@@ -237,6 +251,7 @@ export interface FileRoutesByTo {
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
+  '/layout-classico': typeof LayoutClassicoRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -244,6 +259,7 @@ export interface FileRoutesByTo {
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
@@ -268,6 +284,7 @@ export interface FileRoutesById {
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
+  '/layout-classico': typeof LayoutClassicoRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -275,6 +292,7 @@ export interface FileRoutesById {
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
@@ -300,6 +318,7 @@ export interface FileRouteTypes {
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
+    | '/layout-classico'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/regularidade-fiscal'
@@ -307,6 +326,7 @@ export interface FileRouteTypes {
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sitemap.xml'
+    | '/versao2'
     | '/api/contact'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
@@ -330,6 +350,7 @@ export interface FileRouteTypes {
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
+    | '/layout-classico'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/regularidade-fiscal'
@@ -337,6 +358,7 @@ export interface FileRouteTypes {
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sitemap.xml'
+    | '/versao2'
     | '/api/contact'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
@@ -360,6 +382,7 @@ export interface FileRouteTypes {
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
+    | '/layout-classico'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/regularidade-fiscal'
@@ -367,6 +390,7 @@ export interface FileRouteTypes {
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sitemap.xml'
+    | '/versao2'
     | '/api/contact'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
@@ -391,6 +415,7 @@ export interface RootRouteChildren {
   DocumentosNecessariosCadastroSicafRoute: typeof DocumentosNecessariosCadastroSicafRoute
   EmitirCrcRoute: typeof EmitirCrcRoute
   EmpresaInaptaRoute: typeof EmpresaInaptaRoute
+  LayoutClassicoRoute: typeof LayoutClassicoRoute
   OQueESicafRoute: typeof OQueESicafRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   RegularidadeFiscalRoute: typeof RegularidadeFiscalRoute
@@ -398,6 +423,7 @@ export interface RootRouteChildren {
   SicafCadastroUnificadoDeFornecedoresRoute: typeof SicafCadastroUnificadoDeFornecedoresRoute
   SicafDigitalRoute: typeof SicafDigitalRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  Versao2Route: typeof Versao2Route
   ApiContactRoute: typeof ApiContactRoute
   FaqSlugRoute: typeof FaqSlugRoute
   GuiaCadastroSicafPassoPassoRoute: typeof GuiaCadastroSicafPassoPassoRoute
@@ -406,6 +432,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/versao2': {
+      id: '/versao2'
+      path: '/versao2'
+      fullPath: '/versao2'
+      preLoaderRoute: typeof Versao2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -453,6 +486,13 @@ declare module '@tanstack/react-router' {
       path: '/o-que-e-sicaf'
       fullPath: '/o-que-e-sicaf'
       preLoaderRoute: typeof OQueESicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/layout-classico': {
+      id: '/layout-classico'
+      path: '/layout-classico'
+      fullPath: '/layout-classico'
+      preLoaderRoute: typeof LayoutClassicoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/empresa-inapta': {
@@ -624,6 +664,7 @@ const rootRouteChildren: RootRouteChildren = {
     DocumentosNecessariosCadastroSicafRoute,
   EmitirCrcRoute: EmitirCrcRoute,
   EmpresaInaptaRoute: EmpresaInaptaRoute,
+  LayoutClassicoRoute: LayoutClassicoRoute,
   OQueESicafRoute: OQueESicafRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   RegularidadeFiscalRoute: RegularidadeFiscalRoute,
@@ -632,6 +673,7 @@ const rootRouteChildren: RootRouteChildren = {
     SicafCadastroUnificadoDeFornecedoresRoute,
   SicafDigitalRoute: SicafDigitalRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  Versao2Route: Versao2Route,
   ApiContactRoute: ApiContactRoute,
   FaqSlugRoute: FaqSlugRoute,
   GuiaCadastroSicafPassoPassoRoute: GuiaCadastroSicafPassoPassoRoute,

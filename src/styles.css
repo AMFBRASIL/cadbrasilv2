@@ -150,4 +150,27 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  /* Versão 2 — visual institucional Compras.gov.br / SICAF */
+  .theme-gov-compras {
+    --background: oklch(0.97 0.02 145);
+    --foreground: oklch(0.22 0.06 145);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.22 0.06 145);
+    --brand: oklch(0.42 0.14 145);
+    --brand-foreground: oklch(0.99 0.005 145);
+    --success: oklch(0.48 0.14 145);
+    --muted: oklch(0.95 0.02 145);
+    --muted-foreground: oklch(0.42 0.05 145);
+    --accent: oklch(0.93 0.03 145);
+    --border: oklch(0.88 0.03 145);
+    --gradient-brand: linear-gradient(135deg, #0f6b38 0%, #168821 100%);
+    --gradient-radial: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.92 0.04 145 / 0.8), transparent 60%);
+  }
+
+  .theme-gov-compras .bg-grid {
+    background-image:
+      linear-gradient(to right, oklch(0.88 0.03 145 / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.88 0.03 145 / 0.5) 1px, transparent 1px);
+  }
 }

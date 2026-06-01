@@ -1,12 +1,11 @@
+import { BrandLogo } from "@/components/site/BrandLogo";
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card/50">
       <div className="mx-auto max-w-7xl px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-2 font-display font-bold text-lg">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-brand text-brand-foreground">C</span>
-            CAD<span className="text-brand">BRASIL</span>
-          </div>
+          <BrandLogo />
           <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
             Especialistas em SICAF, regularização documental e participação em licitações públicas.
             Uma marca do grupo CADBRASIL.
