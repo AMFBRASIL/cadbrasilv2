@@ -1,7 +1,6 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
-import { PRODUCTION_HOSTS, ROBOTS_INDEX } from "./lib/seo";
 
 // Add legacy URLs from Search Console / analytics here.
 // Keep values as destination paths in this new site.
@@ -14,26 +13,6 @@ function normalizePathname(pathname: string) {
   const withoutTrailingSlash = pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
   return withoutTrailingSlash.toLowerCase() || "/";
 }
-
-/** Garante indexação no HTML servido (complementa meta tags; prioridade sobre defaults de preview). */
-const productionIndexMiddleware = createMiddleware().server(async ({ request, next }) => {
-  const response = await next();
-  const host = new URL(request.url).hostname;
-  if (!PRODUCTION_HOSTS.has(host)) {
-    return response;
-  }
-  const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("text/html")) {
-    return response;
-  }
-  const headers = new Headers(response.headers);
-  headers.set("X-Robots-Tag", ROBOTS_INDEX);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
-});
 
 const legacyRedirectMiddleware = createMiddleware().server(async ({ request, next }) => {
   const url = new URL(request.url);
@@ -71,5 +50,5 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
 });
 
 export const startInstance = createStart(() => ({
-  requestMiddleware: [legacyRedirectMiddleware, productionIndexMiddleware, errorMiddleware],
+  requestMiddleware: [legacyRedirectMiddleware, errorMiddleware],
 }));

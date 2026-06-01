@@ -1,0 +1,1 @@
+import{q as o,T as t}from"./index-BfvxBbUu.js";import{S as p}from"./SicafLandingPage-DIbRkY58.js";import"./circle-check-B3zyBSIz.js";import"./circle-question-mark-BiIJSy2N.js";import"./file-text-DflT4pCI.js";const s=()=>o.jsx(p,{page:t});export{s as component};
