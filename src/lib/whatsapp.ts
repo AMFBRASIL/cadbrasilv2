@@ -8,7 +8,7 @@ const UTM_CAMPAIGN_KEY = "cadbrasil_utm_campaign";
 
 /** Rótulos amigáveis por rota (SEO / atendimento). */
 const PATH_LABELS: Record<string, string> = {
-  "/": "Home — SICAF e Compras.gov.br",
+  "/": "Home — SICAF",
   "/layout-classico": "Home (layout clássico)",
   "/como-funciona": "Como funciona",
   "/o-que-e-sicaf": "O que é SICAF",

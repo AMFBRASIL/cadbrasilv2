@@ -140,7 +140,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               logo: OG_IMAGE,
               description: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
               areaServed: "BR",
-              knowsAbout: ["SICAF", "Licitações públicas", "Compras.gov.br"],
+              knowsAbout: ["SICAF", "Licitações públicas", "Credenciamento de fornecedores"],
               sameAs: ["https://cadastro.cadbrasil.com.br"],
             },
             {

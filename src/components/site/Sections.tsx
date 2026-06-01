@@ -31,7 +31,7 @@ export function LogosBar() {
         <span className="hidden sm:inline opacity-30">•</span>
         <span>Especialistas em licitações públicas</span>
         <span className="hidden sm:inline opacity-30">•</span>
-        <span>Integrado ao Compras.gov.br</span>
+        <span>Cadastro SICAF em até 24 horas</span>
       </div>
     </div>
   );

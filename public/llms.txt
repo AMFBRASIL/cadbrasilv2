@@ -31,7 +31,7 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Documentos necessários cadastro SICAF](/documentos-necessarios-cadastro-sicaf): Checklist por nível com ItemList schema (12 documentos).
 - [Como atualizar certificados no SICAF](/como-atualizar-certificados-sicaf): Renovação CND, FGTS, CNDT — HowTo com 6 passos.
 - [Como participar de licitação](/como-participar-de-licitacao): Guia completo SICAF, edital, habilitação e pregão — layout institucional.
-- [Cadastro fornecedor governo](/cadastro-fornecedor-governo): Credenciamento SICAF e Compras.gov.br para fornecedores federais.
+- [Cadastro fornecedor governo](/cadastro-fornecedor-governo): Credenciamento SICAF para fornecedores federais.
 - [Pregão eletrônico](/pregao-eletronico): Modalidade, lances, habilitação e SICAF — HowTo com 6 passos.
 - [Documentação licitação](/documentacao-licitacao): Checklist de 12 documentos para habilitação em licitações.
 

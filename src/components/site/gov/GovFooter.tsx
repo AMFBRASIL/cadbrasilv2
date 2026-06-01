@@ -10,8 +10,8 @@ export function GovFooter() {
             <span className="text-[#b8e6c8]">BRASIL</span>
           </p>
           <p className="mt-4 text-sm text-white/75 max-w-sm leading-relaxed">
-            Especialistas em SICAF, credenciamento no Compras.gov.br e participação em licitações
-            públicas em todo o Brasil.
+            Especialistas em SICAF, credenciamento de fornecedores e participação em licitações
+            públicas em todo o Brasil. Assessoria privada — sem vínculo com órgãos governamentais.
           </p>
         </div>
         <div>
@@ -48,9 +48,9 @@ export function GovFooter() {
               </Link>
             </li>
             <li>
-              <a href="https://www.gov.br/compras" target="_blank" rel="noreferrer" className="hover:text-white">
-                Compras.gov.br ↗
-              </a>
+              <Link to="/o-que-e-sicaf" className="hover:text-white">
+                O que é SICAF
+              </Link>
             </li>
           </ul>
         </div>

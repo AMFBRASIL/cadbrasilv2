@@ -769,7 +769,7 @@ export const landingPages: Record<string, LandingPageData> = {
           "Verificação automática de regularidade fiscal",
           "Consulta de níveis de habilitação por edital",
           "Emissão de CRC como comprovante cadastral",
-          "Integração com Compras.gov.br e PNCP",
+          "Consulta de editais federais e no PNCP",
         ],
       },
       {
@@ -1169,7 +1169,7 @@ export const landingPages: Record<string, LandingPageData> = {
     shortTitle: "Como participar de licitação",
     metaTitle: "Como Participar de Licitação Pública 2026 — Guia Completo | CADBRASIL",
     metaDescription:
-      "Aprenda como participar de licitação pública no Brasil: SICAF, Compras.gov.br, habilitação, documentos, pregão eletrônico e cadastro de fornecedor com a CADBRASIL.",
+      "Aprenda como participar de licitação pública no Brasil: SICAF, habilitação, documentos, pregão eletrônico e cadastro de fornecedor com a CADBRASIL.",
     keywords:
       "como participar de licitacao, participar licitacao publica, licitacao governo federal, sicaf licitacao, fornecedor governo, habilitacao licitacao",
     eyebrow: "Licitações públicas",
@@ -1178,7 +1178,7 @@ export const landingPages: Record<string, LandingPageData> = {
     description:
       "Guia prático para empresas que querem vender ao governo: do cadastro SICAF à habilitação no pregão, com requisitos claros e suporte CADBRASIL.",
     quickAnswer:
-      "Para participar de licitação federal, cadastre-se no SICAF (Compras.gov.br), mantenha certidões e níveis de habilitação regulares, leia o edital e envie proposta no portal indicado — a habilitação é verificada após a disputa.",
+      "Para participar de licitação federal, mantenha o SICAF regular, certidões e níveis de habilitação em dia, leia o edital e envie proposta no portal indicado — a habilitação é verificada após a disputa.",
     howToSteps: [
       {
         name: "Regularize o CNPJ e o SICAF",
@@ -1186,7 +1186,7 @@ export const landingPages: Record<string, LandingPageData> = {
       },
       {
         name: "Identifique oportunidades",
-        text: "Consulte editais no Compras.gov.br e PNCP. Filtre por objeto, região e exigências de habilitação compatíveis com seu porte.",
+        text: "Consulte editais no PNCP e nos portais oficiais de licitação. Filtre por objeto, região e exigências de habilitação compatíveis com seu porte.",
       },
       {
         name: "Analise o edital",
@@ -1215,7 +1215,7 @@ export const landingPages: Record<string, LandingPageData> = {
         ],
         bullets: [
           "CNPJ ativo e regular na Receita Federal",
-          "SICAF regular no Compras.gov.br",
+          "SICAF regular e níveis de habilitação ativos",
           "Certificado digital e-CNPJ válido",
           "Certidões fiscais e trabalhistas dentro do prazo",
           "Capacidade técnica e financeira quando exigida",
@@ -1247,7 +1247,7 @@ export const landingPages: Record<string, LandingPageData> = {
       {
         question: "Preciso de SICAF para participar de licitação?",
         answer:
-          "Para a maioria das licitações federais no Compras.gov.br, sim. O cadastro regular é verificado na habilitação.",
+          "Para a maioria das licitações federais, sim. O cadastro SICAF regular é verificado na habilitação.",
       },
       {
         question: "MEI pode participar de licitação?",
@@ -1279,9 +1279,9 @@ export const landingPages: Record<string, LandingPageData> = {
   "/cadastro-fornecedor-governo": {
     path: "/cadastro-fornecedor-governo",
     shortTitle: "Cadastro fornecedor governo",
-    metaTitle: "Cadastro de Fornecedor do Governo 2026 — SICAF e Compras.gov.br | CADBRASIL",
+    metaTitle: "Cadastro de Fornecedor do Governo 2026 — SICAF | CADBRASIL",
     metaDescription:
-      "Cadastro de fornecedor do governo federal: SICAF, Compras.gov.br, níveis de habilitação, e-CNPJ, certidões e CRC. Assessoria CADBRASIL em até 24h.",
+      "Cadastro de fornecedor do governo federal: SICAF, níveis de habilitação, e-CNPJ, certidões e CRC. Assessoria CADBRASIL em até 24h.",
     keywords:
       "cadastro fornecedor governo, fornecedor governo federal, cadastro sicaf, compras gov fornecedor, credenciamento fornecedor publico, habilitacao fornecedor",
     eyebrow: "Fornecedor público",
@@ -1290,7 +1290,7 @@ export const landingPages: Record<string, LandingPageData> = {
     description:
       "Credencie sua empresa como fornecedora do Governo Federal com cadastro SICAF estruturado, documentação validada e acompanhamento até o CRC regular.",
     quickAnswer:
-      "O cadastro de fornecedor do governo federal é feito no SICAF (Compras.gov.br) com certificado e-CNPJ, dados da empresa, níveis de habilitação e certidões válidas. O CRC comprova situação regular.",
+      "O cadastro de fornecedor do governo federal é feito no SICAF com certificado e-CNPJ, dados da empresa, níveis de habilitação e certidões válidas. O CRC comprova situação regular.",
     sections: [
       {
         id: "o-que-e-cadastro",
@@ -1302,9 +1302,9 @@ export const landingPages: Record<string, LandingPageData> = {
       },
       {
         id: "portal-compras",
-        title: "Compras.gov.br e certificado digital",
+        title: "Portal federal e certificado digital",
         paragraphs: [
-          "O acesso ao credenciamento exige certificado digital e-CNPJ (A1 ou A3) do representante legal.",
+          "O acesso ao credenciamento no SICAF exige certificado digital e-CNPJ (A1 ou A3) do representante legal.",
           "Dados societários devem coincidir com Receita Federal, contrato social e procurações — divergências geram indeferimento.",
         ],
         bullets: [
@@ -1342,7 +1342,7 @@ export const landingPages: Record<string, LandingPageData> = {
       {
         question: "Cadastro de fornecedor é o mesmo que SICAF?",
         answer:
-          "No âmbito federal, o cadastro de fornecedor é realizado via SICAF no Compras.gov.br. Estados podem ter cadastros próprios.",
+          "No âmbito federal, o cadastro de fornecedor é realizado via SICAF. Estados podem ter cadastros próprios.",
       },
       {
         question: "Quanto tempo demora o cadastro de fornecedor?",
@@ -1361,7 +1361,7 @@ export const landingPages: Record<string, LandingPageData> = {
     shortTitle: "Pregão eletrônico",
     metaTitle: "Pregão Eletrônico 2026 — Como Participar e Habilitação SICAF | CADBRASIL",
     metaDescription:
-      "Guia de pregão eletrônico: como funciona, SICAF, lances, habilitação, documentos e cadastro de fornecedor no Compras.gov.br com suporte CADBRASIL.",
+      "Guia de pregão eletrônico: como funciona, SICAF, lances, habilitação, documentos e cadastro de fornecedor com suporte CADBRASIL.",
     keywords:
       "pregao eletronico, como participar pregao eletronico, pregao compras gov, sicaf pregao, licitacao pregao federal, fornecedor pregao eletronico",
     eyebrow: "Modalidade licitatória",
@@ -1370,7 +1370,7 @@ export const landingPages: Record<string, LandingPageData> = {
     description:
       "Entenda como disputar pregões eletrônicos federais com SICAF regular, proposta correta e habilitação sem surpresas — com assessoria especializada.",
     quickAnswer:
-      "No pregão eletrônico federal, empresas credenciadas no Compras.gov.br enviam lances em sessão pública; após a classificação, o vencedor passa por habilitação com verificação SICAF e documentos do edital.",
+      "No pregão eletrônico federal, empresas com SICAF regular enviam lances em sessão pública; após a classificação, o vencedor passa por habilitação com verificação cadastral e documentos do edital.",
     howToSteps: [
       {
         name: "Tenha SICAF e e-CNPJ válidos",
@@ -1444,7 +1444,7 @@ export const landingPages: Record<string, LandingPageData> = {
       {
         question: "Preciso de SICAF para pregão federal?",
         answer:
-          "Sim. A habilitação verifica regularidade no SICAF para contratações no Compras.gov.br.",
+          "Sim. A habilitação verifica regularidade no SICAF nas contratações federais.",
       },
       {
         question: "Qual a diferença entre pregão e concorrência?",
@@ -1482,7 +1482,7 @@ export const landingPages: Record<string, LandingPageData> = {
     description:
       "Checklist completo de documentos para habilitação em licitações: jurídicos, fiscais, trabalhistas, técnicos e cadastrais no SICAF.",
     quickAnswer:
-      "A documentação para licitação inclui contrato social, procurações, certidões (CND, FGTS, CNDT), comprovações técnicas e econômico-financeiras conforme o edital, além de cadastro SICAF regular no Compras.gov.br.",
+      "A documentação para licitação inclui contrato social, procurações, certidões (CND, FGTS, CNDT), comprovações técnicas e econômico-financeiras conforme o edital, além de cadastro SICAF regular.",
     itemList: [
       "Certificado digital e-CNPJ A1 ou A3",
       "Contrato social ou estatuto consolidado",
