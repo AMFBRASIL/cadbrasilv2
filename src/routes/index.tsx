@@ -63,19 +63,13 @@ function Hero() {
             className="inline-flex items-center gap-2 text-xs font-semibold bg-card border border-border px-3 py-1.5 rounded-full shadow-card hover:shadow-soft transition"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-success pulse-ring" />
-            Novo: Assistente CADBRASIL 2026 com IA
+            SICAF | COMPRASNET - 2026
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
 
-          <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight text-balance">
-            Seu SICAF{" "}
-            <span className="relative inline-block">
-              <span className="bg-gradient-brand bg-clip-text text-transparent">regularizado</span>
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                <path d="M2 6 Q100 0 198 5" stroke="oklch(0.68 0.17 158)" strokeWidth="3" strokeLinecap="round" />
-              </svg>
-            </span>{" "}
-            sem complicação.
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight text-balance">
+            <span className="bg-gradient-brand bg-clip-text text-transparent">SICAF | COMPRASNET</span>
+            {", Cadastre sua empresa e participe de licitações em todo o Brasil"}
           </h1>
 
           <p className="mt-7 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl">
