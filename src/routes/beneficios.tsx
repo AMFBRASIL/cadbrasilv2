@@ -4,12 +4,14 @@ import {
   TrendingUp, Award, Users, Clock,
 } from "lucide-react";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL, breadcrumbJsonLd } from "@/components/site/PageShell";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 
 export const Route = createFileRoute("/beneficios")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       { title: "Benefícios CADBRASIL — Por Que Empresas Escolhem Nosso SICAF" },
       { name: "description", content: "Velocidade, segurança jurídica, tecnologia com IA, suporte humano especializado e gestão contínua de certidões. Veja por que +8.000 fornecedores confiam na CADBRASIL." },
       { name: "keywords", content: "beneficios sicaf, vantagens cadbrasil, melhor consultoria sicaf, suporte sicaf, gestao certidoes, regularidade fiscal automatica" },

@@ -10,6 +10,7 @@ import { Faq } from "@/components/site/Faq";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 const SOCIAL_PREVIEW_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7c46af53-295b-4a74-8239-56f32ba6ed77/id-preview-d78bce4c--3b6f7a39-c5c1-4555-ad8d-dccb06150a62.lovable.app-1779886304111.png";
@@ -17,6 +18,7 @@ const SOCIAL_PREVIEW_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.de
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       { title: "CADBRASIL · Cadastro e Regularização SICAF em até 24h" },
       { name: "description", content: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas. Tecnologia, IA e atendimento humano. Marca CADBRASIL." },
       { name: "keywords", content: "cadastro sicaf, atualizar sicaf, regularizar sicaf, consultoria sicaf, cadastro compras.gov.br, fornecedor governo, licitações públicas, emitir CRC sicaf, regularidade fiscal sicaf" },

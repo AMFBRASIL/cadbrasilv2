@@ -7,7 +7,7 @@ import {
   glossarioSicaf,
   CADASTRO_SICAF_PASSO_A_PASSO_PATH,
 } from "@/data/guiaCadastroSicaf";
-import { OG_IMAGE, ROBOTS_INDEX, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
+import { OG_IMAGE, robotsMetaTags, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
 
 const CANONICAL = `${SITE_ORIGIN}${CADASTRO_SICAF_PASSO_A_PASSO_PATH}`;
 
@@ -28,8 +28,7 @@ export function buildGuiaHead(canonicalPath: string = CADASTRO_SICAF_PASSO_A_PAS
       { name: "description", content: guiaCadastroSicafMeta.description },
       { name: "keywords", content: guiaCadastroSicafMeta.keywords },
       { name: "author", content: "CADBRASIL" },
-      { name: "robots", content: ROBOTS_INDEX },
-      { name: "googlebot", content: ROBOTS_INDEX },
+      ...robotsMetaTags(),
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },

@@ -4,12 +4,14 @@ import {
   Headphones, Sparkles, CheckCircle2, Lock,
 } from "lucide-react";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL, breadcrumbJsonLd } from "@/components/site/PageShell";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 
 export const Route = createFileRoute("/assistente")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       { title: "Assistente CADBRASIL 2026 — IA para Monitorar seu SICAF" },
       { name: "description", content: "Conheça o Assistente CADBRASIL: app com IA que monitora seu SICAF 24/7, identifica pendências e renova certidões automaticamente com suporte humano." },
       { name: "keywords", content: "assistente cadbrasil, software sicaf, automação sicaf, IA licitações, gestão certidões, anydesk sicaf, atualizar sicaf automatico" },

@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { FaqCategoryRichPage } from "@/components/site/FaqCategoryRichPage";
 import { getFaqCategory } from "@/data/faq/pages";
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
-import { OG_IMAGE, ROBOTS_INDEX, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
+import { OG_IMAGE, robotsMetaTags, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq/$slug")({
   loader: ({ params }) => {
@@ -18,12 +18,11 @@ export const Route = createFileRoute("/faq/$slug")({
 
     return {
       meta: [
+        ...robotsMetaTags(),
         { title: c.metaTitle },
         { name: "description", content: c.metaDescription },
         { name: "keywords", content: c.keywords },
         { name: "author", content: "CADBRASIL" },
-        { name: "robots", content: ROBOTS_INDEX },
-        { name: "googlebot", content: ROBOTS_INDEX },
         { property: "og:type", content: "article" },
         { property: "og:locale", content: "pt_BR" },
         { property: "og:site_name", content: "CADBRASIL" },

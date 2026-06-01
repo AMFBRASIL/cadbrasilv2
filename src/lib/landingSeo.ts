@@ -1,6 +1,6 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
 import type { LandingPageData } from "@/data/sicafLandingPages";
-import { OG_IMAGE, ROBOTS_INDEX, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
+import { OG_IMAGE, robotsMetaTags, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
 
 export function buildLandingHead(page: LandingPageData) {
   const canonical = `${SITE_ORIGIN}${page.path}`;
@@ -112,8 +112,7 @@ export function buildLandingHead(page: LandingPageData) {
       { name: "description", content: page.metaDescription },
       { name: "keywords", content: page.keywords },
       { name: "author", content: "CADBRASIL" },
-      { name: "robots", content: ROBOTS_INDEX },
-      { name: "googlebot", content: ROBOTS_INDEX },
+      ...robotsMetaTags(),
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },

@@ -1,0 +1,1 @@
+import{p as o,J as a}from"./index-DmagTcpc.js";import{S as r}from"./SicafLandingPage-CbqF2rka.js";import"./circle-check-CNKcvURY.js";import"./circle-question-mark-od2f8sid.js";import"./file-text-CLx0INsE.js";function n(){return o.jsx(r,{page:a})}export{n as component};

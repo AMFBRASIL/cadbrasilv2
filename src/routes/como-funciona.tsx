@@ -3,6 +3,7 @@ import {
   MessageCircle, FileCheck2, Bot, ShieldCheck, ArrowRight, Clock, Headphones, Sparkles,
 } from "lucide-react";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL, breadcrumbJsonLd } from "@/components/site/PageShell";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 
@@ -47,6 +48,7 @@ const steps = [
 export const Route = createFileRoute("/como-funciona")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       { title: "Como Funciona o Processo SICAF com a CADBRASIL — Passo a Passo" },
       { name: "description", content: "Veja como funciona o processo CADBRASIL para Cadastro, Regularização e Atualização SICAF: 5 passos simples, com IA, especialistas e suporte contínuo. Pronto em até 24h." },
       { name: "keywords", content: "como fazer sicaf, processo sicaf, passo a passo sicaf, consultoria sicaf, regularizar sicaf rapido, cadastro sicaf compras.gov.br" },

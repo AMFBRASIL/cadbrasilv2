@@ -2,5 +2,27 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "buildCommand": "bun run build:vercel",
-  "installCommand": "bun install"
+  "installCommand": "bun install",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "cadbrasil.com.br" }],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.cadbrasil.com.br" }],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ]
+    }
+  ]
 }

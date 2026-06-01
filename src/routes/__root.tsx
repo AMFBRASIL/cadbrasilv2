@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import { AnalyticsPageView } from "@/components/site/AnalyticsPageView";
 import { BING_UET_SCRIPT, GTAG_AW_ID, GTM_ID, GTM_SCRIPT, GTAG_INIT_SCRIPT } from "@/lib/analytics";
-import { OG_IMAGE, ROBOTS_INDEX, SITE_ORIGIN } from "@/lib/seo";
+import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
 
@@ -89,8 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "geo.region", content: "BR" },
       { name: "theme-color", content: BRAND_THEME_COLOR },
       { name: "msapplication-TileColor", content: BRAND_THEME_COLOR },
-      { name: "robots", content: ROBOTS_INDEX },
-      { name: "googlebot", content: ROBOTS_INDEX },
+      ...robotsMetaTags(),
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },
       { property: "og:type", content: "website" },

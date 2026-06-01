@@ -5,6 +5,7 @@ import {
   Award, ArrowRight, Gavel, Landmark,
 } from "lucide-react";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL, breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 
@@ -18,6 +19,7 @@ const miniFaq = [
 export const Route = createFileRoute("/o-que-e-sicaf")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       { title: "O que é SICAF? Guia Completo do Cadastro de Fornecedores" },
       { name: "description", content: "Entenda o que é o SICAF, como funciona, níveis de habilitação e por que ele é obrigatório para vender ao governo. Saiba como regularizar com a CADBRASIL." },
       { name: "keywords", content: "o que é sicaf, sistema cadastramento unificado fornecedores, sicaf compras gov br, cadastro sicaf, níveis sicaf, habilitação licitação, fornecedor governo federal" },

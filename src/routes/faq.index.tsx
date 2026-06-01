@@ -2,12 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, HelpCircle, BookOpen } from "lucide-react";
 import { PageShell, PageHero, InlineCta, breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
 import { faqCategories } from "@/data/faq/pages";
+import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
 
 export const Route = createFileRoute("/faq/")({
   head: () => ({
     meta: [
+      ...robotsMetaTags(),
       {
         title: "FAQ SICAF 2026 — 15 Guias sobre Cadastro, Licitações e CADBRASIL",
       },
@@ -20,10 +22,6 @@ export const Route = createFileRoute("/faq/")({
         name: "keywords",
         content:
           "faq sicaf, perguntas sicaf, guia sicaf, cadastro sicaf duvidas, licitacoes publicas faq, cadbrasil ajuda, sicaf 2026",
-      },
-      {
-        name: "robots",
-        content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
       },
       { property: "og:title", content: "FAQ SICAF — 15 temas especializados | CADBRASIL" },
       {
