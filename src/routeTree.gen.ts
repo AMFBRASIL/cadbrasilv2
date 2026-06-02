@@ -22,6 +22,7 @@ import { Route as LayoutClassicoRouteImport } from './routes/layout-classico'
 import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
 import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
 import { Route as DocumentosNecessariosCadastroSicafRouteImport } from './routes/documentos-necessarios-cadastro-sicaf'
+import { Route as DocumentacaoSicafRouteImport } from './routes/documentacao-sicaf'
 import { Route as DocumentacaoLicitacaoRouteImport } from './routes/documentacao-licitacao'
 import { Route as CredenciamentoSicafDigitalRouteImport } from './routes/credenciamento-sicaf-digital'
 import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
@@ -111,6 +112,11 @@ const DocumentosNecessariosCadastroSicafRoute =
     path: '/documentos-necessarios-cadastro-sicaf',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DocumentacaoSicafRoute = DocumentacaoSicafRouteImport.update({
+  id: '/documentacao-sicaf',
+  path: '/documentacao-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocumentacaoLicitacaoRoute = DocumentacaoLicitacaoRouteImport.update({
   id: '/documentacao-licitacao',
   path: '/documentacao-licitacao',
@@ -245,6 +251,7 @@ export interface FileRoutesByFullPath {
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
+  '/documentacao-sicaf': typeof DocumentacaoSicafRoute
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
@@ -281,6 +288,7 @@ export interface FileRoutesByTo {
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
+  '/documentacao-sicaf': typeof DocumentacaoSicafRoute
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
@@ -318,6 +326,7 @@ export interface FileRoutesById {
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
+  '/documentacao-sicaf': typeof DocumentacaoSicafRoute
   '/documentos-necessarios-cadastro-sicaf': typeof DocumentosNecessariosCadastroSicafRoute
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
@@ -356,6 +365,7 @@ export interface FileRouteTypes {
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
+    | '/documentacao-sicaf'
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
@@ -392,6 +402,7 @@ export interface FileRouteTypes {
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
+    | '/documentacao-sicaf'
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
@@ -428,6 +439,7 @@ export interface FileRouteTypes {
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
+    | '/documentacao-sicaf'
     | '/documentos-necessarios-cadastro-sicaf'
     | '/emitir-crc'
     | '/empresa-inapta'
@@ -465,6 +477,7 @@ export interface RootRouteChildren {
   CredenciamentoRoute: typeof CredenciamentoRoute
   CredenciamentoSicafDigitalRoute: typeof CredenciamentoSicafDigitalRoute
   DocumentacaoLicitacaoRoute: typeof DocumentacaoLicitacaoRoute
+  DocumentacaoSicafRoute: typeof DocumentacaoSicafRoute
   DocumentosNecessariosCadastroSicafRoute: typeof DocumentosNecessariosCadastroSicafRoute
   EmitirCrcRoute: typeof EmitirCrcRoute
   EmpresaInaptaRoute: typeof EmpresaInaptaRoute
@@ -575,6 +588,13 @@ declare module '@tanstack/react-router' {
       path: '/documentos-necessarios-cadastro-sicaf'
       fullPath: '/documentos-necessarios-cadastro-sicaf'
       preLoaderRoute: typeof DocumentosNecessariosCadastroSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentacao-sicaf': {
+      id: '/documentacao-sicaf'
+      path: '/documentacao-sicaf'
+      fullPath: '/documentacao-sicaf'
+      preLoaderRoute: typeof DocumentacaoSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/documentacao-licitacao': {
@@ -745,6 +765,7 @@ const rootRouteChildren: RootRouteChildren = {
   CredenciamentoRoute: CredenciamentoRoute,
   CredenciamentoSicafDigitalRoute: CredenciamentoSicafDigitalRoute,
   DocumentacaoLicitacaoRoute: DocumentacaoLicitacaoRoute,
+  DocumentacaoSicafRoute: DocumentacaoSicafRoute,
   DocumentosNecessariosCadastroSicafRoute:
     DocumentosNecessariosCadastroSicafRoute,
   EmitirCrcRoute: EmitirCrcRoute,

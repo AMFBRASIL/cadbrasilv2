@@ -34,6 +34,7 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Cadastro fornecedor governo](/cadastro-fornecedor-governo): Credenciamento SICAF para fornecedores federais.
 - [Pregão eletrônico](/pregao-eletronico): Modalidade, lances, habilitação e SICAF — HowTo com 6 passos.
 - [Documentação licitação](/documentacao-licitacao): Checklist de 12 documentos para habilitação em licitações.
+- [Documentação SICAF](/documentacao-sicaf): Checklist interativo completo por nível I a VI, validades e CTAs de cadastro.
 
 ## FAQ especializado (15 temas)
 

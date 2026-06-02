@@ -20,6 +20,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/como-regularizar-sicaf-empresa", changefreq: "weekly", priority: "0.94" },
           { path: "/cadastro-sicaf-licitacao-publica", changefreq: "weekly", priority: "0.94" },
           { path: "/documentos-necessarios-cadastro-sicaf", changefreq: "weekly", priority: "0.94" },
+          { path: "/documentacao-sicaf", changefreq: "weekly", priority: "0.95" },
           { path: "/como-atualizar-certificados-sicaf", changefreq: "weekly", priority: "0.94" },
           { path: "/como-participar-de-licitacao", changefreq: "weekly", priority: "0.93" },
           { path: "/cadastro-fornecedor-governo", changefreq: "weekly", priority: "0.93" },

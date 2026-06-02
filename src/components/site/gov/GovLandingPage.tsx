@@ -14,6 +14,7 @@ const RELATED_LINKS = [
   { to: "/cadastro-fornecedor-governo", label: "Cadastro fornecedor governo" },
   { to: "/pregao-eletronico", label: "Pregão eletrônico" },
   { to: "/documentacao-licitacao", label: "Documentação para licitação" },
+  { to: "/documentacao-sicaf", label: "Documentação SICAF" },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia cadastro SICAF passo a passo" },
   { to: "/faq", label: "Central de perguntas frequentes" },
 ] as const;

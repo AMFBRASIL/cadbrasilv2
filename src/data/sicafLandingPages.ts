@@ -1,3 +1,5 @@
+import { documentacaoSicafFaqs, itemListForSchema } from "./documentacaoSicaf";
+
 export type LandingFaq = { question: string; answer: string };
 
 export type LandingSection = {
@@ -1574,6 +1576,46 @@ export const landingPages: Record<string, LandingPageData> = {
           "Organizamos e validamos conforme contrato, com foco em conformidade e segurança no fluxo SICAF.",
       },
     ],
+  },
+  "/documentacao-sicaf": {
+    path: "/documentacao-sicaf",
+    shortTitle: "Documentação SICAF",
+    metaTitle: "Documentação SICAF 2026 — Checklist Completo de Documentos | CADBRASIL",
+    metaDescription:
+      "Checklist profissional de documentação SICAF: certificado e-CNPJ, certidões, contrato social e documentos por nível I a VI. Valide tudo e inicie seu cadastro com a CADBRASIL.",
+    keywords:
+      "documentacao sicaf, documentos sicaf, checklist sicaf, certidoes sicaf, cadastro sicaf documentos, habilitacao sicaf, niveis sicaf documentos",
+    eyebrow: "Referência documental",
+    title: "Documentação completa para",
+    highlight: "cadastro no SICAF",
+    description:
+      "Checklist profissional por nível de habilitação (I a VI), validades de certidões e pré-requisitos para credenciamento federal.",
+    quickAnswer:
+      "Para o SICAF são necessários e-CNPJ, dados cadastrais (Nível I), documentos jurídicos (II), certidões fiscais e trabalhistas válidas (III) e, conforme o edital, comprovações técnicas, financeiras e linhas de fornecimento (IV a VI).",
+    itemList: itemListForSchema,
+    sections: [
+      {
+        id: "niveis-habilitacao",
+        title: "Documentação por nível de habilitação",
+        paragraphs: [
+          "O SICAF organiza a habilitação em níveis progressivos. A maioria dos fornecedores precisa concluir pelo menos os Níveis I, II e III antes de licitar com segurança.",
+          "Objetos de maior complexidade ou valor exigem comprovação técnica (IV), econômico-financeira (V) e cadastro em catálogos (VI).",
+        ],
+      },
+      {
+        id: "validade-certidoes",
+        title: "Validade e monitoramento",
+        paragraphs: [
+          "Certidões federais, FGTS e CNDT costumam ter validade entre 90 e 180 dias. O vencimento sem renovação gera irregularidade no CRC e impede habilitação em pregões.",
+        ],
+        bullets: [
+          "Calendário de renovação com antecedência",
+          "Conferência de poderes do e-CNPJ",
+          "Versão consolidada do contrato social",
+        ],
+      },
+    ],
+    faqs: documentacaoSicafFaqs,
   },
 };
 

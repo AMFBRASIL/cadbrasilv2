@@ -33,3 +33,4 @@ High-value pages:
 - https://cadbrasil.com.br/cadastro-fornecedor-governo
 - https://cadbrasil.com.br/pregao-eletronico
 - https://cadbrasil.com.br/documentacao-licitacao
+- https://cadbrasil.com.br/documentacao-sicaf
