@@ -21,6 +21,7 @@ const PATH_LABELS: Record<string, string> = {
   "/pregao-eletronico": "Pregão eletrônico",
   "/documentacao-licitacao": "Documentação para licitação",
   "/documentacao-sicaf": "Documentação SICAF — checklist completo",
+  "/quem-pode-se-cadastrar-no-sicaf": "Quem pode se cadastrar no SICAF",
 };
 
 export type WhatsAppMessageOptions = {

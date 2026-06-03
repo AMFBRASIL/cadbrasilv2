@@ -34,3 +34,4 @@ High-value pages:
 - https://cadbrasil.com.br/pregao-eletronico
 - https://cadbrasil.com.br/documentacao-licitacao
 - https://cadbrasil.com.br/documentacao-sicaf
+- https://cadbrasil.com.br/quem-pode-se-cadastrar-no-sicaf

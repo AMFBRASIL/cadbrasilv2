@@ -15,6 +15,7 @@ import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
 import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
 import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
 import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
+import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
 import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
@@ -76,6 +77,12 @@ const RegularidadeFiscalRoute = RegularidadeFiscalRouteImport.update({
   path: '/regularidade-fiscal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuemPodeSeCadastrarNoSicafRoute =
+  QuemPodeSeCadastrarNoSicafRouteImport.update({
+    id: '/quem-pode-se-cadastrar-no-sicaf',
+    path: '/quem-pode-se-cadastrar-no-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PregaoEletronicoRoute = PregaoEletronicoRouteImport.update({
   id: '/pregao-eletronico',
   path: '/pregao-eletronico',
@@ -259,6 +266,7 @@ export interface FileRoutesByFullPath {
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
@@ -296,6 +304,7 @@ export interface FileRoutesByTo {
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
@@ -334,6 +343,7 @@ export interface FileRoutesById {
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
@@ -373,6 +383,7 @@ export interface FileRouteTypes {
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
@@ -410,6 +421,7 @@ export interface FileRouteTypes {
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
@@ -447,6 +459,7 @@ export interface FileRouteTypes {
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
@@ -485,6 +498,7 @@ export interface RootRouteChildren {
   OQueESicafRoute: typeof OQueESicafRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   PregaoEletronicoRoute: typeof PregaoEletronicoRoute
+  QuemPodeSeCadastrarNoSicafRoute: typeof QuemPodeSeCadastrarNoSicafRoute
   RegularidadeFiscalRoute: typeof RegularidadeFiscalRoute
   RenovacaoSicafRoute: typeof RenovacaoSicafRoute
   SicafCadastroUnificadoDeFornecedoresRoute: typeof SicafCadastroUnificadoDeFornecedoresRoute
@@ -539,6 +553,13 @@ declare module '@tanstack/react-router' {
       path: '/regularidade-fiscal'
       fullPath: '/regularidade-fiscal'
       preLoaderRoute: typeof RegularidadeFiscalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-pode-se-cadastrar-no-sicaf': {
+      id: '/quem-pode-se-cadastrar-no-sicaf'
+      path: '/quem-pode-se-cadastrar-no-sicaf'
+      fullPath: '/quem-pode-se-cadastrar-no-sicaf'
+      preLoaderRoute: typeof QuemPodeSeCadastrarNoSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pregao-eletronico': {
@@ -774,6 +795,7 @@ const rootRouteChildren: RootRouteChildren = {
   OQueESicafRoute: OQueESicafRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   PregaoEletronicoRoute: PregaoEletronicoRoute,
+  QuemPodeSeCadastrarNoSicafRoute: QuemPodeSeCadastrarNoSicafRoute,
   RegularidadeFiscalRoute: RegularidadeFiscalRoute,
   RenovacaoSicafRoute: RenovacaoSicafRoute,
   SicafCadastroUnificadoDeFornecedoresRoute:

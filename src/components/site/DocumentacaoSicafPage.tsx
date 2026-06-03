@@ -29,6 +29,7 @@ const RELATED = [
   { to: "/regularidade-fiscal", label: "Regularidade fiscal" },
   { to: "/emitir-crc", label: "Emitir CRC" },
   { to: "/documentacao-licitacao", label: "Documentação para licitação" },
+  { to: "/quem-pode-se-cadastrar-no-sicaf", label: "Quem pode se cadastrar no SICAF" },
   { to: "/faq", label: "Perguntas frequentes" },
 ] as const;
 

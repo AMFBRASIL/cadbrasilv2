@@ -1,0 +1,1 @@
+import{w as o,a6 as t}from"./index-i6zgBxmM.js";import{G as p}from"./GovLandingPage-D3rfLHj4.js";import"./GovNav-Cnfb7S22.js";import"./circle-check-DVBJ8wO8.js";import"./circle-question-mark-C4CEwUI9.js";import"./file-text-C15j3D4y.js";const e=()=>o.jsx(p,{page:t});export{e as component};

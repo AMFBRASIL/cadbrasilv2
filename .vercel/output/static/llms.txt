@@ -35,6 +35,7 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Pregão eletrônico](/pregao-eletronico): Modalidade, lances, habilitação e SICAF — HowTo com 6 passos.
 - [Documentação licitação](/documentacao-licitacao): Checklist de 12 documentos para habilitação em licitações.
 - [Documentação SICAF](/documentacao-sicaf): Checklist interativo completo por nível I a VI, validades e CTAs de cadastro.
+- [Quem pode se cadastrar no SICAF](/quem-pode-se-cadastrar-no-sicaf): Elegibilidade por porte (MEI, ME, EPP, LTDA, S/A, EIRELI), requisitos, quem não pode — JSON-LD QAPage, ItemList, DefinedTermSet, FAQPage.
 
 ## FAQ especializado (15 temas)
 
