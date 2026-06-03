@@ -1,0 +1,33 @@
+import { j as jsxRuntimeExports } from "../_libs/react.mjs";
+import { X as page$1 } from "./router-BUzfRi7u.mjs";
+import { G as GovLandingPage } from "./GovLandingPage-Bjg9kSWR.mjs";
+import "../_libs/tanstack__query-core.mjs";
+import "../_libs/tanstack__react-query.mjs";
+import "../_libs/tanstack__react-router.mjs";
+import "../_libs/tanstack__router-core.mjs";
+import "../_libs/tanstack__history.mjs";
+import "../_libs/cookie-es.mjs";
+import "../_libs/seroval.mjs";
+import "../_libs/seroval-plugins.mjs";
+import "node:stream/web";
+import "node:stream";
+import "../_libs/react-dom.mjs";
+import "util";
+import "crypto";
+import "async_hooks";
+import "stream";
+import "../_libs/isbot.mjs";
+import "../_libs/clsx.mjs";
+import "../_libs/tailwind-merge.mjs";
+import "../_libs/radix-ui__react-label.mjs";
+import "../_libs/radix-ui__react-primitive.mjs";
+import "../_libs/radix-ui__react-slot.mjs";
+import "../_libs/radix-ui__react-compose-refs.mjs";
+import "../_libs/class-variance-authority.mjs";
+import "../_libs/lucide-react.mjs";
+import "../_libs/zod.mjs";
+import "./GovNav-DAXOE4Us.mjs";
+const SplitComponent = () => /* @__PURE__ */ jsxRuntimeExports.jsx(GovLandingPage, { page: page$1 });
+export {
+  SplitComponent as component
+};

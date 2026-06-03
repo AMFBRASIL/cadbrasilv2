@@ -28,6 +28,7 @@ import {
 import { getDefaultIntent } from "@/lib/whatsapp";
 
 const RELATED = [
+  { to: "/cadastrar-no-sicaf", label: "Cadastrar no SICAF" },
   { to: "/cadastro-sicaf", label: "Cadastro SICAF" },
   { to: "/como-cadastrar-empresa-sicaf", label: "Como cadastrar empresa" },
   { to: "/documentacao-sicaf", label: "Documentação SICAF" },
