@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, LogIn } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { CADASTRO_URL, FORNECEDOR_URL } from "@/components/site/PageShell";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
@@ -28,14 +28,15 @@ export function GovNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="bg-[#062a18] border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-1.5 flex justify-end">
+      <div className="bg-[#062a18] border-b border-[#FFCD07]/30">
+        <div className="mx-auto max-w-7xl px-4 py-2 flex justify-end">
           <a
             href={FORNECEDOR_URL}
             target="_blank"
             rel="noreferrer"
-            className="text-xs sm:text-sm font-semibold text-white/90 hover:text-[#FFCD07] transition"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0a4d2c] bg-[#FFCD07] hover:bg-[#ffe566] px-3 py-1 rounded-md transition shadow-sm"
           >
+            <LogIn className="h-3.5 w-3.5" aria-hidden />
             Acesso Fornecedor
           </a>
         </div>
@@ -73,6 +74,15 @@ export function GovNav() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-2 shrink-0">
+              <a
+                href={FORNECEDOR_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold text-white border-2 border-[#FFCD07] hover:bg-[#FFCD07]/15 transition whitespace-nowrap"
+              >
+                <LogIn className="h-4 w-4" aria-hidden />
+                Acesso Fornecedor
+              </a>
               <WhatsAppLink
                 intent="Quero tirar dúvidas sobre SICAF pelo menu do site."
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold text-[#0a4d2c] bg-white hover:bg-[#f0f7f2] transition"
@@ -118,6 +128,16 @@ export function GovNav() {
                   className="px-3 py-3 rounded-md text-white/95 hover:bg-white/10 text-sm font-medium"
                 >
                   Contato
+                </a>
+                <a
+                  href={FORNECEDOR_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-3 rounded-md text-[#0a4d2c] bg-[#FFCD07] hover:bg-[#ffe566] text-sm font-bold inline-flex items-center gap-2"
+                >
+                  <LogIn className="h-4 w-4" aria-hidden />
+                  Acesso Fornecedor
                 </a>
                 <WhatsAppLink
                   intent="Quero tirar dúvidas sobre SICAF pelo menu mobile."

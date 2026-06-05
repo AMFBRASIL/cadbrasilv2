@@ -1,1 +1,0 @@
-import{D as r,_ as o}from"./index-DSOHavhQ.js";import{S as t}from"./SicafLandingPage-Ce15304q.js";import"./circle-check-BlTuJ1dS.js";import"./circle-question-mark-BBC9Um-z.js";import"./file-text-BpLV_4PG.js";function e(){return r.jsx(t,{page:o})}export{e as component};

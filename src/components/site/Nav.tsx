@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, LogIn } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { CADASTRO_URL, FORNECEDOR_URL } from "@/components/site/PageShell";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
@@ -31,14 +31,15 @@ export function Nav() {
         scrolled ? "py-0" : "py-0"
       }`}
     >
-      <div className="bg-foreground/95 text-background">
-        <div className="mx-auto max-w-7xl px-4 py-1.5 flex justify-end">
+      <div className="bg-foreground text-background">
+        <div className="mx-auto max-w-7xl px-4 py-2 flex justify-end">
           <a
             href={FORNECEDOR_URL}
             target="_blank"
             rel="noreferrer"
-            className="text-xs sm:text-sm font-semibold text-background/90 hover:text-background transition"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold bg-[#FFCD07] text-[#0a4d2c] hover:opacity-90 px-3 py-1 rounded-md transition"
           >
+            <LogIn className="h-3.5 w-3.5" aria-hidden />
             Acesso Fornecedor
           </a>
         </div>
@@ -71,6 +72,15 @@ export function Nav() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
+            <a
+              href={FORNECEDOR_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-foreground border-2 border-[#FFCD07] hover:bg-[#FFCD07]/10 transition"
+            >
+              <LogIn className="h-4 w-4" aria-hidden />
+              Acesso Fornecedor
+            </a>
             <WhatsAppLink
               intent="Quero tirar dúvidas sobre SICAF pelo menu do site."
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-foreground border border-border hover:bg-accent transition"
@@ -115,6 +125,16 @@ export function Nav() {
                 className="px-3 py-3 rounded-lg hover:bg-accent text-sm font-medium"
               >
                 Contato
+              </a>
+              <a
+                href={FORNECEDOR_URL}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+                className="px-3 py-3 rounded-lg bg-[#FFCD07] text-[#0a4d2c] font-bold text-sm inline-flex items-center gap-2"
+              >
+                <LogIn className="h-4 w-4" aria-hidden />
+                Acesso Fornecedor
               </a>
               <a
                 href={CADASTRO_URL}
