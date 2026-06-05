@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL, FORNECEDOR_URL } from "@/components/site/PageShell";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 /** Mesmos itens do menu da versão anterior (Nav.tsx). */
@@ -28,6 +28,18 @@ export function GovNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      <div className="bg-[#062a18] border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-4 py-1.5 flex justify-end">
+          <a
+            href={FORNECEDOR_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs sm:text-sm font-semibold text-white/90 hover:text-[#FFCD07] transition"
+          >
+            Acesso Fornecedor
+          </a>
+        </div>
+      </div>
       {/* Faixa estilo gov.br */}
       <div className="h-1 bg-[#FFCD07]" aria-hidden />
       <div

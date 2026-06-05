@@ -8,7 +8,7 @@ export function GovHero() {
   return (
     <section
       id="top"
-      className="relative pt-[5.5rem] sm:pt-28 pb-16 sm:pb-28 overflow-x-clip bg-gradient-to-br from-[#0a4d2c] via-[#0f6b38] to-[#168821]"
+      className="relative pt-[6.75rem] sm:pt-32 pb-16 sm:pb-28 overflow-x-clip bg-gradient-to-br from-[#0a4d2c] via-[#0f6b38] to-[#168821]"
     >
       {/* Padrão institucional */}
       <div

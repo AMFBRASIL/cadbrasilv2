@@ -75,7 +75,7 @@ export function CadastrarNoSicafPage() {
       <main>
         <nav
           aria-label="Breadcrumb"
-          className="pt-[5.5rem] sm:pt-28 pb-2 mx-auto max-w-5xl px-4 text-sm text-[#0a4d2c]/70"
+          className="pt-[6.75rem] sm:pt-32 pb-2 mx-auto max-w-5xl px-4 text-sm text-[#0a4d2c]/70"
         >
           <ol className="flex flex-wrap items-center gap-2">
             <li>

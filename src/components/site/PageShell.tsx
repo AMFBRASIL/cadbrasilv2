@@ -11,6 +11,7 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { getDefaultIntent } from "@/lib/whatsapp";
 
 export const CADASTRO_URL = "https://cadastro.cadbrasil.com.br";
+export const FORNECEDOR_URL = "https://fornecedor.cadbrasil.com.br";
 export { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export function PageShell({

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CADASTRO_URL, FORNECEDOR_URL } from "@/components/site/PageShell";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const links = [
@@ -28,10 +28,22 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-2" : "py-4"
+        scrolled ? "py-0" : "py-0"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="bg-foreground/95 text-background">
+        <div className="mx-auto max-w-7xl px-4 py-1.5 flex justify-end">
+          <a
+            href={FORNECEDOR_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs sm:text-sm font-semibold text-background/90 hover:text-background transition"
+          >
+            Acesso Fornecedor
+          </a>
+        </div>
+      </div>
+      <div className={`mx-auto max-w-7xl px-4 ${scrolled ? "pt-2" : "pt-4"}`}>
         <div
           className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all ${
             scrolled ? "glass shadow-soft" : "bg-transparent"
