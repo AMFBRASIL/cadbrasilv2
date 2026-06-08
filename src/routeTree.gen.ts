@@ -37,6 +37,7 @@ import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-
 import { Route as CadastroSicafLicitacaoPublicaRouteImport } from './routes/cadastro-sicaf-licitacao-publica'
 import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
 import { Route as CadastroFornecedorGovernoRouteImport } from './routes/cadastro-fornecedor-governo'
+import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as CadastrarNoSicafRouteImport } from './routes/cadastrar-no-sicaf'
 import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
@@ -199,6 +200,11 @@ const CadastroFornecedorGovernoRoute =
     path: '/cadastro-fornecedor-governo',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CadastrarNoSicafRoute = CadastrarNoSicafRouteImport.update({
   id: '/cadastrar-no-sicaf',
   path: '/cadastrar-no-sicaf',
@@ -252,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
+  '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
@@ -291,6 +298,7 @@ export interface FileRoutesByTo {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
+  '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
@@ -331,6 +339,7 @@ export interface FileRoutesById {
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
+  '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
   '/cadastro-sicaf': typeof CadastroSicafRoute
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
@@ -372,6 +381,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastrar-no-sicaf'
+    | '/cadastro'
     | '/cadastro-fornecedor-governo'
     | '/cadastro-sicaf'
     | '/cadastro-sicaf-licitacao-publica'
@@ -411,6 +421,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastrar-no-sicaf'
+    | '/cadastro'
     | '/cadastro-fornecedor-governo'
     | '/cadastro-sicaf'
     | '/cadastro-sicaf-licitacao-publica'
@@ -450,6 +461,7 @@ export interface FileRouteTypes {
     | '/autoatendimento-sicaf'
     | '/beneficios'
     | '/cadastrar-no-sicaf'
+    | '/cadastro'
     | '/cadastro-fornecedor-governo'
     | '/cadastro-sicaf'
     | '/cadastro-sicaf-licitacao-publica'
@@ -490,6 +502,7 @@ export interface RootRouteChildren {
   AutoatendimentoSicafRoute: typeof AutoatendimentoSicafRoute
   BeneficiosRoute: typeof BeneficiosRoute
   CadastrarNoSicafRoute: typeof CadastrarNoSicafRoute
+  CadastroRoute: typeof CadastroRoute
   CadastroFornecedorGovernoRoute: typeof CadastroFornecedorGovernoRoute
   CadastroSicafRoute: typeof CadastroSicafRoute
   CadastroSicafLicitacaoPublicaRoute: typeof CadastroSicafLicitacaoPublicaRoute
@@ -722,6 +735,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CadastroFornecedorGovernoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cadastrar-no-sicaf': {
       id: '/cadastrar-no-sicaf'
       path: '/cadastrar-no-sicaf'
@@ -794,6 +814,7 @@ const rootRouteChildren: RootRouteChildren = {
   AutoatendimentoSicafRoute: AutoatendimentoSicafRoute,
   BeneficiosRoute: BeneficiosRoute,
   CadastrarNoSicafRoute: CadastrarNoSicafRoute,
+  CadastroRoute: CadastroRoute,
   CadastroFornecedorGovernoRoute: CadastroFornecedorGovernoRoute,
   CadastroSicafRoute: CadastroSicafRoute,
   CadastroSicafLicitacaoPublicaRoute: CadastroSicafLicitacaoPublicaRoute,

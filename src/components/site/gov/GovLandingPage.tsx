@@ -16,6 +16,7 @@ const RELATED_LINKS = [
   { to: "/documentacao-licitacao", label: "Documentação para licitação" },
   { to: "/documentacao-sicaf", label: "Documentação SICAF" },
   { to: "/quem-pode-se-cadastrar-no-sicaf", label: "Quem pode se cadastrar no SICAF" },
+  { to: "/cadastro", label: "Cadastro SICAF" },
   { to: "/cadastrar-no-sicaf", label: "Cadastrar no SICAF" },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia cadastro SICAF passo a passo" },
   { to: "/faq", label: "Central de perguntas frequentes" },
