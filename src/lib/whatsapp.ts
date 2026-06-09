@@ -17,6 +17,7 @@ const PATH_LABELS: Record<string, string> = {
   "/faq": "FAQ — central de dúvidas",
   "/cadastro-sicaf-passo-a-passo": "Guia cadastro SICAF passo a passo",
   "/como-participar-de-licitacao": "Como participar de licitação",
+  "/como-participar-de-licitacao-resumo": "Como participar de licitação (resumo)",
   "/cadastro-fornecedor-governo": "Cadastro fornecedor governo",
   "/pregao-eletronico": "Pregão eletrônico",
   "/documentacao-licitacao": "Documentação para licitação",

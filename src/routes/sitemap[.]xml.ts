@@ -26,6 +26,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/cadastro", changefreq: "weekly", priority: "0.99" },
           { path: "/como-atualizar-certificados-sicaf", changefreq: "weekly", priority: "0.94" },
           { path: "/como-participar-de-licitacao", changefreq: "weekly", priority: "0.93" },
+          { path: "/como-participar-de-licitacao-resumo", changefreq: "weekly", priority: "0.94" },
           { path: "/cadastro-fornecedor-governo", changefreq: "weekly", priority: "0.93" },
           { path: "/pregao-eletronico", changefreq: "weekly", priority: "0.93" },
           { path: "/documentacao-licitacao", changefreq: "weekly", priority: "0.93" },

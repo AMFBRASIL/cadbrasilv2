@@ -11,6 +11,7 @@ import type { LandingPageData } from "@/data/sicafLandingPages";
 
 const RELATED_LINKS = [
   { to: "/como-participar-de-licitacao", label: "Como participar de licitação" },
+  { to: "/como-participar-de-licitacao-resumo", label: "Licitação — resumo prático" },
   { to: "/cadastro-fornecedor-governo", label: "Cadastro fornecedor governo" },
   { to: "/pregao-eletronico", label: "Pregão eletrônico" },
   { to: "/documentacao-licitacao", label: "Documentação para licitação" },
