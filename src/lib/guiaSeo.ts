@@ -110,7 +110,7 @@ export function buildGuiaHead(canonicalPath: string = CADASTRO_SICAF_PASSO_A_PAS
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(guiaFaqs)),
+        children: JSON.stringify(faqJsonLd(guiaFaqs, canonical)),
       },
       {
         type: "application/ld+json",

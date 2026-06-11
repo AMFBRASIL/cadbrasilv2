@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Plus, Minus, Search } from "lucide-react";
 
-const items = [
+export const homeFaqItems = [
   { q: "O que é o SICAF e por que minha empresa precisa?", a: "SICAF é o Sistema de Cadastramento Unificado de Fornecedores. Ele habilita sua empresa a participar de licitações públicas em todo o Brasil. Sem cadastro ativo e regular, você fica de fora dos pregões e dispensas." },
   { q: "Quanto tempo leva o cadastro com a CADBRASIL?", a: "Na maioria dos casos, em até 24 horas com toda a documentação em mãos. Casos com pendências fiscais podem levar mais tempo — e nós resolvemos cada uma delas." },
   { q: "O que é o Assistente CADBRASIL?", a: "É um aplicativo leve que se instala no computador da sua empresa e conecta sua operação ao nosso time. Ele identifica vencimentos, renova certidões automaticamente e permite suporte remoto via AnyDesk." },
@@ -16,8 +16,8 @@ export function Faq() {
 
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    if (!normalized) return items;
-    return items.filter((it) =>
+    if (!normalized) return homeFaqItems;
+    return homeFaqItems.filter((it) =>
       `${it.q} ${it.a}`.toLowerCase().includes(normalized),
     );
   }, [query]);

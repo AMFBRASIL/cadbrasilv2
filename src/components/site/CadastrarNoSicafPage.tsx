@@ -26,6 +26,10 @@ import {
 import { getDefaultIntent } from "@/lib/whatsapp";
 
 const RELATED = [
+  {
+    to: "/como-cadastrar-no-sicaf-e-vender-para-o-governo",
+    label: "Cadastrar e vender ao governo",
+  },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia passo a passo completo" },
   { to: "/quem-pode-se-cadastrar-no-sicaf", label: "Quem pode se cadastrar" },
   { to: "/documentacao-sicaf", label: "Documentação necessária" },

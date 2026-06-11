@@ -38,6 +38,7 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 - [Documentação SICAF](/documentacao-sicaf): Checklist interativo completo por nível I a VI, validades e CTAs de cadastro.
 - [Quem pode se cadastrar no SICAF](/quem-pode-se-cadastrar-no-sicaf): Elegibilidade por porte (MEI, ME, EPP, LTDA, S/A, EIRELI), requisitos, quem não pode — JSON-LD QAPage, ItemList, DefinedTermSet, FAQPage.
 - [Cadastrar no SICAF](/cadastrar-no-sicaf): Como cadastrar passo a passo com CADBRASIL — HowTo 5 passos, comparativo, checklist pré-cadastro, JSON-LD QAPage/HowTo/Service.
+- [Como cadastrar no SICAF e vender para o governo](/como-cadastrar-no-sicaf-e-vender-para-o-governo): Guia pilar 7 passos (credenciamento → contrato), níveis I–VI, canais de venda, comparativo, 9 FAQs — CTAs fortes CADBRASIL, JSON-LD Article/HowTo/FAQPage/QAPage/ItemList/WebPage+Speakable/Service.
 - [Cadastro SICAF](/cadastro): Landing de conversão com CTAs grandes para cadastro.cadbrasil.com.br — WebPage, RegisterAction, Service, HowTo, FAQPage, QAPage, ItemList.
 
 ## FAQ especializado (15 temas)

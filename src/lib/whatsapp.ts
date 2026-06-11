@@ -24,6 +24,8 @@ const PATH_LABELS: Record<string, string> = {
   "/documentacao-sicaf": "Documentação SICAF — checklist completo",
   "/quem-pode-se-cadastrar-no-sicaf": "Quem pode se cadastrar no SICAF",
   "/cadastrar-no-sicaf": "Cadastrar no SICAF — passo a passo",
+  "/como-cadastrar-no-sicaf-e-vender-para-o-governo":
+    "Como cadastrar no SICAF e vender ao governo",
   "/cadastro": "Cadastro SICAF — landing conversão",
 };
 

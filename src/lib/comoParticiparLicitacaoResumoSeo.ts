@@ -1,4 +1,5 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
+import { qaPageJsonLd } from "@/lib/structuredData";
 import {
   howToStepsSchema,
   itemListResumo,
@@ -104,7 +105,7 @@ export function buildLicitacaoResumoHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(licitacaoResumoFaqs)),
+        children: JSON.stringify(faqJsonLd(licitacaoResumoFaqs, canonical)),
       },
       {
         type: "application/ld+json",
@@ -144,20 +145,15 @@ export function buildLicitacaoResumoHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "QAPage",
-          mainEntity: {
-            "@type": "Question",
-            name: "Como participar de uma licitação do governo?",
-            text: "Qual é o passo a passo resumido para participar de licitação pública no Brasil?",
-            answerCount: 1,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: licitacaoResumoMeta.quickAnswer,
-            },
-          },
-        }),
+        children: JSON.stringify(
+          qaPageJsonLd({
+            questionName: "Como participar de uma licitação do governo?",
+            questionText:
+              "Qual é o passo a passo resumido para participar de licitação pública no Brasil?",
+            answerText: licitacaoResumoMeta.quickAnswer,
+            pageUrl: canonical,
+          }),
+        ),
       },
     ],
   };

@@ -47,7 +47,7 @@ export function buildLandingHead(page: LandingPageData) {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(page.faqs)),
+        children: JSON.stringify(faqJsonLd(page.faqs, canonical)),
       },
       {
         type: "application/ld+json",

@@ -39,8 +39,11 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row gap-2 justify-between text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} CADBRASIL · Uma marca CADBRASIL. Todos os direitos reservados.</div>
+        <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row gap-4 justify-between text-xs text-muted-foreground">
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} CADBRASIL · Assessoria SICAF e licitações públicas</p>
+            <p>52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA</p>
+          </div>
           <div className="flex gap-4">
             <a href="#" className="hover:text-foreground">Política de Privacidade</a>
             <a href="#" className="hover:text-foreground">LGPD</a>

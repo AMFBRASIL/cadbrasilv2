@@ -1,4 +1,5 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
+import { qaPageJsonLd } from "@/lib/structuredData";
 import {
   definedTermsPorte,
   elegiveisItemList,
@@ -88,7 +89,7 @@ export function buildQuemPodeHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(quemPodeFaqs)),
+        children: JSON.stringify(faqJsonLd(quemPodeFaqs, canonical)),
       },
       {
         type: "application/ld+json",
@@ -144,20 +145,15 @@ export function buildQuemPodeHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "QAPage",
-          mainEntity: {
-            "@type": "Question",
-            name: "Quem pode se cadastrar no SICAF?",
-            text: "Quais tipos de empresa podem se credenciar no SICAF para licitar com o governo federal?",
-            answerCount: 1,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: quemPodeMeta.quickAnswer,
-            },
-          },
-        }),
+        children: JSON.stringify(
+          qaPageJsonLd({
+            questionName: "Quem pode se cadastrar no SICAF?",
+            questionText:
+              "Quais tipos de empresa podem se credenciar no SICAF para licitar com o governo federal?",
+            answerText: quemPodeMeta.quickAnswer,
+            pageUrl: canonical,
+          }),
+        ),
       },
     ],
   };

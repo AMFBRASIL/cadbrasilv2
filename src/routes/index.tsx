@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { homeFaqItems } from "@/components/site/Faq";
 import { HomeVersao2Page } from "@/components/site/HomeVersao2Page";
 import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
+import { faqJsonLd, qaPageJsonLd } from "@/lib/structuredData";
+
+const HOME_URL = `${SITE_ORIGIN}/`;
+const HOME_QA_ANSWER =
+  "O SICAF (Sistema de Cadastramento Unificado de Fornecedores) habilita sua empresa a participar de licitações públicas em todo o Brasil. Sem cadastro ativo e regular, você fica de fora dos pregões e dispensas. A CADBRASIL conduz credenciamento e regularização em até 24 horas.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,6 +54,26 @@ export const Route = createFileRoute("/")({
           areaServed: "BR",
           serviceType: ["Cadastro SICAF", "Regularização SICAF", "Atualização SICAF", "Renovação SICAF"],
         }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          faqJsonLd(
+            homeFaqItems.map((it) => ({ question: it.q, answer: it.a })),
+            HOME_URL,
+          ),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          qaPageJsonLd({
+            questionName: "O que é o SICAF e por que minha empresa precisa?",
+            questionText: "Por que uma empresa precisa do cadastro SICAF para vender ao governo?",
+            answerText: HOME_QA_ANSWER,
+            pageUrl: HOME_URL,
+          }),
+        ),
       },
     ],
   }),

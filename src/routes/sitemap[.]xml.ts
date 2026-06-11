@@ -23,6 +23,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/documentacao-sicaf", changefreq: "weekly", priority: "0.95" },
           { path: "/quem-pode-se-cadastrar-no-sicaf", changefreq: "weekly", priority: "0.95" },
           { path: "/cadastrar-no-sicaf", changefreq: "weekly", priority: "0.97" },
+          {
+            path: "/como-cadastrar-no-sicaf-e-vender-para-o-governo",
+            changefreq: "weekly",
+            priority: "0.98",
+          },
           { path: "/cadastro", changefreq: "weekly", priority: "0.99" },
           { path: "/como-atualizar-certificados-sicaf", changefreq: "weekly", priority: "0.94" },
           { path: "/como-participar-de-licitacao", changefreq: "weekly", priority: "0.93" },

@@ -206,27 +206,4 @@ export function InlineCta({
   );
 }
 
-export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((it, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: it.name,
-      item: it.url,
-    })),
-  };
-}
-
-export function faqJsonLd(items: { question: string; answer: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((it) => ({
-      "@type": "Question",
-      name: it.question,
-      acceptedAnswer: { "@type": "Answer", text: it.answer },
-    })),
-  };
-}
+export { breadcrumbJsonLd, faqJsonLd } from "@/lib/structuredData";

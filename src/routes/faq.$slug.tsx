@@ -66,7 +66,7 @@ export const Route = createFileRoute("/faq/$slug")({
         },
         {
           type: "application/ld+json",
-          children: JSON.stringify(faqJsonLd(c.items)),
+          children: JSON.stringify(faqJsonLd(c.items, canonical)),
         },
         {
           type: "application/ld+json",

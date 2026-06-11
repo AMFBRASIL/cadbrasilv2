@@ -69,6 +69,7 @@ export const Route = createFileRoute("/faq/")({
         children: JSON.stringify(
           faqJsonLd(
             faqCategories.flatMap((c) => c.items.slice(0, 2)).slice(0, 12),
+            `${ORIGIN}/faq`,
           ),
         ),
       },

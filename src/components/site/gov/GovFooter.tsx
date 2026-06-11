@@ -55,8 +55,11 @@ export function GovFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} CADBRASIL · Assessoria SICAF e licitações públicas
+      <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-white/60 space-y-1">
+        <p>© {new Date().getFullYear()} CADBRASIL · Assessoria SICAF e licitações públicas</p>
+        <p className="text-white/50">
+          52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA
+        </p>
       </div>
     </footer>
   );

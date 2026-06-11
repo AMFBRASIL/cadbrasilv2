@@ -32,6 +32,7 @@ import { Route as ComoParticiparDeLicitacaoResumoRouteImport } from './routes/co
 import { Route as ComoParticiparDeLicitacaoRouteImport } from './routes/como-participar-de-licitacao'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
 import { Route as ComoFazerCadastroNoSicafRouteImport } from './routes/como-fazer-cadastro-no-sicaf'
+import { Route as ComoCadastrarNoSicafEVenderParaOGovernoRouteImport } from './routes/como-cadastrar-no-sicaf-e-vender-para-o-governo'
 import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
 import { Route as ComoAtualizarCertificadosSicafRouteImport } from './routes/como-atualizar-certificados-sicaf'
 import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-sicaf-passo-a-passo'
@@ -172,6 +173,12 @@ const ComoFazerCadastroNoSicafRoute =
     path: '/como-fazer-cadastro-no-sicaf',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ComoCadastrarNoSicafEVenderParaOGovernoRoute =
+  ComoCadastrarNoSicafEVenderParaOGovernoRouteImport.update({
+    id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
+    path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ComoCadastrarEmpresaSicafRoute =
   ComoCadastrarEmpresaSicafRouteImport.update({
     id: '/como-cadastrar-empresa-sicaf',
@@ -272,6 +279,7 @@ export interface FileRoutesByFullPath {
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
+  '/como-cadastrar-no-sicaf-e-vender-para-o-governo': typeof ComoCadastrarNoSicafEVenderParaOGovernoRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
@@ -313,6 +321,7 @@ export interface FileRoutesByTo {
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
+  '/como-cadastrar-no-sicaf-e-vender-para-o-governo': typeof ComoCadastrarNoSicafEVenderParaOGovernoRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
@@ -355,6 +364,7 @@ export interface FileRoutesById {
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
+  '/como-cadastrar-no-sicaf-e-vender-para-o-governo': typeof ComoCadastrarNoSicafEVenderParaOGovernoRoute
   '/como-fazer-cadastro-no-sicaf': typeof ComoFazerCadastroNoSicafRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
@@ -398,6 +408,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-passo-a-passo'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
+    | '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/como-participar-de-licitacao'
@@ -439,6 +450,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-passo-a-passo'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
+    | '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/como-participar-de-licitacao'
@@ -480,6 +492,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-passo-a-passo'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
+    | '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
     | '/como-fazer-cadastro-no-sicaf'
     | '/como-funciona'
     | '/como-participar-de-licitacao'
@@ -522,6 +535,7 @@ export interface RootRouteChildren {
   CadastroSicafPassoAPassoRoute: typeof CadastroSicafPassoAPassoRoute
   ComoAtualizarCertificadosSicafRoute: typeof ComoAtualizarCertificadosSicafRoute
   ComoCadastrarEmpresaSicafRoute: typeof ComoCadastrarEmpresaSicafRoute
+  ComoCadastrarNoSicafEVenderParaOGovernoRoute: typeof ComoCadastrarNoSicafEVenderParaOGovernoRoute
   ComoFazerCadastroNoSicafRoute: typeof ComoFazerCadastroNoSicafRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   ComoParticiparDeLicitacaoRoute: typeof ComoParticiparDeLicitacaoRoute
@@ -714,6 +728,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoFazerCadastroNoSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-cadastrar-no-sicaf-e-vender-para-o-governo': {
+      id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      fullPath: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      preLoaderRoute: typeof ComoCadastrarNoSicafEVenderParaOGovernoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/como-cadastrar-empresa-sicaf': {
       id: '/como-cadastrar-empresa-sicaf'
       path: '/como-cadastrar-empresa-sicaf'
@@ -842,6 +863,8 @@ const rootRouteChildren: RootRouteChildren = {
   CadastroSicafPassoAPassoRoute: CadastroSicafPassoAPassoRoute,
   ComoAtualizarCertificadosSicafRoute: ComoAtualizarCertificadosSicafRoute,
   ComoCadastrarEmpresaSicafRoute: ComoCadastrarEmpresaSicafRoute,
+  ComoCadastrarNoSicafEVenderParaOGovernoRoute:
+    ComoCadastrarNoSicafEVenderParaOGovernoRoute,
   ComoFazerCadastroNoSicafRoute: ComoFazerCadastroNoSicafRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
   ComoParticiparDeLicitacaoRoute: ComoParticiparDeLicitacaoRoute,

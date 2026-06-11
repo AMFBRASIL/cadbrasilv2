@@ -54,7 +54,7 @@ export const Route = createFileRoute("/o-que-e-sicaf")({
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(miniFaq)),
+        children: JSON.stringify(faqJsonLd(miniFaq, `${ORIGIN}/o-que-e-sicaf`)),
       },
     ],
   }),

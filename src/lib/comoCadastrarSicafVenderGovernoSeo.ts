@@ -1,39 +1,40 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
-import { qaPageJsonLd } from "@/lib/structuredData";
 import {
-  cadastrarNoSicafFaqs,
-  cadastrarNoSicafMeta,
-  itemListAntesDeComecar,
-  passosCadastroCadbrasil,
-} from "@/data/cadastrarNoSicaf";
+  howToStepsSchema,
+  itemListJornada,
+  itemListRequisitos,
+  venderGovernoFaqs,
+  venderGovernoMeta,
+} from "@/data/comoCadastrarSicafVenderGoverno";
 import { OG_IMAGE, robotsMetaTags, SEO_MODIFIED, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
+import { qaPageJsonLd } from "@/lib/structuredData";
 
-export function buildCadastrarNoSicafHead() {
-  const canonical = `${SITE_ORIGIN}${cadastrarNoSicafMeta.path}`;
+export function buildVenderGovernoHead() {
+  const canonical = `${SITE_ORIGIN}${venderGovernoMeta.path}`;
 
   return {
     meta: [
-      { title: cadastrarNoSicafMeta.metaTitle },
-      { name: "description", content: cadastrarNoSicafMeta.metaDescription },
-      { name: "keywords", content: cadastrarNoSicafMeta.keywords },
+      { title: venderGovernoMeta.metaTitle },
+      { name: "description", content: venderGovernoMeta.metaDescription },
+      { name: "keywords", content: venderGovernoMeta.keywords },
       { name: "author", content: "CADBRASIL" },
       ...robotsMetaTags(),
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },
-      { property: "og:title", content: cadastrarNoSicafMeta.metaTitle },
-      { property: "og:description", content: cadastrarNoSicafMeta.metaDescription },
+      { property: "og:title", content: venderGovernoMeta.metaTitle },
+      { property: "og:description", content: venderGovernoMeta.metaDescription },
       { property: "og:url", content: canonical },
       { property: "og:image", content: OG_IMAGE },
       { property: "article:published_time", content: SEO_PUBLISHED },
       { property: "article:modified_time", content: SEO_MODIFIED },
-      { property: "article:section", content: "Cadastro SICAF" },
-      { property: "article:tag", content: "cadastrar no sicaf" },
-      { property: "article:tag", content: "cadastro sicaf 2026" },
-      { property: "article:tag", content: "credenciamento fornecedor" },
+      { property: "article:section", content: "Cadastro SICAF e licitações" },
+      { property: "article:tag", content: "cadastrar sicaf vender governo" },
+      { property: "article:tag", content: "fornecedor governo federal" },
+      { property: "article:tag", content: "credenciamento sicaf 2026" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: cadastrarNoSicafMeta.metaTitle },
-      { name: "twitter:description", content: cadastrarNoSicafMeta.metaDescription },
+      { name: "twitter:title", content: venderGovernoMeta.metaTitle },
+      { name: "twitter:description", content: venderGovernoMeta.metaDescription },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
@@ -47,14 +48,14 @@ export function buildCadastrarNoSicafHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: cadastrarNoSicafMeta.metaTitle,
-          description: cadastrarNoSicafMeta.metaDescription,
+          headline: venderGovernoMeta.metaTitle,
+          description: venderGovernoMeta.metaDescription,
           image: OG_IMAGE,
           author: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
           publisher: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
           mainEntityOfPage: canonical,
-          articleSection: "Como cadastrar no SICAF",
-          keywords: cadastrarNoSicafMeta.keywords,
+          articleSection: "Como cadastrar no SICAF e vender ao governo",
+          keywords: venderGovernoMeta.keywords,
           inLanguage: "pt-BR",
           datePublished: SEO_PUBLISHED,
           dateModified: SEO_MODIFIED,
@@ -65,28 +66,17 @@ export function buildCadastrarNoSicafHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "HowTo",
-          name: "Como cadastrar no SICAF com a CADBRASIL",
-          description: cadastrarNoSicafMeta.metaDescription,
+          name: "Como cadastrar no SICAF e vender para o governo",
+          description: venderGovernoMeta.metaDescription,
           image: OG_IMAGE,
-          totalTime: "P1D",
-          estimatedCost: {
-            "@type": "MonetaryAmount",
-            currency: "BRL",
-            value: "0",
-            description:
-              "Credenciamento oficial gratuito no governo; assessoria CADBRASIL conforme plano contratado.",
-          },
-          tool: [
-            { "@type": "HowToTool", name: "Certificado digital e-CNPJ" },
-            { "@type": "HowToTool", name: "Portal cadastro.cadbrasil.com.br" },
-          ],
+          totalTime: "P7D",
           inLanguage: "pt-BR",
-          step: passosCadastroCadbrasil.map((s, i) => ({
+          step: howToStepsSchema.map((s, i) => ({
             "@type": "HowToStep",
             position: i + 1,
-            name: s.titulo,
-            text: s.descricao,
-            url: `${canonical}#${s.id}`,
+            name: s.name,
+            text: s.text,
+            url: `${canonical}#jornada-${i + 1}`,
           })),
         }),
       },
@@ -95,11 +85,11 @@ export function buildCadastrarNoSicafHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          name: "Cadastro assistido no SICAF",
-          description: cadastrarNoSicafMeta.metaDescription,
+          name: "Cadastro SICAF e habilitação para vender ao governo",
+          description: venderGovernoMeta.metaDescription,
           provider: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
           areaServed: { "@type": "Country", name: "Brasil" },
-          serviceType: "Cadastrar no SICAF — credenciamento federal",
+          serviceType: "Credenciamento SICAF e consultoria em licitações públicas",
           offers: {
             "@type": "Offer",
             url: "https://cadastro.cadbrasil.com.br",
@@ -114,22 +104,37 @@ export function buildCadastrarNoSicafHead() {
         children: JSON.stringify(
           breadcrumbJsonLd([
             { name: "Início", url: `${SITE_ORIGIN}/` },
-            { name: cadastrarNoSicafMeta.shortTitle, url: canonical },
+            { name: "Cadastro SICAF", url: `${SITE_ORIGIN}/cadastro` },
+            { name: venderGovernoMeta.shortTitle, url: canonical },
           ]),
         ),
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(cadastrarNoSicafFaqs, canonical)),
+        children: JSON.stringify(faqJsonLd(venderGovernoFaqs, canonical)),
       },
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
-          name: "O que você precisa antes de cadastrar no SICAF",
-          numberOfItems: itemListAntesDeComecar.length,
-          itemListElement: itemListAntesDeComecar.map((name, index) => ({
+          name: "Jornada: cadastrar no SICAF e vender ao governo",
+          numberOfItems: itemListJornada.length,
+          itemListElement: itemListJornada.map((name, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name,
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Requisitos para cadastro SICAF e venda ao governo",
+          numberOfItems: itemListRequisitos.length,
+          itemListElement: itemListRequisitos.map((name, index) => ({
             "@type": "ListItem",
             position: index + 1,
             name,
@@ -141,20 +146,20 @@ export function buildCadastrarNoSicafHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: cadastrarNoSicafMeta.metaTitle,
-          description: cadastrarNoSicafMeta.metaDescription,
+          name: venderGovernoMeta.metaTitle,
+          description: venderGovernoMeta.metaDescription,
           url: canonical,
           inLanguage: "pt-BR",
           datePublished: SEO_PUBLISHED,
           dateModified: SEO_MODIFIED,
           about: {
             "@type": "Thing",
-            name: "Cadastrar no SICAF",
-            description: cadastrarNoSicafMeta.quickAnswer,
+            name: "Cadastrar no SICAF e vender para o governo",
+            description: venderGovernoMeta.quickAnswer,
           },
           speakable: {
             "@type": "SpeakableSpecification",
-            cssSelector: ["h1", ".page-hero-summary", ".ai-summary"],
+            cssSelector: ["h1", ".page-hero-summary", ".ai-summary", ".vender-governo-resumo"],
           },
         }),
       },
@@ -162,9 +167,10 @@ export function buildCadastrarNoSicafHead() {
         type: "application/ld+json",
         children: JSON.stringify(
           qaPageJsonLd({
-            questionName: "Como cadastrar no SICAF?",
-            questionText: "Qual é o processo para cadastrar uma empresa no SICAF em 2026?",
-            answerText: cadastrarNoSicafMeta.quickAnswer,
+            questionName: "Como cadastrar no SICAF e vender para o governo?",
+            questionText:
+              "Qual é o passo a passo para credenciar no SICAF e começar a vender para o governo federal?",
+            answerText: venderGovernoMeta.quickAnswer,
             pageUrl: canonical,
           }),
         ),

@@ -1,4 +1,5 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
+import { qaPageJsonLd } from "@/lib/structuredData";
 import {
   cadastroPageFaqs,
   cadastroPageMeta,
@@ -125,7 +126,7 @@ export function buildCadastroHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(cadastroPageFaqs)),
+        children: JSON.stringify(faqJsonLd(cadastroPageFaqs, canonical)),
       },
       {
         type: "application/ld+json",
@@ -143,20 +144,14 @@ export function buildCadastroHead() {
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "QAPage",
-          mainEntity: {
-            "@type": "Question",
-            name: "Como fazer cadastro SICAF online?",
-            text: "Qual é a forma mais rápida de cadastrar minha empresa no SICAF?",
-            answerCount: 1,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: cadastroPageMeta.quickAnswer,
-            },
-          },
-        }),
+        children: JSON.stringify(
+          qaPageJsonLd({
+            questionName: "Como fazer cadastro SICAF online?",
+            questionText: "Qual é a forma mais rápida de cadastrar minha empresa no SICAF?",
+            answerText: cadastroPageMeta.quickAnswer,
+            pageUrl: canonical,
+          }),
+        ),
       },
     ],
   };
