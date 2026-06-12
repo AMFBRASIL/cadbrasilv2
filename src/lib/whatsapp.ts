@@ -26,6 +26,7 @@ const PATH_LABELS: Record<string, string> = {
   "/cadastrar-no-sicaf": "Cadastrar no SICAF — passo a passo",
   "/como-cadastrar-no-sicaf-e-vender-para-o-governo":
     "Como cadastrar no SICAF e vender ao governo",
+  "/comprasnet": "Comprasnet — o que é e para que serve",
   "/cadastro": "Cadastro SICAF — landing conversão",
 };
 

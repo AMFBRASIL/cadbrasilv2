@@ -221,6 +221,7 @@ export const comparativoCadastro = [
 ];
 
 export const relatedGuides = [
+  { to: "/comprasnet", label: "Comprasnet — o que é e benefícios" },
   { to: "/cadastro-sicaf", label: "Cadastro SICAF — página comercial" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF — guia completo" },
   { to: "/como-fazer-cadastro-no-sicaf", label: "Como fazer cadastro no SICAF" },

@@ -27,6 +27,7 @@ import { Route as DocumentacaoSicafRouteImport } from './routes/documentacao-sic
 import { Route as DocumentacaoLicitacaoRouteImport } from './routes/documentacao-licitacao'
 import { Route as CredenciamentoSicafDigitalRouteImport } from './routes/credenciamento-sicaf-digital'
 import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
+import { Route as ComprasnetRouteImport } from './routes/comprasnet'
 import { Route as ComoRegularizarSicafEmpresaRouteImport } from './routes/como-regularizar-sicaf-empresa'
 import { Route as ComoParticiparDeLicitacaoResumoRouteImport } from './routes/como-participar-de-licitacao-resumo'
 import { Route as ComoParticiparDeLicitacaoRouteImport } from './routes/como-participar-de-licitacao'
@@ -142,6 +143,11 @@ const CredenciamentoSicafDigitalRoute =
 const CredenciamentoRoute = CredenciamentoRouteImport.update({
   id: '/credenciamento',
   path: '/credenciamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComprasnetRoute = ComprasnetRouteImport.update({
+  id: '/comprasnet',
+  path: '/comprasnet',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComoRegularizarSicafEmpresaRoute =
@@ -285,6 +291,7 @@ export interface FileRoutesByFullPath {
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
   '/como-participar-de-licitacao-resumo': typeof ComoParticiparDeLicitacaoResumoRoute
   '/como-regularizar-sicaf-empresa': typeof ComoRegularizarSicafEmpresaRoute
+  '/comprasnet': typeof ComprasnetRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
@@ -327,6 +334,7 @@ export interface FileRoutesByTo {
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
   '/como-participar-de-licitacao-resumo': typeof ComoParticiparDeLicitacaoResumoRoute
   '/como-regularizar-sicaf-empresa': typeof ComoRegularizarSicafEmpresaRoute
+  '/comprasnet': typeof ComprasnetRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
@@ -370,6 +378,7 @@ export interface FileRoutesById {
   '/como-participar-de-licitacao': typeof ComoParticiparDeLicitacaoRoute
   '/como-participar-de-licitacao-resumo': typeof ComoParticiparDeLicitacaoResumoRoute
   '/como-regularizar-sicaf-empresa': typeof ComoRegularizarSicafEmpresaRoute
+  '/comprasnet': typeof ComprasnetRoute
   '/credenciamento': typeof CredenciamentoRoute
   '/credenciamento-sicaf-digital': typeof CredenciamentoSicafDigitalRoute
   '/documentacao-licitacao': typeof DocumentacaoLicitacaoRoute
@@ -414,6 +423,7 @@ export interface FileRouteTypes {
     | '/como-participar-de-licitacao'
     | '/como-participar-de-licitacao-resumo'
     | '/como-regularizar-sicaf-empresa'
+    | '/comprasnet'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
@@ -456,6 +466,7 @@ export interface FileRouteTypes {
     | '/como-participar-de-licitacao'
     | '/como-participar-de-licitacao-resumo'
     | '/como-regularizar-sicaf-empresa'
+    | '/comprasnet'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
@@ -498,6 +509,7 @@ export interface FileRouteTypes {
     | '/como-participar-de-licitacao'
     | '/como-participar-de-licitacao-resumo'
     | '/como-regularizar-sicaf-empresa'
+    | '/comprasnet'
     | '/credenciamento'
     | '/credenciamento-sicaf-digital'
     | '/documentacao-licitacao'
@@ -541,6 +553,7 @@ export interface RootRouteChildren {
   ComoParticiparDeLicitacaoRoute: typeof ComoParticiparDeLicitacaoRoute
   ComoParticiparDeLicitacaoResumoRoute: typeof ComoParticiparDeLicitacaoResumoRoute
   ComoRegularizarSicafEmpresaRoute: typeof ComoRegularizarSicafEmpresaRoute
+  ComprasnetRoute: typeof ComprasnetRoute
   CredenciamentoRoute: typeof CredenciamentoRoute
   CredenciamentoSicafDigitalRoute: typeof CredenciamentoSicafDigitalRoute
   DocumentacaoLicitacaoRoute: typeof DocumentacaoLicitacaoRoute
@@ -691,6 +704,13 @@ declare module '@tanstack/react-router' {
       path: '/credenciamento'
       fullPath: '/credenciamento'
       preLoaderRoute: typeof CredenciamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comprasnet': {
+      id: '/comprasnet'
+      path: '/comprasnet'
+      fullPath: '/comprasnet'
+      preLoaderRoute: typeof ComprasnetRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/como-regularizar-sicaf-empresa': {
@@ -870,6 +890,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoParticiparDeLicitacaoRoute: ComoParticiparDeLicitacaoRoute,
   ComoParticiparDeLicitacaoResumoRoute: ComoParticiparDeLicitacaoResumoRoute,
   ComoRegularizarSicafEmpresaRoute: ComoRegularizarSicafEmpresaRoute,
+  ComprasnetRoute: ComprasnetRoute,
   CredenciamentoRoute: CredenciamentoRoute,
   CredenciamentoSicafDigitalRoute: CredenciamentoSicafDigitalRoute,
   DocumentacaoLicitacaoRoute: DocumentacaoLicitacaoRoute,

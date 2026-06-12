@@ -24,6 +24,7 @@ const RELATED_LINKS = [
     label: "SICAF e vender ao governo",
   },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia cadastro SICAF passo a passo" },
+  { to: "/comprasnet", label: "Comprasnet — guia completo" },
   { to: "/faq", label: "Central de perguntas frequentes" },
 ] as const;
 
