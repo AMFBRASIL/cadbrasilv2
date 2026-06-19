@@ -15,7 +15,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   passosElegibilidade,
@@ -50,15 +50,12 @@ function CtaBand({ title, compact }: { title?: string; compact?: boolean }) {
         assistido em até 24 horas com documentação validada.
       </p>
       <div className="mt-6 flex flex-wrap gap-3 justify-center">
-        <a
-          href={CADASTRO_URL}
-          target="_blank"
-          rel="noreferrer"
+        <CadastroLink
           className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold hover:bg-[#ffe566] transition"
         >
           Fazer cadastro na CADBRASIL
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </CadastroLink>
         <WhatsAppLink
           pageLabel={quemPodeMeta.shortTitle}
           intent={getDefaultIntent(quemPodeMeta.path)}
@@ -121,15 +118,12 @@ export function QuemPodeSeCadastrarSicafPage() {
               {quemPodeMeta.quickAnswer}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold shadow-lg hover:bg-[#ffe566] transition"
               >
                 Iniciar cadastro SICAF
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </CadastroLink>
               <WhatsAppLink
                 pageLabel={quemPodeMeta.shortTitle}
                 intent={getDefaultIntent(quemPodeMeta.path)}
@@ -240,15 +234,12 @@ export function QuemPodeSeCadastrarSicafPage() {
                           </p>
                         )}
                         <div className="mt-5 flex flex-wrap gap-2">
-                          <a
-                            href={CADASTRO_URL}
-                            target="_blank"
-                            rel="noreferrer"
+                          <CadastroLink
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#168821] text-white text-sm font-semibold hover:bg-[#0f6b38] transition"
                           >
                             Cadastrar {perfil.sigla} na CADBRASIL
                             <ArrowRight className="h-3.5 w-3.5" />
-                          </a>
+                          </CadastroLink>
                         </div>
                       </>
                     );

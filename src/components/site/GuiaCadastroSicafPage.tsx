@@ -28,6 +28,7 @@ import {
   usefulLinks,
 } from "@/data/guiaCadastroSicaf";
 import { PageShell, InlineCta, CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const PUBLISHED = "15 jan 2026";
@@ -99,15 +100,12 @@ export function GuiaCadastroSicafPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={CADASTRO_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <CadastroLink
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition"
                 >
                   Fazer cadastro SICAF
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </CadastroLink>
                 <WhatsAppLink
                   pageLabel="Guia cadastro SICAF passo a passo"
                   intent="Estou no guia passo a passo e preciso de ajuda com meu cadastro SICAF."
@@ -203,14 +201,11 @@ export function GuiaCadastroSicafPage() {
                 <p className="text-xs text-muted-foreground mb-3">
                   Validação de documentos antes do envio oficial.
                 </p>
-                <a
-                  href={CADASTRO_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <CadastroLink
                   className="block w-full text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground"
                 >
                   Iniciar cadastro
-                </a>
+                </CadastroLink>
               </div>
             </nav>
           </aside>
@@ -511,14 +506,11 @@ export function GuiaCadastroSicafPage() {
                     ))}
                   </ul>
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <a
-                      href={CADASTRO_URL}
-                      target="_blank"
-                      rel="noreferrer"
+                    <CadastroLink
                       className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-brand font-semibold"
                     >
                       Começar cadastro <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </CadastroLink>
                     <Link
                       to="/como-funciona"
                       className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/30 font-semibold"

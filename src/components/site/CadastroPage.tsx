@@ -12,7 +12,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   cadastroPageFaqs,
@@ -33,29 +33,23 @@ const RELATED = [
 
 function BtnCadastroGrande({ className = "" }: { className?: string }) {
   return (
-    <a
-      href={CADASTRO_URL}
-      target="_blank"
-      rel="noreferrer"
+    <CadastroLink
       className={`cadastro-cta-hero inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-5 sm:py-6 rounded-xl bg-[#FFCD07] text-[#0a4d2c] font-bold text-lg sm:text-xl shadow-xl hover:bg-[#ffe566] hover:shadow-2xl hover:scale-[1.02] transition-all ${className}`}
     >
       Fazer cadastro SICAF agora
       <ArrowRight className="h-6 w-6 shrink-0" />
-    </a>
+    </CadastroLink>
   );
 }
 
 function BtnCadastroMedio({ label = "Iniciar cadastro" }: { label?: string }) {
   return (
-    <a
-      href={CADASTRO_URL}
-      target="_blank"
-      rel="noreferrer"
+    <CadastroLink
       className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#168821] text-white font-bold text-base hover:bg-[#0f6b38] transition shadow-md"
     >
       {label}
       <ArrowRight className="h-5 w-5" />
-    </a>
+    </CadastroLink>
   );
 }
 
@@ -131,14 +125,11 @@ export function CadastroPage() {
             {/* Botões grandes — destaque principal */}
             <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-stretch sm:items-center max-w-2xl mx-auto">
               <BtnCadastroGrande className="w-full sm:flex-1 min-w-[280px]" />
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="w-full sm:flex-1 min-w-[280px] inline-flex items-center justify-center gap-2 px-8 py-5 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 transition"
               >
                 Acessar cadastro.cadbrasil.com.br
-              </a>
+              </CadastroLink>
             </div>
             <div className="mt-6">
               <WhatsAppLink

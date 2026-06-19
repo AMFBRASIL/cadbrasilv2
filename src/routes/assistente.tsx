@@ -4,6 +4,7 @@ import {
   Headphones, Sparkles, CheckCircle2, Lock,
 } from "lucide-react";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL, breadcrumbJsonLd } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { robotsMetaTags } from "@/lib/seo";
 
 const ORIGIN = "https://cadbrasil.com.br";
@@ -99,14 +100,11 @@ function Assistente() {
                 </div>
               ))}
             </div>
-            <a
-              href={CADASTRO_URL}
-              target="_blank"
-              rel="noreferrer"
+            <CadastroLink
               className="mt-9 inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-foreground text-background font-semibold hover:opacity-90 transition"
             >
               <Download className="h-4 w-4" /> Baixar Assistente CADBRASIL
-            </a>
+            </CadastroLink>
           </div>
 
           <div className="relative">

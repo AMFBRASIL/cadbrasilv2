@@ -3,6 +3,7 @@
 import { useRouterState } from "@tanstack/react-router";
 import { useLayoutEffect } from "react";
 import { captureUtmParams } from "@/lib/whatsapp";
+import { captureTrackingParams } from "@/lib/cadastroUrl";
 
 /** Persiste utm_term (e source/campaign) na sessão para links de WhatsApp em navegação SPA. */
 export function UtmCapture() {
@@ -16,6 +17,7 @@ export function UtmCapture() {
     const qs =
       (search && search.length > 0 ? search : null) ??
       (typeof window !== "undefined" ? window.location.search : "");
+    captureTrackingParams(qs || undefined);
     captureUtmParams(qs || undefined);
   }, [search]);
 

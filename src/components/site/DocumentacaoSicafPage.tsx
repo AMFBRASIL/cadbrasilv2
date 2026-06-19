@@ -14,7 +14,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   documentacaoSicafFaqs,
@@ -48,15 +48,12 @@ function CtaBand({ compact }: { compact?: boolean }) {
         A CADBRASIL organiza o checklist, corrige pendências e conduz o credenciamento até o CRC regular.
       </p>
       <div className="mt-6 flex flex-wrap gap-3 justify-center">
-        <a
-          href={CADASTRO_URL}
-          target="_blank"
-          rel="noreferrer"
+        <CadastroLink
           className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold hover:bg-[#ffe566] transition"
         >
           Fazer cadastro SICAF
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </CadastroLink>
         <WhatsAppLink
           pageLabel={documentacaoSicafMeta.shortTitle}
           intent={getDefaultIntent(documentacaoSicafMeta.path)}
@@ -138,15 +135,12 @@ export function DocumentacaoSicafPage() {
               comprovações técnicas e financeiras (IV e V) e linhas de fornecimento (VI).
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold shadow-lg hover:bg-[#ffe566] transition"
               >
                 Iniciar cadastro SICAF
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </CadastroLink>
               <WhatsAppLink
                 pageLabel={documentacaoSicafMeta.shortTitle}
                 intent={getDefaultIntent(documentacaoSicafMeta.path)}

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, FileText, HelpCircle } from "lucide-react";
 import { CADASTRO_URL, InlineCta, PageHero, PageShell } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import type { LandingPageData } from "@/data/sicafLandingPages";
 
 export function SicafLandingPage({ page }: { page: LandingPageData }) {
@@ -101,15 +102,12 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
                 Habilitação em até 24h · Validação com IA · Especialistas em licitações
               </p>
             </div>
-            <a
-              href={CADASTRO_URL}
-              target="_blank"
-              rel="noreferrer"
+            <CadastroLink
               className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-brand font-bold shrink-0 hover:scale-[1.02] transition"
             >
               Iniciar cadastro SICAF
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </CadastroLink>
           </div>
         </div>
       </section>
@@ -159,15 +157,12 @@ export function SicafLandingPage({ page }: { page: LandingPageData }) {
               Assistente CADBRASIL com IA →
             </Link>
           </div>
-          <a
-            href={CADASTRO_URL}
-            target="_blank"
-            rel="noreferrer"
+          <CadastroLink
             className="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold"
           >
             Começar agora
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </CadastroLink>
         </div>
       </section>
 

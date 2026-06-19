@@ -13,7 +13,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   errosFatais,
@@ -38,15 +38,12 @@ const RELATED = [
 
 function BtnCadastroGrande({ label, className = "" }: { label?: string; className?: string }) {
   return (
-    <a
-      href={CADASTRO_URL}
-      target="_blank"
-      rel="noreferrer"
+    <CadastroLink
       className={`inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-5 rounded-xl bg-[#FFCD07] text-[#0a4d2c] font-bold text-lg shadow-xl hover:bg-[#ffe566] hover:scale-[1.02] transition-all ${className}`}
     >
       {label ?? "Cadastrar no SICAF — CADBRASIL"}
       <ArrowRight className="h-5 w-5 shrink-0" />
-    </a>
+    </CadastroLink>
   );
 }
 
@@ -113,14 +110,11 @@ export function ComoParticiparLicitacaoResumoPage() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-3xl mx-auto">
               <BtnCadastroGrande label="Começar pelo SICAF — cadastro CADBRASIL" className="w-full sm:flex-1" />
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-8 py-5 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white/10 transition"
               >
                 Acessar portal de cadastro
-              </a>
+              </CadastroLink>
             </div>
           </div>
         </section>

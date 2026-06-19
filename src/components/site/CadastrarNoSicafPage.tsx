@@ -13,7 +13,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   antesDeComecar,
@@ -51,15 +51,12 @@ function CtaBand({ title, compact }: { title?: string; compact?: boolean }) {
         regular em até 24 horas.
       </p>
       <div className="mt-6 flex flex-wrap gap-3 justify-center">
-        <a
-          href={CADASTRO_URL}
-          target="_blank"
-          rel="noreferrer"
+        <CadastroLink
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold hover:bg-[#ffe566] transition shadow-md"
         >
           Cadastrar no SICAF — CADBRASIL
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </CadastroLink>
         <WhatsAppLink
           pageLabel={cadastrarNoSicafMeta.shortTitle}
           intent={getDefaultIntent(cadastrarNoSicafMeta.path)}
@@ -119,15 +116,12 @@ export function CadastrarNoSicafPage() {
               {cadastrarNoSicafMeta.quickAnswer}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold shadow-lg hover:bg-[#ffe566] transition"
               >
                 Iniciar cadastro na CADBRASIL
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </CadastroLink>
               <WhatsAppLink
                 pageLabel={cadastrarNoSicafMeta.shortTitle}
                 intent={getDefaultIntent(cadastrarNoSicafMeta.path)}
@@ -192,15 +186,12 @@ export function CadastrarNoSicafPage() {
                         {passo.descricao}
                       </p>
                       {passo.numero === "01" && (
-                        <a
-                          href={CADASTRO_URL}
-                          target="_blank"
-                          rel="noreferrer"
+                        <CadastroLink
                           className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#168821] hover:text-[#0a4d2c] transition"
                         >
                           Acessar cadastro.cadbrasil.com.br
                           <ArrowRight className="h-3.5 w-3.5" />
-                        </a>
+                        </CadastroLink>
                       )}
                     </div>
                   </li>
@@ -290,15 +281,12 @@ export function CadastrarNoSicafPage() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={CADASTRO_URL}
-                    target="_blank"
-                    rel="noreferrer"
+                  <CadastroLink
                     className="mt-5 inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#168821] text-white font-semibold hover:bg-[#0f6b38] transition"
                   >
                     Cadastrar agora
                     <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </CadastroLink>
                 </div>
               </div>
             </article>

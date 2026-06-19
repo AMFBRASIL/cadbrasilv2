@@ -4,7 +4,7 @@ import { GovFooter } from "@/components/site/gov/GovFooter";
 import { GovNav } from "@/components/site/gov/GovNav";
 import { ContactSection } from "@/components/site/ContactSection";
 import { FloatingCta } from "@/components/site/FloatingCta";
-import { CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { getDefaultIntent } from "@/lib/whatsapp";
 import type { LandingPageData } from "@/data/sicafLandingPages";
@@ -71,15 +71,12 @@ export function GovLandingPage({ page }: { page: LandingPageData }) {
               {page.description}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold shadow-lg hover:bg-[#ffe566] transition"
               >
                 Iniciar cadastro SICAF
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </CadastroLink>
               <WhatsAppLink
                 pageLabel={page.shortTitle}
                 intent={getDefaultIntent(page.path)}
@@ -175,15 +172,12 @@ export function GovLandingPage({ page }: { page: LandingPageData }) {
                   Habilitação em até 24h · Validação documental · Especialistas em licitações
                 </p>
               </div>
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-bold shrink-0 hover:bg-[#ffe566] transition"
               >
                 Iniciar cadastro
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </CadastroLink>
             </div>
           </div>
         </section>

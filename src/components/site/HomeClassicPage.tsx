@@ -1,3 +1,4 @@
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { ArrowRight, Download, MessageCircle, ShieldCheck } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { HeroDashboard } from "@/components/site/HeroDashboard";
@@ -50,14 +51,11 @@ function Hero() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="https://cadastro.cadbrasil.com.br"
-              target="_blank"
-              rel="noreferrer"
+            <CadastroLink
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
             >
               🚀 Fazer Cadastro SICAF
-            </a>
+            </CadastroLink>
             <WhatsAppLink
               intent="Quero tirar dúvidas sobre SICAF (layout clássico)."
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-card border border-border font-semibold hover:bg-accent transition"

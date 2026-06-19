@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { CadastroLink } from "@/components/site/CadastroLink";
 
 export function GovFooter() {
   return (
@@ -23,9 +24,9 @@ export function GovFooter() {
               </Link>
             </li>
             <li>
-              <a href="https://cadastro.cadbrasil.com.br" className="hover:text-white">
+              <CadastroLink className="hover:text-white">
                 Cadastro online
-              </a>
+              </CadastroLink>
             </li>
             <li>
               <Link to="/como-regularizar-sicaf-empresa" className="hover:text-white">

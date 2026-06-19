@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { FaqCategory, FaqItem } from "@/data/faq/types";
 import { faqCategories } from "@/data/faq/pages";
 import { PageShell, PageHero, InlineCta, CADASTRO_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
 
 export function FaqCategoryRichPage({ category }: { category: FaqCategory }) {
   const others = faqCategories.filter((c) => c.slug !== category.slug).slice(0, 6);
@@ -106,15 +107,12 @@ export function FaqCategoryRichPage({ category }: { category: FaqCategory }) {
       </section>
 
       <section className="mx-auto max-w-4xl px-4 pb-8 text-center">
-        <a
-          href={CADASTRO_URL}
-          target="_blank"
-          rel="noreferrer"
+        <CadastroLink
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
         >
           Iniciar cadastro SICAF
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </CadastroLink>
       </section>
 
       <InlineCta

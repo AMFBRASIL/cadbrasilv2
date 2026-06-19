@@ -8,11 +8,13 @@ import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
 import { ContactSection } from "@/components/site/ContactSection";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { getDefaultIntent } from "@/lib/whatsapp";
+import { CADASTRO_URL, isCadastroPortalUrl } from "@/lib/cadastroUrl";
 
-export const CADASTRO_URL = "https://cadastro.cadbrasil.com.br";
 export const FORNECEDOR_URL = "https://fornecedor.cadbrasil.com.br";
 export { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
+export { CADASTRO_URL } from "@/lib/cadastroUrl";
 
 export function PageShell({
   children,
@@ -95,16 +97,23 @@ export function PageHero({
         </p>
         {(primaryCta || secondaryCta) && (
           <div className="mt-9 flex flex-wrap gap-3 justify-center">
-            {primaryCta && (
-              <a
-                href={primaryCta.href}
-                target={primaryCta.external ? "_blank" : undefined}
-                rel={primaryCta.external ? "noreferrer" : undefined}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
-              >
-                {primaryCta.label} <ArrowRight className="h-4 w-4" />
-              </a>
-            )}
+            {primaryCta &&
+              (primaryCta.external && isCadastroPortalUrl(primaryCta.href) ? (
+                <CadastroLink
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
+                >
+                  {primaryCta.label} <ArrowRight className="h-4 w-4" />
+                </CadastroLink>
+              ) : (
+                <a
+                  href={primaryCta.href}
+                  target={primaryCta.external ? "_blank" : undefined}
+                  rel={primaryCta.external ? "noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
+                >
+                  {primaryCta.label} <ArrowRight className="h-4 w-4" />
+                </a>
+              ))}
             {secondaryCta &&
               ("whatsapp" in secondaryCta && secondaryCta.whatsapp ? (
                 <WhatsAppLink
@@ -184,14 +193,11 @@ export function InlineCta({
               <p className="mt-3 text-white/85">{subtitle}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition whitespace-nowrap"
               >
                 {contextual.primary}
-              </a>
+              </CadastroLink>
               <WhatsAppLink
                 intent={getDefaultIntent(pathname)}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition whitespace-nowrap"

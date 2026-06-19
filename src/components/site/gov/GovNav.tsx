@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
-import { CADASTRO_URL, FORNECEDOR_URL } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
+import { FORNECEDOR_URL } from "@/components/site/PageShell";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 /** Mesmos itens do menu da versão anterior (Nav.tsx). */
@@ -79,14 +80,11 @@ export function GovNav() {
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </WhatsAppLink>
-              <a
-                href={CADASTRO_URL}
-                target="_blank"
-                rel="noreferrer"
+              <CadastroLink
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold bg-[#FFCD07] text-[#0a4d2c] hover:bg-[#ffe566] transition"
               >
                 Fazer Cadastro
-              </a>
+              </CadastroLink>
             </div>
 
             <button
@@ -126,15 +124,12 @@ export function GovNav() {
                 >
                   <MessageCircle className="h-4 w-4" /> WhatsApp
                 </WhatsAppLink>
-                <a
-                  href={CADASTRO_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <CadastroLink
                   onClick={() => setOpen(false)}
                   className="mt-2 text-center px-4 py-3 rounded-md bg-[#FFCD07] text-[#0a4d2c] font-semibold"
                 >
                   Fazer Cadastro
-                </a>
+                </CadastroLink>
               </div>
             </div>
           )}
