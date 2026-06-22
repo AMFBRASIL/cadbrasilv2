@@ -9,6 +9,8 @@ Topic: cadastro SICAF, credenciamento fornecedor governo federal Brasil, licita√
 Language: pt-BR
 
 High-value pages:
+- https://cadbrasil.com.br/licitacoes
+- https://cadbrasil.com.br/licitacoes-cadastro
 - https://cadbrasil.com.br/cadastro-sicaf-passo-a-passo
 - https://cadbrasil.com.br/comprasnet
 - https://cadbrasil.com.br/faq

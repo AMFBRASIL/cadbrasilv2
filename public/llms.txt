@@ -7,6 +7,8 @@ A CADBRASIL entrega o SICAF habilitado em até 24 horas com tecnologia, IA e sup
 ## Pages
 
 - [Início](/): Visão geral da CADBRASIL, serviços SICAF e contato.
+- [Plataforma de licitações](/licitacoes): Ecossistema completo — busca de editais, gestão documental, SICAF, pregão, IA, jurídico e 6 etapas do processo — layout guia com sidebar, JSON-LD Article/HowTo/FAQPage/QAPage/ItemList/SoftwareApplication/WebPage+Speakable/DefinedTermSet.
+- [Cadastro plataforma licitações](/licitacoes-cadastro): Formulário CTA de captação (nome, CNPJ, WhatsApp, e-mail) com redirect para cadastro.cadbrasil.com.br — WebPage+RegisterAction.
 - [Cadastro SICAF passo a passo](/cadastro-sicaf-passo-a-passo): Guia principal 2026 — 8 passos HowTo, 13 FAQs, glossário, checklist de 11 documentos, níveis I a VI, JSON-LD Article/HowTo/FAQPage.
 - [Comprasnet](/comprasnet): Guia completo — o que é, para que serve, benefícios, módulos Compras.gov.br, SICAF, como acessar, glossário, 9 FAQs — layout guia com sidebar, JSON-LD Article/HowTo/FAQPage/QAPage/ItemList/DefinedTermSet/WebPage+Speakable/SoftwareApplication.
 - [O que é SICAF](/o-que-e-sicaf): Definição, níveis e obrigatoriedade.

@@ -5,6 +5,11 @@ import {
   formatClientConfirmationHtml,
   formatContactEmailBody,
 } from "@/lib/contact";
+import type { LicitacoesLeadPayload } from "@/lib/licitacoesLead";
+import {
+  formatLicitacoesLeadBody,
+  formatLicitacoesLeadConfirmation,
+} from "@/lib/licitacoesLead";
 
 /** Caixa que recebe os formulários de contato do site */
 export const CONTACT_INBOX_EMAIL = "documentos@fornecedordigital.com.br";
@@ -110,6 +115,40 @@ export async function sendContactEmail(data: ContactPayload) {
       subject: clientSubject,
       text: clientText,
       html: clientHtml,
+    }),
+  ]);
+
+  return {
+    team: teamResult,
+    client: clientResult,
+    clientEmail,
+  };
+}
+
+export async function sendLicitacoesLeadEmail(data: LicitacoesLeadPayload) {
+  const config = getMailgunConfig();
+  if (!config) {
+    throw new Error("MAILGUN_NOT_CONFIGURED");
+  }
+
+  const clientEmail = data.email.trim().toLowerCase();
+  const cnpjFmt = data.cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+  const teamSubject = `[CADBRASIL Licitações] Novo cadastro — ${data.nome} (${cnpjFmt})`;
+  const teamBody = formatLicitacoesLeadBody(data);
+  const clientSubject = "Cadastro recebido — Plataforma CADBRASIL Licitações";
+  const clientText = formatLicitacoesLeadConfirmation(data);
+
+  const [teamResult, clientResult] = await Promise.all([
+    sendMailgunMessage(config, {
+      to: config.toEmail,
+      subject: teamSubject,
+      text: teamBody,
+      replyTo: formatRecipient(data.nome, clientEmail),
+    }),
+    sendMailgunMessage(config, {
+      to: formatRecipient(data.nome, clientEmail),
+      subject: clientSubject,
+      text: clientText,
     }),
   ]);
 

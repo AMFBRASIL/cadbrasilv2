@@ -19,6 +19,8 @@ import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-po
 import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
+import { Route as LicitacoesCadastroRouteImport } from './routes/licitacoes-cadastro'
+import { Route as LicitacoesRouteImport } from './routes/licitacoes'
 import { Route as LayoutClassicoRouteImport } from './routes/layout-classico'
 import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
 import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
@@ -49,6 +51,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as FaqIndexRouteImport } from './routes/faq.index'
 import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/cadastro-sicaf-passo-passo'
 import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
+import { Route as ApiLicitacoesLeadRouteImport } from './routes/api/licitacoes-lead'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 
 const Versao2Route = Versao2RouteImport.update({
@@ -101,6 +104,16 @@ const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
 const OQueESicafRoute = OQueESicafRouteImport.update({
   id: '/o-que-e-sicaf',
   path: '/o-que-e-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicitacoesCadastroRoute = LicitacoesCadastroRouteImport.update({
+  id: '/licitacoes-cadastro',
+  path: '/licitacoes-cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicitacoesRoute = LicitacoesRouteImport.update({
+  id: '/licitacoes',
+  path: '/licitacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LayoutClassicoRoute = LayoutClassicoRouteImport.update({
@@ -266,6 +279,11 @@ const FaqSlugRoute = FaqSlugRouteImport.update({
   path: '/faq/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLicitacoesLeadRoute = ApiLicitacoesLeadRouteImport.update({
+  id: '/api/licitacoes-lead',
+  path: '/api/licitacoes-lead',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
@@ -300,6 +318,8 @@ export interface FileRoutesByFullPath {
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
   '/layout-classico': typeof LayoutClassicoRoute
+  '/licitacoes': typeof LicitacoesRoute
+  '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -311,6 +331,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
+  '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq/': typeof FaqIndexRoute
@@ -343,6 +364,8 @@ export interface FileRoutesByTo {
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
   '/layout-classico': typeof LayoutClassicoRoute
+  '/licitacoes': typeof LicitacoesRoute
+  '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -354,6 +377,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
+  '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq': typeof FaqIndexRoute
@@ -387,6 +411,8 @@ export interface FileRoutesById {
   '/emitir-crc': typeof EmitirCrcRoute
   '/empresa-inapta': typeof EmpresaInaptaRoute
   '/layout-classico': typeof LayoutClassicoRoute
+  '/licitacoes': typeof LicitacoesRoute
+  '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -398,6 +424,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
+  '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
   '/guia/cadastro-sicaf-passo-passo': typeof GuiaCadastroSicafPassoPassoRoute
   '/faq/': typeof FaqIndexRoute
@@ -432,6 +459,8 @@ export interface FileRouteTypes {
     | '/emitir-crc'
     | '/empresa-inapta'
     | '/layout-classico'
+    | '/licitacoes'
+    | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -443,6 +472,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
+    | '/api/licitacoes-lead'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
     | '/faq/'
@@ -475,6 +505,8 @@ export interface FileRouteTypes {
     | '/emitir-crc'
     | '/empresa-inapta'
     | '/layout-classico'
+    | '/licitacoes'
+    | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -486,6 +518,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
+    | '/api/licitacoes-lead'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
     | '/faq'
@@ -518,6 +551,8 @@ export interface FileRouteTypes {
     | '/emitir-crc'
     | '/empresa-inapta'
     | '/layout-classico'
+    | '/licitacoes'
+    | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -529,6 +564,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
+    | '/api/licitacoes-lead'
     | '/faq/$slug'
     | '/guia/cadastro-sicaf-passo-passo'
     | '/faq/'
@@ -562,6 +598,8 @@ export interface RootRouteChildren {
   EmitirCrcRoute: typeof EmitirCrcRoute
   EmpresaInaptaRoute: typeof EmpresaInaptaRoute
   LayoutClassicoRoute: typeof LayoutClassicoRoute
+  LicitacoesRoute: typeof LicitacoesRoute
+  LicitacoesCadastroRoute: typeof LicitacoesCadastroRoute
   OQueESicafRoute: typeof OQueESicafRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   PregaoEletronicoRoute: typeof PregaoEletronicoRoute
@@ -573,6 +611,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Versao2Route: typeof Versao2Route
   ApiContactRoute: typeof ApiContactRoute
+  ApiLicitacoesLeadRoute: typeof ApiLicitacoesLeadRoute
   FaqSlugRoute: typeof FaqSlugRoute
   GuiaCadastroSicafPassoPassoRoute: typeof GuiaCadastroSicafPassoPassoRoute
   FaqIndexRoute: typeof FaqIndexRoute
@@ -648,6 +687,20 @@ declare module '@tanstack/react-router' {
       path: '/o-que-e-sicaf'
       fullPath: '/o-que-e-sicaf'
       preLoaderRoute: typeof OQueESicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licitacoes-cadastro': {
+      id: '/licitacoes-cadastro'
+      path: '/licitacoes-cadastro'
+      fullPath: '/licitacoes-cadastro'
+      preLoaderRoute: typeof LicitacoesCadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licitacoes': {
+      id: '/licitacoes'
+      path: '/licitacoes'
+      fullPath: '/licitacoes'
+      preLoaderRoute: typeof LicitacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/layout-classico': {
@@ -860,6 +913,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/licitacoes-lead': {
+      id: '/api/licitacoes-lead'
+      path: '/api/licitacoes-lead'
+      fullPath: '/api/licitacoes-lead'
+      preLoaderRoute: typeof ApiLicitacoesLeadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/contact': {
       id: '/api/contact'
       path: '/api/contact'
@@ -900,6 +960,8 @@ const rootRouteChildren: RootRouteChildren = {
   EmitirCrcRoute: EmitirCrcRoute,
   EmpresaInaptaRoute: EmpresaInaptaRoute,
   LayoutClassicoRoute: LayoutClassicoRoute,
+  LicitacoesRoute: LicitacoesRoute,
+  LicitacoesCadastroRoute: LicitacoesCadastroRoute,
   OQueESicafRoute: OQueESicafRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   PregaoEletronicoRoute: PregaoEletronicoRoute,
@@ -912,6 +974,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Versao2Route: Versao2Route,
   ApiContactRoute: ApiContactRoute,
+  ApiLicitacoesLeadRoute: ApiLicitacoesLeadRoute,
   FaqSlugRoute: FaqSlugRoute,
   GuiaCadastroSicafPassoPassoRoute: GuiaCadastroSicafPassoPassoRoute,
   FaqIndexRoute: FaqIndexRoute,
