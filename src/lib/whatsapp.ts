@@ -29,6 +29,7 @@ const PATH_LABELS: Record<string, string> = {
   "/comprasnet": "Comprasnet — o que é e para que serve",
   "/licitacoes": "Plataforma de licitações CADBRASIL",
   "/licitacoes-cadastro": "Cadastro plataforma de licitações",
+  "/planos": "Planos e preços CADBRASIL",
   "/cadastro": "Cadastro SICAF — landing conversão",
 };
 

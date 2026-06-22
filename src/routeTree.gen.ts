@@ -18,6 +18,7 @@ import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fi
 import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
 import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
+import { Route as PlanosRouteImport } from './routes/planos'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
 import { Route as LicitacoesCadastroRouteImport } from './routes/licitacoes-cadastro'
 import { Route as LicitacoesRouteImport } from './routes/licitacoes'
@@ -99,6 +100,11 @@ const PregaoEletronicoRoute = PregaoEletronicoRouteImport.update({
 const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
   id: '/plataforma-digital',
   path: '/plataforma-digital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OQueESicafRoute = OQueESicafRouteImport.update({
@@ -321,6 +327,7 @@ export interface FileRoutesByFullPath {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
@@ -367,6 +374,7 @@ export interface FileRoutesByTo {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
@@ -414,6 +422,7 @@ export interface FileRoutesById {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
@@ -462,6 +471,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
     | '/quem-pode-se-cadastrar-no-sicaf'
@@ -508,6 +518,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
     | '/quem-pode-se-cadastrar-no-sicaf'
@@ -554,6 +565,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
     | '/quem-pode-se-cadastrar-no-sicaf'
@@ -601,6 +613,7 @@ export interface RootRouteChildren {
   LicitacoesRoute: typeof LicitacoesRoute
   LicitacoesCadastroRoute: typeof LicitacoesCadastroRoute
   OQueESicafRoute: typeof OQueESicafRoute
+  PlanosRoute: typeof PlanosRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   PregaoEletronicoRoute: typeof PregaoEletronicoRoute
   QuemPodeSeCadastrarNoSicafRoute: typeof QuemPodeSeCadastrarNoSicafRoute
@@ -680,6 +693,13 @@ declare module '@tanstack/react-router' {
       path: '/plataforma-digital'
       fullPath: '/plataforma-digital'
       preLoaderRoute: typeof PlataformaDigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-e-sicaf': {
@@ -963,6 +983,7 @@ const rootRouteChildren: RootRouteChildren = {
   LicitacoesRoute: LicitacoesRoute,
   LicitacoesCadastroRoute: LicitacoesCadastroRoute,
   OQueESicafRoute: OQueESicafRoute,
+  PlanosRoute: PlanosRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   PregaoEletronicoRoute: PregaoEletronicoRoute,
   QuemPodeSeCadastrarNoSicafRoute: QuemPodeSeCadastrarNoSicafRoute,

@@ -287,6 +287,7 @@ export const licitacoesFaqs = [
 export const itemListFerramentas = ferramentas.map((f) => f.nome);
 
 export const relatedGuides = [
+  { to: "/planos", label: "Planos e preços" },
   { to: "/como-participar-de-licitacao", label: "Como participar de licitação" },
   { to: "/como-participar-de-licitacao-resumo", label: "Licitação — resumo prático" },
   { to: "/pregao-eletronico", label: "Pregão eletrônico" },
