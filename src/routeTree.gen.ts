@@ -19,6 +19,7 @@ import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-po
 import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as OQueESicafEComoSeCadastrarRouteImport } from './routes/o-que-e-sicaf-e-como-se-cadastrar'
 import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
 import { Route as LicitacoesCadastroRouteImport } from './routes/licitacoes-cadastro'
 import { Route as LicitacoesRouteImport } from './routes/licitacoes'
@@ -107,6 +108,12 @@ const PlanosRoute = PlanosRouteImport.update({
   path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OQueESicafEComoSeCadastrarRoute =
+  OQueESicafEComoSeCadastrarRouteImport.update({
+    id: '/o-que-e-sicaf-e-como-se-cadastrar',
+    path: '/o-que-e-sicaf-e-como-se-cadastrar',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OQueESicafRoute = OQueESicafRouteImport.update({
   id: '/o-que-e-sicaf',
   path: '/o-que-e-sicaf',
@@ -327,6 +334,7 @@ export interface FileRoutesByFullPath {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/o-que-e-sicaf-e-como-se-cadastrar': typeof OQueESicafEComoSeCadastrarRoute
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -374,6 +382,7 @@ export interface FileRoutesByTo {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/o-que-e-sicaf-e-como-se-cadastrar': typeof OQueESicafEComoSeCadastrarRoute
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -422,6 +431,7 @@ export interface FileRoutesById {
   '/licitacoes': typeof LicitacoesRoute
   '/licitacoes-cadastro': typeof LicitacoesCadastroRoute
   '/o-que-e-sicaf': typeof OQueESicafRoute
+  '/o-que-e-sicaf-e-como-se-cadastrar': typeof OQueESicafEComoSeCadastrarRoute
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
@@ -471,6 +481,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/o-que-e-sicaf-e-como-se-cadastrar'
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -518,6 +529,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/o-que-e-sicaf-e-como-se-cadastrar'
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -565,6 +577,7 @@ export interface FileRouteTypes {
     | '/licitacoes'
     | '/licitacoes-cadastro'
     | '/o-que-e-sicaf'
+    | '/o-que-e-sicaf-e-como-se-cadastrar'
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
@@ -613,6 +626,7 @@ export interface RootRouteChildren {
   LicitacoesRoute: typeof LicitacoesRoute
   LicitacoesCadastroRoute: typeof LicitacoesCadastroRoute
   OQueESicafRoute: typeof OQueESicafRoute
+  OQueESicafEComoSeCadastrarRoute: typeof OQueESicafEComoSeCadastrarRoute
   PlanosRoute: typeof PlanosRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   PregaoEletronicoRoute: typeof PregaoEletronicoRoute
@@ -700,6 +714,13 @@ declare module '@tanstack/react-router' {
       path: '/planos'
       fullPath: '/planos'
       preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-que-e-sicaf-e-como-se-cadastrar': {
+      id: '/o-que-e-sicaf-e-como-se-cadastrar'
+      path: '/o-que-e-sicaf-e-como-se-cadastrar'
+      fullPath: '/o-que-e-sicaf-e-como-se-cadastrar'
+      preLoaderRoute: typeof OQueESicafEComoSeCadastrarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-e-sicaf': {
@@ -983,6 +1004,7 @@ const rootRouteChildren: RootRouteChildren = {
   LicitacoesRoute: LicitacoesRoute,
   LicitacoesCadastroRoute: LicitacoesCadastroRoute,
   OQueESicafRoute: OQueESicafRoute,
+  OQueESicafEComoSeCadastrarRoute: OQueESicafEComoSeCadastrarRoute,
   PlanosRoute: PlanosRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   PregaoEletronicoRoute: PregaoEletronicoRoute,
