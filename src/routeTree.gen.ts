@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Versao2RouteImport } from './routes/versao2'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SicafNiveisRouteImport } from './routes/sicaf-niveis'
 import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
 import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
 import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
@@ -64,6 +65,11 @@ const Versao2Route = Versao2RouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SicafNiveisRoute = SicafNiveisRouteImport.update({
+  id: '/sicaf-niveis',
+  path: '/sicaf-niveis',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SicafDigitalRoute = SicafDigitalRouteImport.update({
@@ -343,6 +349,7 @@ export interface FileRoutesByFullPath {
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
+  '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
@@ -391,6 +398,7 @@ export interface FileRoutesByTo {
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
+  '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
@@ -440,6 +448,7 @@ export interface FileRoutesById {
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
+  '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
   '/api/contact': typeof ApiContactRoute
@@ -490,6 +499,7 @@ export interface FileRouteTypes {
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
+    | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
@@ -538,6 +548,7 @@ export interface FileRouteTypes {
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
+    | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
@@ -586,6 +597,7 @@ export interface FileRouteTypes {
     | '/renovacao-sicaf'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
+    | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
     | '/api/contact'
@@ -635,6 +647,7 @@ export interface RootRouteChildren {
   RenovacaoSicafRoute: typeof RenovacaoSicafRoute
   SicafCadastroUnificadoDeFornecedoresRoute: typeof SicafCadastroUnificadoDeFornecedoresRoute
   SicafDigitalRoute: typeof SicafDigitalRoute
+  SicafNiveisRoute: typeof SicafNiveisRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Versao2Route: typeof Versao2Route
   ApiContactRoute: typeof ApiContactRoute
@@ -658,6 +671,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-niveis': {
+      id: '/sicaf-niveis'
+      path: '/sicaf-niveis'
+      fullPath: '/sicaf-niveis'
+      preLoaderRoute: typeof SicafNiveisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sicaf-digital': {
@@ -1014,6 +1034,7 @@ const rootRouteChildren: RootRouteChildren = {
   SicafCadastroUnificadoDeFornecedoresRoute:
     SicafCadastroUnificadoDeFornecedoresRoute,
   SicafDigitalRoute: SicafDigitalRoute,
+  SicafNiveisRoute: SicafNiveisRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Versao2Route: Versao2Route,
   ApiContactRoute: ApiContactRoute,
