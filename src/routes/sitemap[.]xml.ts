@@ -21,6 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/planos", changefreq: "weekly", priority: "0.98" },
           { path: "/o-que-e-sicaf-e-como-se-cadastrar", changefreq: "weekly", priority: "0.98" },
           { path: "/sicaf-niveis", changefreq: "weekly", priority: "0.98" },
+          { path: "/servicos-documentacao", changefreq: "weekly", priority: "0.98" },
           { path: "/cadastro-sicaf-passo-a-passo", changefreq: "weekly", priority: "0.98" },
           { path: "/comprasnet", changefreq: "weekly", priority: "0.97" },
           { path: "/como-regularizar-sicaf-empresa", changefreq: "weekly", priority: "0.94" },

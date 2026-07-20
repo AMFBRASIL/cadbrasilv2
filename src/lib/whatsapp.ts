@@ -32,6 +32,7 @@ const PATH_LABELS: Record<string, string> = {
   "/planos": "Planos e preços CADBRASIL",
   "/o-que-e-sicaf-e-como-se-cadastrar": "O que é SICAF e como se cadastrar",
   "/sicaf-niveis": "Níveis do SICAF — manual de atualização",
+  "/servicos-documentacao": "Serviços e gestão documental CADBRASIL",
   "/cadastro": "Cadastro SICAF — landing conversão",
 };
 

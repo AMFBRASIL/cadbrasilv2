@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SicafNiveisRouteImport } from './routes/sicaf-niveis'
 import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
 import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
+import { Route as ServicosDocumentacaoRouteImport } from './routes/servicos-documentacao'
 import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
 import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
 import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
@@ -83,6 +84,11 @@ const SicafCadastroUnificadoDeFornecedoresRoute =
     path: '/sicaf-cadastro-unificado-de-fornecedores',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicosDocumentacaoRoute = ServicosDocumentacaoRouteImport.update({
+  id: '/servicos-documentacao',
+  path: '/servicos-documentacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RenovacaoSicafRoute = RenovacaoSicafRouteImport.update({
   id: '/renovacao-sicaf',
   path: '/renovacao-sicaf',
@@ -347,6 +353,7 @@ export interface FileRoutesByFullPath {
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
+  '/servicos-documentacao': typeof ServicosDocumentacaoRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sicaf-niveis': typeof SicafNiveisRoute
@@ -396,6 +403,7 @@ export interface FileRoutesByTo {
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
+  '/servicos-documentacao': typeof ServicosDocumentacaoRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sicaf-niveis': typeof SicafNiveisRoute
@@ -446,6 +454,7 @@ export interface FileRoutesById {
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
   '/renovacao-sicaf': typeof RenovacaoSicafRoute
+  '/servicos-documentacao': typeof ServicosDocumentacaoRoute
   '/sicaf-cadastro-unificado-de-fornecedores': typeof SicafCadastroUnificadoDeFornecedoresRoute
   '/sicaf-digital': typeof SicafDigitalRoute
   '/sicaf-niveis': typeof SicafNiveisRoute
@@ -497,6 +506,7 @@ export interface FileRouteTypes {
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
+    | '/servicos-documentacao'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sicaf-niveis'
@@ -546,6 +556,7 @@ export interface FileRouteTypes {
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
+    | '/servicos-documentacao'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sicaf-niveis'
@@ -595,6 +606,7 @@ export interface FileRouteTypes {
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
     | '/renovacao-sicaf'
+    | '/servicos-documentacao'
     | '/sicaf-cadastro-unificado-de-fornecedores'
     | '/sicaf-digital'
     | '/sicaf-niveis'
@@ -645,6 +657,7 @@ export interface RootRouteChildren {
   QuemPodeSeCadastrarNoSicafRoute: typeof QuemPodeSeCadastrarNoSicafRoute
   RegularidadeFiscalRoute: typeof RegularidadeFiscalRoute
   RenovacaoSicafRoute: typeof RenovacaoSicafRoute
+  ServicosDocumentacaoRoute: typeof ServicosDocumentacaoRoute
   SicafCadastroUnificadoDeFornecedoresRoute: typeof SicafCadastroUnificadoDeFornecedoresRoute
   SicafDigitalRoute: typeof SicafDigitalRoute
   SicafNiveisRoute: typeof SicafNiveisRoute
@@ -692,6 +705,13 @@ declare module '@tanstack/react-router' {
       path: '/sicaf-cadastro-unificado-de-fornecedores'
       fullPath: '/sicaf-cadastro-unificado-de-fornecedores'
       preLoaderRoute: typeof SicafCadastroUnificadoDeFornecedoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos-documentacao': {
+      id: '/servicos-documentacao'
+      path: '/servicos-documentacao'
+      fullPath: '/servicos-documentacao'
+      preLoaderRoute: typeof ServicosDocumentacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/renovacao-sicaf': {
@@ -1031,6 +1051,7 @@ const rootRouteChildren: RootRouteChildren = {
   QuemPodeSeCadastrarNoSicafRoute: QuemPodeSeCadastrarNoSicafRoute,
   RegularidadeFiscalRoute: RegularidadeFiscalRoute,
   RenovacaoSicafRoute: RenovacaoSicafRoute,
+  ServicosDocumentacaoRoute: ServicosDocumentacaoRoute,
   SicafCadastroUnificadoDeFornecedoresRoute:
     SicafCadastroUnificadoDeFornecedoresRoute,
   SicafDigitalRoute: SicafDigitalRoute,
