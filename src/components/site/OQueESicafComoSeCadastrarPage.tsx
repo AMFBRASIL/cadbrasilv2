@@ -5,11 +5,13 @@ import {
   BookOpen,
   CheckCircle2,
   Clock,
+  ExternalLink,
   FileText,
   Key,
   Layers,
   ListChecks,
   MessageCircle,
+  Scale,
   Shield,
   Sparkles,
   Users,
@@ -24,25 +26,29 @@ import {
   quemPrecisaSicaf,
 } from "@/data/guiaCadastroSicaf";
 import {
+  baseLegal,
   custosPrazos,
+  editorialTrust,
+  fontesOficiais,
+  mitosVerdades,
   obrigatoriedade,
   oQueESicafParagrafos,
   passosCadastroResumo,
   relatedGuides,
   resumoInteligente,
   sicafCadastroFaqs,
+  sicafCadastroMeta,
   sicafCadastroToc,
+  sicafVsPncp,
 } from "@/data/oQueESicafComoSeCadastrar";
 import { PageShell } from "@/components/site/PageShell";
 import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
-const MODIFIED = "29 mai 2026";
-
 const heroStats = [
   { value: "8", label: "Passos oficiais" },
   { value: "6", label: "Níveis de habilitação" },
-  { value: "11+", label: "Documentos mapeados" },
+  { value: "12", label: "FAQs respondidas" },
   { value: "24h", label: "Com CADBRASIL" },
 ];
 
@@ -72,7 +78,7 @@ export function OQueESicafComoSeCadastrarPage() {
             <div className="text-white">
               <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-white/70 border border-white/20 rounded-full px-3 py-1">
                 <BookOpen className="h-3 w-3" />
-                Guia SICAF · 2026
+                Guia pilar SICAF · 2026
               </span>
 
               <h1 className="mt-5 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] tracking-tight text-balance">
@@ -81,13 +87,14 @@ export function OQueESicafComoSeCadastrarPage() {
               </h1>
 
               <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
-                Guia completo do <strong className="text-white font-semibold">Sistema de Cadastramento Unificado de Fornecedores</strong>{" "}
-                — definição, obrigatoriedade, passo a passo no Compras.gov.br, documentos e como habilitar sua empresa.
+                Guia completo do{" "}
+                <strong className="text-white font-semibold">Sistema de Cadastramento Unificado de Fornecedores</strong> —
+                definição, obrigatoriedade, passo a passo no Compras.gov.br, documentos, níveis I a VI, CRC e prazos.
               </p>
 
               <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                Resposta direta: o SICAF é obrigatório para licitar com o governo federal. O cadastro oficial é gratuito;
-                você precisa de e-CNPJ, documentos por nível e CRC regular antes de disputar pregões.
+                Conteúdo people-first: feito para quem precisa cadastrar de verdade — não só para ranquear. Atualizado
+                por especialistas CADBRASIL.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -136,7 +143,7 @@ export function OQueESicafComoSeCadastrarPage() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground mb-8">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground mb-6">
           <nav aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -155,9 +162,30 @@ export function OQueESicafComoSeCadastrarPage() {
             </ol>
           </nav>
           <span className="hidden sm:inline text-border">|</span>
-          <span>Atualizado {MODIFIED}</span>
+          <span>Atualizado {editorialTrust.how.updatedLabel}</span>
           <span aria-hidden>·</span>
-          <span>~14 min de leitura</span>
+          <span>{editorialTrust.how.readingTime}</span>
+        </div>
+
+        {/* E-E-A-T: Who / How / Why */}
+        <div className="mb-10 rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Transparência editorial</p>
+          <div className="grid sm:grid-cols-3 gap-4 text-sm">
+            <div>
+              <p className="font-semibold text-foreground">Quem</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">
+                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Como</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.how.method}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Por quê</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.why.purpose}</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
@@ -181,19 +209,35 @@ export function OQueESicafComoSeCadastrarPage() {
                   </li>
                 ))}
               </ol>
-              <div className="p-4 border-t border-border bg-gradient-to-b from-brand/5 to-transparent">
+              <div className="p-4 border-t border-border bg-gradient-to-b from-brand/5 to-transparent space-y-2">
                 <CadastroLink className="block w-full text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground">
                   Cadastrar no SICAF
                 </CadastroLink>
+                <Link
+                  to="/sicaf-niveis"
+                  className="block w-full text-center text-sm font-medium py-2 rounded-xl border border-border hover:border-brand/40 transition"
+                >
+                  Manual dos níveis
+                </Link>
               </div>
             </nav>
           </aside>
 
-          <article className="min-w-0 prose-guide">
+          <article className="min-w-0 prose-guide" itemScope itemType="https://schema.org/Article">
+            <meta itemProp="headline" content={sicafCadastroMeta.title} />
+            <meta itemProp="dateModified" content="2026-07-21" />
+
+            <section id="resposta-rapida" className="scroll-mt-32 mb-14">
+              <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
+                <p className="guide-quick-answer text-base text-foreground leading-relaxed">{sicafCadastroMeta.quickAnswer}</p>
+              </div>
+            </section>
+
             <div className="mb-14 rounded-2xl border border-border bg-accent/30 p-6 sm:p-8">
               <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-brand" />
-                Resumo inteligente (IA e buscadores)
+                Resumo para IA e buscadores
               </h2>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {resumoInteligente.map((item) => (
@@ -241,6 +285,21 @@ export function OQueESicafComoSeCadastrarPage() {
               </p>
             </section>
 
+            <section id="base-legal" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
+                <Scale className="h-7 w-7 text-brand shrink-0" />
+                Base legal e contexto
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {baseLegal.map((item) => (
+                  <div key={item.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <h3 className="font-semibold">{item.titulo}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.descricao}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             <section id="obrigatorio" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">O SICAF é obrigatório?</h2>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -282,7 +341,7 @@ export function OQueESicafComoSeCadastrarPage() {
                 Como se cadastrar no SICAF — passo a passo
               </h2>
               <p className="text-muted-foreground mb-6 max-w-3xl">
-                Fluxo oficial no Compras.gov.br. Schema HowTo desta página para Google e assistentes de IA.
+                Fluxo prático no Compras.gov.br. Cada passo abaixo está marcado para rich results HowTo no Google.
               </p>
               <ol className="space-y-3">
                 {passosOficiais.map((step, index) => (
@@ -305,13 +364,18 @@ export function OQueESicafComoSeCadastrarPage() {
                   </li>
                 ))}
               </ol>
-              <Link
-                to="/cadastro-sicaf-passo-a-passo"
-                className="inline-flex items-center gap-2 mt-6 text-brand font-semibold hover:underline"
-              >
-                Ver guia passo a passo expandido (8 passos + glossário)
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <CadastroLink className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow">
+                  Fazer cadastro com CADBRASIL
+                  <ArrowRight className="h-4 w-4" />
+                </CadastroLink>
+                <Link
+                  to="/cadastro-sicaf-passo-a-passo"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+                >
+                  Guia expandido (checklist + glossário)
+                </Link>
+              </div>
             </section>
 
             <section id="niveis" className="scroll-mt-32 mb-14">
@@ -330,6 +394,13 @@ export function OQueESicafComoSeCadastrarPage() {
                   </div>
                 ))}
               </div>
+              <Link
+                to="/sicaf-niveis"
+                className="inline-flex items-center gap-2 mt-4 text-sm text-brand font-semibold hover:underline"
+              >
+                Manual ilustrado de atualização dos níveis
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </section>
 
             <section id="documentos" className="scroll-mt-32 mb-14">
@@ -394,6 +465,34 @@ export function OQueESicafComoSeCadastrarPage() {
               </ul>
             </section>
 
+            <section id="sicaf-vs-pncp" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">SICAF vs PNCP</h2>
+              <p className="text-muted-foreground mb-4 max-w-3xl">
+                Confusão comum: SICAF habilita o fornecedor; PNCP dá publicidade às contratações. Você precisa dos dois
+                no ecossistema — funções diferentes.
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-card">
+                <table className="w-full text-sm min-w-[520px]">
+                  <thead className="bg-accent/60 text-left">
+                    <tr>
+                      <th className="p-4 font-semibold">Aspecto</th>
+                      <th className="p-4 font-semibold">SICAF</th>
+                      <th className="p-4 font-semibold">PNCP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sicafVsPncp.map((row) => (
+                      <tr key={row.aspecto} className="border-t border-border">
+                        <td className="p-4 font-medium">{row.aspecto}</td>
+                        <td className="p-4 text-muted-foreground">{row.sicaf}</td>
+                        <td className="p-4 text-muted-foreground">{row.pncp}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
             <section id="custos" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Custos e prazos reais</h2>
               <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-card">
@@ -416,7 +515,30 @@ export function OQueESicafComoSeCadastrarPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">* Com documentação completa e sem pendências fiscais estruturais.</p>
+              <p className="mt-3 text-xs text-muted-foreground">
+                * Com documentação completa e sem pendências fiscais estruturais. Valores de mercado de e-CNPJ variam por
+                AC — confirme com sua autoridade certificadora.
+              </p>
+            </section>
+
+            <section id="mitos" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Mitos e verdades sobre o SICAF</h2>
+              <div className="space-y-3">
+                {mitosVerdades.map((m) => (
+                  <div key={m.mito} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <p className="text-sm font-semibold text-amber-800 dark:text-amber-200 flex gap-2">
+                      <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
+                      Mito: {m.mito}
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground flex gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                      <span>
+                        <strong className="text-foreground">Verdade:</strong> {m.verdade}
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section id="comparativo" className="scroll-mt-32 mb-14">
@@ -458,7 +580,7 @@ export function OQueESicafComoSeCadastrarPage() {
               </ul>
             </section>
 
-            <section className="mb-14">
+            <section id="glossario" className="scroll-mt-32 mb-14">
               <h2 className="text-xl font-bold mb-4">Glossário SICAF</h2>
               <dl className="grid sm:grid-cols-2 gap-4">
                 {glossarioSicaf.map((g) => (
@@ -468,6 +590,32 @@ export function OQueESicafComoSeCadastrarPage() {
                   </div>
                 ))}
               </dl>
+            </section>
+
+            <section id="fontes" className="scroll-mt-32 mb-14 rounded-3xl border border-border bg-accent/20 p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Fontes oficiais e referências</h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                Consulte sempre os portais oficiais para procedimentos atualizados. Este guia organiza a prática e a
+                interpretação operacional — não substitui normas ou manuais do governo.
+              </p>
+              <ul className="space-y-3">
+                {fontesOficiais.map((f) => (
+                  <li key={f.href}>
+                    <a
+                      href={f.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-3 rounded-xl border border-border bg-card p-4 hover:border-brand/40 transition"
+                    >
+                      <ExternalLink className="h-4 w-4 text-brand shrink-0 mt-0.5" />
+                      <span>
+                        <span className="font-semibold text-sm text-foreground">{f.label}</span>
+                        <span className="block text-xs text-muted-foreground mt-1">{f.nota}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section id="faq" className="scroll-mt-32 mb-14">
@@ -491,13 +639,20 @@ export function OQueESicafComoSeCadastrarPage() {
               <div className="rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-8 sm:p-10 text-center shadow-card">
                 <h2 className="text-2xl sm:text-3xl font-bold">Pronto para se cadastrar no SICAF?</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Credenciamento assistido em até 24 horas. Especialistas em SICAF e licitações públicas.
+                  Credenciamento assistido em até 24 horas. Especialistas em SICAF e licitações públicas — gestão
+                  documental e monitoramento de certidões.
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
                   <CadastroLink className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
                     Iniciar cadastro SICAF
                     <ArrowRight className="h-4 w-4" />
                   </CadastroLink>
+                  <Link
+                    to="/servicos-documentacao"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+                  >
+                    Ver serviços de documentação
+                  </Link>
                   <Link
                     to="/planos"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"

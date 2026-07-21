@@ -19,7 +19,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/licitacoes", changefreq: "weekly", priority: "0.99" },
           { path: "/licitacoes-cadastro", changefreq: "weekly", priority: "0.99" },
           { path: "/planos", changefreq: "weekly", priority: "0.98" },
-          { path: "/o-que-e-sicaf-e-como-se-cadastrar", changefreq: "weekly", priority: "0.98" },
+          { path: "/o-que-e-sicaf-e-como-se-cadastrar", changefreq: "weekly", priority: "1.0" },
           { path: "/sicaf-niveis", changefreq: "weekly", priority: "0.98" },
           { path: "/servicos-documentacao", changefreq: "weekly", priority: "0.98" },
           { path: "/cadastro-sicaf-passo-a-passo", changefreq: "weekly", priority: "0.98" },

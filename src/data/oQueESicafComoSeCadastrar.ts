@@ -1,72 +1,121 @@
-/** Conteúdo /o-que-e-sicaf-e-como-se-cadastrar — guia pilar SICAF + cadastro */
+/** Conteúdo /o-que-e-sicaf-e-como-se-cadastrar — guia pilar SEO + IA (people-first / E-E-A-T) */
 
 export const sicafCadastroMeta = {
   path: "/o-que-e-sicaf-e-como-se-cadastrar",
-  title: "O que é SICAF e Como se Cadastrar 2026 | Guia Completo CADBRASIL",
+  title: "O que é SICAF e Como se Cadastrar (2026) | Guia Oficial CADBRASIL",
   description:
-    "Entenda o que é o SICAF, por que é obrigatório, quem pode se cadastrar e o passo a passo completo para credenciar sua empresa no Compras.gov.br — documentos, níveis I a VI, CRC e prazos.",
+    "O que é SICAF, para que serve, se é obrigatório e como se cadastrar no Compras.gov.br: passo a passo, documentos, níveis I–VI, CRC, custos, prazos e erros comuns. Guia atualizado por especialistas CADBRASIL.",
   keywords:
-    "o que é sicaf, como se cadastrar no sicaf, cadastro sicaf passo a passo, sicaf compras gov br, credenciamento sicaf, habilitação fornecedor, crc sicaf, certificado digital sicaf, sicaf 2026, fornecedor governo federal",
+    "o que é sicaf, como se cadastrar no sicaf, cadastro sicaf passo a passo, sicaf compras.gov.br, credenciamento sicaf, habilitação fornecedor governo, crc sicaf, certificado digital e-cnpj, níveis sicaf, sicaf 2026, fornecedor governo federal, lei 14133 sicaf",
   quickAnswer:
-    "O SICAF (Sistema de Cadastramento Unificado de Fornecedores) é o cadastro obrigatório para vender ao Governo Federal. Para se cadastrar: certificado e-CNPJ, acesso ao Compras.gov.br, Nível I (credenciamento) e níveis II a VI conforme o edital — com CRC regular antes de licitar.",
+    "O SICAF (Sistema de Cadastramento Unificado de Fornecedores) é o cadastro oficial para empresas venderem ao Governo Federal via Compras.gov.br. Para se cadastrar: e-CNPJ, Nível I (credenciamento), documentos dos níveis II–VI conforme o edital e CRC Regular. O credenciamento no portal é gratuito.",
+};
+
+/** Who / How / Why — Google Search Central (E-E-A-T) */
+export const editorialTrust = {
+  who: {
+    organization: "CADBRASIL",
+    role: "Especialistas em SICAF e licitações públicas",
+    experience:
+      "Equipe que conduz credenciamento, regularização e monitoramento de certidões no Compras.gov.br para MEI, ME, EPP e demais portes em todo o Brasil.",
+  },
+  how: {
+    method:
+      "Este guia combina procedimentos oficiais do Compras.gov.br com a prática de cadastro assistido observada pela CADBRASIL em milhares de fornecedores — revisado por especialistas cadastrais.",
+    updatedLabel: "21 jul 2026",
+    readingTime: "~18 min de leitura",
+  },
+  why: {
+    purpose:
+      "Ajudar gestores e empresários a entender o SICAF e concluir o cadastro com segurança — sem conteúdo feito só para manipular ranqueamento.",
+  },
 };
 
 export const sicafCadastroToc = [
+  { id: "resposta-rapida", label: "Resposta rápida" },
   { id: "o-que-e", label: "O que é SICAF" },
+  { id: "base-legal", label: "Base legal" },
   { id: "obrigatorio", label: "É obrigatório?" },
   { id: "quem-pode", label: "Quem pode cadastrar" },
   { id: "como-cadastrar", label: "Como se cadastrar" },
   { id: "niveis", label: "Níveis I a VI" },
   { id: "documentos", label: "Documentos" },
   { id: "certificado", label: "Certificado digital" },
+  { id: "sicaf-vs-pncp", label: "SICAF vs PNCP" },
   { id: "custos", label: "Custos e prazos" },
+  { id: "mitos", label: "Mitos e verdades" },
   { id: "comparativo", label: "Sozinho vs CADBRASIL" },
   { id: "erros", label: "Erros comuns" },
+  { id: "glossario", label: "Glossário" },
+  { id: "fontes", label: "Fontes oficiais" },
   { id: "faq", label: "Perguntas frequentes" },
   { id: "cadastro", label: "Cadastrar agora" },
 ] as const;
 
 export const resumoInteligente = [
-  "SICAF é o cadastro unificado de fornecedores do Governo Federal — obrigatório para licitar no Compras.gov.br.",
-  "Credenciamento oficial no portal é gratuito; o investimento está no certificado digital e na regularidade documental.",
-  "Níveis I a VI definem a habilitação: jurídica, fiscal, técnica, econômico-financeira e linhas de fornecimento.",
-  "Sem CRC regular, a empresa é desclassificada na habilitação — mesmo com proposta vencedora no pregão.",
+  "SICAF = cadastro unificado de fornecedores do Governo Federal no Compras.gov.br.",
+  "Credenciamento oficial no portal é gratuito; custos reais: e-CNPJ e manutenção documental.",
+  "Níveis I a VI cobrem dados, jurídica, fiscal federal, estadual/municipal, técnica e econômico-financeira.",
+  "CRC Regular comprova habilitação — sem ele, risco alto de desclassificação na habilitação.",
   "MEI, ME, EPP, LTDA, S/A e EIRELI podem se cadastrar com CNPJ ativo e documentos válidos.",
-  "Certificado digital e-CNPJ (A1 ou A3) é requisito para acessar o Compras.gov.br como pessoa jurídica.",
-  "Certidões fiscais e trabalhistas vencem — monitoramento contínuo evita bloqueio do cadastro.",
-  "Com assessoria CADBRASIL, credenciamento e regularização podem ser concluídos em até 24 horas.",
+  "e-CNPJ (A1 ou A3) é requisito para acessar o Compras.gov.br como pessoa jurídica.",
+  "Certidões vencem; monitoramento contínuo evita SICAF irregular no meio do pregão.",
+  "Com CADBRASIL, credenciamento/regularização podem ser concluídos em até 24h com documentação completa.",
 ];
 
 export const oQueESicafParagrafos = [
   {
     titulo: "Definição oficial",
     texto:
-      "O SICAF (Sistema de Cadastramento Unificado de Fornecedores) centraliza o cadastro e a habilitação de empresas que desejam contratar com a administração pública federal. Ele substitui credenciamentos fragmentados e permite que órgãos verifiquem a regularidade do fornecedor em tempo real.",
+      "O SICAF (Sistema de Cadastramento Unificado de Fornecedores) centraliza o cadastro e a habilitação de empresas que desejam contratar com a administração pública federal. Em vez de credenciamentos fragmentados por órgão, o sistema permite que compradores públicos consultem a regularidade do fornecedor de forma unificada e atualizada.",
   },
   {
-    titulo: "Onde fica",
+    titulo: "Onde fica (Compras.gov.br)",
     texto:
-      "O credenciamento é feito no portal Compras.gov.br (antigo Comprasnet). O mercado ainda usa os dois nomes, mas a plataforma oficial atual é o Compras.gov.br.",
+      "O credenciamento é feito no portal Compras.gov.br (sucessor operacional do antigo Comprasnet no uso cotidiano do mercado). Você acessa com certificado digital, entra no módulo de fornecedores e atualiza os níveis do SICAF. O mercado ainda fala “Comprasnet”; o portal oficial atual é o Compras.gov.br.",
   },
   {
-    titulo: "Para que serve",
+    titulo: "Para que serve na prática",
     texto:
-      "Validar dados cadastrais, documentos societários, regularidade fiscal e trabalhista, qualificação técnica e capacidade econômico-financeira — tudo vinculado ao CNPJ da empresa licitante.",
+      "Validar dados cadastrais, documentos societários, regularidade fiscal e trabalhista, qualificação técnica e capacidade econômico-financeira — tudo vinculado ao CNPJ. É a base da fase de habilitação: proposta vencedora não basta se o SICAF estiver irregular.",
+  },
+  {
+    titulo: "O que o SICAF não é",
+    texto:
+      "Não é um site de busca de editais, não substitui o PNCP e não “garante” vitória em pregão. Ele comprova que sua empresa está apta a contratar. Ganhar demanda exige estratégia comercial, preço competitivo e gestão de oportunidades.",
+  },
+];
+
+export const baseLegal = [
+  {
+    titulo: "Lei 14.133/2021",
+    descricao:
+      "Nova Lei de Licitações e Contratos — reforça exigências de habilitação jurídica, fiscal, técnica e econômico-financeira nas contratações públicas.",
+  },
+  {
+    titulo: "Portal Compras.gov.br",
+    descricao:
+      "Ambiente oficial de compras do Governo Federal onde o fornecedor se credencia e mantém o SICAF atualizado.",
+  },
+  {
+    titulo: "CRC — Certificado de Registro Cadastral",
+    descricao:
+      "Documento que evidencia a situação cadastral da empresa no SICAF nos níveis exigidos — use-o como prova de regularidade quando solicitado.",
   },
 ];
 
 export const obrigatoriedade = [
   {
     titulo: "Licitações federais",
-    descricao: "Obrigatório para participar de pregões, concorrências e dispensas do Executivo Federal.",
+    descricao: "Na prática, é indispensável para participar de pregões, concorrências e outras modalidades do Executivo Federal.",
   },
   {
     titulo: "Estados e municípios",
-    descricao: "Muitos entes consultam o SICAF ou exigem regularidade equivalente na habilitação.",
+    descricao: "Muitos entes consultam o SICAF ou exigem regularidade equivalente na habilitação — mesmo em certames locais.",
   },
   {
     titulo: "Habilitação pós-disputa",
-    descricao: "Mesmo vencendo o pregão, pendência cadastral leva à desclassificação na fase de habilitação.",
+    descricao: "Mesmo vencendo o pregão, pendência cadastral ou documental leva à desclassificação na fase de habilitação.",
   },
 ];
 
@@ -88,26 +137,72 @@ export const passosCadastroResumo = [
   { n: "6", t: "Monitore vencimentos", d: "Renove certidões antes do prazo para manter habilitação em licitações." },
 ];
 
+export const sicafVsPncp = [
+  {
+    aspecto: "Função",
+    sicaf: "Cadastro e habilitação do fornecedor",
+    pncp: "Publicidade e transparência das contratações",
+  },
+  {
+    aspecto: "Pergunta que responde",
+    sicaf: "Esta empresa está apta a contratar?",
+    pncp: "Quais editais, contratos e resultados existem?",
+  },
+  {
+    aspecto: "Quando usar",
+    sicaf: "Antes e durante a habilitação",
+    pncp: "Para pesquisar e acompanhar contratações",
+  },
+  {
+    aspecto: "Relação",
+    sicaf: "Complementar ao PNCP",
+    pncp: "Complementar ao SICAF",
+  },
+];
+
+export const mitosVerdades = [
+  {
+    mito: "O SICAF custa caro no governo.",
+    verdade: "O credenciamento oficial no portal é gratuito. Os custos são e-CNPJ, tempo interno e eventual assessoria.",
+  },
+  {
+    mito: "Com Nível I já posso licitar qualquer edital.",
+    verdade: "Cada edital exige níveis específicos (jurídica, fiscal, técnica, econômico-financeira). Nível I sozinho costuma ser insuficiente.",
+  },
+  {
+    mito: "SICAF e CRC são a mesma coisa.",
+    verdade: "SICAF é o sistema/cadastro. CRC é o certificado que comprova a situação regular nos níveis exigidos.",
+  },
+  {
+    mito: "Depois de cadastrar, nunca preciso atualizar.",
+    verdade: "Certidões vencem. Sem renovação, o cadastro fica irregular e a empresa pode ser desclassificada.",
+  },
+  {
+    mito: "e-CPF resolve o acesso da empresa.",
+    verdade: "Para pessoa jurídica, o fluxo padrão exige e-CNPJ. e-CPF não substitui o certificado da empresa.",
+  },
+];
+
 export const sicafCadastroFaqs = [
   {
     question: "O que é SICAF em termos simples?",
     answer:
-      "É o \"RG da sua empresa\" perante o Governo Federal para licitações. Sem SICAF regular, você não habilita para vender ao governo na maioria dos certames federais.",
+      "É o cadastro oficial da sua empresa perante o Governo Federal para licitações e contratos. Sem SICAF regular, você tende a ser barrado na habilitação — mesmo com boa proposta.",
   },
   {
     question: "Como me cadastrar no SICAF pela primeira vez?",
     answer:
-      "Obtenha certificado e-CNPJ, acesse Compras.gov.br, complete o Nível I e avance nos níveis II a VI exigidos pelo tipo de licitação que pretende disputar. Emita o CRC quando estiver regular.",
+      "Obtenha e-CNPJ, acesse Compras.gov.br, complete o Nível I (credenciamento) e avance nos níveis II a VI exigidos pelo tipo de licitação. Emita o CRC quando estiver regular e monitore vencimentos.",
   },
   {
     question: "Quanto tempo demora o cadastro?",
     answer:
-      "Sozinho, de 7 a 20 dias úteis conforme pendências. Com documentação organizada e CADBRASIL, até 24 horas.",
+      "Sozinho, tipicamente 7 a 20 dias úteis conforme pendências. Com documentação organizada e CADBRASIL, até 24 horas é viável.",
   },
   {
     question: "Preciso pagar ao governo para cadastrar?",
     answer:
-      "Não. O credenciamento oficial é gratuito. Custos reais: certificado digital, certidões (emissão gratuita) e eventual assessoria.",
+      "Não. O credenciamento oficial é gratuito. Custos reais: certificado digital, eventual emissão de documentos e assessoria especializada.",
   },
   {
     question: "MEI pode se cadastrar no SICAF?",
@@ -117,12 +212,32 @@ export const sicafCadastroFaqs = [
   {
     question: "Qual a diferença entre SICAF e CRC?",
     answer:
-      "SICAF é o sistema/cadastro. CRC é o certificado que comprova que sua empresa está regular no SICAF nos níveis exigidos.",
+      "SICAF é o sistema/cadastro. CRC (Certificado de Registro Cadastral) comprova que a empresa está regular nos níveis exigidos.",
   },
   {
     question: "Posso licitar com SICAF irregular?",
     answer:
       "Não de forma segura. A habilitação verifica pendências — irregularidade leva à desclassificação mesmo após vencer o pregão.",
+  },
+  {
+    question: "Qual a diferença entre SICAF e PNCP?",
+    answer:
+      "SICAF cadastra/habilita o fornecedor. O PNCP publica e centraliza informações de contratações. São complementares no ecossistema de compras públicas.",
+  },
+  {
+    question: "Preciso de certificado digital para o SICAF?",
+    answer:
+      "Sim. Para pessoa jurídica, o e-CNPJ (A1 ou A3) é o meio padrão de acesso ao Compras.gov.br no fluxo de fornecedor.",
+  },
+  {
+    question: "O que fazer se uma certidão não atualizar automaticamente (Nível III)?",
+    answer:
+      "Verifique a emissão no órgão (Receita, FGTS, Justiça do Trabalho etc.). Se o sistema não localizar, corrija a pendência na origem e aguarde a sincronização — ou busque suporte especializado.",
+  },
+  {
+    question: "Como atualizar certidão estadual/municipal (Nível IV)?",
+    answer:
+      "Exclua a certidão vencida, depois cadastre a nova com código, data de validade e PDF. Não apenas “substitua” o arquivo sem excluir a anterior.",
   },
   {
     question: "A CADBRASIL faz o cadastro por mim?",
@@ -131,8 +246,33 @@ export const sicafCadastroFaqs = [
   },
 ];
 
+export const fontesOficiais = [
+  {
+    label: "Compras.gov.br — portal oficial",
+    href: "https://www.gov.br/compras",
+    nota: "Ambiente de credenciamento e compras federais.",
+  },
+  {
+    label: "PNCP — Portal Nacional de Contratações Públicas",
+    href: "https://www.gov.br/pncp",
+    nota: "Transparência de editais, contratos e resultados.",
+  },
+  {
+    label: "Lei nº 14.133/2021 (Nova Lei de Licitações)",
+    href: "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm",
+    nota: "Base legal das contratações públicas federais.",
+  },
+  {
+    label: "Google — conteúdo útil e people-first",
+    href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    nota: "Princípios de qualidade que orientam a estrutura deste guia.",
+  },
+];
+
 export const relatedGuides = [
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia passo a passo detalhado" },
+  { to: "/sicaf-niveis", label: "Manual dos 6 níveis SICAF" },
+  { to: "/servicos-documentacao", label: "Serviços e gestão documental" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF — visão geral" },
   { to: "/cadastrar-no-sicaf", label: "Cadastrar no SICAF com CADBRASIL" },
   { to: "/quem-pode-se-cadastrar-no-sicaf", label: "Quem pode se cadastrar" },
