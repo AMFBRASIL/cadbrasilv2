@@ -284,5 +284,6 @@ export const relatedGuides = [
   { to: "/planos", label: "Planos e preços" },
   { to: "/cadastrar-no-sicaf", label: "Cadastrar no SICAF" },
   { to: "/renovacao-sicaf", label: "Renovação SICAF" },
+  { to: "/renovar-sicaf", label: "Renovar SICAF — campanha" },
   { to: "/emitir-crc", label: "Emitir CRC" },
 ];

@@ -33,6 +33,8 @@ const PATH_LABELS: Record<string, string> = {
   "/o-que-e-sicaf-e-como-se-cadastrar": "O que é SICAF e como se cadastrar",
   "/sicaf-niveis": "Níveis do SICAF — manual de atualização",
   "/servicos-documentacao": "Serviços e gestão documental CADBRASIL",
+  "/renovar-sicaf": "Campanha Renovar SICAF",
+  "/renovacao-sicaf": "Renovação SICAF",
   "/cadastro": "Cadastro SICAF — landing conversão",
 };
 
@@ -123,7 +125,7 @@ export function getDefaultIntent(pathname: string): string {
     return "Preciso de orientação para participar de licitações com SICAF regular.";
   if (p.includes("cadastro") || p.includes("credenciamento") || p.includes("crc"))
     return "Quero fazer ou concluir meu cadastro SICAF com apoio especializado.";
-  if (p.includes("regulariz") || p.includes("inapta") || p.includes("renovacao"))
+  if (p.includes("regulariz") || p.includes("inapta") || p.includes("renovacao") || p.includes("renovar"))
     return "Preciso regularizar ou renovar meu SICAF e certidões.";
   if (p.includes("assistente")) return "Quero saber mais sobre o Assistente CADBRASIL e monitoramento.";
   if (p.includes("faq")) return "Tenho dúvidas sobre SICAF, documentos ou licitações.";
