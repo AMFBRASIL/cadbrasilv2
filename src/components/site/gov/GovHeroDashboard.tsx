@@ -2,18 +2,16 @@ import {
   AlertTriangle,
   CheckCircle2,
   FileText,
-  ShieldCheck,
   Sparkles,
   TrendingUp,
 } from "lucide-react";
-import { GovFloatingBadge } from "@/components/site/gov/GovFloatingBadge";
 
 export function GovHeroDashboard() {
   return (
-    <div className="relative pb-8 sm:pb-4">
+    <div className="relative">
       <div className="absolute -inset-4 bg-[#FFCD07]/20 blur-3xl rounded-[2rem] opacity-40" aria-hidden />
 
-      <div className="relative rounded-lg border-2 border-white/25 bg-white shadow-2xl overflow-visible">
+      <div className="relative rounded-lg border-2 border-white/25 bg-white shadow-2xl overflow-hidden">
         <div className="bg-[#071D41] px-4 py-2.5 flex items-center justify-between rounded-t-md">
           <span className="text-[10px] sm:text-xs font-mono text-white/85">
             portal.cadbrasil.com.br/sicaf
@@ -122,22 +120,6 @@ export function GovHeroDashboard() {
           </div>
         </div>
       </div>
-
-      <GovFloatingBadge
-        icon={ShieldCheck}
-        title="CRC emitido"
-        subtitle="há 2 minutos"
-        className="absolute -left-2 sm:-left-6 bottom-16 sm:bottom-20 z-10 max-w-[200px] hidden sm:flex"
-      />
-
-      <GovFloatingBadge
-        icon={CheckCircle2}
-        title="CND Federal validada"
-        subtitle="há 8 minutos"
-        variant="info"
-        animationDelay="0.8s"
-        className="absolute -right-2 sm:-right-6 bottom-8 sm:bottom-12 z-10 max-w-[210px] hidden sm:flex"
-      />
     </div>
   );
 }

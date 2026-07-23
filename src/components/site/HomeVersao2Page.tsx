@@ -3,14 +3,9 @@ import {
   LogosBar,
   WhatIsSicaf,
   Process,
-  ReadinessCalculator,
-  DocumentChecklist,
   ComparisonSection,
   Assistant,
-  Benefits,
-  Stats,
   Testimonials,
-  StartIn2Minutes,
   FinalCTA,
 } from "@/components/site/Sections";
 import { Faq } from "@/components/site/Faq";
@@ -38,25 +33,22 @@ export function HomeVersao2Page() {
 
         <div className="bg-[#f0f7f2]">
           <Process />
-          <ReadinessCalculator />
         </div>
 
         <div className="bg-white border-y border-[#168821]/15">
-          <DocumentChecklist />
           <ComparisonSection />
+        </div>
+
+        <div className="bg-white">
+          <Testimonials />
         </div>
 
         <div className="bg-[#e8f3eb]">
           <Assistant />
-          <Benefits />
         </div>
 
-        <Stats />
-        <div className="bg-white">
-          <Testimonials />
-          <StartIn2Minutes />
-        </div>
         <FinalCTA />
+
         <div className="bg-[#f0f7f2]">
           <Faq />
           <ContactSection />

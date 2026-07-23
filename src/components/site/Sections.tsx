@@ -4,7 +4,9 @@ import {
   CheckCircle2, ArrowRight, Building2, Award, Clock, Users, Search, Lock, BadgeCheck,
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { CadastroLink } from "@/components/site/CadastroLink";
 import { openWhatsApp } from "@/lib/whatsapp";
 
 export function ServiceStatusBar() {
@@ -59,9 +61,15 @@ export function WhatIsSicaf() {
             IA e atendimento humano especializado.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#cta" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow">
-              Quero ser fornecedor do governo <ArrowRight className="h-4 w-4" />
-            </a>
+            <CadastroLink className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
+              Iniciar cadastro SICAF <ArrowRight className="h-4 w-4" />
+            </CadastroLink>
+            <WhatsAppLink
+              intent="Quero entender o SICAF e cadastrar minha empresa (seção o que é SICAF)."
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+            >
+              Falar com especialista
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -120,6 +128,13 @@ export function Process() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <CadastroLink className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
+            Começar meu cadastro SICAF
+            <ArrowRight className="h-4 w-4" />
+          </CadastroLink>
         </div>
       </div>
     </section>
@@ -397,18 +412,15 @@ export function Assistant() {
             ))}
           </ul>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#cta"
+            <Link
+              to="/assistente"
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-semibold shadow-glow hover:bg-white/95 transition"
             >
-              <Download className="h-4 w-4" /> Instalar Assistente Agora
-            </a>
-            <WhatsAppLink
-              intent="Quero saber mais sobre o Assistente CADBRASIL."
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 text-white font-semibold border border-white/20 backdrop-blur hover:bg-white/20 transition"
-            >
-              Falar com especialista
-            </WhatsAppLink>
+              <Download className="h-4 w-4" /> Conhecer o Assistente
+            </Link>
+            <CadastroLink className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 text-white font-semibold border border-white/20 backdrop-blur hover:bg-white/20 transition">
+              Preferir cadastro SICAF
+            </CadastroLink>
           </div>
         </div>
 
@@ -578,6 +590,12 @@ export function ComparisonSection() {
             </tbody>
           </table>
         </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <CadastroLink className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
+            Cadastrar SICAF com CADBRASIL
+            <ArrowRight className="h-4 w-4" />
+          </CadastroLink>
+        </div>
       </div>
     </section>
   );
@@ -647,7 +665,20 @@ export function FinalCTA() {
               Nossa equipe especializada e nossa tecnologia inteligente ajudam você
               a participar de licitações sem dores de cabeça.
             </p>
-            <div className="mt-9 grid lg:grid-cols-[1fr_auto] gap-6 items-end">
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CadastroLink className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition">
+                Iniciar cadastro SICAF
+                <ArrowRight className="h-4 w-4" />
+              </CadastroLink>
+              <button
+                type="button"
+                onClick={openGeneralWhatsApp}
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition"
+              >
+                Atendimento imediato
+              </button>
+            </div>
+            <div className="mt-8 grid lg:grid-cols-[1fr_auto] gap-6 items-end">
               <div className="grid sm:grid-cols-3 gap-3">
                 <input
                   value={lead.nome}
@@ -668,22 +699,13 @@ export function FinalCTA() {
                   className="rounded-xl px-4 py-3 bg-white text-foreground placeholder:text-muted-foreground"
                 />
               </div>
-              <div className="flex flex-wrap gap-3">
               <button
                 type="button"
                 onClick={openLeadWhatsApp}
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/15 border border-white/25 text-white font-semibold backdrop-blur hover:bg-white/25 transition"
               >
-                🚀 Começar Agora
+                Enviar no WhatsApp
               </button>
-              <button
-                type="button"
-                onClick={openGeneralWhatsApp}
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white/10 border border-white/30 text-white font-bold backdrop-blur hover:bg-white/20 transition"
-              >
-                💬 Atendimento Imediato
-              </button>
-              </div>
             </div>
             <div className="mt-6 text-sm text-white/70">
               Sem letras miúdas. Sem amarras. Pague apenas pelo serviço contratado.

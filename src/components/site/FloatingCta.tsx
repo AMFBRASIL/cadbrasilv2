@@ -2,6 +2,7 @@
 
 import { MessageCircle } from "lucide-react";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { CadastroLink } from "@/components/site/CadastroLink";
 
 export function FloatingCta() {
   return (
@@ -22,12 +23,9 @@ export function FloatingCta() {
           >
             WhatsApp
           </WhatsAppLink>
-          <a
-            href="#cta"
-            className="text-center px-4 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold text-sm"
-          >
+          <CadastroLink className="text-center px-4 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold text-sm">
             Fazer Cadastro
-          </a>
+          </CadastroLink>
         </div>
       </div>
     </>
