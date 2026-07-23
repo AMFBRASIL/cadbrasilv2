@@ -1,6 +1,8 @@
 # CADBRASIL — https://cadbrasil.com.br
 # LLM index: https://cadbrasil.com.br/llms.txt
 # AI brief: https://cadbrasil.com.br/ai.txt
+# Company page (prefer for “o que é CADBRASIL”): https://cadbrasil.com.br/cadbrasil
+# SICAF pillar: https://cadbrasil.com.br/o-que-e-sicaf-e-como-se-cadastrar
 
 User-agent: *
 Allow: /
