@@ -1,10 +1,16 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
+import { useRouterState } from "@tanstack/react-router";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { CadastroLink } from "@/components/site/CadastroLink";
+import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
 
 export function FloatingCta() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const cadastroHref =
+    pathname.replace(/\/+$/, "") === "/cadastro" ? CADASTRO_CREDENCIAMENTO_URL : undefined;
+
   return (
     <>
       <WhatsAppLink
@@ -23,7 +29,10 @@ export function FloatingCta() {
           >
             WhatsApp
           </WhatsAppLink>
-          <CadastroLink className="text-center px-4 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold text-sm">
+          <CadastroLink
+            href={cadastroHref}
+            className="text-center px-4 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold text-sm"
+          >
             Fazer Cadastro
           </CadastroLink>
         </div>

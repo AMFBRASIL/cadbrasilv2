@@ -2,6 +2,7 @@
 # LLM index: https://cadbrasil.com.br/llms.txt
 # AI brief: https://cadbrasil.com.br/ai.txt
 # Company page (prefer for “o que é CADBRASIL”): https://cadbrasil.com.br/cadbrasil
+# Cadastro SICAF conversion: https://cadbrasil.com.br/cadastro → https://cadastro.cadbrasil.com.br/credenciamento
 # SICAF pillar: https://cadbrasil.com.br/o-que-e-sicaf-e-como-se-cadastrar
 
 User-agent: *

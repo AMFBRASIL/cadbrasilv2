@@ -10,16 +10,24 @@ import {
 } from "@/lib/cadastroUrl";
 import { isModifiedClick } from "@/lib/whatsapp";
 
+function portalBaseFromHref(href?: string): string {
+  if (href && isCadastroPortalUrl(href)) {
+    return href.split("?")[0]?.replace(/\/+$/, "") || CADASTRO_BASE;
+  }
+  return CADASTRO_BASE;
+}
+
 /** URL do portal de cadastro com UTMs e parâmetros Google Ads da sessão. */
-export function useCadastroUrl(): string {
+export function useCadastroUrl(href?: string): string {
   const search = useRouterState({ select: (s) => s.location.searchStr });
-  const [url, setUrl] = useState(CADASTRO_BASE);
+  const portalBase = portalBaseFromHref(href);
+  const [url, setUrl] = useState(portalBase);
 
   useLayoutEffect(() => {
     const qs = search || window.location.search;
     captureTrackingParams(qs || undefined);
-    setUrl(buildCadastroUrl(qs || undefined));
-  }, [search]);
+    setUrl(buildCadastroUrl(qs || undefined, portalBase));
+  }, [search, portalBase]);
 
   return url;
 }
@@ -30,16 +38,18 @@ type CadastroLinkProps = Omit<ComponentProps<"a">, "href"> & {
 
 /**
  * Link para cadastro.cadbrasil.com.br preservando gclid, utm_* e demais parâmetros de campanha.
+ * Aceita path customizado (ex.: /credenciamento) via `href`.
  */
 export function CadastroLink({ href, onClick, target = "_blank", rel = "noreferrer", ...props }: CadastroLinkProps) {
-  const cadastroUrl = useCadastroUrl();
+  const portalBase = portalBaseFromHref(href);
+  const cadastroUrl = useCadastroUrl(href);
   const resolvedHref =
     href === undefined || isCadastroPortalUrl(href) ? cadastroUrl : href;
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(event);
     if (!event.defaultPrevented && !isModifiedClick(event) && isCadastroPortalUrl(resolvedHref)) {
-      event.currentTarget.href = buildCadastroUrl();
+      event.currentTarget.href = buildCadastroUrl(undefined, portalBase);
     }
   };
 

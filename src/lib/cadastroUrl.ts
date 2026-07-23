@@ -3,6 +3,9 @@ export const CADASTRO_BASE = "https://cadastro.cadbrasil.com.br";
 /** URL base sem query — fallback SSR. */
 export const CADASTRO_URL = CADASTRO_BASE;
 
+/** Destino de conversão da landing /cadastro */
+export const CADASTRO_CREDENCIAMENTO_URL = `${CADASTRO_BASE}/credenciamento`;
+
 const STORAGE_KEY = "cadbrasil_tracking_params";
 
 /** Parâmetros de campanha repassados ao portal cadastro.cadbrasil.com.br */
@@ -67,9 +70,22 @@ export function captureTrackingParams(search?: string) {
   storeTrackingParams(readParamsFromSearch(search));
 }
 
+function normalizePortalBase(baseUrl: string = CADASTRO_BASE): string {
+  try {
+    const u = new URL(baseUrl);
+    if (u.origin !== new URL(CADASTRO_BASE).origin) return CADASTRO_BASE;
+    const path = u.pathname.replace(/\/+$/, "") || "";
+    return path && path !== "/" ? `${u.origin}${path}` : u.origin;
+  } catch {
+    return CADASTRO_BASE;
+  }
+}
+
 /** Monta URL do portal de cadastro com parâmetros de campanha preservados. */
-export function buildCadastroUrl(search?: string): string {
-  if (typeof window === "undefined") return CADASTRO_BASE;
+export function buildCadastroUrl(search?: string, baseUrl: string = CADASTRO_BASE): string {
+  const portalBase = normalizePortalBase(baseUrl);
+
+  if (typeof window === "undefined") return portalBase;
 
   captureTrackingParams(search);
   const merged = {
@@ -77,19 +93,19 @@ export function buildCadastroUrl(search?: string): string {
     ...readParamsFromSearch(search ?? window.location.search),
   };
 
-  const target = new URL(CADASTRO_BASE);
+  const target = new URL(portalBase);
   for (const [key, value] of Object.entries(merged)) {
     if (value) target.searchParams.set(key, value);
   }
 
-  const qs = target.searchParams.toString();
-  return qs ? `${CADASTRO_BASE}?${qs}` : CADASTRO_BASE;
+  return target.toString();
 }
 
 export function isCadastroPortalUrl(href: string): boolean {
   return (
     href === CADASTRO_BASE ||
     href === CADASTRO_URL ||
+    href === CADASTRO_CREDENCIAMENTO_URL ||
     href.startsWith(`${CADASTRO_BASE}?`) ||
     href.startsWith(`${CADASTRO_BASE}/`)
   );
