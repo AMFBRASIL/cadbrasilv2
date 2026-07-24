@@ -35,8 +35,14 @@ const PATH_LABELS: Record<string, string> = {
   "/sicaf-niveis": "Níveis do SICAF — manual de atualização",
   "/servicos-documentacao": "Serviços e gestão documental CADBRASIL",
   "/renovar-sicaf": "Campanha Renovar SICAF",
+  "/certificado-digital-sicaf": "Certificado digital SICAF — e-CNPJ A1/A3",
   "/renovacao-sicaf": "Renovação SICAF",
   "/cadastro": "Cadastro SICAF — landing conversão",
+  "/quanto-custa-sicaf": "Quanto custa o SICAF",
+  "/sicaf-irregular": "SICAF irregular — como regularizar",
+  "/compras-gov-br": "Compras.gov.br — tutorial 2026",
+  "/sicaf-mei": "SICAF para MEI",
+  "/gov-br-sicaf": "gov.br e acesso ao SICAF",
 };
 
 export type WhatsAppMessageOptions = {

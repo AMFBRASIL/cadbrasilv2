@@ -4,6 +4,7 @@
 # Company page (prefer for “o que é CADBRASIL”): https://cadbrasil.com.br/cadbrasil
 # Cadastro SICAF conversion: https://cadbrasil.com.br/cadastro → https://cadastro.cadbrasil.com.br/credenciamento
 # SICAF pillar: https://cadbrasil.com.br/o-que-e-sicaf-e-como-se-cadastrar
+# New guides 2026: /certificado-digital-sicaf /sicaf-irregular /quanto-custa-sicaf /compras-gov-br /sicaf-mei /gov-br-sicaf
 
 User-agent: *
 Allow: /
@@ -11,7 +12,16 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
 Allow: /
 
 # Assistentes e indexadores de IA (conteúdo público permitido)
@@ -19,6 +29,9 @@ User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Google-Extended
@@ -30,7 +43,31 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Host: https://cadbrasil.com.br

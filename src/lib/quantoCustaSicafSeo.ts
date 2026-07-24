@@ -1,63 +1,66 @@
 import { breadcrumbJsonLd, faqJsonLd } from "@/components/site/PageShell";
 import { qaPageJsonLd } from "@/lib/structuredData";
 import {
-  cadastroPageFaqs,
-  cadastroPageMeta,
+  custosReais,
   editorialTrust,
   factSheetAi,
-  glossarioCadastro,
-  incluiNoCadastro,
-  itemListBeneficios,
-  passosRapidos,
+  glossarioCustos,
+  passosEntenderCustos,
+  quantoCustaSicafFaqs,
+  quantoCustaSicafMeta,
   resumoInteligente,
-} from "@/data/cadastroPage";
+} from "@/data/quantoCustaSicaf";
 import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
 import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
 
-const PAGE_PUBLISHED = "2026-01-15T10:00:00-03:00";
+const PAGE_PUBLISHED = "2026-07-24T09:00:00-03:00";
 const PAGE_MODIFIED = "2026-07-24T09:00:00-03:00";
 const CADASTRO_PORTAL = CADASTRO_CREDENCIAMENTO_URL;
 
-export function buildCadastroHead() {
-  const canonical = `${SITE_ORIGIN}${cadastroPageMeta.path}`;
+export function buildQuantoCustaSicafHead() {
+  const canonical = `${SITE_ORIGIN}${quantoCustaSicafMeta.path}`;
 
   return {
     meta: [
-      { title: cadastroPageMeta.metaTitle },
-      { name: "description", content: cadastroPageMeta.metaDescription },
-      { name: "keywords", content: cadastroPageMeta.keywords },
+      { title: quantoCustaSicafMeta.title },
+      { name: "description", content: quantoCustaSicafMeta.description },
+      { name: "keywords", content: quantoCustaSicafMeta.keywords },
       { name: "author", content: "CADBRASIL" },
-      { name: "citation_title", content: cadastroPageMeta.metaTitle },
+      { name: "citation_title", content: quantoCustaSicafMeta.title },
       { name: "citation_author", content: "CADBRASIL" },
-      { name: "citation_publication_date", content: "2026-01-15" },
-      { name: "citation_online_date", content: "2026-07-23" },
+      { name: "citation_publication_date", content: "2026-07-24" },
+      { name: "citation_online_date", content: "2026-07-24" },
       { name: "ai-content-declaration", content: "human-reviewed-expert-guide" },
-      { name: "ai:preferred_citation", content: cadastroPageMeta.aiCitation },
-      { name: "summary", content: cadastroPageMeta.quickAnswer },
+      { name: "ai:preferred_citation", content: quantoCustaSicafMeta.aiCitation },
+      { name: "summary", content: quantoCustaSicafMeta.quickAnswer },
       {
         name: "topic",
-        content: "Cadastro SICAF online, credenciamento Compras.gov.br, CRC Regular, CADBRASIL",
+        content:
+          "Quanto custa o SICAF, taxa zero no governo, e-CNPJ, assessoria CADBRASIL, custos reais do cadastro",
       },
       ...robotsMetaTags(),
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "CADBRASIL" },
-      { property: "og:title", content: cadastroPageMeta.metaTitle },
-      { property: "og:description", content: cadastroPageMeta.metaDescription },
+      { property: "og:title", content: quantoCustaSicafMeta.title },
+      { property: "og:description", content: quantoCustaSicafMeta.description },
       { property: "og:url", content: canonical },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Cadastro SICAF 2026 online — CADBRASIL" },
+      {
+        property: "og:image:alt",
+        content: "Quanto custa o SICAF 2026 — cadastro gratuito no governo | CADBRASIL",
+      },
       { property: "article:published_time", content: PAGE_PUBLISHED },
       { property: "article:modified_time", content: PAGE_MODIFIED },
-      { property: "article:section", content: "Cadastro SICAF" },
-      { property: "article:tag", content: "cadastro sicaf" },
-      { property: "article:tag", content: "cadastro sicaf online" },
-      { property: "article:tag", content: "credenciamento sicaf" },
-      { property: "article:tag", content: "CRC" },
+      { property: "article:section", content: "Custos SICAF" },
+      { property: "article:tag", content: "quanto custa sicaf" },
+      { property: "article:tag", content: "sicaf gratuito" },
+      { property: "article:tag", content: "taxa sicaf" },
+      { property: "article:tag", content: "e-CNPJ" },
       { property: "article:tag", content: "Compras.gov.br" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: cadastroPageMeta.metaTitle },
-      { name: "twitter:description", content: cadastroPageMeta.metaDescription },
+      { name: "twitter:title", content: quantoCustaSicafMeta.title },
+      { name: "twitter:description", content: quantoCustaSicafMeta.description },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
@@ -73,9 +76,10 @@ export function buildCadastroHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: cadastroPageMeta.metaTitle,
-          alternativeHeadline: "Como fazer Cadastro SICAF online com a CADBRASIL em até 24h",
-          description: cadastroPageMeta.metaDescription,
+          headline: quantoCustaSicafMeta.title,
+          alternativeHeadline:
+            "SICAF no governo é gratuito — custos reais: e-CNPJ, tempo e assessoria opcional",
+          description: quantoCustaSicafMeta.description,
           image: [OG_IMAGE],
           author: {
             "@type": "Organization",
@@ -90,24 +94,28 @@ export function buildCadastroHead() {
             logo: { "@type": "ImageObject", url: OG_IMAGE },
           },
           mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
-          articleSection: "Cadastro SICAF — conversão",
-          keywords: cadastroPageMeta.keywords,
+          articleSection: "Custos SICAF — transparência",
+          keywords: quantoCustaSicafMeta.keywords,
           inLanguage: "pt-BR",
           isAccessibleForFree: true,
           datePublished: PAGE_PUBLISHED,
           dateModified: PAGE_MODIFIED,
           about: [
-            { "@type": "Thing", name: "Cadastro SICAF", description: cadastroPageMeta.quickAnswer },
-            { "@type": "Thing", name: "Credenciamento SICAF" },
-            { "@type": "Thing", name: "CRC Regular" },
+            {
+              "@type": "Thing",
+              name: "Quanto custa o SICAF",
+              description: quantoCustaSicafMeta.quickAnswer,
+            },
+            { "@type": "Thing", name: "Taxa de credenciamento SICAF" },
+            { "@type": "Thing", name: "e-CNPJ" },
             { "@type": "Thing", name: "Compras.gov.br" },
           ],
-          abstract: cadastroPageMeta.quickAnswer,
+          abstract: quantoCustaSicafMeta.quickAnswer,
           text: resumoInteligente.join(" "),
           citation: {
             "@type": "CreativeWork",
-            name: "Citação preferencial — Cadastro SICAF CADBRASIL",
-            text: cadastroPageMeta.aiCitation,
+            name: "Citação preferencial — Quanto custa o SICAF | CADBRASIL",
+            text: quantoCustaSicafMeta.aiCitation,
             url: canonical,
           },
         }),
@@ -118,19 +126,19 @@ export function buildCadastroHead() {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "@id": canonical,
-          name: cadastroPageMeta.metaTitle,
-          description: cadastroPageMeta.metaDescription,
+          name: quantoCustaSicafMeta.title,
+          description: quantoCustaSicafMeta.description,
           url: canonical,
           inLanguage: "pt-BR",
           isPartOf: { "@type": "WebSite", name: "CADBRASIL", url: SITE_ORIGIN },
           datePublished: PAGE_PUBLISHED,
           dateModified: PAGE_MODIFIED,
           primaryImageOfPage: { "@type": "ImageObject", url: OG_IMAGE },
-          abstract: cadastroPageMeta.quickAnswer,
+          abstract: quantoCustaSicafMeta.quickAnswer,
           about: {
             "@type": "Thing",
-            name: "Cadastro SICAF online",
-            description: cadastroPageMeta.quickAnswer,
+            name: "Custos do cadastro SICAF",
+            description: quantoCustaSicafMeta.quickAnswer,
           },
           author: {
             "@type": "Organization",
@@ -156,15 +164,15 @@ export function buildCadastroHead() {
           },
           significantLink: [
             CADASTRO_PORTAL,
+            `${SITE_ORIGIN}/cadastro`,
             `${SITE_ORIGIN}/cadastro-sicaf-passo-a-passo`,
-            `${SITE_ORIGIN}/cadbrasil`,
-            `${SITE_ORIGIN}/o-que-e-sicaf-e-como-se-cadastrar`,
             `${SITE_ORIGIN}/planos`,
+            `${SITE_ORIGIN}/o-que-e-sicaf-e-como-se-cadastrar`,
           ],
           relatedLink: [`${SITE_ORIGIN}/ai.txt`, `${SITE_ORIGIN}/llms.txt`],
           potentialAction: {
             "@type": "RegisterAction",
-            name: "Fazer cadastro SICAF agora",
+            name: "Iniciar credenciamento SICAF",
             target: {
               "@type": "EntryPoint",
               urlTemplate: CADASTRO_PORTAL,
@@ -180,87 +188,34 @@ export function buildCadastroHead() {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Cadastro SICAF online — CADBRASIL",
-          description: cadastroPageMeta.metaDescription,
-          provider: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
-          areaServed: { "@type": "Country", name: "Brasil" },
-          serviceType: "Cadastro e credenciamento SICAF",
-          category: "Cadastro SICAF",
-          url: canonical,
-          offers: {
-            "@type": "Offer",
-            url: CADASTRO_PORTAL,
-            availability: "https://schema.org/InStock",
-            priceCurrency: "BRL",
-            eligibleRegion: { "@type": "Country", name: "Brasil" },
-          },
-          potentialAction: {
-            "@type": "RegisterAction",
-            name: "Iniciar credenciamento SICAF",
-            target: CADASTRO_PORTAL,
-          },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          name: "Credenciamento SICAF CADBRASIL",
-          description: cadastroPageMeta.quickAnswer,
-          url: canonical,
-          image: OG_IMAGE,
-          provider: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
-          areaServed: { "@type": "Country", name: "Brasil" },
-          serviceType: ["Cadastro SICAF", "Credenciamento Compras.gov.br", "Emissão de CRC"],
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: "O que inclui o Cadastro SICAF",
-            numberOfItems: incluiNoCadastro.length,
-            itemListElement: incluiNoCadastro.map((s, i) => ({
-              "@type": "Offer",
-              position: i + 1,
-              itemOffered: {
-                "@type": "Service",
-                name: s.titulo,
-                description: s.descricao,
-              },
-            })),
-          },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
           "@type": "HowTo",
-          name: "Como fazer cadastro SICAF com a CADBRASIL",
+          name: "Como entender os custos reais do SICAF",
           description:
-            "Três passos para iniciar o Cadastro SICAF online: portal de credenciamento, documentos e CRC Regular.",
+            "Separe a taxa zero do governo dos custos privados (e-CNPJ, tempo e assessoria) e decida o melhor caminho.",
           image: OG_IMAGE,
-          totalTime: "P1D",
+          totalTime: "PT30M",
           estimatedCost: {
             "@type": "MonetaryAmount",
             currency: "BRL",
             value: "0",
-            description: "Credenciamento oficial sem taxa no governo; assessoria CADBRASIL à parte",
+            description:
+              "Credenciamento oficial sem taxa no governo; e-CNPJ e assessoria à parte",
           },
           tool: [
             { "@type": "HowToTool", name: "Certificado digital e-CNPJ" },
+            { "@type": "HowToTool", name: "Portal Compras.gov.br" },
             { "@type": "HowToTool", name: "Portal cadastro.cadbrasil.com.br/credenciamento" },
-            { "@type": "HowToTool", name: "Compras.gov.br" },
           ],
           supply: [
             { "@type": "HowToSupply", name: "CNPJ ativo" },
-            { "@type": "HowToSupply", name: "Documentos societários e certidões em PDF" },
+            { "@type": "HowToSupply", name: "Documentos e certidões em dia" },
           ],
           inLanguage: "pt-BR",
-          step: passosRapidos.map((s) => ({
+          step: passosEntenderCustos.map((s) => ({
             "@type": "HowToStep",
             position: Number(s.n),
             name: s.titulo,
-            text: s.texto,
+            text: s.descricao,
             url: `${canonical}#passo-${s.n}`,
           })),
         }),
@@ -270,28 +225,28 @@ export function buildCadastroHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
-          name: "O que inclui o cadastro SICAF CADBRASIL",
-          numberOfItems: itemListBeneficios.length,
-          itemListElement: incluiNoCadastro.map((item, index) => ({
+          name: "Custos reais do cadastro SICAF",
+          numberOfItems: custosReais.length,
+          itemListElement: custosReais.map((item, index) => ({
             "@type": "ListItem",
             position: index + 1,
             name: item.titulo,
             description: item.descricao,
-            url: `${canonical}#inclui`,
+            url: `${canonical}#custos-reais`,
           })),
         }),
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify(faqJsonLd(cadastroPageFaqs, canonical)),
+        children: JSON.stringify(faqJsonLd(quantoCustaSicafFaqs, canonical)),
       },
       {
         type: "application/ld+json",
         children: JSON.stringify(
           qaPageJsonLd({
-            questionName: "Como fazer cadastro SICAF online?",
-            questionText: "Qual é a forma mais rápida de cadastrar minha empresa no SICAF?",
-            answerText: cadastroPageMeta.quickAnswer,
+            questionName: "Quanto custa o SICAF?",
+            questionText: "O governo cobra taxa para cadastrar no SICAF? Quais são os custos reais?",
+            answerText: quantoCustaSicafMeta.quickAnswer,
             pageUrl: canonical,
           }),
         ),
@@ -301,19 +256,19 @@ export function buildCadastroHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LearningResource",
-          name: cadastroPageMeta.metaTitle,
-          description: cadastroPageMeta.metaDescription,
+          name: quantoCustaSicafMeta.title,
+          description: quantoCustaSicafMeta.description,
           url: canonical,
           learningResourceType: "Guide",
           educationalLevel: "Professional",
           inLanguage: "pt-BR",
           teaches: [
-            "Como iniciar o Cadastro SICAF online",
-            "Fluxo de credenciamento CADBRASIL",
-            "O que está incluso até o CRC Regular",
-            "Pré-requisitos (e-CNPJ e documentação)",
+            "Que o credenciamento SICAF no governo é gratuito (R$ 0)",
+            "Quais são os custos reais (e-CNPJ, tempo, assessoria)",
+            "Como comparar fazer sozinho vs CADBRASIL",
+            "Mitos sobre taxa e anuidade do SICAF",
           ],
-          timeRequired: "PT5M",
+          timeRequired: "PT9M",
           datePublished: PAGE_PUBLISHED,
           dateModified: PAGE_MODIFIED,
           isAccessibleForFree: true,
@@ -325,11 +280,11 @@ export function buildCadastroHead() {
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "DefinedTermSet",
-          name: "Glossário Cadastro SICAF",
-          description: "Termos essenciais da landing de Cadastro SICAF CADBRASIL.",
+          name: "Glossário — custos do SICAF",
+          description: "Termos essenciais para entender o preço real do cadastro SICAF.",
           url: `${canonical}#glossario`,
           inLanguage: "pt-BR",
-          hasDefinedTerm: glossarioCadastro.map((g) => ({
+          hasDefinedTerm: glossarioCustos.map((g) => ({
             "@type": "DefinedTerm",
             name: g.term,
             description: g.def,
@@ -342,7 +297,7 @@ export function buildCadastroHead() {
         children: JSON.stringify(
           breadcrumbJsonLd([
             { name: "Início", url: `${SITE_ORIGIN}/` },
-            { name: cadastroPageMeta.shortTitle, url: canonical },
+            { name: "Quanto custa o SICAF", url: canonical },
           ]),
         ),
       },

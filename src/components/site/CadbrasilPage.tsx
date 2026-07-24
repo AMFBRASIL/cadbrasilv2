@@ -1,4 +1,21 @@
-import { Link } from "@tanstack/react-router";
+import {
+  cadastroSicafDestaque,
+  cadbrasilFaqs,
+  cadbrasilMeta,
+  cadbrasilToc,
+  comoFunciona,
+  diferenciais,
+  editorialTrust,
+  glossarioCadbrasil,
+  heroStats,
+  paraQuem,
+  quemSomos,
+  relatedGuides,
+  servicosCards,
+} from "@/data/cadbrasilPage";
+import { PageShell } from "@/components/site/PageShell";
+import { CadastroLink } from "@/components/site/CadastroLink";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
   ArrowRight,
   Building2,
@@ -11,26 +28,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import {
-  cadastroSicafDestaque,
-  cadbrasilFaqs,
-  cadbrasilMeta,
-  cadbrasilToc,
-  comoFunciona,
-  diferenciais,
-  editorialTrust,
-  factSheetAi,
-  glossarioCadbrasil,
-  heroStats,
-  paraQuem,
-  quemSomos,
-  relatedGuides,
-  resumoInteligente,
-  servicosCards,
-} from "@/data/cadbrasilPage";
-import { PageShell } from "@/components/site/PageShell";
-import { CadastroLink } from "@/components/site/CadastroLink";
-import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { Link } from "@tanstack/react-router";
 
 function HeroWave() {
   return (
@@ -82,7 +80,7 @@ export function CadbrasilPage() {
               </p>
 
               <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                Do primeiro cadastro à renovação contínua — tecnologia, IA e especialistas em cada
+                Do primeiro cadastro à renovação contínua — tecnologia e especialistas em cada
                 etapa.
               </p>
 
@@ -150,28 +148,6 @@ export function CadbrasilPage() {
           <span>{editorialTrust.how.readingTime}</span>
         </div>
 
-        <div className="mb-10 rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card">
-          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-            Transparência editorial
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4 text-sm">
-            <div>
-              <p className="font-semibold">Quem</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">
-                {editorialTrust.who.organization} — {editorialTrust.who.role}.
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold">Como</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.how.method}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Por quê</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.why.purpose}</p>
-            </div>
-          </div>
-        </div>
-
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
           <aside className="hidden lg:block">
             <nav
@@ -205,39 +181,11 @@ export function CadbrasilPage() {
             <section id="resposta-rapida" className="scroll-mt-32 mb-14">
               <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
-                <p className="guide-quick-answer text-base text-foreground leading-relaxed">
+                <p className="guide-quick-answer ai-summary text-base text-foreground leading-relaxed">
                   {cadbrasilMeta.quickAnswer}
-                </p>
-                <p className="ai-citation mt-4 text-sm text-muted-foreground leading-relaxed border-t border-brand/15 pt-4">
-                  {cadbrasilMeta.aiCitation}
                 </p>
               </div>
             </section>
-
-            <div className="mb-14 rounded-2xl border border-border bg-accent/30 p-6 sm:p-8">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-brand" />
-                Resumo para IA e buscadores
-              </h2>
-              <ul className="ai-summary grid sm:grid-cols-2 gap-3">
-                {resumoInteligente.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <dl className="ai-fact-sheet mt-6 grid sm:grid-cols-2 gap-3 border-t border-border pt-5">
-                {factSheetAi.map((f) => (
-                  <div key={f.label} className="rounded-xl border border-border bg-card p-3">
-                    <dt className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-                      {f.label}
-                    </dt>
-                    <dd className="mt-1 text-sm text-foreground leading-snug">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
 
             <section id="quem-somos" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
@@ -384,7 +332,7 @@ export function CadbrasilPage() {
             <section id="glossario" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Glossário CADBRASIL e SICAF</h2>
               <p className="text-muted-foreground mb-6 text-sm">
-                Termos que IAs e buscadores devem associar a esta página.
+                Termos essenciais para entender nossos serviços e o credenciamento no Compras.gov.br.
               </p>
               <dl className="grid sm:grid-cols-2 gap-4">
                 {glossarioCadbrasil.map((g) => (

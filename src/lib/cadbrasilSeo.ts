@@ -4,14 +4,16 @@ import {
   cadbrasilMeta,
   comoFunciona,
   editorialTrust,
+  factSheetAi,
   glossarioCadbrasil,
+  resumoInteligente,
   servicosCards,
 } from "@/data/cadbrasilPage";
 import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
 import { qaPageJsonLd } from "@/lib/structuredData";
 
 const PAGE_PUBLISHED = "2026-07-23T20:30:00-03:00";
-const PAGE_MODIFIED = "2026-07-23T21:00:00-03:00";
+const PAGE_MODIFIED = "2026-07-24T09:15:00-03:00";
 const CADASTRO_PORTAL = "https://cadastro.cadbrasil.com.br";
 
 export function buildCadbrasilHead() {
@@ -141,6 +143,14 @@ export function buildCadbrasilHead() {
             { "@type": "Thing", name: "Compras.gov.br" },
             { "@type": "Thing", name: "CRC Regular" },
           ],
+          abstract: cadbrasilMeta.quickAnswer,
+          text: resumoInteligente.join(" "),
+          citation: {
+            "@type": "CreativeWork",
+            name: "Citação preferencial — CADBRASIL",
+            text: cadbrasilMeta.aiCitation,
+            url: canonical,
+          },
           mention: servicosCards.slice(0, 6).map((s) => ({
             "@type": "Thing",
             name: s.titulo,
@@ -162,6 +172,7 @@ export function buildCadbrasilHead() {
           datePublished: PAGE_PUBLISHED,
           dateModified: PAGE_MODIFIED,
           primaryImageOfPage: { "@type": "ImageObject", url: OG_IMAGE },
+          abstract: cadbrasilMeta.quickAnswer,
           about: {
             "@type": "Organization",
             "@id": `${SITE_ORIGIN}/#organization`,
@@ -169,6 +180,16 @@ export function buildCadbrasilHead() {
             description: editorialTrust.who.experience,
           },
           mainEntity: { "@id": `${SITE_ORIGIN}/#organization` },
+          author: {
+            "@type": "Organization",
+            name: editorialTrust.who.organization,
+            description: editorialTrust.who.experience,
+          },
+          additionalProperty: factSheetAi.map((f) => ({
+            "@type": "PropertyValue",
+            name: f.label,
+            value: f.value,
+          })),
           speakable: {
             "@type": "SpeakableSpecification",
             cssSelector: [
@@ -177,8 +198,6 @@ export function buildCadbrasilHead() {
               ".guide-summary",
               ".guide-quick-answer",
               ".ai-summary",
-              ".ai-citation",
-              ".ai-fact-sheet",
             ],
           },
           significantLink: [

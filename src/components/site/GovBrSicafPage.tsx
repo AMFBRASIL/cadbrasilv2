@@ -1,30 +1,31 @@
+import { Link } from "@tanstack/react-router";
 import {
-  cadastroPageFaqs,
-  cadastroPageMeta,
-  cadastroToc,
+  ArrowRight,
+  CheckCircle2,
+  IdCard,
+  KeyRound,
+  ListChecks,
+  MessageCircle,
+  ShieldAlert,
+} from "lucide-react";
+import {
+  acessoSicaf,
   editorialTrust,
-  glossarioCadastro,
-  heroBeneficios,
+  errosGovBr,
+  glossarioGovBr,
+  govBrSicafFaqs,
+  govBrSicafMeta,
+  govBrSicafToc,
   heroStats,
-  incluiNoCadastro,
-  passosRapidos,
-  relatedGuidesCadastro,
-} from "@/data/cadastroPage";
+  niveisGovBr,
+  passosElevar,
+  relatedGuides,
+  relacaoGovBrEcnpj,
+} from "@/data/govBrSicaf";
 import { PageShell } from "@/components/site/PageShell";
 import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Clock,
-  FileText,
-  ListChecks,
-  MessageCircle,
-  Shield,
-  Zap,
-} from "lucide-react";
-import { Link } from "@tanstack/react-router";
 
 function HeroWave() {
   return (
@@ -39,69 +40,51 @@ function HeroWave() {
   );
 }
 
-export function CadastroPage() {
+export function GovBrSicafPage() {
   return (
     <PageShell>
       <section className="relative pt-24 sm:pt-28 pb-20 sm:pb-24 overflow-hidden bg-[oklch(0.22_0.08_260)]">
         <div className="absolute inset-0 bg-grid opacity-[0.07]" aria-hidden />
         <div className="absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand/30 blur-3xl" aria-hidden />
-        <div
-          className="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-[oklch(0.35_0.12_250)]/40 blur-3xl"
-          aria-hidden
-        />
         <HeroWave />
-
         <div className="relative mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-center">
             <div className="text-white">
               <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-white/70 border border-white/20 rounded-full px-3 py-1">
-                <Zap className="h-3 w-3" />
-                Cadastro online · até 24 horas
+                <IdCard className="h-3 w-3" />
+                Conta gov.br · SICAF 2026
               </span>
-
               <h1 className="mt-5 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] tracking-tight text-balance">
-                Cadastro <span className="text-[oklch(0.82_0.08_250)]">SICAF 2026</span> para sua
-                empresa
+                gov.br e <span className="text-[oklch(0.82_0.08_250)]">SICAF</span>: prata, ouro e
+                e-CNPJ
               </h1>
-
-              <p className="guide-hero-lead page-hero-summary mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
-                Credenciamento assistido, documentação validada e{" "}
-                <strong className="text-white font-semibold">CRC Regular</strong> — comece agora no
-                portal CADBRASIL.
+              <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
+                Entenda níveis da conta, elevação e o papel do e-CNPJ no Compras.gov.br. A{" "}
+                <strong className="text-white font-semibold">CADBRASIL</strong> conduz até o CRC
+                Regular.
               </p>
-
               <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                {cadastroPageMeta.quickAnswer}
+                Conta prata/ouro ajuda em serviços digitais — no SICAF PJ o certificado da empresa
+                manda.
               </p>
-
-              <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <CadastroLink
                   href={CADASTRO_CREDENCIAMENTO_URL}
-                  className="cadastro-cta-hero inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-white text-[oklch(0.28_0.09_260)] text-base sm:text-lg font-bold shadow-xl hover:scale-[1.02] transition"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition"
                 >
-                  Cadastro SICAF 2026 agora
-                  <ArrowRight className="h-5 w-5" />
+                  Cadastro SICAF agora
+                  <ArrowRight className="h-4 w-4" />
                 </CadastroLink>
                 <WhatsAppLink
-                  pageLabel={cadastroPageMeta.shortTitle}
-                  intent="Quero iniciar meu Cadastro SICAF 2026 pelo portal de credenciamento."
-                  className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
+                  pageLabel="gov.br e SICAF"
+                  intent="Quero entender gov.br, e-CNPJ e cadastrar no SICAF."
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  Falar com especialista
+                  WhatsApp
                 </WhatsAppLink>
               </div>
-
-              <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm text-white/80">
-                {heroBeneficios.map((b) => (
-                  <li key={b} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[oklch(0.82_0.08_250)] shrink-0" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
             </div>
-
             <div className="grid grid-cols-2 gap-3">
               {heroStats.map((s) => (
                 <div
@@ -119,7 +102,7 @@ export function CadastroPage() {
 
       <div className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-[72px] z-30 lg:hidden">
         <div className="mx-auto max-w-7xl px-4 py-3 flex gap-2 overflow-x-auto scrollbar-none">
-          {cadastroToc.map((item) => (
+          {govBrSicafToc.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
@@ -141,7 +124,7 @@ export function CadastroPage() {
                 </Link>
               </li>
               <li aria-hidden>/</li>
-              <li className="text-foreground font-medium">{cadastroPageMeta.shortTitle}</li>
+              <li className="text-foreground font-medium">gov.br e SICAF</li>
             </ol>
           </nav>
           <span className="hidden sm:inline text-border">|</span>
@@ -153,14 +136,14 @@ export function CadastroPage() {
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
           <aside className="hidden lg:block">
             <nav
-              aria-label="Índice Cadastro SICAF"
+              aria-label="Índice gov.br e SICAF"
               className="sticky top-28 rounded-2xl border border-border bg-card shadow-card overflow-hidden"
             >
               <div className="px-5 py-4 border-b border-border bg-accent/40">
                 <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nesta página</p>
               </div>
               <ol className="p-3 space-y-0.5 max-h-[calc(100vh-12rem)] overflow-y-auto">
-                {cadastroToc.map((item) => (
+                {govBrSicafToc.map((item) => (
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
@@ -176,7 +159,7 @@ export function CadastroPage() {
                   href={CADASTRO_CREDENCIAMENTO_URL}
                   className="block w-full text-center text-sm font-bold py-3 rounded-xl bg-gradient-brand text-brand-foreground"
                 >
-                  Cadastro SICAF 2026 agora
+                  Cadastro SICAF agora
                 </CadastroLink>
               </div>
             </nav>
@@ -187,19 +170,48 @@ export function CadastroPage() {
               <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
                 <p className="guide-quick-answer ai-summary text-base text-foreground leading-relaxed">
-                  {cadastroPageMeta.quickAnswer}
+                  {govBrSicafMeta.quickAnswer}
                 </p>
               </div>
             </section>
 
-            <section id="como-funciona" className="scroll-mt-32 mb-14">
+            <section id="niveis" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Níveis gov.br</h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {niveisGovBr.map((n) => (
+                  <div key={n.nivel} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <h3 className="font-semibold">{n.nivel}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{n.texto}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="relacao" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2">
+                <KeyRound className="h-7 w-7 text-brand shrink-0" />
+                gov.br × e-CNPJ
+              </h2>
+              <div className="space-y-3">
+                {relacaoGovBrEcnpj.map((item) => (
+                  <div key={item.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <h3 className="font-semibold flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-brand" />
+                      {item.titulo}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.texto}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="como-elevar" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2 flex items-center gap-2">
                 <ListChecks className="h-7 w-7 text-brand shrink-0" />
-                Como funciona o cadastro
+                Como elevar a conta
               </h2>
-              <p className="text-muted-foreground mb-6">Três passos até o CRC Regular.</p>
-              <ol className="space-y-3">
-                {passosRapidos.map((passo) => (
+              <ol className="mt-6 space-y-3">
+                {passosElevar.map((passo) => (
                   <li
                     key={passo.n}
                     id={`passo-${passo.n}`}
@@ -210,64 +222,44 @@ export function CadastroPage() {
                     </span>
                     <div>
                       <h3 className="font-semibold text-lg">{passo.titulo}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{passo.texto}</p>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{passo.descricao}</p>
                     </div>
                   </li>
                 ))}
               </ol>
-              <div className="mt-6">
-                <CadastroLink
-                  href={CADASTRO_CREDENCIAMENTO_URL}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow"
-                >
-                  Iniciar cadastro
-                  <ArrowRight className="h-4 w-4" />
-                </CadastroLink>
-              </div>
             </section>
 
-            <section id="inclui" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2">O que está incluído</h2>
-              <p className="text-muted-foreground mb-6">
-                Tudo o que você precisa do diagnóstico ao CRC Regular.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {incluiNoCadastro.map((item) => (
-                  <div key={item.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card flex gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" />
-                    <div>
-                      <h3 className="font-semibold">{item.titulo}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.descricao}</p>
-                    </div>
+            <section id="acesso-sicaf" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Acesso ao SICAF</h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {acessoSicaf.map((item) => (
+                  <div key={item.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <h3 className="font-semibold">{item.titulo}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.texto}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section id="destaques" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Destaques</h2>
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  { icon: Clock, label: "Até 24h", sub: "com documentação ok" },
-                  { icon: Shield, label: "CRC Regular", sub: "habilitado para licitar" },
-                  { icon: FileText, label: "Todo o Brasil", sub: "qualquer UF ou porte" },
-                ].map(({ icon: Icon, label, sub }) => (
-                  <div key={label} className="rounded-2xl border border-border bg-card p-6 text-center shadow-card">
-                    <Icon className="h-7 w-7 text-brand mx-auto" />
-                    <p className="mt-3 font-semibold text-lg">{label}</p>
-                    <p className="text-sm text-muted-foreground">{sub}</p>
+            <section id="erros" className="scroll-mt-32 mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Erros comuns</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {errosGovBr.map((e) => (
+                  <div key={e.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
+                    <h3 className="font-semibold flex items-center gap-2">
+                      <ShieldAlert className="h-4 w-4 text-brand" />
+                      {e.titulo}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{e.texto}</p>
                   </div>
                 ))}
               </div>
             </section>
 
             <section id="glossario" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Glossário Cadastro SICAF</h2>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Termos essenciais para entender o credenciamento no Compras.gov.br.
-              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Glossário</h2>
               <dl className="grid sm:grid-cols-2 gap-4">
-                {glossarioCadastro.map((g) => (
+                {glossarioGovBr.map((g) => (
                   <div key={g.term} className="rounded-2xl border border-border bg-card p-5 shadow-card">
                     <dt className="font-semibold text-brand">{g.term}</dt>
                     <dd className="mt-2 text-sm text-muted-foreground leading-relaxed">{g.def}</dd>
@@ -279,7 +271,7 @@ export function CadastroPage() {
             <section id="faq" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-6">Perguntas frequentes</h2>
               <div className="space-y-3">
-                {cadastroPageFaqs.map((faq) => (
+                {govBrSicafFaqs.map((faq) => (
                   <details key={faq.question} className="group rounded-2xl border border-border bg-card shadow-card">
                     <summary className="cursor-pointer list-none p-5 font-semibold flex items-center justify-between gap-4">
                       {faq.question}
@@ -295,33 +287,26 @@ export function CadastroPage() {
 
             <section id="cta" className="scroll-mt-32 mb-14">
               <div className="rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-8 sm:p-10 text-center shadow-card">
-                <h2 className="text-2xl sm:text-3xl font-bold">Pronto para cadastrar seu SICAF?</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold">Pronto para o SICAF com e-CNPJ?</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Acesse o portal de credenciamento e inicie agora — com suporte CADBRASIL até o CRC
-                  Regular.
+                  Oriente o acesso e conclua o Cadastro SICAF com a CADBRASIL.
                 </p>
-                <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
                   <CadastroLink
                     href={CADASTRO_CREDENCIAMENTO_URL}
-                    className="cadastro-cta-hero inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-brand-foreground text-base sm:text-lg font-bold shadow-glow hover:scale-[1.02] transition"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-brand-foreground font-bold shadow-glow"
                   >
-                    Cadastro SICAF 2026 agora
+                    Cadastro SICAF 2026
                     <ArrowRight className="h-5 w-5" />
                   </CadastroLink>
                   <WhatsAppLink
-                    pageLabel={cadastroPageMeta.shortTitle}
-                    intent="Quero ajuda para iniciar o Cadastro SICAF 2026."
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+                    pageLabel="gov.br e SICAF"
+                    intent="Quero ajuda com gov.br, e-CNPJ e Cadastro SICAF."
+                    className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl border border-border bg-card font-semibold"
                   >
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp
                   </WhatsAppLink>
-                  <Link
-                    to="/planos"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-border bg-card font-semibold hover:border-brand/40 transition"
-                  >
-                    Ver planos
-                  </Link>
                 </div>
               </div>
             </section>
@@ -329,7 +314,7 @@ export function CadastroPage() {
             <section className="mb-8">
               <h2 className="text-lg font-bold mb-4">Guias relacionados</h2>
               <ul className="flex flex-wrap gap-2">
-                {relatedGuidesCadastro.map((g) => (
+                {relatedGuides.map((g) => (
                   <li key={g.to}>
                     <Link
                       to={g.to}
