@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CadastroLink } from "@/components/site/CadastroLink";
+import { SEO_CADASTRO_HUB } from "@/components/site/SeoCadastroHub";
 
 export function GovFooter() {
   return (
@@ -16,31 +17,28 @@ export function GovFooter() {
           </p>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[#FFCD07] mb-3">Serviços</p>
+          <p className="text-sm font-semibold text-[#FFCD07] mb-3">Cadastro SICAF</p>
           <ul className="space-y-2 text-sm text-white/80">
-            <li>
-              <Link to="/cadastro-sicaf-passo-a-passo" className="hover:text-white">
-                Guia cadastro SICAF
-              </Link>
-            </li>
-            <li>
-              <CadastroLink className="hover:text-white">
-                Cadastro online
-              </CadastroLink>
-            </li>
-            <li>
-              <Link to="/como-regularizar-sicaf-empresa" className="hover:text-white">
-                Regularização
-              </Link>
-            </li>
+            {SEO_CADASTRO_HUB.slice(0, 4).map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <p className="text-sm font-semibold text-[#FFCD07] mb-3">Portal</p>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
-              <Link to="/como-funciona" className="hover:text-white">
-                Como funciona
+              <Link to="/como-cadastrar-empresa-sicaf" className="hover:text-white">
+                SICAF para empresas
+              </Link>
+            </li>
+            <li>
+              <Link to="/cadastro-sicaf-passo-a-passo" className="hover:text-white">
+                Guia passo a passo
               </Link>
             </li>
             <li>
@@ -49,18 +47,14 @@ export function GovFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/o-que-e-sicaf" className="hover:text-white">
-                O que é SICAF
-              </Link>
+              <CadastroLink className="hover:text-white">Cadastro online</CadastroLink>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-white/60 space-y-1">
         <p>© {new Date().getFullYear()} CADBRASIL · Assessoria SICAF e licitações públicas</p>
-        <p className="text-white/50">
-          52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA
-        </p>
+        <p className="text-white/50">52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA</p>
       </div>
     </footer>
   );

@@ -60,8 +60,8 @@ export function CadastroPage() {
               </span>
 
               <h1 className="mt-5 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] tracking-tight text-balance">
-                Cadastro <span className="text-[oklch(0.82_0.08_250)]">SICAF 2026</span> para sua
-                empresa
+                Cadastro no <span className="text-[oklch(0.82_0.08_250)]">SICAF</span> — online
+                em até 24h
               </h1>
 
               <p className="guide-hero-lead page-hero-summary mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">

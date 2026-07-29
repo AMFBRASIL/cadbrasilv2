@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "cadastro sicaf, atualizar sicaf, regularizar sicaf, consultoria sicaf, cadastro compras.gov.br, fornecedor governo, licitações públicas, emitir CRC sicaf, regularidade fiscal sicaf",
+          "cadastro sicaf, cadastro no sicaf, cadastrar no sicaf, como cadastrar no sicaf, como fazer meu sicaf, preciso fazer sicaf, sicaf para empresas, credenciar minha empresa no sicaf, cadastramento no sicaf, credenciamento sicaf, regularizar sicaf, licitações públicas",
       },
       { property: "og:title", content: "CADBRASIL · Seu SICAF Regularizado Sem Complicação" },
       {

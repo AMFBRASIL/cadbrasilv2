@@ -6,6 +6,9 @@ import { renderErrorPage } from "./lib/error-page";
 // Keep values as destination paths in this new site.
 const LEGACY_REDIRECTS: Record<string, string> = {
   "/versao2": "/",
+  // Consolida canibalização do cluster "cadastro/credenciamento SICAF"
+  "/cadastro-sicaf": "/cadastro",
+  "/credenciamento-sicaf-digital": "/credenciamento",
 };
 
 function normalizePathname(pathname: string) {

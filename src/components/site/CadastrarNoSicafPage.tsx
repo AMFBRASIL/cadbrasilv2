@@ -21,20 +21,18 @@ import {
   cadastrarNoSicafMeta,
   comparativo,
   passosCadastroCadbrasil,
+  secaoCadastramento,
   vantagensCadbrasil,
 } from "@/data/cadastrarNoSicaf";
 import { getDefaultIntent } from "@/lib/whatsapp";
 
 const RELATED = [
-  {
-    to: "/como-cadastrar-no-sicaf-e-vender-para-o-governo",
-    label: "Cadastrar e vender ao governo",
-  },
+  { to: "/cadastro", label: "Cadastro SICAF (começar agora)" },
+  { to: "/como-fazer-cadastro-no-sicaf", label: "Como fazer meu SICAF" },
+  { to: "/como-cadastrar-empresa-sicaf", label: "SICAF para empresas" },
+  { to: "/credenciamento", label: "Credenciar minha empresa no SICAF" },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia passo a passo completo" },
-  { to: "/quem-pode-se-cadastrar-no-sicaf", label: "Quem pode se cadastrar" },
   { to: "/documentacao-sicaf", label: "Documentação necessária" },
-  { to: "/credenciamento", label: "Credenciamento SICAF" },
-  { to: "/emitir-crc", label: "Emitir CRC" },
   { to: "/faq/cadastro-sicaf", label: "FAQ cadastro" },
 ] as const;
 
@@ -200,6 +198,19 @@ export function CadastrarNoSicafPage() {
             </article>
 
             <CtaBand title="Pronto para o passo 1? Cadastre-se na CADBRASIL" />
+
+            <article id={secaoCadastramento.id} className="scroll-mt-28 mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0a4d2c] mb-4 text-center">
+                {secaoCadastramento.title}
+              </h2>
+              <div className="max-w-3xl mx-auto space-y-4">
+                {secaoCadastramento.paragraphs.map((p) => (
+                  <p key={p.slice(0, 40)} className="text-[#0a4d2c]/80 leading-relaxed text-center sm:text-left">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </article>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <article id="antes-de-comecar" className="scroll-mt-28">

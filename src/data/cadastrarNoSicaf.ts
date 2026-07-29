@@ -3,13 +3,13 @@
 export const cadastrarNoSicafMeta = {
   path: "/cadastrar-no-sicaf",
   shortTitle: "Cadastrar no SICAF",
-  metaTitle: "Cadastrar no SICAF 2026 — Como Fazer Cadastro Rápido e Seguro | CADBRASIL",
+  metaTitle: "Cadastrar no SICAF 2026 — Como Cadastrar e Cadastramento Passo a Passo | CADBRASIL",
   metaDescription:
-    "Aprenda como cadastrar no SICAF em 2026: passo a passo, documentos, e-CNPJ, prazos e cadastro assistido pela CADBRASIL em até 24 horas. MEI, ME, EPP e demais portes.",
+    "Como cadastrar no SICAF: cadastramento no SICAF com e-CNPJ, documentos e CRC. Precisa fazer SICAF? A CADBRASIL conclui o cadastro assistido em até 24 horas.",
   keywords:
-    "cadastrar no sicaf, como cadastrar no sicaf, cadastro sicaf 2026, fazer cadastro sicaf, credenciamento sicaf, cadastrar empresa sicaf, sicaf compras.gov.br, cadastro fornecedor governo",
+    "cadastrar no sicaf, como cadastrar no sicaf, cadastramento no sicaf, preciso fazer sicaf, como fazer meu sicaf, cadastro sicaf, credenciamento sicaf, cadastrar empresa sicaf, sicaf compras.gov.br",
   quickAnswer:
-    "Para cadastrar no SICAF você precisa de CNPJ ativo, certificado e-CNPJ, documentos por nível de habilitação e acesso ao Compras.gov.br. Com a CADBRASIL, o credenciamento assistido pode ser concluído em até 24 horas.",
+    "Para cadastrar no SICAF (cadastramento unificado de fornecedores) você precisa de CNPJ ativo, e-CNPJ, documentos por nível e acesso ao Compras.gov.br. Se você precisa fazer o SICAF agora, a CADBRASIL conclui o credenciamento assistido em até 24 horas.",
 };
 
 export type PassoCadastro = {
@@ -114,6 +114,21 @@ export const cadastrarNoSicafFaqs = [
       "Prepare e-CNPJ e documentos, acesse o Compras.gov.br e conclua os níveis de habilitação. Com a CADBRASIL, você envia os documentos pelo portal e nossa equipe conduz todo o credenciamento até o CRC regular.",
   },
   {
+    question: "O que é o cadastramento no SICAF?",
+    answer:
+      "Cadastramento no SICAF é o credenciamento da empresa no Sistema de Cadastramento Unificado de Fornecedores do Governo Federal — o passo obrigatório para habilitar vendas em licitações federais.",
+  },
+  {
+    question: "Preciso fazer SICAF — por onde começo?",
+    answer:
+      "Comece com CNPJ ativo e e-CNPJ. Em seguida inicie o cadastro assistido na CADBRASIL ou no Compras.gov.br. Se a urgência for alta (edital próximo), o fluxo CADBRASIL costuma ser a opção mais rápida.",
+  },
+  {
+    question: "Como fazer meu SICAF sozinho?",
+    answer:
+      "É possível: autentique no Compras.gov.br, preencha o Nível I e envie documentos dos níveis exigidos. Erros de certidão ou dados societários são a principal causa de atraso — a CADBRASIL valida antes do envio oficial.",
+  },
+  {
     question: "Quanto tempo demora para cadastrar no SICAF?",
     answer:
       "Sozinho, o prazo varia de dias a semanas conforme pendências. Com documentação completa, a CADBRASIL conclui o cadastro assistido em até 24 horas.",
@@ -144,6 +159,16 @@ export const cadastrarNoSicafFaqs = [
       "Não enquanto o CNPJ estiver inapto. É preciso regularizar a situação cadastral na Receita Federal antes. A CADBRASIL orienta nesse processo.",
   },
 ];
+
+/** Seção SEO — cobre “cadastramento no SICAF” sem nova URL */
+export const secaoCadastramento = {
+  id: "cadastramento",
+  title: "Cadastramento no SICAF: o que significa na prática",
+  paragraphs: [
+    "Cadastramento no SICAF é o nome oficial do processo de inclusão da empresa como fornecedora no sistema federal. Na prática, é o mesmo fluxo de cadastrar no SICAF: credenciamento no Compras.gov.br, níveis de habilitação e CRC Regular.",
+    "Se você pesquisou “preciso fazer SICAF” ou “como fazer meu SICAF”, o caminho é o mesmo — a diferença está em fazer sozinho ou com assessoria CADBRASIL para reduzir indeferimento e ganhar tempo.",
+  ],
+};
 
 export const howToStepsForSchema = passosCadastroCadbrasil.map((p) => ({
   name: p.titulo,

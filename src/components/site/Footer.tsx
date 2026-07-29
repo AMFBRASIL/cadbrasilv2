@@ -1,5 +1,6 @@
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { SeoCadastroHub } from "@/components/site/SeoCadastroHub";
 
 export function Footer() {
   return (
@@ -12,27 +13,30 @@ export function Footer() {
             Uma marca do grupo CADBRASIL.
           </p>
         </div>
-        <div>
-          <div className="text-sm font-semibold mb-3">Serviços</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="/cadastro-sicaf-passo-a-passo" className="hover:text-foreground">Guia Cadastro SICAF</a></li>
-            <li><a href="#cta" className="hover:text-foreground">Cadastro SICAF</a></li>
-            <li><a href="#cta" className="hover:text-foreground">Regularização SICAF</a></li>
-            <li><a href="#cta" className="hover:text-foreground">Atualização SICAF</a></li>
-            <li><a href="#cta" className="hover:text-foreground">Renovação de certidões</a></li>
-            <li><a href="#assistente" className="hover:text-foreground">Assistente CADBRASIL</a></li>
-          </ul>
-        </div>
+        <SeoCadastroHub
+          className="space-y-2 text-sm text-muted-foreground"
+          linkClassName="hover:text-foreground"
+          title="Cadastro SICAF"
+          titleClassName="text-sm font-semibold mb-3 text-foreground"
+        />
         <div>
           <div className="text-sm font-semibold mb-3">Contato</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="#contato" className="hover:text-foreground">Formulário de contato</a></li>
+            <li>
+              <a href="#contato" className="hover:text-foreground">
+                Formulário de contato
+              </a>
+            </li>
             <li>
               <WhatsAppLink intent="Contato pelo rodapé do site." className="hover:text-foreground">
                 WhatsApp
               </WhatsAppLink>
             </li>
-            <li><a href="mailto:documentos@fornecedordigital.com.br" className="hover:text-foreground">documentos@fornecedordigital.com.br</a></li>
+            <li>
+              <a href="mailto:documentos@fornecedordigital.com.br" className="hover:text-foreground">
+                documentos@fornecedordigital.com.br
+              </a>
+            </li>
             <li>Atendimento Seg–Sex · 8h às 18h</li>
             <li>Brasil · 100% remoto</li>
           </ul>
@@ -45,9 +49,15 @@ export function Footer() {
             <p>52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA</p>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-foreground">Política de Privacidade</a>
-            <a href="#" className="hover:text-foreground">LGPD</a>
-            <a href="#" className="hover:text-foreground">Termos</a>
+            <a href="#" className="hover:text-foreground">
+              Política de Privacidade
+            </a>
+            <a href="#" className="hover:text-foreground">
+              LGPD
+            </a>
+            <a href="#" className="hover:text-foreground">
+              Termos
+            </a>
           </div>
         </div>
       </div>

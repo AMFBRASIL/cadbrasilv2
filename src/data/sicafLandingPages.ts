@@ -90,22 +90,22 @@ export const landingPages: Record<string, LandingPageData> = {
   "/credenciamento": {
     path: "/credenciamento",
     shortTitle: "Credenciamento SICAF",
-    metaTitle: "Credenciamento SICAF 2026 — Cadastro de Fornecedor Federal | CADBRASIL",
+    metaTitle: "Credenciar Minha Empresa no SICAF 2026 — Credenciamento SICAF | CADBRASIL",
     metaDescription:
-      "Guia completo de credenciamento SICAF para fornecedores: documentos, certificado digital, níveis de habilitação e prazo de liberação.",
+      "Credenciar minha empresa no SICAF: credenciamento SICAF com e-CNPJ, documentos, níveis e CRC. CADBRASIL conclui o fluxo assistido em até 24 horas.",
     keywords:
-      "credenciamento sicaf, credenciar empresa no sicaf, cadastro fornecedor federal, compras gov credenciamento, habilitacao sicaf",
+      "credenciar minha empresa no sicaf, credenciamento sicaf minha empresa, credenciamento sicaf, credenciar empresa no sicaf, cadastro fornecedor federal, habilitacao sicaf",
     eyebrow: "Credenciamento oficial",
-    title: "Credenciamento SICAF",
-    highlight: "rápido e seguro",
+    title: "Credenciar minha empresa",
+    highlight: "no SICAF",
     description:
-      "Estruturamos o credenciamento da sua empresa no SICAF com validação documental, checklist por CNPJ e emissão de CRC em fluxo assistido.",
+      "Credenciamento SICAF da sua empresa com validação documental, checklist por CNPJ e emissão de CRC em fluxo assistido pela CADBRASIL.",
     quickAnswer:
-      "Credenciamento SICAF é o processo de habilitar sua empresa como fornecedora no sistema federal. Exige e-CNPJ, dados societários e certidões válidas.",
+      "Credenciar minha empresa no SICAF significa habilitar o CNPJ como fornecedor federal no Compras.gov.br. Exige e-CNPJ, dados societários e certidões válidas — a CADBRASIL conduz até o CRC Regular.",
     sections: [
       {
         id: "como-funciona",
-        title: "Como funciona o credenciamento",
+        title: "Como funciona o credenciamento SICAF da minha empresa",
         paragraphs: [
           "O credenciamento começa no Compras.gov.br com autenticação por certificado digital e-CNPJ, seguido pelo preenchimento do Nível I e envio dos documentos dos demais níveis exigidos.",
           "Empresas com divergência de dados cadastrais, certidões vencidas ou classificação incompleta de níveis tendem a ser desclassificadas em editais relevantes.",
@@ -124,8 +124,27 @@ export const landingPages: Record<string, LandingPageData> = {
           "Níveis de habilitação alinhados ao edital-alvo",
         ],
       },
+      {
+        id: "credenciamento-cadbrasil",
+        title: "Credenciamento SICAF com a CADBRASIL",
+        paragraphs: [
+          "Se a prioridade é credenciar minha empresa no SICAF sem retrabalho, a CADBRASIL valida o checklist, conduz o portal e acompanha até o CRC Regular — em até 24h com documentação ok.",
+        ],
+      },
     ],
-    faqs: baseFaqs,
+    faqs: [
+      ...baseFaqs,
+      {
+        question: "Como credenciar minha empresa no SICAF?",
+        answer:
+          "Reúna e-CNPJ e documentos, acesse o Compras.gov.br ou inicie pelo portal CADBRASIL. Conduzimos o credenciamento SICAF da sua empresa até o CRC Regular.",
+      },
+      {
+        question: "Credenciamento SICAF minha empresa — quanto tempo leva?",
+        answer:
+          "Com documentação completa, o fluxo assistido CADBRASIL pode ser concluído em até 24 horas.",
+      },
+    ],
   },
   "/renovacao-sicaf": {
     path: "/renovacao-sicaf",
@@ -335,23 +354,31 @@ export const landingPages: Record<string, LandingPageData> = {
   },
   "/como-fazer-cadastro-no-sicaf": {
     path: "/como-fazer-cadastro-no-sicaf",
-    shortTitle: "Como Fazer Cadastro",
-    metaTitle: "Como Fazer Cadastro no SICAF — Passo a Passo Atualizado | CADBRASIL",
+    shortTitle: "Como Fazer Meu SICAF",
+    metaTitle: "Como Fazer Meu SICAF 2026 — Preciso Fazer SICAF? Passo a Passo | CADBRASIL",
     metaDescription:
-      "Aprenda como fazer cadastro no SICAF com processo oficial, documentos por nível, prazos e erros comuns que travam a habilitação.",
+      "Como fazer meu SICAF e o que fazer se você precisa fazer SICAF agora: passo a passo, documentos, e-CNPJ e cadastro assistido CADBRASIL em até 24h.",
     keywords:
-      "como fazer cadastro no sicaf, passo a passo sicaf, cadastro compras gov, documentos sicaf 2026, habilitacao fornecedor",
+      "como fazer meu sicaf, preciso fazer sicaf, como fazer cadastro no sicaf, fazer sicaf agora, passo a passo sicaf, cadastro compras gov",
     eyebrow: "Guia prático",
-    title: "Como fazer cadastro",
-    highlight: "no SICAF",
+    title: "Como fazer meu",
+    highlight: "SICAF",
     description:
-      "Conteúdo orientado para ação com o fluxo oficial, documentação necessária e recomendações para concluir o cadastro sem indeferimento.",
+      "Se você precisa fazer SICAF com urgência, este guia mostra o fluxo oficial e como a CADBRASIL acelera até o CRC Regular.",
     quickAnswer:
-      "Para fazer cadastro no SICAF, acesse o Compras.gov.br com e-CNPJ, preencha o Nível I e envie os documentos dos níveis de habilitação exigidos.",
+      "Para fazer seu SICAF: e-CNPJ + documentos + Compras.gov.br (Nível I e demais níveis). Se você precisa fazer SICAF rápido, a CADBRASIL conclui o cadastro assistido em até 24 horas.",
     sections: [
       {
+        id: "preciso-fazer",
+        title: "Preciso fazer SICAF: por onde começar",
+        paragraphs: [
+          "Se a busca foi “preciso fazer SICAF”, priorize CNPJ ativo e e-CNPJ. Sem esses dois itens o cadastramento não avança no portal federal.",
+          "Com a documentação em mãos, você pode seguir sozinho no Compras.gov.br ou iniciar o fluxo assistido CADBRASIL para evitar indeferimento.",
+        ],
+      },
+      {
         id: "passo-a-passo",
-        title: "Passo a passo resumido",
+        title: "Como fazer meu SICAF — passo a passo",
         paragraphs: [
           "Prepare certificado digital, valide dados societários, separe certidões e preencha o cadastro inicial. Em seguida, conclua níveis jurídicos, fiscais, trabalhistas e técnicos conforme o edital.",
         ],
@@ -370,7 +397,19 @@ export const landingPages: Record<string, LandingPageData> = {
         ],
       },
     ],
-    faqs: baseFaqs,
+    faqs: [
+      ...baseFaqs,
+      {
+        question: "Como fazer meu SICAF pela primeira vez?",
+        answer:
+          "Reúna e-CNPJ e documentos, acesse o Compras.gov.br ou o portal CADBRASIL e conclua os níveis até o CRC Regular.",
+      },
+      {
+        question: "Preciso fazer SICAF com urgência. Dá tempo?",
+        answer:
+          "Com documentação completa, a CADBRASIL costuma concluir em até 24 horas. Pendências fiscais podem alongar o prazo.",
+      },
+    ],
   },
   "/plataforma-digital": {
     path: "/plataforma-digital",
@@ -413,20 +452,28 @@ export const landingPages: Record<string, LandingPageData> = {
   },
   "/como-cadastrar-empresa-sicaf": {
     path: "/como-cadastrar-empresa-sicaf",
-    shortTitle: "Cadastrar Empresa",
-    metaTitle: "Como Cadastrar Empresa no SICAF — Guia para Fornecedores | CADBRASIL",
+    shortTitle: "SICAF para Empresas",
+    metaTitle: "SICAF para Empresas 2026 — Como Cadastrar Empresa no SICAF | CADBRASIL",
     metaDescription:
-      "Veja como cadastrar sua empresa no SICAF com segurança: requisitos jurídicos, fiscais e técnicos para licitar no governo federal.",
+      "SICAF para empresas: como cadastrar sua empresa no SICAF (MEI, ME, EPP, LTDA, S/A). Requisitos, e-CNPJ, documentos e cadastro assistido CADBRASIL.",
     keywords:
-      "como cadastrar empresa no sicaf, empresa no compras gov, credenciamento fornecedor empresa, cadastro cnpj sicaf",
+      "sicaf para empresas, como cadastrar empresa no sicaf, credenciar minha empresa no sicaf, empresa no compras gov, cadastro cnpj sicaf, sicaf cnpj",
     eyebrow: "Para CNPJ",
-    title: "Como cadastrar sua",
-    highlight: "empresa no SICAF",
+    title: "SICAF para",
+    highlight: "empresas",
     description:
-      "Guia para empresas de todos os portes (MEI, ME, EPP, LTDA e S/A) com foco em habilitação correta desde o primeiro envio.",
+      "Guia de SICAF para empresas de todos os portes (MEI, ME, EPP, LTDA e S/A) com foco em habilitação correta desde o primeiro envio.",
     quickAnswer:
-      "Para cadastrar empresa no SICAF, é necessário CNPJ ativo, e-CNPJ válido e documentos societários/fiscais compatíveis com os níveis exigidos.",
+      "SICAF para empresas é o cadastro do CNPJ no sistema federal de fornecedores. É necessário CNPJ ativo, e-CNPJ e documentos societários/fiscais compatíveis com os níveis exigidos.",
     sections: [
+      {
+        id: "sicaf-empresas",
+        title: "O que é SICAF para empresas",
+        paragraphs: [
+          "SICAF para empresas é o cadastramento do CNPJ no Sistema de Cadastramento Unificado de Fornecedores — obrigatório para licitar com o Governo Federal no Compras.gov.br.",
+          "Sem SICAF regular, a empresa não conclui a habilitação em pregões federais, independentemente do porte.",
+        ],
+      },
       {
         id: "porte-empresa",
         title: "Empresas que podem se cadastrar",
@@ -447,7 +494,19 @@ export const landingPages: Record<string, LandingPageData> = {
         ],
       },
     ],
-    faqs: baseFaqs,
+    faqs: [
+      ...baseFaqs,
+      {
+        question: "O que é SICAF para empresas?",
+        answer:
+          "É o cadastramento do CNPJ no Sistema de Cadastramento Unificado de Fornecedores, necessário para licitar com o Governo Federal.",
+      },
+      {
+        question: "Qualquer empresa pode fazer SICAF?",
+        answer:
+          "Sim, com CNPJ ativo: MEI, ME, EPP, LTDA, S/A e EIRELI, desde que cumpram documentos e exigências do edital.",
+      },
+    ],
   },
   "/autoatendimento-sicaf": {
     path: "/autoatendimento-sicaf",
