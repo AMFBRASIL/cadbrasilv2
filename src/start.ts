@@ -32,14 +32,8 @@ const legacyRedirectMiddleware = createMiddleware().server(async ({ request, nex
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
-    const response = await next();
-
-    // Force unknown routes to home as requested.
-    if (response.status === 404) {
-      return Response.redirect("/", 302);
-    }
-
-    return response;
+    // Preserve real 404 responses — soft-404 (302→/) harms crawl signals.
+    return await next();
   } catch (error) {
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;

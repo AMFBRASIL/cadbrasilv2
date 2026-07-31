@@ -24,8 +24,7 @@ const PATH_LABELS: Record<string, string> = {
   "/documentacao-sicaf": "Documentação SICAF — checklist completo",
   "/quem-pode-se-cadastrar-no-sicaf": "Quem pode se cadastrar no SICAF",
   "/cadastrar-no-sicaf": "Cadastrar no SICAF — passo a passo",
-  "/como-cadastrar-no-sicaf-e-vender-para-o-governo":
-    "Como cadastrar no SICAF e vender ao governo",
+  "/como-cadastrar-no-sicaf-e-vender-para-o-governo": "Como cadastrar no SICAF e vender ao governo",
   "/comprasnet": "Comprasnet — o que é e para que serve",
   "/licitacoes": "Plataforma de licitações CADBRASIL",
   "/licitacoes-cadastro": "Cadastro plataforma de licitações",
@@ -38,6 +37,7 @@ const PATH_LABELS: Record<string, string> = {
   "/certificado-digital-sicaf": "Certificado digital SICAF — e-CNPJ A1/A3",
   "/renovacao-sicaf": "Renovação SICAF",
   "/cadastro": "Cadastro SICAF — landing conversão",
+  "/proposta": "Proposta personalizada CADBRASIL",
   "/quanto-custa-sicaf": "Quanto custa o SICAF",
   "/sicaf-irregular": "SICAF irregular — como regularizar",
   "/compras-gov-br": "Compras.gov.br — tutorial 2026",
@@ -132,9 +132,15 @@ export function getDefaultIntent(pathname: string): string {
     return "Preciso de orientação para participar de licitações com SICAF regular.";
   if (p.includes("cadastro") || p.includes("credenciamento") || p.includes("crc"))
     return "Quero fazer ou concluir meu cadastro SICAF com apoio especializado.";
-  if (p.includes("regulariz") || p.includes("inapta") || p.includes("renovacao") || p.includes("renovar"))
+  if (
+    p.includes("regulariz") ||
+    p.includes("inapta") ||
+    p.includes("renovacao") ||
+    p.includes("renovar")
+  )
     return "Preciso regularizar ou renovar meu SICAF e certidões.";
-  if (p.includes("assistente")) return "Quero saber mais sobre o Assistente CADBRASIL e monitoramento.";
+  if (p.includes("assistente"))
+    return "Quero saber mais sobre o Assistente CADBRASIL e monitoramento.";
   if (p.includes("faq")) return "Tenho dúvidas sobre SICAF, documentos ou licitações.";
   if (p.includes("passo-a-passo") || p.includes("guia"))
     return "Estou seguindo o guia de cadastro e preciso de ajuda em alguma etapa.";
@@ -146,22 +152,23 @@ export function buildWhatsAppMessage(options: WhatsAppMessageOptions = {}): stri
     captureUtmParams();
   }
 
-  const pathname = options.pathname ?? (typeof window !== "undefined" ? window.location.pathname : "/");
+  const pathname =
+    options.pathname ?? (typeof window !== "undefined" ? window.location.pathname : "/");
   const pageLabel = options.pageLabel ?? getPageLabel(pathname);
   const fromUrl = readUtmFromUrl();
 
   const utmTerm =
     options.utmTerm !== undefined && options.utmTerm !== null
       ? options.utmTerm
-      : fromUrl.term ?? getStoredUtmTerm();
+      : (fromUrl.term ?? getStoredUtmTerm());
   const utmSource =
     options.utmSource !== undefined && options.utmSource !== null
       ? options.utmSource
-      : fromUrl.source ?? getStoredUtmSource();
+      : (fromUrl.source ?? getStoredUtmSource());
   const utmCampaign =
     options.utmCampaign !== undefined && options.utmCampaign !== null
       ? options.utmCampaign
-      : fromUrl.campaign ?? getStoredUtmCampaign();
+      : (fromUrl.campaign ?? getStoredUtmCampaign());
 
   const intent = options.intent ?? getDefaultIntent(pathname);
 
@@ -203,7 +210,13 @@ export function openWhatsApp(options: WhatsAppMessageOptions = {}) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
-export function isModifiedClick(event: { metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; button: number }) {
+export function isModifiedClick(event: {
+  metaKey: boolean;
+  ctrlKey: boolean;
+  shiftKey: boolean;
+  altKey: boolean;
+  button: number;
+}) {
   return event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
 }
 

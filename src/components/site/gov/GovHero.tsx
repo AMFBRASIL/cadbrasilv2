@@ -27,7 +27,7 @@ export function GovHero() {
       <div className="relative mx-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="text-white">
-            <p className="text-2xl sm:text-3xl font-bold tracking-tight text-[#FFCD07]">CADBRASIL</p>
+            <p className="text-2xl sm:text-3xl font-bold tracking-tight text-[#FFCD07]">CADBRASIL Oficial ®</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-white/70">
               Especialistas em SICAF · Compras.gov.br
             </p>

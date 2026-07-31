@@ -7,7 +7,6 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect } from "react";
 
 import { AnalyticsPageView } from "@/components/site/AnalyticsPageView";
 import { UtmCapture } from "@/components/site/UtmCapture";
@@ -22,22 +21,28 @@ const DEFAULT_DESCRIPTION =
   "Cadastre sua empresa no SICAF em até 24 horas. Especialistas em cadastramento, regularização e consultoria em licitações públicas.";
 
 function NotFoundComponent() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      window.location.replace("/");
-    }, 50);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Página não encontrada</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Redirecionando para a página inicial...
+          O endereço não existe ou foi movido. Use o menu ou volte para a página inicial.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Ir para o início
+          </Link>
+          <Link
+            to="/cadastro"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Cadastro SICAF
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -113,8 +118,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
       { rel: "manifest", href: "/site.webmanifest" },
       { rel: "sitemap", href: `${SITE_ORIGIN}/sitemap.xml`, type: "application/xml" },
-      { rel: "alternate", hrefLang: "pt-BR", href: `${SITE_ORIGIN}/` },
-      { rel: "alternate", hrefLang: "x-default", href: `${SITE_ORIGIN}/` },
       { rel: "stylesheet", href: appCss },
     ],
     scripts: [
@@ -134,10 +137,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "Organization",
               "@id": `${SITE_ORIGIN}/#organization`,
               name: "CADBRASIL",
+              legalName: "CADBRASIL PORTAL LICITACOES LTDA",
               alternateName: "CADBRASIL",
+              taxID: "52.841.613/0001-55",
               url: SITE_ORIGIN,
-              logo: OG_IMAGE,
-              description: "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_ORIGIN}/icon-512.png`,
+                width: 512,
+                height: 512,
+              },
+              description:
+                "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
               areaServed: "BR",
               knowsAbout: ["SICAF", "Licitações públicas", "Credenciamento de fornecedores"],
               sameAs: ["https://cadastro.cadbrasil.com.br"],

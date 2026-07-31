@@ -22,6 +22,7 @@ import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
 import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
 import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
 import { Route as QuantoCustaSicafRouteImport } from './routes/quanto-custa-sicaf'
+import { Route as PropostaRouteImport } from './routes/proposta'
 import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
 import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
 import { Route as PlanosRouteImport } from './routes/planos'
@@ -131,6 +132,11 @@ const QuemPodeSeCadastrarNoSicafRoute =
 const QuantoCustaSicafRoute = QuantoCustaSicafRouteImport.update({
   id: '/quanto-custa-sicaf',
   path: '/quanto-custa-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropostaRoute = PropostaRouteImport.update({
+  id: '/proposta',
+  path: '/proposta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PregaoEletronicoRoute = PregaoEletronicoRouteImport.update({
@@ -402,6 +408,7 @@ export interface FileRoutesByFullPath {
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/proposta': typeof PropostaRoute
   '/quanto-custa-sicaf': typeof QuantoCustaSicafRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -460,6 +467,7 @@ export interface FileRoutesByTo {
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/proposta': typeof PropostaRoute
   '/quanto-custa-sicaf': typeof QuantoCustaSicafRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -519,6 +527,7 @@ export interface FileRoutesById {
   '/planos': typeof PlanosRoute
   '/plataforma-digital': typeof PlataformaDigitalRoute
   '/pregao-eletronico': typeof PregaoEletronicoRoute
+  '/proposta': typeof PropostaRoute
   '/quanto-custa-sicaf': typeof QuantoCustaSicafRoute
   '/quem-pode-se-cadastrar-no-sicaf': typeof QuemPodeSeCadastrarNoSicafRoute
   '/regularidade-fiscal': typeof RegularidadeFiscalRoute
@@ -579,6 +588,7 @@ export interface FileRouteTypes {
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/proposta'
     | '/quanto-custa-sicaf'
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
@@ -637,6 +647,7 @@ export interface FileRouteTypes {
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/proposta'
     | '/quanto-custa-sicaf'
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
@@ -695,6 +706,7 @@ export interface FileRouteTypes {
     | '/planos'
     | '/plataforma-digital'
     | '/pregao-eletronico'
+    | '/proposta'
     | '/quanto-custa-sicaf'
     | '/quem-pode-se-cadastrar-no-sicaf'
     | '/regularidade-fiscal'
@@ -754,6 +766,7 @@ export interface RootRouteChildren {
   PlanosRoute: typeof PlanosRoute
   PlataformaDigitalRoute: typeof PlataformaDigitalRoute
   PregaoEletronicoRoute: typeof PregaoEletronicoRoute
+  PropostaRoute: typeof PropostaRoute
   QuantoCustaSicafRoute: typeof QuantoCustaSicafRoute
   QuemPodeSeCadastrarNoSicafRoute: typeof QuemPodeSeCadastrarNoSicafRoute
   RegularidadeFiscalRoute: typeof RegularidadeFiscalRoute
@@ -865,6 +878,13 @@ declare module '@tanstack/react-router' {
       path: '/quanto-custa-sicaf'
       fullPath: '/quanto-custa-sicaf'
       preLoaderRoute: typeof QuantoCustaSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proposta': {
+      id: '/proposta'
+      path: '/proposta'
+      fullPath: '/proposta'
+      preLoaderRoute: typeof PropostaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pregao-eletronico': {
@@ -1212,6 +1232,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlanosRoute: PlanosRoute,
   PlataformaDigitalRoute: PlataformaDigitalRoute,
   PregaoEletronicoRoute: PregaoEletronicoRoute,
+  PropostaRoute: PropostaRoute,
   QuantoCustaSicafRoute: QuantoCustaSicafRoute,
   QuemPodeSeCadastrarNoSicafRoute: QuemPodeSeCadastrarNoSicafRoute,
   RegularidadeFiscalRoute: RegularidadeFiscalRoute,

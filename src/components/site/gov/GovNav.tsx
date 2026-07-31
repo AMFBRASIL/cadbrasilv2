@@ -9,7 +9,7 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 /** Mesmos itens do menu da versão anterior (Nav.tsx). */
 const links = [
   { to: "/cadastro", label: "Cadastro SICAF" },
-  { to: "/cadastrar-no-sicaf", label: "Cadastrar no SICAF" },
+  { to: "/proposta", label: "Proposta" },
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia SICAF" },
   { to: "/o-que-e-sicaf", label: "O que é SICAF" },
   { to: "/como-funciona", label: "Como funciona" },

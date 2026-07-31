@@ -1,14 +1,6 @@
 import { useMemo, useState } from "react";
 import { Plus, Minus, Search } from "lucide-react";
-
-export const homeFaqItems = [
-  { q: "O que é o SICAF e por que minha empresa precisa?", a: "SICAF é o Sistema de Cadastramento Unificado de Fornecedores. Ele habilita sua empresa a participar de licitações públicas em todo o Brasil. Sem cadastro ativo e regular, você fica de fora dos pregões e dispensas." },
-  { q: "Quanto tempo leva o cadastro com a CADBRASIL?", a: "Na maioria dos casos, em até 24 horas com toda a documentação em mãos. Casos com pendências fiscais podem levar mais tempo — e nós resolvemos cada uma delas." },
-  { q: "O que é o Assistente CADBRASIL?", a: "É um aplicativo leve que se instala no computador da sua empresa e conecta sua operação ao nosso time. Ele identifica vencimentos, renova certidões automaticamente e permite suporte remoto via AnyDesk." },
-  { q: "Como funciona a renovação e atualização SICAF?", a: "Monitoramos suas certidões 24/7. Antes de qualquer vencimento, nossa IA inicia o processo e nosso time finaliza. Você é avisado quando tudo está concluído." },
-  { q: "Quanto custa?", a: "Trabalhamos com planos personalizados conforme o porte e a complexidade da sua empresa. Fale conosco no WhatsApp e enviamos uma proposta clara em minutos." },
-  { q: "Vocês atendem em todo o Brasil?", a: "Sim. 100% remoto, em todos os estados, com suporte via WhatsApp, telefone e AnyDesk." },
-];
+import { homeFaqItems } from "@/data/homeFaq";
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
@@ -17,9 +9,7 @@ export function Faq() {
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     if (!normalized) return homeFaqItems;
-    return homeFaqItems.filter((it) =>
-      `${it.q} ${it.a}`.toLowerCase().includes(normalized),
-    );
+    return homeFaqItems.filter((it) => `${it.q} ${it.a}`.toLowerCase().includes(normalized));
   }, [query]);
 
   return (
@@ -69,7 +59,8 @@ export function Faq() {
           })}
           {filteredItems.length === 0 && (
             <div className="rounded-2xl bg-card border border-border p-6 text-sm text-muted-foreground text-center">
-              Nenhum resultado encontrado. Fale com nossa equipe no WhatsApp para um diagnóstico gratuito.
+              Nenhum resultado encontrado. Fale com nossa equipe no WhatsApp para um diagnóstico
+              gratuito.
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { faqCategories } from "@/components/site/faqData";
+import { SEO_MODIFIED } from "@/lib/seo";
 
 const BASE_URL = "https://cadbrasil.com.br";
 
@@ -34,7 +35,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gov-br-sicaf", changefreq: "weekly", priority: "0.97" },
           { path: "/como-regularizar-sicaf-empresa", changefreq: "weekly", priority: "0.94" },
           { path: "/cadastro-sicaf-licitacao-publica", changefreq: "weekly", priority: "0.94" },
-          { path: "/documentos-necessarios-cadastro-sicaf", changefreq: "weekly", priority: "0.94" },
+          {
+            path: "/documentos-necessarios-cadastro-sicaf",
+            changefreq: "weekly",
+            priority: "0.94",
+          },
           { path: "/documentacao-sicaf", changefreq: "weekly", priority: "0.95" },
           { path: "/quem-pode-se-cadastrar-no-sicaf", changefreq: "weekly", priority: "0.95" },
           {
@@ -43,6 +48,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.98",
           },
           { path: "/cadastro", changefreq: "weekly", priority: "1.0" },
+          { path: "/proposta", changefreq: "weekly", priority: "0.98" },
           { path: "/cadastrar-no-sicaf", changefreq: "weekly", priority: "0.99" },
           { path: "/credenciamento", changefreq: "weekly", priority: "0.98" },
           { path: "/como-fazer-cadastro-no-sicaf", changefreq: "weekly", priority: "0.97" },
@@ -60,7 +66,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/plataforma-digital", changefreq: "weekly", priority: "0.85" },
           { path: "/autoatendimento-sicaf", changefreq: "weekly", priority: "0.85" },
           { path: "/sicaf-digital", changefreq: "weekly", priority: "0.88" },
-          { path: "/sicaf-cadastro-unificado-de-fornecedores", changefreq: "weekly", priority: "0.88" },
+          {
+            path: "/sicaf-cadastro-unificado-de-fornecedores",
+            changefreq: "weekly",
+            priority: "0.88",
+          },
           { path: "/o-que-e-sicaf", changefreq: "monthly", priority: "0.9" },
           { path: "/como-funciona", changefreq: "monthly", priority: "0.9" },
           { path: "/assistente", changefreq: "monthly", priority: "0.9" },
@@ -72,17 +82,17 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           })),
         ];
-        const nowIso = new Date().toISOString();
-
         const urls = entries.map((e) =>
           [
             `  <url>`,
             `    <loc>${BASE_URL}${e.path}</loc>`,
-            `    <lastmod>${nowIso}</lastmod>`,
+            `    <lastmod>${SEO_MODIFIED}</lastmod>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ].filter(Boolean).join("\n"),
+          ]
+            .filter(Boolean)
+            .join("\n"),
         );
 
         const xml = [

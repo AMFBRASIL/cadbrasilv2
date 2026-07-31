@@ -1,15 +1,14 @@
-import {
-  AlertTriangle,
-  CheckCircle2,
-  FileText,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
+import { BadgeCheck, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+
+const DOCUMENTOS = ["CND Federal", "FGTS", "CND Estadual", "CND Municipal", "CNDT Trabalhista"];
 
 export function GovHeroDashboard() {
   return (
     <div className="relative">
-      <div className="absolute -inset-4 bg-[#FFCD07]/20 blur-3xl rounded-[2rem] opacity-40" aria-hidden />
+      <div
+        className="absolute -inset-4 bg-[#FFCD07]/20 blur-3xl rounded-[2rem] opacity-40"
+        aria-hidden
+      />
 
       <div className="relative rounded-lg border-2 border-white/25 bg-white shadow-2xl overflow-hidden">
         <div className="bg-[#071D41] px-4 py-2.5 flex items-center justify-between rounded-t-md">
@@ -40,38 +39,37 @@ export function GovHeroDashboard() {
           </div>
 
           <div className="p-3 sm:p-4 grid grid-cols-6 gap-2 sm:gap-3">
-            <div className="col-span-6 sm:col-span-3 row-span-2 relative rounded-lg border border-[#168821]/20 bg-white p-3 sm:p-4 overflow-hidden">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#168821]">
-                <Sparkles className="h-3.5 w-3.5" /> Análise IA em andamento
+            <div className="col-span-6 rounded-lg border border-[#168821]/30 bg-[#168821] p-3 sm:p-4 flex items-center gap-3">
+              <div className="h-10 w-10 shrink-0 rounded-full bg-white/15 grid place-items-center">
+                <BadgeCheck className="h-5 w-5 text-white" />
               </div>
-              <p className="mt-2 text-sm font-semibold text-[#0a4d2c] leading-snug">
-                Verificando 14 documentos no SICAF…
-              </p>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm sm:text-base font-bold text-white leading-tight">
+                  Cadastro SICAF concluído
+                </p>
+                <p className="text-[11px] sm:text-xs text-white/85">
+                  CRC disponível para emissão · empresa apta a licitar
+                </p>
+              </div>
+            </div>
+
+            <div className="col-span-6 sm:col-span-3 rounded-lg border border-[#168821]/20 bg-white p-3 sm:p-4">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#168821]">
+                <ShieldCheck className="h-3.5 w-3.5" /> Certidões validadas
+              </div>
               <div className="mt-3 space-y-2">
-                {[
-                  { l: "CND Federal", ok: true },
-                  { l: "FGTS", ok: true },
-                  { l: "CND Estadual", ok: false },
-                  { l: "CND Municipal", ok: true },
-                ].map((r) => (
-                  <div key={r.l} className="flex items-center justify-between text-xs">
+                {DOCUMENTOS.map((doc) => (
+                  <div key={doc} className="flex items-center justify-between text-xs">
                     <span className="flex items-center gap-2 text-[#0a4d2c]">
                       <FileText className="h-3.5 w-3.5 text-[#168821]/70" />
-                      {r.l}
+                      {doc}
                     </span>
-                    {r.ok ? (
-                      <span className="inline-flex items-center gap-1 text-[#168821] font-semibold">
-                        <CheckCircle2 className="h-3.5 w-3.5" /> Válido
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 text-amber-700 font-semibold">
-                        <AlertTriangle className="h-3.5 w-3.5" /> Vence 12d
-                      </span>
-                    )}
+                    <span className="inline-flex items-center gap-1 text-[#168821] font-semibold">
+                      <CheckCircle2 className="h-3.5 w-3.5" /> Válida
+                    </span>
                   </div>
                 ))}
               </div>
-              <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#168821] to-transparent animate-scan top-1/2 opacity-60" />
             </div>
 
             <div className="col-span-3 sm:col-span-3 rounded-lg border border-[#168821]/20 bg-white p-3">
@@ -79,42 +77,28 @@ export function GovHeroDashboard() {
                 Níveis SICAF
               </div>
               <div className="mt-2 grid grid-cols-3 gap-1.5">
-                {["I", "II", "III", "IV", "V", "VI"].map((n, i) => (
+                {["I", "II", "III", "IV", "V", "VI"].map((n) => (
                   <div
                     key={n}
-                    className={`h-7 sm:h-8 rounded-md grid place-items-center text-[10px] sm:text-[11px] font-bold ${
-                      i < 5
-                        ? "bg-[#168821]/15 text-[#168821] border border-[#168821]/30"
-                        : "bg-[#f0f7f2] text-[#0a4d2c]/40 border border-[#168821]/10"
-                    }`}
+                    className="h-7 sm:h-8 rounded-md grid place-items-center text-[10px] sm:text-[11px] font-bold bg-[#168821]/15 text-[#168821] border border-[#168821]/30"
                   >
                     {n}
                   </div>
                 ))}
               </div>
-              <p className="mt-2 text-[10px] text-[#0a4d2c]/60">5 de 6 níveis ativos</p>
+              <p className="mt-2 text-[10px] text-[#0a4d2c]/60">6 de 6 níveis concluídos</p>
             </div>
 
             <div className="col-span-3 sm:col-span-3 rounded-lg border border-[#168821]/20 bg-white p-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-semibold text-[#0a4d2c]/70">Regularidade fiscal</span>
-                <TrendingUp className="h-3.5 w-3.5 text-[#168821]" />
+                <span className="text-[10px] font-semibold text-[#0a4d2c]/70">
+                  Documentos conferidos
+                </span>
+                <CheckCircle2 className="h-3.5 w-3.5 text-[#168821]" />
               </div>
-              <div className="mt-1 text-xl sm:text-2xl font-bold text-[#0a4d2c]">98%</div>
+              <div className="mt-1 text-xl sm:text-2xl font-bold text-[#0a4d2c]">14 / 14</div>
               <div className="mt-2 h-1.5 rounded-full bg-[#e8f3eb] overflow-hidden">
-                <div className="h-full w-[98%] bg-[#168821] rounded-full" />
-              </div>
-            </div>
-
-            <div className="col-span-6 rounded-lg border border-amber-500/35 bg-amber-50 p-2.5 sm:p-3 flex items-center gap-3">
-              <div className="h-8 w-8 rounded-lg bg-amber-500/20 grid place-items-center shrink-0">
-                <AlertTriangle className="h-4 w-4 text-amber-700" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-bold text-[#0a4d2c]">1 pendência detectada</p>
-                <p className="text-[10px] sm:text-[11px] text-[#0a4d2c]/70 truncate">
-                  CND Estadual vence em 12 dias — renovação pela CADBRASIL
-                </p>
+                <div className="h-full w-full bg-[#168821] rounded-full" />
               </div>
             </div>
           </div>

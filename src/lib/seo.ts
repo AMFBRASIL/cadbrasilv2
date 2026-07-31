@@ -20,7 +20,7 @@ export function robotsMetaTags() {
 }
 
 export const SEO_PUBLISHED = "2026-01-15T08:00:00-03:00";
-export const SEO_MODIFIED = "2026-05-28T12:00:00-03:00";
+export const SEO_MODIFIED = "2026-07-31T09:00:00-03:00";
 
 export function canonical(path: string) {
   return path.startsWith("http") ? path : `${SITE_ORIGIN}${path}`;
