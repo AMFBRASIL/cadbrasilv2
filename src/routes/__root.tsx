@@ -151,7 +151,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Especialistas em SICAF: cadastro, atualização, regularização e suporte completo para licitações públicas.",
               areaServed: "BR",
               knowsAbout: ["SICAF", "Licitações públicas", "Credenciamento de fornecedores"],
-              sameAs: ["https://cadastro.cadbrasil.com.br"],
+              sameAs: [
+                SITE_ORIGIN,
+                `${SITE_ORIGIN}/cadbrasil`,
+                "https://cadastro.cadbrasil.com.br",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                areaServed: "BR",
+                availableLanguage: "Portuguese",
+                email: "documentos@fornecedordigital.com.br",
+              },
             },
             {
               "@type": "WebSite",

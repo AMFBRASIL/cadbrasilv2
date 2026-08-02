@@ -40,6 +40,10 @@ export const Route = createFileRoute("/")({
       { rel: "canonical", href: `${SITE_ORIGIN}/` },
       { rel: "alternate", hrefLang: "pt-BR", href: HOME_URL },
       { rel: "alternate", hrefLang: "x-default", href: HOME_URL },
+      { rel: "describedby", href: `${SITE_ORIGIN}/ai.txt` },
+      { rel: "describedby", href: `${SITE_ORIGIN}/llms.txt` },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",

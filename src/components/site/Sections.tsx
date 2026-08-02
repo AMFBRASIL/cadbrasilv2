@@ -1,7 +1,25 @@
 import {
-  ShieldCheck, Sparkles, Headphones, Gauge, FileCheck2, Workflow,
-  Bot, Download, MonitorSmartphone, RefreshCw, FolderSync, AlertTriangle,
-  CheckCircle2, ArrowRight, Building2, Award, Clock, Users, Search, Lock, BadgeCheck,
+  ShieldCheck,
+  Sparkles,
+  Headphones,
+  Gauge,
+  FileCheck2,
+  Workflow,
+  Bot,
+  Download,
+  MonitorSmartphone,
+  RefreshCw,
+  FolderSync,
+  AlertTriangle,
+  CheckCircle2,
+  ArrowRight,
+  Building2,
+  Award,
+  Clock,
+  Users,
+  Search,
+  Lock,
+  BadgeCheck,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
@@ -16,8 +34,12 @@ export function ServiceStatusBar() {
         <span className="inline-flex items-center gap-2 text-success font-semibold">
           <span className="h-2 w-2 rounded-full bg-success pulse-ring" /> Atendimento online agora
         </span>
-        <span className="text-muted-foreground">Tempo médio de resposta: <strong className="text-foreground">3 minutos</strong></span>
-        <span className="text-muted-foreground">Último SICAF regularizado: <strong className="text-foreground">há 18 minutos</strong></span>
+        <span className="text-muted-foreground">
+          Tempo médio de resposta: <strong className="text-foreground">3 minutos</strong>
+        </span>
+        <span className="text-muted-foreground">
+          Último SICAF regularizado: <strong className="text-foreground">há 18 minutos</strong>
+        </span>
       </div>
     </section>
   );
@@ -51,14 +73,14 @@ export function WhatIsSicaf() {
             O passaporte da sua empresa para <span className="text-brand">vender ao governo</span>.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-            O SICAF (Sistema de Cadastramento Unificado de Fornecedores) é o registro
-            obrigatório para qualquer empresa que queira participar de licitações
-            públicas no Brasil. Sem ele, sua empresa simplesmente não compete.
+            O SICAF (Sistema de Cadastramento Unificado de Fornecedores) é o registro obrigatório
+            para qualquer empresa que queira participar de licitações públicas no Brasil. Sem ele,
+            sua empresa simplesmente não compete.
           </p>
           <p className="mt-3 text-lg text-muted-foreground leading-relaxed">
-            A CADBRASIL cuida de <span className="text-foreground font-semibold">tudo</span> —
-            do cadastro inicial à renovação automática de certidões — com tecnologia,
-            IA e atendimento humano especializado.
+            A CADBRASIL cuida de <span className="text-foreground font-semibold">tudo</span> — do
+            cadastro inicial à renovação automática de certidões — com tecnologia, IA e atendimento
+            humano especializado.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <CadastroLink className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
@@ -71,22 +93,62 @@ export function WhatIsSicaf() {
               Falar com especialista
             </WhatsAppLink>
           </div>
+          <p className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm text-muted-foreground">
+            <Link
+              to="/o-que-e-sicaf-e-como-se-cadastrar"
+              className="font-medium text-brand hover:underline"
+            >
+              Guia completo do SICAF
+            </Link>
+            <span className="text-border">·</span>
+            <Link to="/cadastro" className="font-medium text-brand hover:underline">
+              Cadastro SICAF
+            </Link>
+            <span className="text-border">·</span>
+            <Link to="/renovar-sicaf" className="font-medium text-brand hover:underline">
+              Renovar SICAF
+            </Link>
+            <span className="text-border">·</span>
+            <Link to="/compras-gov-br" className="font-medium text-brand hover:underline">
+              Compras.gov.br
+            </Link>
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           {[
-            { i: Building2, t: "Órgãos públicos", v: "+200 mil", d: "compram via SICAF" },
-            { i: Award, t: "Volume anual", v: "R$ 1 tri+", d: "em licitações no país" },
+            {
+              i: Building2,
+              t: "Compras.gov.br (2025)",
+              v: "R$ 240,5 bi",
+              d: "em pregões no portal federal",
+            },
+            { i: Award, t: "Pregões em 2025", v: "97.755", d: "compras via Compras.gov.br" },
             { i: Clock, t: "Tempo médio", v: "24h", d: "para regularizar com a CADBRASIL" },
             { i: Users, t: "Clientes ativos", v: "+8.000", d: "fornecedores atendidos" },
           ].map((s) => (
-            <div key={s.t} className="rounded-2xl bg-card border border-border p-5 shadow-card hover:shadow-soft transition">
+            <div
+              key={s.t}
+              className="rounded-2xl bg-card border border-border p-5 shadow-card hover:shadow-soft transition"
+            >
               <s.i className="h-5 w-5 text-brand" />
               <div className="mt-4 text-3xl font-display font-bold tracking-tight">{s.v}</div>
               <div className="text-xs font-semibold text-foreground mt-1">{s.t}</div>
               <div className="text-xs text-muted-foreground">{s.d}</div>
             </div>
           ))}
+          <p className="col-span-2 text-[11px] text-muted-foreground">
+            Volumes oficiais:{" "}
+            <a
+              href="https://www.gov.br/compras/pt-br/acesso-a-informacao/noticias/compras-gov-br-vence-duas-categorias-no-premio-19-de-marco"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-foreground"
+            >
+              Portal de Compras do Governo Federal
+            </a>
+            .
+          </p>
         </div>
       </div>
     </section>
@@ -95,10 +157,26 @@ export function WhatIsSicaf() {
 
 export function Process() {
   const steps = [
-    { i: MonitorSmartphone, t: "Fale com a CADBRASIL", d: "WhatsApp, formulário ou Assistente — você escolhe. Resposta em minutos." },
-    { i: FileCheck2, t: "Enviamos a checklist", d: "Mostramos exatamente quais documentos precisamos. Sem burocracia." },
-    { i: Bot, t: "IA analisa tudo", d: "Nossa tecnologia valida cada documento, identifica pendências e prepara o cadastro." },
-    { i: ShieldCheck, t: "SICAF regularizado", d: "Você recebe o CRC, todos os níveis ativos e suporte contínuo de especialistas." },
+    {
+      i: MonitorSmartphone,
+      t: "Fale com a CADBRASIL",
+      d: "WhatsApp, formulário ou Assistente — você escolhe. Resposta em minutos.",
+    },
+    {
+      i: FileCheck2,
+      t: "Enviamos a checklist",
+      d: "Mostramos exatamente quais documentos precisamos. Sem burocracia.",
+    },
+    {
+      i: Bot,
+      t: "IA analisa tudo",
+      d: "Nossa tecnologia valida cada documento, identifica pendências e prepara o cadastro.",
+    },
+    {
+      i: ShieldCheck,
+      t: "SICAF regularizado",
+      d: "Você recebe o CRC, todos os níveis ativos e suporte contínuo de especialistas.",
+    },
   ];
   return (
     <section id="processo" className="py-24 sm:py-32 bg-gradient-to-b from-background to-accent/40">
@@ -117,7 +195,10 @@ export function Process() {
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {steps.map((s, i) => (
-            <div key={s.t} className="relative rounded-2xl bg-card border border-border p-6 shadow-card hover:-translate-y-1 transition">
+            <div
+              key={s.t}
+              className="relative rounded-2xl bg-card border border-border p-6 shadow-card hover:-translate-y-1 transition"
+            >
               <div className="absolute -top-3 left-6 text-[10px] font-bold tracking-widest text-brand bg-background px-2 py-0.5 rounded-full border border-border">
                 PASSO {String(i + 1).padStart(2, "0")}
               </div>
@@ -160,12 +241,18 @@ export function ReadinessCalculator() {
     return Math.min(100, base);
   }, [answers]);
 
-  const readinessLabel = score >= 75 ? "Pronto para licitar" : score >= 45 ? "Precisa de ajustes" : "Risco alto sem suporte";
-  const readinessHint = score >= 75
-    ? "Seu cenário está avançado. Podemos acelerar o fechamento em até 24h."
-    : score >= 45
-      ? "Com alguns ajustes de documentação e certidões, sua empresa pode disputar editais rapidamente."
-      : "Há pontos críticos no seu cadastro atual. Recomendamos diagnóstico com especialista.";
+  const readinessLabel =
+    score >= 75
+      ? "Pronto para licitar"
+      : score >= 45
+        ? "Precisa de ajustes"
+        : "Risco alto sem suporte";
+  const readinessHint =
+    score >= 75
+      ? "Seu cenário está avançado. Podemos acelerar o fechamento em até 24h."
+      : score >= 45
+        ? "Com alguns ajustes de documentação e certidões, sua empresa pode disputar editais rapidamente."
+        : "Há pontos críticos no seu cadastro atual. Recomendamos diagnóstico com especialista.";
 
   return (
     <section className="py-24 sm:py-32 bg-accent/20">
@@ -188,36 +275,56 @@ export function ReadinessCalculator() {
               label="Sua empresa já possui cadastro ativo no SICAF?"
               value={answers.cadastro}
               onChange={(v) => setAnswers((s) => ({ ...s, cadastro: v }))}
-              options={[{ value: "sim", label: "Sim" }, { value: "nao", label: "Não" }]}
+              options={[
+                { value: "sim", label: "Sim" },
+                { value: "nao", label: "Não" },
+              ]}
             />
             <Question
               label="As principais certidões estão válidas hoje?"
               value={answers.certidoes}
               onChange={(v) => setAnswers((s) => ({ ...s, certidoes: v }))}
-              options={[{ value: "sim", label: "Sim" }, { value: "nao", label: "Não / Não sei" }]}
+              options={[
+                { value: "sim", label: "Sim" },
+                { value: "nao", label: "Não / Não sei" },
+              ]}
             />
             <Question
               label="Qual a sua urgência para começar a licitar?"
               value={answers.urgencia}
               onChange={(v) => setAnswers((s) => ({ ...s, urgencia: v }))}
-              options={[{ value: "24h", label: "Até 24h" }, { value: "7d", label: "Até 7 dias" }, { value: "30d", label: "Até 30 dias" }]}
+              options={[
+                { value: "24h", label: "Até 24h" },
+                { value: "7d", label: "Até 7 dias" },
+                { value: "30d", label: "Até 30 dias" },
+              ]}
             />
             <Question
               label="Seu time tem experiência com habilitação em licitações?"
               value={answers.experiencia}
               onChange={(v) => setAnswers((s) => ({ ...s, experiencia: v }))}
-              options={[{ value: "baixa", label: "Baixa" }, { value: "media", label: "Média" }, { value: "alta", label: "Alta" }]}
+              options={[
+                { value: "baixa", label: "Baixa" },
+                { value: "media", label: "Média" },
+                { value: "alta", label: "Alta" },
+              ]}
             />
             <Question
               label="Quantos editais/mês pretendem disputar?"
               value={answers.volume}
               onChange={(v) => setAnswers((s) => ({ ...s, volume: v }))}
-              options={[{ value: "1-2", label: "1 a 2" }, { value: "3-4", label: "3 a 4" }, { value: "5+", label: "5+" }]}
+              options={[
+                { value: "1-2", label: "1 a 2" },
+                { value: "3-4", label: "3 a 4" },
+                { value: "5+", label: "5+" },
+              ]}
             />
           </div>
 
           <div className="mt-6 rounded-2xl bg-accent border border-border p-5">
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">Nível de prontidão</div>
+            <div className="text-xs uppercase tracking-wider text-muted-foreground">
+              Nível de prontidão
+            </div>
             <div className="mt-1 text-2xl font-bold">{score}%</div>
             <div className="mt-1 font-semibold text-brand">{readinessLabel}</div>
             <p className="mt-2 text-sm text-muted-foreground">{readinessHint}</p>
@@ -295,20 +402,22 @@ export function DocumentChecklist() {
             Veja em segundos o que falta para seu SICAF.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Marque os documentos que você já possui. Nós cuidamos de organizar o restante e acelerar a regularização.
+            Marque os documentos que você já possui. Nós cuidamos de organizar o restante e acelerar
+            a regularização.
           </p>
         </div>
 
         <div className="rounded-3xl bg-card border border-border p-6 shadow-card">
           <div className="space-y-2">
             {docs.map((doc, idx) => (
-              <label key={doc} className="flex items-center gap-3 rounded-xl border border-border px-3 py-2.5 hover:bg-accent">
+              <label
+                key={doc}
+                className="flex items-center gap-3 rounded-xl border border-border px-3 py-2.5 hover:bg-accent"
+              >
                 <input
                   type="checkbox"
                   checked={checked[idx]}
-                  onChange={() =>
-                    setChecked((state) => state.map((v, i) => (i === idx ? !v : v)))
-                  }
+                  onChange={() => setChecked((state) => state.map((v, i) => (i === idx ? !v : v)))}
                   className="h-4 w-4 accent-[oklch(0.53_0.13_258)]"
                 />
                 <span className="text-sm">{doc}</span>
@@ -318,9 +427,14 @@ export function DocumentChecklist() {
           <div className="mt-5 rounded-2xl bg-accent border border-border p-4">
             <div className="text-sm">
               {missing === 0 ? (
-                <span className="font-semibold text-success">Checklist completa. Você está pronto para avançar.</span>
+                <span className="font-semibold text-success">
+                  Checklist completa. Você está pronto para avançar.
+                </span>
               ) : (
-                <span><strong>{missing}</strong> documento(s) pendente(s). Enviamos a lista personalizada no WhatsApp.</span>
+                <span>
+                  <strong>{missing}</strong> documento(s) pendente(s). Enviamos a lista
+                  personalizada no WhatsApp.
+                </span>
               )}
             </div>
             <WhatsAppLink
@@ -343,12 +457,36 @@ export function DocumentChecklist() {
 
 export function Benefits() {
   const items = [
-    { i: Gauge, t: "Velocidade absurda", d: "SICAF regularizado em até 24h. Nada de esperar semanas." },
-    { i: ShieldCheck, t: "Segurança jurídica", d: "Equipe que entende de licitações e protege seu CNPJ." },
-    { i: Bot, t: "IA + humanos", d: "Tecnologia que valida, especialista que decide. O melhor dos dois mundos." },
-    { i: RefreshCw, t: "Atualização automática", d: "Monitoramos suas certidões 24/7. Nunca mais um vencimento perdido." },
-    { i: FolderSync, t: "Gestão documental", d: "Tudo organizado em um painel — acesso a qualquer momento." },
-    { i: Headphones, t: "Suporte de verdade", d: "Atendimento humano via WhatsApp, telefone ou AnyDesk." },
+    {
+      i: Gauge,
+      t: "Velocidade absurda",
+      d: "SICAF regularizado em até 24h. Nada de esperar semanas.",
+    },
+    {
+      i: ShieldCheck,
+      t: "Segurança jurídica",
+      d: "Equipe que entende de licitações e protege seu CNPJ.",
+    },
+    {
+      i: Bot,
+      t: "IA + humanos",
+      d: "Tecnologia que valida, especialista que decide. O melhor dos dois mundos.",
+    },
+    {
+      i: RefreshCw,
+      t: "Atualização automática",
+      d: "Monitoramos suas certidões 24/7. Nunca mais um vencimento perdido.",
+    },
+    {
+      i: FolderSync,
+      t: "Gestão documental",
+      d: "Tudo organizado em um painel — acesso a qualquer momento.",
+    },
+    {
+      i: Headphones,
+      t: "Suporte de verdade",
+      d: "Atendimento humano via WhatsApp, telefone ou AnyDesk.",
+    },
   ];
   return (
     <section id="beneficios" className="py-24 sm:py-32">
@@ -364,7 +502,10 @@ export function Benefits() {
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((b) => (
-            <div key={b.t} className="group rounded-2xl bg-card border border-border p-7 hover:border-brand/40 hover:shadow-soft transition">
+            <div
+              key={b.t}
+              className="group rounded-2xl bg-card border border-border p-7 hover:border-brand/40 hover:shadow-soft transition"
+            >
               <div className="h-12 w-12 rounded-2xl bg-accent text-brand group-hover:bg-gradient-brand group-hover:text-brand-foreground grid place-items-center transition">
                 <b.i className="h-5 w-5" />
               </div>
@@ -394,9 +535,9 @@ export function Assistant() {
             Assistente CADBRASIL — o jeito moderno de cuidar do seu SICAF.
           </h2>
           <p className="mt-5 text-lg text-white/80 leading-relaxed">
-            Um aplicativo leve que se instala em minutos e conecta sua empresa diretamente
-            aos nossos especialistas. IA analisa, identifica certidões vencidas e
-            atualiza automaticamente — você só assiste.
+            Um aplicativo leve que se instala em minutos e conecta sua empresa diretamente aos
+            nossos especialistas. IA analisa, identifica certidões vencidas e atualiza
+            automaticamente — você só assiste.
           </p>
           <ul className="mt-7 space-y-3">
             {[
@@ -430,7 +571,9 @@ export function Assistant() {
             <div className="rounded-2xl bg-[oklch(0.18_0.04_258)] text-white overflow-hidden">
               <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
                 <div className="flex items-center gap-2">
-                  <div className="h-7 w-7 rounded-lg bg-white/10 grid place-items-center text-xs font-bold">C</div>
+                  <div className="h-7 w-7 rounded-lg bg-white/10 grid place-items-center text-xs font-bold">
+                    C
+                  </div>
                   <span className="text-xs font-semibold">Assistente CADBRASIL</span>
                 </div>
                 <span className="text-[10px] text-emerald-300 inline-flex items-center gap-1">
@@ -511,9 +654,24 @@ export function Stats() {
 
 export function Testimonials() {
   const items = [
-    { q: "Em 18 horas tudo estava regularizado. Entramos no pregão da prefeitura no dia seguinte.", a: "Carla M.", r: "Diretora · Construtora ML · SP", kpi: "SICAF regularizado em 18h" },
-    { q: "O Assistente CADBRASIL mudou tudo. Não me preocupo mais com vencimento de certidão.", a: "Roberto S.", r: "Sócio · Tech Supply · PR", kpi: "0 certidões vencidas em 9 meses" },
-    { q: "Já fechei 4 contratos com órgãos públicos depois que a CADBRASIL cuidou do meu SICAF.", a: "Patrícia L.", r: "CEO · Alimentar SP · SP", kpi: "4 contratos após regularização" },
+    {
+      q: "Em 18 horas tudo estava regularizado. Entramos no pregão da prefeitura no dia seguinte.",
+      a: "Carla M.",
+      r: "Diretora · Construtora ML · SP",
+      kpi: "SICAF regularizado em 18h",
+    },
+    {
+      q: "O Assistente CADBRASIL mudou tudo. Não me preocupo mais com vencimento de certidão.",
+      a: "Roberto S.",
+      r: "Sócio · Tech Supply · PR",
+      kpi: "0 certidões vencidas em 9 meses",
+    },
+    {
+      q: "Já fechei 4 contratos com órgãos públicos depois que a CADBRASIL cuidou do meu SICAF.",
+      a: "Patrícia L.",
+      r: "CEO · Alimentar SP · SP",
+      kpi: "4 contratos após regularização",
+    },
   ];
   return (
     <section className="py-24 sm:py-32">
@@ -528,9 +686,14 @@ export function Testimonials() {
         </div>
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {items.map((t) => (
-            <figure key={t.a} className="rounded-2xl bg-card border border-border p-7 shadow-card flex flex-col">
+            <figure
+              key={t.a}
+              className="rounded-2xl bg-card border border-border p-7 shadow-card flex flex-col"
+            >
               <div className="text-brand text-xl">★★★★★</div>
-              <blockquote className="mt-4 text-foreground leading-relaxed flex-1">"{t.q}"</blockquote>
+              <blockquote className="mt-4 text-foreground leading-relaxed flex-1">
+                "{t.q}"
+              </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-gradient-brand text-brand-foreground grid place-items-center font-bold">
                   {t.a[0]}
@@ -554,8 +717,16 @@ export function Testimonials() {
 export function ComparisonSection() {
   const rows = [
     { feature: "Tempo para regularização", cadbrasil: "Até 24h", semApoio: "1 a 4 semanas" },
-    { feature: "Risco de desclassificação", cadbrasil: "Baixo (monitoramento ativo)", semApoio: "Alto (controle manual)" },
-    { feature: "Renovação de certidões", cadbrasil: "Automática 24/7", semApoio: "Lembretes manuais" },
+    {
+      feature: "Risco de desclassificação",
+      cadbrasil: "Baixo (monitoramento ativo)",
+      semApoio: "Alto (controle manual)",
+    },
+    {
+      feature: "Renovação de certidões",
+      cadbrasil: "Automática 24/7",
+      semApoio: "Lembretes manuais",
+    },
     { feature: "Acompanhamento", cadbrasil: "Painel + especialistas", semApoio: "Planilha/e-mail" },
   ];
 
@@ -662,8 +833,8 @@ export function FinalCTA() {
               Regularize seu SICAF hoje mesmo.
             </h2>
             <p className="mt-6 text-lg sm:text-xl text-white/85 leading-relaxed">
-              Nossa equipe especializada e nossa tecnologia inteligente ajudam você
-              a participar de licitações sem dores de cabeça.
+              Nossa equipe especializada e nossa tecnologia inteligente ajudam você a participar de
+              licitações sem dores de cabeça.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CadastroLink className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-white text-brand font-bold shadow-soft hover:scale-[1.02] transition">

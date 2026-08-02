@@ -71,7 +71,6 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "weekly",
             priority: "0.88",
           },
-          { path: "/o-que-e-sicaf", changefreq: "monthly", priority: "0.9" },
           { path: "/como-funciona", changefreq: "monthly", priority: "0.9" },
           { path: "/assistente", changefreq: "monthly", priority: "0.9" },
           { path: "/beneficios", changefreq: "monthly", priority: "0.8" },

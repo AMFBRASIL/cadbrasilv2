@@ -8,7 +8,7 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const links = [
   { to: "/cadastro-sicaf-passo-a-passo", label: "Guia SICAF" },
-  { to: "/o-que-e-sicaf", label: "O que é SICAF" },
+  { to: "/o-que-e-sicaf-e-como-se-cadastrar", label: "O que é SICAF" },
   { to: "/como-funciona", label: "Como funciona" },
   { to: "/assistente", label: "Assistente" },
   { to: "/beneficios", label: "Benefícios" },
@@ -78,9 +78,7 @@ export function Nav() {
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </WhatsAppLink>
-            <CadastroLink
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-brand text-brand-foreground shadow-glow hover:opacity-95 transition"
-            >
+            <CadastroLink className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-brand text-brand-foreground shadow-glow hover:opacity-95 transition">
               Fazer Cadastro
             </CadastroLink>
           </div>

@@ -2,6 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { CadastroLink } from "@/components/site/CadastroLink";
 import { SEO_CADASTRO_HUB } from "@/components/site/SeoCadastroHub";
 
+const GUIAS = [
+  { to: "/o-que-e-sicaf-e-como-se-cadastrar", label: "O que é SICAF" },
+  { to: "/renovar-sicaf", label: "Renovar SICAF" },
+  { to: "/quanto-custa-sicaf", label: "Quanto custa o SICAF" },
+  { to: "/sicaf-irregular", label: "SICAF irregular" },
+  { to: "/cadbrasil", label: "Sobre a CADBRASIL" },
+] as const;
+
 export function GovFooter() {
   return (
     <footer className="bg-[#0a4d2c] text-white border-t-4 border-[#FFCD07]">
@@ -14,6 +22,17 @@ export function GovFooter() {
           <p className="mt-4 text-sm text-white/75 max-w-sm leading-relaxed">
             Especialistas em SICAF, credenciamento de fornecedores e participação em licitações
             públicas em todo o Brasil. Assessoria privada — sem vínculo com órgãos governamentais.
+          </p>
+          <p className="mt-4 text-xs text-white/55">
+            Fonte oficial:{" "}
+            <a
+              href="https://www.gov.br/compras/pt-br/fornecedor/cadastro"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-white"
+            >
+              Portal de Compras do Governo Federal
+            </a>
           </p>
         </div>
         <div>
@@ -29,23 +48,15 @@ export function GovFooter() {
           </ul>
         </div>
         <div>
-          <p className="text-sm font-semibold text-[#FFCD07] mb-3">Portal</p>
+          <p className="text-sm font-semibold text-[#FFCD07] mb-3">Guias</p>
           <ul className="space-y-2 text-sm text-white/80">
-            <li>
-              <Link to="/como-cadastrar-empresa-sicaf" className="hover:text-white">
-                SICAF para empresas
-              </Link>
-            </li>
-            <li>
-              <Link to="/cadastro-sicaf-passo-a-passo" className="hover:text-white">
-                Guia passo a passo
-              </Link>
-            </li>
-            <li>
-              <Link to="/faq" className="hover:text-white">
-                Perguntas frequentes
-              </Link>
-            </li>
+            {GUIAS.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
             <li>
               <CadastroLink className="hover:text-white">Cadastro online</CadastroLink>
             </li>
@@ -55,6 +66,15 @@ export function GovFooter() {
       <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-white/60 space-y-1">
         <p>© {new Date().getFullYear()} CADBRASIL · Assessoria SICAF e licitações públicas</p>
         <p className="text-white/50">52.841.613/0001-55 · CADBRASIL PORTAL LICITACOES LTDA</p>
+        <p className="text-white/45">
+          <a href="/ai.txt" className="hover:text-white underline-offset-2 hover:underline">
+            ai.txt
+          </a>
+          {" · "}
+          <a href="/llms.txt" className="hover:text-white underline-offset-2 hover:underline">
+            llms.txt
+          </a>
+        </p>
       </div>
     </footer>
   );

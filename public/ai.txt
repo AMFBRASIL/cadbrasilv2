@@ -83,7 +83,7 @@ High-value pages:
 - https://cadbrasil.com.br/cadastro-sicaf-passo-a-passo
 - https://cadbrasil.com.br/comprasnet
 - https://cadbrasil.com.br/faq
-- https://cadbrasil.com.br/o-que-e-sicaf
+- https://cadbrasil.com.br/o-que-e-sicaf-e-como-se-cadastrar
 - https://cadbrasil.com.br/renovacao-sicaf
 - https://cadbrasil.com.br/empresa-inapta
 - https://cadbrasil.com.br/emitir-crc

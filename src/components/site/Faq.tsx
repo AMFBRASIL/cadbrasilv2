@@ -37,23 +37,34 @@ export function Faq() {
         <div className="mt-12 space-y-3">
           {filteredItems.map((it, i) => {
             const isOpen = open === i;
+            const panelId = `faq-panel-${i}`;
             return (
               <div key={it.q} className="rounded-2xl bg-card border border-border overflow-hidden">
                 <button
+                  type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left hover:bg-accent transition"
                   aria-expanded={isOpen}
+                  aria-controls={panelId}
                 >
                   <span className="font-display font-semibold text-base sm:text-lg">{it.q}</span>
                   <span className="shrink-0 h-8 w-8 rounded-full bg-accent grid place-items-center">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-muted-foreground leading-relaxed animate-fade-up">
-                    {it.a}
-                  </div>
-                )}
+                {/* Resposta sempre no HTML (SEO); só oculta visualmente quando fechada. */}
+                <div
+                  id={panelId}
+                  role="region"
+                  hidden={!isOpen}
+                  className={
+                    isOpen
+                      ? "px-5 sm:px-6 pb-6 text-muted-foreground leading-relaxed animate-fade-up"
+                      : undefined
+                  }
+                >
+                  {it.a}
+                </div>
               </div>
             );
           })}

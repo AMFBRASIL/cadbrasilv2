@@ -9,6 +9,8 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   // Consolida canibalização do cluster "cadastro/credenciamento SICAF"
   "/cadastro-sicaf": "/cadastro",
   "/credenciamento-sicaf-digital": "/credenciamento",
+  // Consolida "o que é SICAF" no guia pilar
+  "/o-que-e-sicaf": "/o-que-e-sicaf-e-como-se-cadastrar",
 };
 
 function normalizePathname(pathname: string) {
