@@ -58,6 +58,11 @@ export function GovFooter() {
               </li>
             ))}
             <li>
+              <Link to="/acesso-remoto" className="hover:text-white">
+                Acesso remoto
+              </Link>
+            </li>
+            <li>
               <CadastroLink className="hover:text-white">Cadastro online</CadastroLink>
             </li>
           </ul>

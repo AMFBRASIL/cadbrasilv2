@@ -11,6 +11,7 @@ const links = [
   { to: "/o-que-e-sicaf-e-como-se-cadastrar", label: "O que é SICAF" },
   { to: "/como-funciona", label: "Como funciona" },
   { to: "/assistente", label: "Assistente" },
+  { to: "/acesso-remoto", label: "Acesso remoto" },
   { to: "/beneficios", label: "Benefícios" },
   { to: "/faq", label: "FAQ" },
 ] as const;

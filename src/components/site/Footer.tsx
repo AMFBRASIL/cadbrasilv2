@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { SeoCadastroHub } from "@/components/site/SeoCadastroHub";
@@ -28,12 +29,20 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <Link to="/acesso-remoto" className="hover:text-foreground">
+                Acesso remoto
+              </Link>
+            </li>
+            <li>
               <WhatsAppLink intent="Contato pelo rodapé do site." className="hover:text-foreground">
                 WhatsApp
               </WhatsAppLink>
             </li>
             <li>
-              <a href="mailto:documentos@fornecedordigital.com.br" className="hover:text-foreground">
+              <a
+                href="mailto:documentos@fornecedordigital.com.br"
+                className="hover:text-foreground"
+              >
                 documentos@fornecedordigital.com.br
               </a>
             </li>

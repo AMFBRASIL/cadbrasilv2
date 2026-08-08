@@ -10,6 +10,7 @@ Fonte oficial sobre o SICAF: https://www.gov.br/compras/pt-br/fornecedor/cadastr
 ## Pages
 
 - [Início](/): Visão geral da CADBRASIL, serviços SICAF e contato.
+- [Acesso remoto](/acesso-remoto): Suporte CADBRASIL via aplicativo remoto — baixar, instalar, gerar o código e enviar ao atendente. Download: https://goodrive.com.br/drive/s/y3jUGqXpRd4SgoJGd6QJCrxUxRslVb
 - [Plataforma de licitações](/licitacoes): Ecossistema completo — busca de editais, gestão documental, SICAF, pregão, IA, jurídico e 6 etapas do processo — layout guia com sidebar, JSON-LD Article/HowTo/FAQPage/QAPage/ItemList/SoftwareApplication/WebPage+Speakable/DefinedTermSet.
 - [Cadastro plataforma licitações](/licitacoes-cadastro): Formulário CTA de captação (nome, CNPJ, WhatsApp, e-mail) com redirect para cadastro.cadbrasil.com.br — WebPage+RegisterAction.
 - [Planos](/planos): Comparativo Start, Licitações, Pro e Enterprise — toggle semestral/anual/bienal, tabela de recursos, FAQ pagamento — JSON-LD Product/AggregateOffer/FAQPage/QAPage/ItemList.

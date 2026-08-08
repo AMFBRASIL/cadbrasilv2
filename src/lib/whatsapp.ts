@@ -13,6 +13,7 @@ const PATH_LABELS: Record<string, string> = {
   "/como-funciona": "Como funciona",
   "/o-que-e-sicaf": "O que é SICAF",
   "/assistente": "Assistente CADBRASIL",
+  "/acesso-remoto": "Acesso remoto CADBRASIL",
   "/beneficios": "Benefícios CADBRASIL",
   "/faq": "FAQ — central de dúvidas",
   "/cadastro-sicaf-passo-a-passo": "Guia cadastro SICAF passo a passo",

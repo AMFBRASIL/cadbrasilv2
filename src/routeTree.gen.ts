@@ -60,6 +60,7 @@ import { Route as CadastrarNoSicafRouteImport } from './routes/cadastrar-no-sica
 import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
 import { Route as AssistenteRouteImport } from './routes/assistente'
+import { Route as AcessoRemotoRouteImport } from './routes/acesso-remoto'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FaqIndexRouteImport } from './routes/faq.index'
 import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/cadastro-sicaf-passo-passo'
@@ -337,6 +338,11 @@ const AssistenteRoute = AssistenteRouteImport.update({
   path: '/assistente',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcessoRemotoRoute = AcessoRemotoRouteImport.update({
+  id: '/acesso-remoto',
+  path: '/acesso-remoto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -371,6 +377,7 @@ const ApiContactRoute = ApiContactRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acesso-remoto': typeof AcessoRemotoRoute
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
@@ -430,6 +437,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acesso-remoto': typeof AcessoRemotoRoute
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
@@ -490,6 +498,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acesso-remoto': typeof AcessoRemotoRoute
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
@@ -551,6 +560,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/acesso-remoto'
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
@@ -610,6 +620,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/acesso-remoto'
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
@@ -669,6 +680,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/acesso-remoto'
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
@@ -729,6 +741,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcessoRemotoRoute: typeof AcessoRemotoRoute
   AssistenteRoute: typeof AssistenteRoute
   AutoatendimentoSicafRoute: typeof AutoatendimentoSicafRoute
   BeneficiosRoute: typeof BeneficiosRoute
@@ -1146,6 +1159,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AssistenteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acesso-remoto': {
+      id: '/acesso-remoto'
+      path: '/acesso-remoto'
+      fullPath: '/acesso-remoto'
+      preLoaderRoute: typeof AcessoRemotoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -1193,6 +1213,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcessoRemotoRoute: AcessoRemotoRoute,
   AssistenteRoute: AssistenteRoute,
   AutoatendimentoSicafRoute: AutoatendimentoSicafRoute,
   BeneficiosRoute: BeneficiosRoute,
