@@ -13,7 +13,7 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { OG_IMAGE, robotsMetaTags, SITE_ORIGIN } from "@/lib/seo";
 
 export const ACESSO_REMOTO_DOWNLOAD_URL =
-  "https://goodrive.com.br/drive/s/y3jUGqXpRd4SgoJGd6QJCrxUxRslVb";
+  "https://goodrive.com.br/drive/s/8HLMOPD4vrtxT0CgCi69PgCbtFtECz";
 
 const PAGE_URL = `${SITE_ORIGIN}/acesso-remoto`;
 const PAGE_TITLE = "Acesso remoto CADBRASIL — suporte ao vivo no seu computador";
