@@ -9,6 +9,8 @@
     "build:vercel": "vite build",
     "vercel-build": "npm run build:vercel",
     "build:dev": "vite build --mode development",
+    "build:vps": "NITRO_PRESET=node-server vite build",
+    "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
