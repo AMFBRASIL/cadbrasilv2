@@ -7,6 +7,7 @@ import {
   Briefcase,
   CheckCircle2,
   Clock,
+  ExternalLink,
   FileText,
   Gavel,
   Layers,
@@ -22,12 +23,16 @@ import {
 } from "lucide-react";
 import {
   comparativoLicitacoes,
+  editorialTrust,
   etapasProcesso,
+  factSheetAi,
   ferramentas,
   ferramentasIa,
+  fontesOficiais,
   glossarioLicitacoes,
   juridicoBeneficios,
   licitacoesFaqs,
+  licitacoesMeta,
   licitacoesToc,
   paraQueServe,
   pilares,
@@ -38,8 +43,7 @@ import {
 import { PageShell } from "@/components/site/PageShell";
 import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
-
-const MODIFIED = "29 mai 2026";
+import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
 
 const heroStats = [
   { value: "12+", label: "Ferramentas integradas" },
@@ -47,6 +51,15 @@ const heroStats = [
   { value: "8k+", label: "Fornecedores atendidos" },
   { value: "24h", label: "SICAF com CADBRASIL" },
 ];
+
+function IniciarLicitacaoButton({ className }: { className: string }) {
+  return (
+    <CadastroLink href={CADASTRO_CREDENCIAMENTO_URL} className={className}>
+      Iniciar Minha Licitação
+      <ArrowRight className="h-4 w-4" />
+    </CadastroLink>
+  );
+}
 
 const ferramentaIcons: Record<string, typeof Search> = {
   Oportunidades: Search,
@@ -98,33 +111,31 @@ export function LicitacoesPage() {
               </h1>
 
               <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
-                Otimize seus processos com <strong className="text-white font-semibold">IA especializada</strong>,
-                encontre licitações, gerencie documentos, credencie no SICAF e conte com assessoria jurídica —
-                tudo na <strong className="text-white font-semibold">CADBRASIL</strong>.
+                Comece pelo diagnóstico da sua empresa. Em poucos minutos avaliamos SICAF, certificado digital
+                e o melhor caminho para participar de licitações — com{" "}
+                <strong className="text-white font-semibold">IA</strong>, documentos e suporte da{" "}
+                <strong className="text-white font-semibold">CADBRASIL</strong>.
               </p>
 
               <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                Do edital ao contrato: uma plataforma completa para MEI, ME, EPP e empresas que querem vender ao
-                governo com previsibilidade e suporte humano.
+                Do edital ao contrato: triagem inicial, credenciamento SICAF e operação completa para MEI, ME,
+                EPP e demais portes que querem vender ao governo.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  to="/licitacoes-cadastro"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition"
-                >
-                  Cadastre-se gratuitamente
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <IniciarLicitacaoButton className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition" />
                 <WhatsAppLink
                   pageLabel="Plataforma de licitações CADBRASIL"
-                  intent="Quero conhecer a plataforma CADBRASIL de licitações para minha empresa."
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
+                  intent="Quero iniciar minha licitação e passar pela triagem de credenciamento."
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Falar com especialista
                 </WhatsAppLink>
               </div>
+              <p className="mt-3 text-xs text-white/55">
+                Você será direcionado à triagem de credenciamento da CADBRASIL.
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
@@ -170,9 +181,31 @@ export function LicitacoesPage() {
             </ol>
           </nav>
           <span className="hidden sm:inline text-border">|</span>
-          <span>Atualizado {MODIFIED}</span>
+          <span>Atualizado {editorialTrust.how.updatedLabel}</span>
           <span aria-hidden>·</span>
-          <span>~15 min de leitura</span>
+          <span>{editorialTrust.how.readingTime}</span>
+        </div>
+
+        <div className="mb-10 rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
+            Transparência editorial
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4 text-sm">
+            <div>
+              <p className="font-semibold text-foreground">Quem</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">
+                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Como</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.how.method}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Por quê</p>
+              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.why.purpose}</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
@@ -197,24 +230,45 @@ export function LicitacoesPage() {
                 ))}
               </ol>
               <div className="p-4 border-t border-border bg-gradient-to-b from-brand/5 to-transparent">
-                <p className="text-xs font-semibold text-foreground mb-2">Teste gratuito</p>
-                <Link
-                  to="/licitacoes-cadastro"
-                  className="block w-full text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground"
-                >
-                  Cadastrar agora
-                </Link>
+                <p className="text-xs font-semibold text-foreground mb-2">Começar agora</p>
+                <IniciarLicitacaoButton className="flex w-full items-center justify-center gap-2 text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground" />
               </div>
             </nav>
           </aside>
 
           <article className="min-w-0 prose-guide">
+            <section id="resposta-rapida" className="scroll-mt-32 mb-14">
+              <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
+                <p className="guide-quick-answer ai-summary text-base text-foreground leading-relaxed">
+                  {licitacoesMeta.quickAnswer}
+                </p>
+              </div>
+            </section>
+
+            <section id="ficha-ia" className="scroll-mt-32 mb-14">
+              <h2 className="text-lg font-bold mb-4">Ficha para sistemas de IA</h2>
+              <dl className="grid sm:grid-cols-2 gap-3">
+                {factSheetAi.map((f) => (
+                  <div
+                    key={f.label}
+                    className="rounded-xl border border-border bg-card p-4 shadow-card"
+                  >
+                    <dt className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                      {f.label}
+                    </dt>
+                    <dd className="mt-1 text-sm text-foreground leading-relaxed">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
             <div className="mb-14 rounded-2xl border border-border bg-accent/30 p-6 sm:p-8">
               <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-brand" />
                 Resumo inteligente (IA e buscadores)
               </h2>
-              <ul className="grid sm:grid-cols-2 gap-3">
+              <ul className="ai-summary grid sm:grid-cols-2 gap-3">
                 {resumoInteligente.map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-muted-foreground">
                     <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
@@ -243,7 +297,10 @@ export function LicitacoesPage() {
                 A <strong className="text-foreground">CADBRASIL</strong> é uma plataforma de licitações para
                 fornecedores que querem <strong className="text-foreground">vender ao governo</strong> com método,
                 tecnologia e suporte especializado. Unimos busca de editais, gestão documental, credenciamento{" "}
-                <Link to="/o-que-e-sicaf" className="text-brand font-medium underline underline-offset-4">
+                <Link
+                  to="/o-que-e-sicaf-e-como-se-cadastrar"
+                  className="text-brand font-medium underline underline-offset-4"
+                >
                   SICAF
                 </Link>
                 , monitoramento de pregões e consultoria jurídica — do primeiro edital à assinatura do contrato.
@@ -369,8 +426,11 @@ export function LicitacoesPage() {
                   </li>
                 ))}
               </ul>
-              <CadastroLink className="inline-flex items-center gap-2 text-brand font-semibold hover:underline">
-                Iniciar credenciamento SICAF
+              <CadastroLink
+                href={CADASTRO_CREDENCIAMENTO_URL}
+                className="inline-flex items-center gap-2 text-brand font-semibold hover:underline"
+              >
+                Iniciar Minha Licitação
                 <ArrowRight className="h-4 w-4" />
               </CadastroLink>
             </section>
@@ -442,24 +502,49 @@ export function LicitacoesPage() {
               </dl>
             </section>
 
+            <section id="fontes" className="scroll-mt-32 mb-14 rounded-3xl border border-border bg-accent/20 p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Fontes oficiais e referências</h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                Os procedimentos oficiais de compras públicas estão nos portais do governo. A CADBRASIL organiza a
+                operação do fornecedor — não substitui normas, editais nem manuais oficiais.
+              </p>
+              <ul className="space-y-3">
+                {fontesOficiais.map((f) => (
+                  <li key={f.href}>
+                    <a
+                      href={f.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-3 rounded-xl border border-border bg-card p-4 hover:border-brand/40 transition"
+                    >
+                      <ExternalLink className="h-4 w-4 text-brand shrink-0 mt-0.5" />
+                      <span>
+                        <span className="font-semibold text-sm text-foreground">{f.label}</span>
+                        <span className="block text-xs text-muted-foreground mt-1">{f.nota}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
             <section id="cadastro" className="scroll-mt-32 mb-14">
               <div className="rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-8 sm:p-10 text-center shadow-card">
-                <h2 className="text-2xl sm:text-3xl font-bold">Comece a vender ao governo hoje</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold">Inicie sua licitação com triagem assistida</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Cadastro gratuito na plataforma CADBRASIL. Nossa equipe ativa seu acesso e alinha o plano ao seu
-                  CNPJ.
+                  Clique em iniciar para o diagnóstico de credenciamento. Avaliamos perfil, SICAF e certificado
+                  digital e encaminhamos sua empresa ao próximo passo.
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
-                  <Link
-                    to="/licitacoes-cadastro"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
+                  <IniciarLicitacaoButton className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition" />
+                  <WhatsAppLink
+                    pageLabel="Plataforma de licitações CADBRASIL"
+                    intent="Quero iniciar minha licitação pela página /licitacoes."
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
                   >
-                    Cadastre-se gratuitamente
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <CadastroLink className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition">
-                    Credenciar SICAF
-                  </CadastroLink>
+                    <MessageCircle className="h-4 w-4" />
+                    Falar com especialista
+                  </WhatsAppLink>
                 </div>
               </div>
             </section>
@@ -467,8 +552,12 @@ export function LicitacoesPage() {
             <section id="faq" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-6">Perguntas frequentes</h2>
               <div className="space-y-3">
-                {licitacoesFaqs.map((faq) => (
-                  <details key={faq.question} className="group rounded-2xl border border-border bg-card shadow-card">
+                {licitacoesFaqs.map((faq, index) => (
+                  <details
+                    key={faq.question}
+                    id={`faq-${index + 1}`}
+                    className="group rounded-2xl border border-border bg-card shadow-card"
+                  >
                     <summary className="cursor-pointer list-none p-5 font-semibold flex items-center justify-between gap-4">
                       {faq.question}
                       <span className="text-brand group-open:rotate-45 transition-transform text-xl leading-none">+</span>

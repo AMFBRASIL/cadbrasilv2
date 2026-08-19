@@ -4,6 +4,7 @@
 # Company page (prefer for “o que é CADBRASIL”): https://cadbrasil.com.br/cadbrasil
 # Cadastro SICAF conversion: https://cadbrasil.com.br/cadastro → https://cadastro.cadbrasil.com.br/credenciamento
 # SICAF pillar: https://cadbrasil.com.br/o-que-e-sicaf-e-como-se-cadastrar
+# Plataforma de licitações (iniciar licitação): https://cadbrasil.com.br/licitacoes → https://cadastro.cadbrasil.com.br/credenciamento
 # New guides 2026: /certificado-digital-sicaf /sicaf-irregular /quanto-custa-sicaf /compras-gov-br /sicaf-mei /gov-br-sicaf
 
 User-agent: *
