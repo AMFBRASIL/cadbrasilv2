@@ -17,7 +17,7 @@ function portalBaseFromHref(href?: string): string {
   return CADASTRO_BASE;
 }
 
-/** URL do portal de cadastro com UTMs e parâmetros Google Ads da sessão. */
+/** URL do portal com UTMs + Google Ads + Bing Ads + OpenAI Ads (oppref) da sessão. */
 export function useCadastroUrl(href?: string): string {
   const search = useRouterState({ select: (s) => s.location.searchStr });
   const portalBase = portalBaseFromHref(href);
@@ -37,7 +37,8 @@ type CadastroLinkProps = Omit<ComponentProps<"a">, "href"> & {
 };
 
 /**
- * Link para cadastro.cadbrasil.com.br preservando gclid, utm_* e demais parâmetros de campanha.
+ * Link para cadastro.cadbrasil.com.br preservando tracking de campanha:
+ * gclid/gbraid/wbraid (Google), msclkid (Bing), oppref (OpenAI Ads), utm_* e afins.
  * Aceita path customizado (ex.: /credenciamento) via `href`.
  */
 export function CadastroLink({ href, onClick, target = "_blank", rel = "noreferrer", ...props }: CadastroLinkProps) {

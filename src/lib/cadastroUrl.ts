@@ -3,27 +3,47 @@ export const CADASTRO_BASE = "https://cadastro.cadbrasil.com.br";
 /** URL base sem query — fallback SSR. */
 export const CADASTRO_URL = CADASTRO_BASE;
 
-/** Destino de conversão da landing /cadastro */
+/** Destino de conversão da landing /cadastro e CTAs de /licitacoes */
 export const CADASTRO_CREDENCIAMENTO_URL = `${CADASTRO_BASE}/credenciamento`;
 
 const STORAGE_KEY = "cadbrasil_tracking_params";
 
-/** Parâmetros de campanha repassados ao portal cadastro.cadbrasil.com.br */
+/**
+ * Click IDs e parâmetros exatos de campanha (Google Ads, Microsoft/Bing Ads,
+ * OpenAI/ChatGPT Ads, Meta e demais redes).
+ * Repassados ao portal cadastro.cadbrasil.com.br/credenciamento.
+ */
 const EXACT_TRACKING_PARAMS = new Set([
+  // Google Ads / Google Marketing Platform
   "gclid",
   "gbraid",
   "wbraid",
+  "gclsrc",
   "gad_source",
   "gad_campaignid",
-  "fbclid",
-  "msclkid",
   "dclid",
+  // Microsoft Advertising (Bing Ads)
+  "msclkid",
+  // OpenAI Ads / ChatGPT Ads — click reference oficial
+  "oppref",
+  // Meta / Facebook / Instagram
+  "fbclid",
+  // Outras redes comuns
+  "ttclid",
+  "twclid",
+  "li_fat_id",
+  "rdt_cid",
+  "epik",
   "ref",
 ]);
 
+/** Prefixos de query string sempre capturados (UTMs + extensões de plataforma). */
+const TRACKING_PARAM_PREFIXES = ["utm_", "gad_", "oai_", "openai_"] as const;
+
 function isTrackingParam(name: string): boolean {
   const lower = name.toLowerCase();
-  return lower.startsWith("utm_") || EXACT_TRACKING_PARAMS.has(lower);
+  if (EXACT_TRACKING_PARAMS.has(lower)) return true;
+  return TRACKING_PARAM_PREFIXES.some((prefix) => lower.startsWith(prefix));
 }
 
 function parseSearch(search?: string): URLSearchParams {
@@ -64,7 +84,10 @@ function storeTrackingParams(params: Record<string, string>) {
   sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
 }
 
-/** Persiste parâmetros de campanha da URL (Google Ads, UTMs, etc.) na sessão. */
+/**
+ * Persiste parâmetros de campanha da URL na sessão
+ * (Google Ads, Bing/Microsoft Ads, OpenAI Ads / oppref, UTMs, etc.).
+ */
 export function captureTrackingParams(search?: string) {
   if (typeof window === "undefined") return;
   storeTrackingParams(readParamsFromSearch(search));

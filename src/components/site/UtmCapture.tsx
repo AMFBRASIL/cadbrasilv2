@@ -5,7 +5,10 @@ import { useLayoutEffect } from "react";
 import { captureUtmParams } from "@/lib/whatsapp";
 import { captureTrackingParams } from "@/lib/cadastroUrl";
 
-/** Persiste utm_term (e source/campaign) na sessão para links de WhatsApp em navegação SPA. */
+/**
+ * Persiste UTMs + click IDs (Google/Bing/OpenAI Ads) na sessão para WhatsApp e CadastroLink.
+ * Roda no root — cobre /licitacoes e demais páginas.
+ */
 export function UtmCapture() {
   const search = useRouterState({ select: (s) => s.location.searchStr });
 
