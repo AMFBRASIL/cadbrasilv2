@@ -44,11 +44,10 @@ export const factSheetAi = [
 ];
 
 export const licitacoesToc = [
-  { id: "resposta-rapida", label: "Resposta rápida" },
   { id: "o-que-e", label: "O que é a plataforma" },
   { id: "para-que-serve", label: "Para que serve" },
   { id: "ferramentas", label: "Ferramentas" },
-  { id: "ia", label: "IA para licitantes" },
+  { id: "ia", label: "Tecnologia e suporte" },
   { id: "etapas", label: "Etapas do processo" },
   { id: "sicaf", label: "SICAF e cadastro" },
   { id: "juridico", label: "Consultoria jurídica" },
@@ -72,7 +71,7 @@ export const passosHowToInicio = [
     n: "02",
     t: "Diagnóstico de credenciamento",
     d: "Responda perfil (CNPJ ou CPF), meta de faturamento, situação do SICAF, certificado digital e urgência. O diagnóstico calibra o próximo passo.",
-    urlHash: "resposta-rapida",
+    urlHash: "o-que-e",
   },
   {
     n: "03",
@@ -195,9 +194,9 @@ export const ferramentas = [
     tag: "SICAF",
   },
   {
-    nome: "Assistente CADBRASIL IA",
-    descricao: "IA treinada em licitações e SICAF para resumos de edital e diagnóstico de pendências.",
-    tag: "IA",
+    nome: "Assistente CADBRASIL",
+    descricao: "Apoio digital em licitações e SICAF para resumos de edital e diagnóstico de pendências.",
+    tag: "Tecnologia",
   },
   {
     nome: "Consultoria jurídica",
@@ -227,7 +226,7 @@ export const ferramentasIa = [
   },
   {
     nome: "Consultor licitatório",
-    descricao: "IA especializada em Lei 14.133/2021 conectada ao seu histórico e documentos.",
+    descricao: "Orientação especializada em Lei 14.133/2021 conectada ao seu histórico e documentos.",
   },
 ];
 
@@ -290,7 +289,7 @@ export const comparativoLicitacoes = [
   { aspecto: "SICAF", sozinho: "Semanas com retrabalho", cadbrasil: "Até 24h com especialistas" },
   { aspecto: "Pregão", sozinho: "Risco de perder chat e prazos", cadbrasil: "Monitoramento e alertas" },
   { aspecto: "Jurídico", sozinho: "Advogado pontual e caro", cadbrasil: "Consultoria integrada à plataforma" },
-  { aspecto: "IA", sozinho: "Não disponível", cadbrasil: "Assistente CADBRASIL com contexto real" },
+  { aspecto: "Tecnologia", sozinho: "Não disponível", cadbrasil: "Assistente CADBRASIL com contexto real" },
 ];
 
 export const glossarioLicitacoes = [
@@ -329,7 +328,7 @@ export const licitacoesFaqs = [
   {
     question: "O que é uma plataforma de licitações?",
     answer:
-      "É um software que centraliza busca de editais, gestão documental, credenciamento SICAF, acompanhamento de pregões e suporte jurídico para empresas que vendem ao governo. A CADBRASIL integra essas etapas com IA e especialistas humanos.",
+      "É um software que centraliza busca de editais, gestão documental, credenciamento SICAF, acompanhamento de pregões e suporte jurídico para empresas que vendem ao governo. A CADBRASIL integra essas etapas com tecnologia e especialistas humanos.",
   },
   {
     question: "A CADBRASIL substitui o Compras.gov.br ou o PNCP?",
@@ -362,7 +361,7 @@ export const licitacoesFaqs = [
       "Variam por edital e nível SICAF (I a VI): contrato social, certidões fiscais, FGTS, CNDT, atestados técnicos e balanços, entre outros. O módulo de documentos da CADBRASIL mapeia o que falta para cada oportunidade.",
   },
   {
-    question: "A IA da CADBRASIL faz o quê?",
+    question: "O Assistente CADBRASIL faz o quê?",
     answer:
       "Resume editais, diagnostica pendências SICAF, sugere documentos e responde dúvidas licitatórias com base em regras e na sua operação — sempre com revisão humana quando necessário.",
   },

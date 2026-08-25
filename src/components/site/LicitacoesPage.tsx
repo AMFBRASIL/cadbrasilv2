@@ -69,7 +69,7 @@ const ferramentaIcons: Record<string, typeof Search> = {
   Pregão: Gavel,
   Inteligência: BarChart3,
   SICAF: Shield,
-  IA: Bot,
+  Tecnologia: Bot,
   Jurídico: Scale,
   "Pós-licitação": FileText,
   Estratégia: Target,
@@ -112,8 +112,7 @@ export function LicitacoesPage() {
 
               <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
                 Comece pelo diagnóstico da sua empresa. Em poucos minutos avaliamos SICAF, certificado digital
-                e o melhor caminho para participar de licitações — com{" "}
-                <strong className="text-white font-semibold">IA</strong>, documentos e suporte da{" "}
+                e o melhor caminho para participar de licitações — com tecnologia, documentos e suporte da{" "}
                 <strong className="text-white font-semibold">CADBRASIL</strong>.
               </p>
 
@@ -182,30 +181,6 @@ export function LicitacoesPage() {
           </nav>
           <span className="hidden sm:inline text-border">|</span>
           <span>Atualizado {editorialTrust.how.updatedLabel}</span>
-          <span aria-hidden>·</span>
-          <span>{editorialTrust.how.readingTime}</span>
-        </div>
-
-        <div className="mb-10 rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card">
-          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-            Transparência editorial
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4 text-sm">
-            <div>
-              <p className="font-semibold text-foreground">Quem</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">
-                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Como</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.how.method}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Por quê</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.why.purpose}</p>
-            </div>
-          </div>
         </div>
 
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
@@ -237,45 +212,27 @@ export function LicitacoesPage() {
           </aside>
 
           <article className="min-w-0 prose-guide">
-            <section id="resposta-rapida" className="scroll-mt-32 mb-14">
-              <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
-                <p className="guide-quick-answer ai-summary text-base text-foreground leading-relaxed">
-                  {licitacoesMeta.quickAnswer}
-                </p>
-              </div>
-            </section>
-
-            <section id="ficha-ia" className="scroll-mt-32 mb-14">
-              <h2 className="text-lg font-bold mb-4">Ficha para sistemas de IA</h2>
-              <dl className="grid sm:grid-cols-2 gap-3">
+            {/* Conteúdo estruturado para SEO/Speakable — invisível na interface */}
+            <div className="hidden" data-seo-ai>
+              <p className="guide-quick-answer ai-summary">{licitacoesMeta.quickAnswer}</p>
+              <ul className="ai-summary">
+                {resumoInteligente.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <dl>
                 {factSheetAi.map((f) => (
-                  <div
-                    key={f.label}
-                    className="rounded-xl border border-border bg-card p-4 shadow-card"
-                  >
-                    <dt className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                      {f.label}
-                    </dt>
-                    <dd className="mt-1 text-sm text-foreground leading-relaxed">{f.value}</dd>
+                  <div key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
                   </div>
                 ))}
               </dl>
-            </section>
-
-            <div className="mb-14 rounded-2xl border border-border bg-accent/30 p-6 sm:p-8">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-brand" />
-                Resumo inteligente (IA e buscadores)
-              </h2>
-              <ul className="ai-summary grid sm:grid-cols-2 gap-3">
-                {resumoInteligente.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p>
+                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}{" "}
+                {editorialTrust.how.method} {editorialTrust.why.purpose}
+              </p>
+              <p>{licitacoesMeta.aiCitation}</p>
             </div>
 
             <div className="mb-14 grid sm:grid-cols-3 gap-4">
@@ -353,12 +310,12 @@ export function LicitacoesPage() {
 
             <section id="ia" className="scroll-mt-32 mb-14">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
-                <Bot className="h-7 w-7 text-brand shrink-0" />
-                IA especializada para licitantes
+                <Sparkles className="h-7 w-7 text-brand shrink-0" />
+                Tecnologia e suporte para licitantes
               </h2>
               <p className="text-muted-foreground mb-6 max-w-3xl">
-                Inteligência artificial treinada por especialistas em licitações e SICAF — conectada ao seu histórico,
-                documentos e oportunidades. Conheça também o{" "}
+                Ferramentas digitais e especialistas em licitações e SICAF — conectadas ao seu histórico, documentos e
+                oportunidades. Conheça também o{" "}
                 <Link to="/assistente" className="text-brand font-medium underline underline-offset-4">
                   Assistente CADBRASIL
                 </Link>
