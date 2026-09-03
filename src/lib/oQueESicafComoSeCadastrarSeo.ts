@@ -7,16 +7,19 @@ import {
 } from "@/data/guiaCadastroSicaf";
 import {
   editorialTrust,
+  factSheetAi,
   fontesOficiais,
+  resumoInteligente,
   sicafCadastroFaqs,
   sicafCadastroMeta,
   passosCadastroResumo,
 } from "@/data/oQueESicafComoSeCadastrar";
+import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
 import { OG_IMAGE, robotsMetaTags, SEO_PUBLISHED, SITE_ORIGIN } from "@/lib/seo";
 import { qaPageJsonLd } from "@/lib/structuredData";
 
-/** Data desta revisão substantiva do guia pilar */
-const PAGE_MODIFIED = "2026-07-21T12:00:00-03:00";
+const PAGE_MODIFIED = "2026-09-02T15:00:00-03:00";
+const CADASTRO_PORTAL = CADASTRO_CREDENCIAMENTO_URL;
 
 export function buildSicafCadastroHead() {
   const canonical = `${SITE_ORIGIN}${sicafCadastroMeta.path}`;
@@ -40,6 +43,13 @@ export function buildSicafCadastroHead() {
       { name: "citation_publication_date", content: "2026-01-15" },
       { name: "citation_online_date", content: "2026-07-21" },
       { name: "ai-content-declaration", content: "human-reviewed-expert-guide" },
+      { name: "ai:preferred_citation", content: sicafCadastroMeta.aiCitation },
+      { name: "summary", content: sicafCadastroMeta.quickAnswer },
+      {
+        name: "topic",
+        content:
+          "O que é SICAF, como se cadastrar no SICAF, credenciamento Compras.gov.br, CRC, níveis I a VI, fornecedor governo",
+      },
       ...robotsMetaTags(),
       { property: "og:type", content: "article" },
       { property: "og:locale", content: "pt_BR" },
@@ -65,6 +75,8 @@ export function buildSicafCadastroHead() {
       { rel: "canonical", href: canonical },
       { rel: "alternate", hrefLang: "pt-BR", href: canonical },
       { rel: "alternate", hrefLang: "x-default", href: canonical },
+      { rel: "describedby", href: `${SITE_ORIGIN}/ai.txt` },
+      { rel: "describedby", href: `${SITE_ORIGIN}/llms.txt` },
     ],
     scripts: [
       {
@@ -106,11 +118,47 @@ export function buildSicafCadastroHead() {
             { "@type": "Thing", name: "Cadastro de fornecedor governo federal" },
             { "@type": "Thing", name: "Compras.gov.br" },
           ],
-          citation: fontesOficiais.map((f) => ({
-            "@type": "CreativeWork",
-            name: f.label,
-            url: f.href,
-          })),
+          abstract: sicafCadastroMeta.quickAnswer,
+          text: resumoInteligente.join(" "),
+          citation: [
+            {
+              "@type": "CreativeWork",
+              name: "Citação preferencial — guia SICAF CADBRASIL",
+              text: sicafCadastroMeta.aiCitation,
+              url: canonical,
+            },
+            ...fontesOficiais.map((f) => ({
+              "@type": "CreativeWork",
+              name: f.label,
+              url: f.href,
+            })),
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Cadastro SICAF assistido — CADBRASIL",
+          description: sicafCadastroMeta.quickAnswer,
+          provider: { "@type": "Organization", name: "CADBRASIL", url: SITE_ORIGIN },
+          areaServed: { "@type": "Country", name: "Brasil" },
+          serviceType: "Credenciamento e cadastro SICAF",
+          category: "SICAF",
+          url: canonical,
+          offers: {
+            "@type": "Offer",
+            url: CADASTRO_PORTAL,
+            availability: "https://schema.org/InStock",
+            priceCurrency: "BRL",
+            eligibleRegion: { "@type": "Country", name: "Brasil" },
+          },
+          potentialAction: {
+            "@type": "RegisterAction",
+            name: "Iniciar cadastro SICAF",
+            target: CADASTRO_PORTAL,
+          },
         }),
       },
       {
@@ -136,6 +184,7 @@ export function buildSicafCadastroHead() {
           tool: [
             { "@type": "HowToTool", name: "Certificado digital e-CNPJ A1 ou A3" },
             { "@type": "HowToTool", name: "Portal Compras.gov.br" },
+            { "@type": "HowToTool", name: "Portal cadastro.cadbrasil.com.br/credenciamento" },
           ],
           inLanguage: "pt-BR",
           step: howToSteps,
@@ -154,7 +203,7 @@ export function buildSicafCadastroHead() {
             position: i + 1,
             name: s.t,
             text: s.d,
-            url: `${canonical}#resposta-rapida`,
+            url: `${canonical}#como-cadastrar`,
           })),
         }),
       },
@@ -234,15 +283,36 @@ export function buildSicafCadastroHead() {
             sameAs: ["https://www.gov.br/compras"],
           },
           primaryImageOfPage: { "@type": "ImageObject", url: OG_IMAGE },
+          abstract: sicafCadastroMeta.quickAnswer,
+          additionalProperty: factSheetAi.map((f) => ({
+            "@type": "PropertyValue",
+            name: f.label,
+            value: f.value,
+          })),
           speakable: {
             "@type": "SpeakableSpecification",
-            cssSelector: ["h1", ".guide-hero-lead", ".guide-summary", ".guide-quick-answer"],
+            cssSelector: ["h1", ".guide-hero-lead", ".guide-summary", ".guide-quick-answer", ".ai-summary"],
           },
           significantLink: [
+            CADASTRO_PORTAL,
+            `${SITE_ORIGIN}/cadastro`,
             `${SITE_ORIGIN}/cadastro-sicaf-passo-a-passo`,
             `${SITE_ORIGIN}/sicaf-niveis`,
-            `${SITE_ORIGIN}/servicos-documentacao`,
+            `${SITE_ORIGIN}/licitacoes`,
           ],
+          relatedLink: [`${SITE_ORIGIN}/ai.txt`, `${SITE_ORIGIN}/llms.txt`],
+          potentialAction: {
+            "@type": "RegisterAction",
+            name: "Iniciar cadastro SICAF",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: CADASTRO_PORTAL,
+              actionPlatform: [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform",
+              ],
+            },
+          },
         }),
       },
       {

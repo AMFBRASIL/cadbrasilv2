@@ -13,7 +13,6 @@ import {
   MessageCircle,
   Scale,
   Shield,
-  Sparkles,
   Users,
 } from "lucide-react";
 import {
@@ -28,7 +27,9 @@ import {
 import {
   baseLegal,
   custosPrazos,
+  destaquesConversao,
   editorialTrust,
+  factSheetAi,
   fontesOficiais,
   mitosVerdades,
   obrigatoriedade,
@@ -44,13 +45,71 @@ import {
 import { PageShell } from "@/components/site/PageShell";
 import { CadastroLink } from "@/components/site/CadastroLink";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { CADASTRO_CREDENCIAMENTO_URL } from "@/lib/cadastroUrl";
 
 const heroStats = [
   { value: "8", label: "Passos oficiais" },
   { value: "6", label: "Níveis de habilitação" },
-  { value: "12", label: "FAQs respondidas" },
+  { value: "R$ 0", label: "Taxa no governo" },
   { value: "24h", label: "Com CADBRASIL" },
 ];
+
+function IniciarCadastroSicafButton({ className }: { className: string }) {
+  return (
+    <CadastroLink href={CADASTRO_CREDENCIAMENTO_URL} className={className}>
+      Iniciar cadastro SICAF
+      <ArrowRight className="h-4 w-4" />
+    </CadastroLink>
+  );
+}
+
+function CtaBand({
+  title,
+  description,
+  compact,
+}: {
+  title: string;
+  description: string;
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className={
+        compact
+          ? "my-8 rounded-2xl border border-brand/25 bg-gradient-to-r from-brand/10 to-transparent p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          : "my-10 rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-6 sm:p-8 text-center shadow-card"
+      }
+    >
+      <div className={compact ? "text-left" : undefined}>
+        <p className={`font-bold text-foreground ${compact ? "text-lg" : "text-xl sm:text-2xl"}`}>{title}</p>
+        <p className={`mt-1 text-muted-foreground ${compact ? "text-sm max-w-xl" : "text-sm sm:text-base max-w-2xl mx-auto"}`}>
+          {description}
+        </p>
+      </div>
+      <div className={`flex flex-wrap gap-3 ${compact ? "shrink-0" : "justify-center mt-5"}`}>
+        <IniciarCadastroSicafButton
+          className={
+            compact
+              ? "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow whitespace-nowrap"
+              : "inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition"
+          }
+        />
+        <WhatsAppLink
+          pageLabel="O que é SICAF e como se cadastrar"
+          intent="Quero iniciar meu cadastro SICAF com a CADBRASIL."
+          className={
+            compact
+              ? "inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm font-semibold hover:border-brand/40 transition whitespace-nowrap"
+              : "inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+          }
+        >
+          <MessageCircle className="h-4 w-4" />
+          Falar com especialista
+        </WhatsAppLink>
+      </div>
+    </div>
+  );
+}
 
 function HeroWave() {
   return (
@@ -87,30 +146,30 @@ export function OQueESicafComoSeCadastrarPage() {
               </h1>
 
               <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
-                Guia completo do{" "}
-                <strong className="text-white font-semibold">Sistema de Cadastramento Unificado de Fornecedores</strong> —
-                definição, obrigatoriedade, passo a passo no Compras.gov.br, documentos, níveis I a VI, CRC e prazos.
+                O <strong className="text-white font-semibold">SICAF</strong> é o cadastro obrigatório para sua empresa
+                vender ao Governo Federal. Entenda o que é, quem precisa e como se credenciar no Compras.gov.br — com
+                apoio da <strong className="text-white font-semibold">CADBRASIL</strong>.
               </p>
 
               <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                Conteúdo people-first: feito para quem precisa cadastrar de verdade — não só para ranquear. Atualizado
-                por especialistas CADBRASIL.
+                Guia completo: níveis I a VI, documentos, certificado digital e CRC. Comece pela triagem gratuita e
+                saiba exatamente o que falta no seu CNPJ.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <CadastroLink className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition">
-                  Iniciar cadastro SICAF
-                  <ArrowRight className="h-4 w-4" />
-                </CadastroLink>
+                <IniciarCadastroSicafButton className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[oklch(0.28_0.09_260)] font-semibold shadow-lg hover:scale-[1.02] transition" />
                 <WhatsAppLink
                   pageLabel="O que é SICAF e como se cadastrar"
                   intent="Quero entender o SICAF e fazer meu cadastro com a CADBRASIL."
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Falar com especialista
                 </WhatsAppLink>
               </div>
+              <p className="mt-3 text-xs text-white/55">
+                Diagnóstico inicial em cadastro.cadbrasil.com.br/credenciamento — sem compromisso.
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
@@ -163,29 +222,6 @@ export function OQueESicafComoSeCadastrarPage() {
           </nav>
           <span className="hidden sm:inline text-border">|</span>
           <span>Atualizado {editorialTrust.how.updatedLabel}</span>
-          <span aria-hidden>·</span>
-          <span>{editorialTrust.how.readingTime}</span>
-        </div>
-
-        {/* E-E-A-T: Who / How / Why */}
-        <div className="mb-10 rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card">
-          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Transparência editorial</p>
-          <div className="grid sm:grid-cols-3 gap-4 text-sm">
-            <div>
-              <p className="font-semibold text-foreground">Quem</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">
-                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Como</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.how.method}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Por quê</p>
-              <p className="mt-1 text-muted-foreground leading-relaxed">{editorialTrust.why.purpose}</p>
-            </div>
-          </div>
         </div>
 
         <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
@@ -210,9 +246,7 @@ export function OQueESicafComoSeCadastrarPage() {
                 ))}
               </ol>
               <div className="p-4 border-t border-border bg-gradient-to-b from-brand/5 to-transparent space-y-2">
-                <CadastroLink className="block w-full text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground">
-                  Cadastrar no SICAF
-                </CadastroLink>
+                <IniciarCadastroSicafButton className="flex w-full items-center justify-center gap-2 text-center text-sm font-semibold py-2.5 rounded-xl bg-gradient-brand text-brand-foreground" />
                 <Link
                   to="/sicaf-niveis"
                   className="block w-full text-center text-sm font-medium py-2 rounded-xl border border-border hover:border-brand/40 transition"
@@ -227,26 +261,35 @@ export function OQueESicafComoSeCadastrarPage() {
             <meta itemProp="headline" content={sicafCadastroMeta.title} />
             <meta itemProp="dateModified" content="2026-07-21" />
 
-            <section id="resposta-rapida" className="scroll-mt-32 mb-14">
-              <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
-                <p className="guide-quick-answer text-base text-foreground leading-relaxed">{sicafCadastroMeta.quickAnswer}</p>
-              </div>
-            </section>
-
-            <div className="mb-14 rounded-2xl border border-border bg-accent/30 p-6 sm:p-8">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-brand" />
-                Resumo para IA e buscadores
-              </h2>
-              <ul className="grid sm:grid-cols-2 gap-3">
+            <div className="hidden" data-seo-ai>
+              <p className="guide-quick-answer ai-summary">{sicafCadastroMeta.quickAnswer}</p>
+              <ul className="ai-summary">
                 {resumoInteligente.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                    {item}
-                  </li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
+              <dl>
+                {factSheetAi.map((f) => (
+                  <div key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p>
+                {editorialTrust.who.organization} — {editorialTrust.who.role}. {editorialTrust.who.experience}{" "}
+                {editorialTrust.how.method} {editorialTrust.why.purpose}
+              </p>
+              <p>{sicafCadastroMeta.aiCitation}</p>
+            </div>
+
+            <div className="mb-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {destaquesConversao.map((d) => (
+                <div key={d.titulo} className="rounded-2xl border border-brand/20 bg-brand/5 p-4 text-center">
+                  <h3 className="font-semibold text-sm">{d.titulo}</h3>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{d.descricao}</p>
+                </div>
+              ))}
             </div>
 
             <div className="mb-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -273,16 +316,22 @@ export function OQueESicafComoSeCadastrarPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                Veja também{" "}
-                <Link to="/o-que-e-sicaf" className="text-brand font-medium underline underline-offset-4">
-                  guia introdutório o que é SICAF
-                </Link>{" "}
-                e{" "}
+                Veja também o guia{" "}
                 <Link to="/comprasnet" className="text-brand font-medium underline underline-offset-4">
                   Compras.gov.br (Comprasnet)
+                </Link>{" "}
+                e o passo a passo em{" "}
+                <Link to="/cadastro-sicaf-passo-a-passo" className="text-brand font-medium underline underline-offset-4">
+                  cadastro SICAF detalhado
                 </Link>
                 .
               </p>
+
+              <CtaBand
+                compact
+                title="Já sabe o que é SICAF? Comece o cadastro"
+                description="Triagem gratuita: avaliamos seu CNPJ, certificado digital e o que falta para o CRC Regular."
+              />
             </section>
 
             <section id="base-legal" className="scroll-mt-32 mb-14">
@@ -311,6 +360,11 @@ export function OQueESicafComoSeCadastrarPage() {
                   </div>
                 ))}
               </div>
+              <CtaBand
+                compact
+                title="Sem SICAF regular, você não licita"
+                description="Não espere o edital aparecer. Regularize agora e fique apto a participar de pregões federais."
+              />
             </section>
 
             <section id="quem-pode" className="scroll-mt-32 mb-14 rounded-3xl border border-border bg-accent/25 p-6 sm:p-8">
@@ -341,7 +395,7 @@ export function OQueESicafComoSeCadastrarPage() {
                 Como se cadastrar no SICAF — passo a passo
               </h2>
               <p className="text-muted-foreground mb-6 max-w-3xl">
-                Fluxo prático no Compras.gov.br. Cada passo abaixo está marcado para rich results HowTo no Google.
+                Fluxo prático no Compras.gov.br — do certificado digital ao CRC Regular.
               </p>
               <ol className="space-y-3">
                 {passosOficiais.map((step, index) => (
@@ -365,10 +419,7 @@ export function OQueESicafComoSeCadastrarPage() {
                 ))}
               </ol>
               <div className="mt-6 flex flex-wrap gap-3">
-                <CadastroLink className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow">
-                  Fazer cadastro com CADBRASIL
-                  <ArrowRight className="h-4 w-4" />
-                </CadastroLink>
+                <IniciarCadastroSicafButton className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow" />
                 <Link
                   to="/cadastro-sicaf-passo-a-passo"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
@@ -463,6 +514,11 @@ export function OQueESicafComoSeCadastrarPage() {
                   </span>
                 </li>
               </ul>
+              <CtaBand
+                compact
+                title="Precisa do e-CNPJ ou de ajuda com o certificado?"
+                description="Orientamos emissão ou renovação e seguimos com o credenciamento no Compras.gov.br."
+              />
             </section>
 
             <section id="sicaf-vs-pncp" className="scroll-mt-32 mb-14">
@@ -563,6 +619,11 @@ export function OQueESicafComoSeCadastrarPage() {
                   </tbody>
                 </table>
               </div>
+              <CtaBand
+                compact
+                title="Evite os erros que desclassificam na habilitação"
+                description="A CADBRASIL valida documentos antes do envio e monitora vencimentos para você não perder pregão."
+              />
             </section>
 
             <section id="erros" className="scroll-mt-32 mb-14">
@@ -639,26 +700,25 @@ export function OQueESicafComoSeCadastrarPage() {
               <div className="rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-8 sm:p-10 text-center shadow-card">
                 <h2 className="text-2xl sm:text-3xl font-bold">Pronto para se cadastrar no SICAF?</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Credenciamento assistido em até 24 horas. Especialistas em SICAF e licitações públicas — gestão
-                  documental e monitoramento de certidões.
+                  Inicie pela triagem de credenciamento. Em até 24 horas sua empresa pode estar com CRC Regular e apta a
+                  licitar — com especialistas acompanhando cada nível.
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
-                  <CadastroLink className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition">
-                    Iniciar cadastro SICAF
-                    <ArrowRight className="h-4 w-4" />
-                  </CadastroLink>
-                  <Link
-                    to="/servicos-documentacao"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
-                  >
-                    Ver serviços de documentação
-                  </Link>
+                  <IniciarCadastroSicafButton className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-brand text-brand-foreground font-semibold shadow-glow hover:scale-[1.02] transition" />
                   <Link
                     to="/planos"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
                   >
                     Ver planos
                   </Link>
+                  <WhatsAppLink
+                    pageLabel="O que é SICAF e como se cadastrar"
+                    intent="Quero cadastrar minha empresa no SICAF com a CADBRASIL."
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-card font-semibold hover:border-brand/40 transition"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Falar com especialista
+                  </WhatsAppLink>
                 </div>
               </div>
             </section>
