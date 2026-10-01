@@ -5,6 +5,12 @@ import {
   formatClientConfirmationHtml,
   formatContactEmailBody,
 } from "@/lib/contact";
+import type { CadbrasilLeadPayload } from "@/lib/cadbrasilLead";
+import {
+  formatCadbrasilLeadBody,
+  formatCadbrasilLeadConfirmation,
+  formatCnpj,
+} from "@/lib/cadbrasilLead";
 import type { LicitacoesLeadPayload } from "@/lib/licitacoesLead";
 import {
   formatLicitacoesLeadBody,
@@ -115,6 +121,36 @@ export async function sendContactEmail(data: ContactPayload) {
       subject: clientSubject,
       text: clientText,
       html: clientHtml,
+    }),
+  ]);
+
+  return {
+    team: teamResult,
+    client: clientResult,
+    clientEmail,
+  };
+}
+
+export async function sendCadbrasilLeadEmail(data: CadbrasilLeadPayload) {
+  const config = getMailgunConfig();
+  if (!config) {
+    throw new Error("MAILGUN_NOT_CONFIGURED");
+  }
+
+  const clientEmail = data.email.trim().toLowerCase();
+  const teamSubject = `[CADBrasil Especialista] Novo lead — ${data.empresa} (${formatCnpj(data.cnpj)})`;
+
+  const [teamResult, clientResult] = await Promise.all([
+    sendMailgunMessage(config, {
+      to: config.toEmail,
+      subject: teamSubject,
+      text: formatCadbrasilLeadBody(data),
+      replyTo: formatRecipient(data.nome, clientEmail),
+    }),
+    sendMailgunMessage(config, {
+      to: formatRecipient(data.nome, clientEmail),
+      subject: "Recebemos sua solicitação — CADBrasil",
+      text: formatCadbrasilLeadConfirmation(data),
     }),
   ]);
 

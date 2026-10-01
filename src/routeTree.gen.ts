@@ -67,6 +67,7 @@ import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/c
 import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
 import { Route as ApiLicitacoesLeadRouteImport } from './routes/api/licitacoes-lead'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ApiCadbrasilLeadRouteImport } from './routes/api/cadbrasil-lead'
 
 const Versao2Route = Versao2RouteImport.update({
   id: '/versao2',
@@ -374,6 +375,11 @@ const ApiContactRoute = ApiContactRouteImport.update({
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCadbrasilLeadRoute = ApiCadbrasilLeadRouteImport.update({
+  id: '/api/cadbrasil-lead',
+  path: '/api/cadbrasil-lead',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -429,6 +435,7 @@ export interface FileRoutesByFullPath {
   '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
+  '/api/cadbrasil-lead': typeof ApiCadbrasilLeadRoute
   '/api/contact': typeof ApiContactRoute
   '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
@@ -489,6 +496,7 @@ export interface FileRoutesByTo {
   '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
+  '/api/cadbrasil-lead': typeof ApiCadbrasilLeadRoute
   '/api/contact': typeof ApiContactRoute
   '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
@@ -550,6 +558,7 @@ export interface FileRoutesById {
   '/sicaf-niveis': typeof SicafNiveisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/versao2': typeof Versao2Route
+  '/api/cadbrasil-lead': typeof ApiCadbrasilLeadRoute
   '/api/contact': typeof ApiContactRoute
   '/api/licitacoes-lead': typeof ApiLicitacoesLeadRoute
   '/faq/$slug': typeof FaqSlugRoute
@@ -612,6 +621,7 @@ export interface FileRouteTypes {
     | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
+    | '/api/cadbrasil-lead'
     | '/api/contact'
     | '/api/licitacoes-lead'
     | '/faq/$slug'
@@ -672,6 +682,7 @@ export interface FileRouteTypes {
     | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
+    | '/api/cadbrasil-lead'
     | '/api/contact'
     | '/api/licitacoes-lead'
     | '/faq/$slug'
@@ -732,6 +743,7 @@ export interface FileRouteTypes {
     | '/sicaf-niveis'
     | '/sitemap.xml'
     | '/versao2'
+    | '/api/cadbrasil-lead'
     | '/api/contact'
     | '/api/licitacoes-lead'
     | '/faq/$slug'
@@ -793,6 +805,7 @@ export interface RootRouteChildren {
   SicafNiveisRoute: typeof SicafNiveisRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   Versao2Route: typeof Versao2Route
+  ApiCadbrasilLeadRoute: typeof ApiCadbrasilLeadRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiLicitacoesLeadRoute: typeof ApiLicitacoesLeadRoute
   FaqSlugRoute: typeof FaqSlugRoute
@@ -1208,6 +1221,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cadbrasil-lead': {
+      id: '/api/cadbrasil-lead'
+      path: '/api/cadbrasil-lead'
+      fullPath: '/api/cadbrasil-lead'
+      preLoaderRoute: typeof ApiCadbrasilLeadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -1268,6 +1288,7 @@ const rootRouteChildren: RootRouteChildren = {
   SicafNiveisRoute: SicafNiveisRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   Versao2Route: Versao2Route,
+  ApiCadbrasilLeadRoute: ApiCadbrasilLeadRoute,
   ApiContactRoute: ApiContactRoute,
   ApiLicitacoesLeadRoute: ApiLicitacoesLeadRoute,
   FaqSlugRoute: FaqSlugRoute,

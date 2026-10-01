@@ -29,14 +29,36 @@ export const BING_UET_SCRIPT = `(function(w,d,t,r,u){
   i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);
 })(window,document,"script","https://bat.bing.com/bat.js","uetq");`;
 
+/** Lead enviado por formulário: `generate_lead` no dataLayer (GTM), gtag (GA4/Ads) e Bing UET. */
+export function trackLeadConversion(params: Record<string, string>) {
+  if (typeof window === "undefined") return;
+
+  const w = window as Window & {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+    uetq?: unknown[];
+  };
+
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: "generate_lead", ...params });
+
+  if (typeof w.gtag === "function") {
+    w.gtag("event", "generate_lead", params);
+  }
+
+  w.uetq = w.uetq || [];
+  w.uetq.push("event", "submit_lead_form", { event_category: "lead", event_label: params.lead_source });
+}
+
 export function pushSpaPageView(pathname: string) {
   if (typeof window === "undefined") return;
 
   const pageLocation = window.location.href;
   const pageTitle = document.title;
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
+  const w = window as Window & { dataLayer?: unknown[] };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({
     event: "page_view",
     page_path: pathname,
     page_location: pageLocation,

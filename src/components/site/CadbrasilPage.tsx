@@ -1,415 +1,425 @@
-import {
-  cadastroSicafDestaque,
-  cadbrasilFaqs,
-  cadbrasilMeta,
-  cadbrasilToc,
-  comoFunciona,
-  diferenciais,
-  editorialTrust,
-  glossarioCadbrasil,
-  heroStats,
-  paraQuem,
-  quemSomos,
-  relatedGuides,
-  servicosCards,
-} from "@/data/cadbrasilPage";
-import { PageShell } from "@/components/site/PageShell";
-import { CadastroLink } from "@/components/site/CadastroLink";
-import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+"use client";
+
 import {
   ArrowRight,
-  Building2,
+  BellRing,
+  Bot,
   CheckCircle2,
-  Clock,
+  ClipboardCheck,
+  ExternalLink,
+  FileSearch,
+  FolderCheck,
+  FolderKanban,
+  Handshake,
+  Headset,
+  Info,
+  LayoutDashboard,
   MessageCircle,
-  Shield,
+  Radar,
+  Rocket,
+  ShieldCheck,
   Sparkles,
-  Target,
-  Users,
-  Zap,
+  TrendingUp,
+  type LucideIcon,
 } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { WhatsAppLink } from "@/components/site/WhatsAppLink";
+import { CtaBand } from "@/components/site/cadbrasil/CtaBand";
+import { FaqList } from "@/components/site/cadbrasil/FaqList";
+import { FeatureCard } from "@/components/site/cadbrasil/FeatureCard";
+import { HeroDashboard } from "@/components/site/cadbrasil/HeroDashboard";
+import { LandingFloatingCta } from "@/components/site/cadbrasil/LandingFloatingCta";
+import { LandingFooter } from "@/components/site/cadbrasil/LandingFooter";
+import { LandingHeader } from "@/components/site/cadbrasil/LandingHeader";
+import { LeadForm } from "@/components/site/cadbrasil/LeadForm";
+import { PrivateCompanyNotice } from "@/components/site/cadbrasil/PrivateCompanyNotice";
+import { SectionHeading } from "@/components/site/cadbrasil/SectionHeading";
+import {
+  LEAD_FORM_ANCHOR,
+  PLATFORM_ANCHOR,
+  btnPrimary,
+  btnSecondary,
+} from "@/components/site/cadbrasil/styles";
+import {
+  audiences,
+  cadbrasilFaqs,
+  cadbrasilMeta,
+  COMPRAS_GOV_OFFICIAL_URL,
+  factSheetAi,
+  hero,
+  howItWorks,
+  resumoInteligente,
+  sicafOrientation,
+  solutions,
+  techFeatures,
+  type SolutionIcon,
+  type TechIcon,
+} from "@/data/cadbrasilPage";
 
-function HeroWave() {
+const PAGE_LABEL = "CADBrasil — Tecnologia e assessoria em licitações";
+
+const solutionIcons: Record<SolutionIcon, LucideIcon> = {
+  assessoria: Handshake,
+  documentos: FolderCheck,
+  alertas: BellRing,
+  editais: FileSearch,
+  oportunidades: Radar,
+  assistente: Bot,
+};
+
+const techIcons: Record<TechIcon, LucideIcon> = {
+  assistente: Bot,
+  ia: Sparkles,
+  organizacao: FolderKanban,
+  oportunidades: Radar,
+  alertas: BellRing,
+  cadastral: ClipboardCheck,
+  central: LayoutDashboard,
+  suporte: Headset,
+};
+
+const audienceIcons: LucideIcon[] = [Rocket, TrendingUp, FolderKanban];
+
+export function CadbrasilPage() {
   return (
-    <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none" aria-hidden>
-      <svg className="relative block w-full h-12 sm:h-16 text-background" viewBox="0 0 1440 64" preserveAspectRatio="none">
-        <path
-          fill="currentColor"
-          d="M0,32L48,37.3C96,43,192,53,288,53.3C384,53,480,43,576,40C672,37,768,43,864,45.3C960,48,1056,48,1152,42.7C1248,37,1344,27,1392,21.3L1440,16L1440,64L0,64Z"
+    <div className="min-h-screen bg-background pb-16 sm:pb-0">
+      <LandingHeader />
+
+      <main>
+        <HeroSection />
+
+        <div className="relative z-10 -mt-12 sm:-mt-16 mx-auto max-w-5xl px-4">
+          <PrivateCompanyNotice />
+        </div>
+
+        <SolutionsSection />
+
+        <CtaBand
+          title="Quero preparar minha empresa para licitar"
+          subtitle="Comece com um diagnóstico e descubra o que sua empresa precisa organizar para disputar oportunidades no mercado público."
+          primary={{ label: "Solicitar diagnóstico", href: LEAD_FORM_ANCHOR }}
+          whatsapp={{
+            label: "Falar com um especialista",
+            intent: "Quero preparar minha empresa para participar de licitações.",
+          }}
         />
-      </svg>
+
+        <SicafOrientationSection />
+        <HowItWorksSection />
+        <PlatformSection />
+        <AudienceSection />
+        <LeadSection />
+        <FaqSection />
+
+        <CtaBand
+          title="Sua empresa pronta para vender ao poder público"
+          subtitle="Tecnologia, organização e especialistas ao lado do seu time em cada oportunidade."
+          primary={{ label: "Falar com um especialista", href: LEAD_FORM_ANCHOR }}
+          whatsapp={{
+            label: "Chamar no WhatsApp",
+            intent: "Quero falar com um especialista CADBrasil sobre licitações.",
+          }}
+        />
+
+        <SeoAiBlock />
+      </main>
+
+      <LandingFooter />
+      <LandingFloatingCta />
     </div>
   );
 }
 
-export function CadbrasilPage() {
+function HeroSection() {
   return (
-    <PageShell>
-      <section className="relative pt-24 sm:pt-28 pb-20 sm:pb-24 overflow-hidden bg-[oklch(0.22_0.08_260)]">
-        <div className="absolute inset-0 bg-grid opacity-[0.07]" aria-hidden />
-        <div className="absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand/30 blur-3xl" aria-hidden />
-        <div
-          className="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-[oklch(0.35_0.12_250)]/40 blur-3xl"
-          aria-hidden
-        />
-        <HeroWave />
-
-        <div className="relative mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-center">
-            <div className="text-white">
-              <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-white/70 border border-white/20 rounded-full px-3 py-1">
-                <Sparkles className="h-3 w-3" />
-                Institucional · Especialistas em SICAF
-              </span>
-
-              <p className="mt-5 text-2xl sm:text-3xl font-bold tracking-tight text-[oklch(0.82_0.08_250)]">
-                CADBRASIL
-              </p>
-
-              <h1 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] tracking-tight text-balance">
-                Cadastro SICAF 2026 com quem{" "}
-                <span className="text-[oklch(0.82_0.08_250)]">vive Compras.gov.br</span>
-              </h1>
-
-              <p className="guide-hero-lead mt-5 text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">
-                Habilitamos sua empresa no{" "}
-                <strong className="text-white font-semibold">SICAF</strong>, cuidamos de certidões e
-                níveis I–VI e mantemos o <strong className="text-white font-semibold">CRC Regular</strong>{" "}
-                para você licitar com segurança em todo o Brasil.
-              </p>
-
-              <p className="guide-summary mt-3 text-sm text-white/65 max-w-xl leading-relaxed">
-                Do primeiro cadastro à renovação contínua — tecnologia e especialistas em cada
-                etapa.
-              </p>
-
-              <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-                <CadastroLink className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-white text-[oklch(0.28_0.09_260)] text-base sm:text-lg font-bold shadow-xl hover:scale-[1.02] transition">
-                  Cadastro SICAF 2026 agora
-                  <ArrowRight className="h-5 w-5" />
-                </CadastroLink>
-                <WhatsAppLink
-                  pageLabel="Página CADBRASIL"
-                  intent="Quero conhecer a CADBRASIL e iniciar meu Cadastro SICAF 2026."
-                  className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/15 transition"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Falar com especialista
-                </WhatsAppLink>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {heroStats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 sm:p-5 text-center"
-                >
-                  <div className="text-2xl sm:text-3xl font-bold text-white tabular-nums">{s.value}</div>
-                  <div className="mt-1 text-xs sm:text-sm text-white/70 leading-snug">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-[72px] z-30 lg:hidden">
-        <div className="mx-auto max-w-7xl px-4 py-3 flex gap-2 overflow-x-auto scrollbar-none">
-          {cadbrasilToc.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="shrink-0 text-xs font-medium px-3 py-1.5 rounded-full bg-accent text-muted-foreground hover:text-brand hover:bg-brand/10 transition"
-            >
-              {item.label}
+    <section className="relative overflow-hidden bg-[oklch(0.22_0.08_260)] pt-28 pb-28 sm:pt-36 sm:pb-36">
+      <div className="absolute inset-0 bg-grid opacity-[0.08]" aria-hidden />
+      <div
+        className="absolute -top-40 left-1/2 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-[oklch(0.42_0.16_258/0.45)] blur-[120px]"
+        aria-hidden
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 lg:grid-cols-[1.1fr_1fr]">
+        <div className="animate-fade-up">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[oklch(0.82_0.08_250)]">
+            <Sparkles className="h-3.5 w-3.5" /> {hero.eyebrow}
+          </span>
+          <h1 className="mt-6 text-4xl font-bold leading-[1.04] tracking-tight text-white text-balance sm:text-5xl lg:text-6xl">
+            {hero.title}{" "}
+            <span className="bg-gradient-to-r from-[oklch(0.82_0.1_250)] to-[oklch(0.9_0.08_200)] bg-clip-text text-transparent">
+              {hero.highlight}
+            </span>
+          </h1>
+          <p className="guide-hero-lead mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
+            {hero.subtitle}
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href={LEAD_FORM_ANCHOR} className={`${btnPrimary} uppercase tracking-wide text-sm`}>
+              {hero.primaryCta} <ArrowRight className="h-4 w-4" />
             </a>
+            <a
+              href={PLATFORM_ANCHOR}
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur transition hover:bg-white/10"
+            >
+              {hero.secondaryCta}
+            </a>
+          </div>
+          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/70">
+            {hero.trust.map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-success" /> {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <HeroDashboard />
+      </div>
+    </section>
+  );
+}
+
+function SolutionsSection() {
+  return (
+    <section id="solucoes" className="scroll-mt-20 py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading
+          eyebrow="Soluções"
+          title="O que a CADBrasil faz"
+          description="Tecnologia e assessoria especializada para sua empresa organizar a operação, entender editais e encontrar oportunidades no mercado público."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {solutions.map((s) => (
+            <FeatureCard
+              key={s.title}
+              icon={solutionIcons[s.icon]}
+              title={s.title}
+              description={s.description}
+            />
           ))}
         </div>
       </div>
+    </section>
+  );
+}
 
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground mb-6">
-          <nav aria-label="Breadcrumb">
-            <ol className="flex flex-wrap items-center gap-2">
-              <li>
-                <Link to="/" className="hover:text-brand">
-                  Início
-                </Link>
-              </li>
-              <li aria-hidden>/</li>
-              <li className="text-foreground font-medium">CADBRASIL</li>
-            </ol>
-          </nav>
-          <span className="hidden sm:inline text-border">|</span>
-          <span>Atualizado {editorialTrust.how.updatedLabel}</span>
-          <span aria-hidden>·</span>
-          <span>{editorialTrust.how.readingTime}</span>
+function SicafOrientationSection() {
+  return (
+    <section className="py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-4 lg:grid-cols-2">
+        <div className="reveal">
+          <SectionHeading
+            align="left"
+            eyebrow={sicafOrientation.eyebrow}
+            title={sicafOrientation.title}
+            description={sicafOrientation.text}
+          />
+          <div className="mt-8 flex gap-3 rounded-2xl border border-brand/20 bg-brand/5 p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden />
+            <p className="text-sm leading-relaxed text-foreground/80">
+              {sicafOrientation.clarification}{" "}
+              <a
+                href={COMPRAS_GOV_OFFICIAL_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1 font-semibold text-brand hover:underline"
+              >
+                Portal oficial Compras.gov.br <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href={LEAD_FORM_ANCHOR} className={btnPrimary}>
+              Solicitar diagnóstico <ArrowRight className="h-4 w-4" />
+            </a>
+            <WhatsAppLink
+              intent="Tenho dúvidas sobre SICAF/Compras.gov.br e quero orientação de um especialista."
+              pageLabel={PAGE_LABEL}
+              className={btnSecondary}
+            >
+              <MessageCircle className="h-4 w-4 text-success" /> Tirar dúvidas no WhatsApp
+            </WhatsAppLink>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-[260px_minmax(0,1fr)] gap-10 xl:gap-14 items-start">
-          <aside className="hidden lg:block">
-            <nav
-              aria-label="Índice CADBRASIL"
-              className="sticky top-28 rounded-2xl border border-border bg-card shadow-card overflow-hidden"
+        <ul className="reveal grid gap-3 sm:grid-cols-2">
+          {sicafOrientation.bullets.map((b) => (
+            <li
+              key={b}
+              className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 shadow-card transition hover:-translate-y-0.5 hover:border-brand/30"
             >
-              <div className="px-5 py-4 border-b border-border bg-accent/40">
-                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nesta página</p>
-              </div>
-              <ol className="p-3 space-y-0.5 max-h-[calc(100vh-12rem)] overflow-y-auto">
-                {cadbrasilToc.map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      className="block text-sm py-2 px-3 rounded-lg text-muted-foreground hover:text-brand hover:bg-brand/5 transition"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-              <div className="p-4 border-t border-border">
-                <CadastroLink className="block w-full text-center text-sm font-bold py-3 rounded-xl bg-gradient-brand text-brand-foreground">
-                  Cadastro SICAF 2026 agora
-                </CadastroLink>
-              </div>
-            </nav>
-          </aside>
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-success" aria-hidden />
+              <span className="font-medium leading-snug">{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
-          <article className="min-w-0">
-            <section id="resposta-rapida" className="scroll-mt-32 mb-14">
-              <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-3">Resposta rápida</h2>
-                <p className="guide-quick-answer ai-summary text-base text-foreground leading-relaxed">
-                  {cadbrasilMeta.quickAnswer}
-                </p>
-              </div>
-            </section>
-
-            <section id="quem-somos" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
-                <Building2 className="h-7 w-7 text-brand shrink-0" />
-                Quem somos
-              </h2>
-              <div className="grid sm:grid-cols-3 gap-4">
-                {quemSomos.map((item) => (
-                  <div key={item.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
-                    <h3 className="font-semibold">{item.titulo}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.texto}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section
-              id="cadastro-sicaf"
-              className="scroll-mt-32 mb-14 rounded-3xl border-2 border-brand/30 bg-gradient-to-br from-brand/10 via-card to-card p-6 sm:p-8 shadow-card"
+function HowItWorksSection() {
+  return (
+    <section id="como-funciona" className="scroll-mt-20 border-y border-border bg-accent/30 py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading
+          eyebrow="Como funciona"
+          title="Do diagnóstico ao acompanhamento contínuo"
+          description="Um processo simples para sua empresa ganhar clareza, organização e ritmo no mercado público."
+        />
+        <ol className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {howItWorks.map((step, i) => (
+            <li
+              key={step.title}
+              className="reveal relative rounded-3xl border border-border bg-card p-7 shadow-card"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2">{cadastroSicafDestaque.titulo}</h2>
-              <p className="text-muted-foreground max-w-3xl">{cadastroSicafDestaque.subtitulo}</p>
+              <span className="relative grid h-14 w-14 place-items-center rounded-2xl bg-gradient-brand font-display text-xl font-bold text-brand-foreground shadow-glow">
+                {i + 1}
+              </span>
+              <h3 className="mt-5 text-xl font-semibold">{step.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{step.description}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
 
-              <ul className="mt-6 grid sm:grid-cols-2 gap-3">
-                {cadastroSicafDestaque.beneficios.map((b) => (
-                  <li
-                    key={b}
-                    className="flex gap-2 text-sm text-muted-foreground rounded-xl border border-border bg-card/80 p-4"
-                  >
-                    <Shield className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <CadastroLink className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-brand-foreground text-base sm:text-lg font-bold shadow-glow hover:scale-[1.02] transition">
-                  Cadastro SICAF 2026 agora
-                  <ArrowRight className="h-5 w-5" />
-                </CadastroLink>
-                <Link
-                  to="/cadastro-sicaf-passo-a-passo"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border border-border bg-card font-semibold hover:border-brand/40 transition"
-                >
-                  Ver guia passo a passo
-                </Link>
-              </div>
-            </section>
-
-            <section id="o-que-fazemos" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2">O que a CADBRASIL faz</h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl">
-                Tudo o que sua empresa precisa para entrar, permanecer e competir no mercado público —
-                com o Cadastro SICAF no centro.
-              </p>
-
-              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-                {servicosCards.map((card) => (
-                  <div
-                    key={card.id}
-                    className={`rounded-2xl border bg-card p-5 sm:p-6 shadow-card flex flex-col ${
-                      card.destaque ? "border-brand/40 ring-1 ring-brand/20" : "border-border"
-                    }`}
-                  >
-                    {card.destaque && (
-                      <span className="mb-3 inline-flex self-start text-[10px] font-bold uppercase tracking-widest text-brand bg-brand/10 px-2 py-1 rounded-md">
-                        Serviço principal
-                      </span>
-                    )}
-                    <h3 className="font-semibold text-lg">{card.titulo}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
-                      {card.descricao}
-                    </p>
-                    <ul className="mt-4 space-y-1.5">
-                      {card.itens.map((item) => (
-                        <li key={item} className="flex gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="h-3.5 w-3.5 text-brand shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section id="como-funciona" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2">
-                <Zap className="h-7 w-7 text-brand shrink-0" />
-                Como funciona
-              </h2>
-              <ol className="space-y-3">
-                {comoFunciona.map((step, index) => (
-                  <li
-                    key={step.n}
-                    id={`passo-${index + 1}`}
-                    className="scroll-mt-32 rounded-2xl border border-border bg-card p-5 sm:p-6 flex flex-col sm:flex-row gap-4 shadow-card"
-                  >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-brand-foreground font-bold text-sm">
-                      {step.n}
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg">{step.titulo}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.descricao}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
-
-            <section id="diferenciais" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 flex items-center gap-2">
-                <Target className="h-7 w-7 text-brand shrink-0" />
-                Diferenciais
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {diferenciais.map((d) => (
-                  <div key={d.titulo} className="rounded-2xl border border-border bg-card p-5 shadow-card">
-                    <h3 className="font-semibold">{d.titulo}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{d.descricao}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section id="para-quem" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
-                <Users className="h-7 w-7 text-brand shrink-0" />
-                Para quem é
-              </h2>
-              <ul className="grid sm:grid-cols-2 gap-3">
-                {paraQuem.map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-2 text-sm text-muted-foreground rounded-xl border border-border bg-card p-4"
-                  >
-                    <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section id="glossario" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Glossário CADBRASIL e SICAF</h2>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Termos essenciais para entender nossos serviços e o credenciamento no Compras.gov.br.
-              </p>
-              <dl className="grid sm:grid-cols-2 gap-4">
-                {glossarioCadbrasil.map((g) => (
-                  <div key={g.term} className="rounded-2xl border border-border bg-card p-5 shadow-card">
-                    <dt className="font-semibold text-brand">{g.term}</dt>
-                    <dd className="mt-2 text-sm text-muted-foreground leading-relaxed">{g.def}</dd>
-                  </div>
-                ))}
-              </dl>
-            </section>
-
-            <section id="faq" className="scroll-mt-32 mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">Perguntas frequentes</h2>
-              <div className="space-y-3">
-                {cadbrasilFaqs.map((faq) => (
-                  <details key={faq.question} className="group rounded-2xl border border-border bg-card shadow-card">
-                    <summary className="cursor-pointer list-none p-5 font-semibold flex items-center justify-between gap-4">
-                      {faq.question}
-                      <span className="text-brand group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-                    </summary>
-                    <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed border-t border-border pt-4">
-                      {faq.answer}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </section>
-
-            <section id="cta" className="scroll-mt-32 mb-14">
-              <div className="rounded-3xl border border-brand/25 bg-gradient-to-br from-brand/10 via-card to-card p-8 sm:p-10 text-center shadow-card">
-                <Clock className="h-8 w-8 text-brand mx-auto mb-3" />
-                <h2 className="text-2xl sm:text-3xl font-bold">Pronto para habilitar seu SICAF?</h2>
-                <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Comece agora o Cadastro SICAF 2026 com a CADBRASIL e mantenha sua empresa apta a
-                  licitar.
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
-                  <CadastroLink className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-brand-foreground text-base sm:text-lg font-bold shadow-glow hover:scale-[1.02] transition">
-                    Cadastro SICAF 2026 agora
-                    <ArrowRight className="h-5 w-5" />
-                  </CadastroLink>
-                  <WhatsAppLink
-                    pageLabel="Página CADBRASIL"
-                    intent="Quero iniciar o Cadastro SICAF 2026 com a CADBRASIL."
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-border bg-card font-semibold hover:border-brand/40 transition"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    WhatsApp
-                  </WhatsAppLink>
-                  <Link
-                    to="/planos"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-border bg-card font-semibold hover:border-brand/40 transition"
-                  >
-                    Ver planos
-                  </Link>
-                </div>
-              </div>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-lg font-bold mb-4">Guias relacionados</h2>
-              <ul className="flex flex-wrap gap-2">
-                {relatedGuides.map((g) => (
-                  <li key={g.to}>
-                    <Link
-                      to={g.to}
-                      className="inline-block text-sm px-3 py-1.5 rounded-full border border-border bg-accent/50 hover:border-brand/40 hover:text-brand transition"
-                    >
-                      {g.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </article>
+function PlatformSection() {
+  return (
+    <section id="plataforma" className="scroll-mt-20 py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading
+          eyebrow="Plataforma CADBrasil"
+          title="Tecnologia que trabalha junto com sua empresa"
+          description="Ferramentas digitais e inteligência artificial para reduzir trabalho manual, evitar surpresas com prazos e dar visibilidade a cada oportunidade."
+        />
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {techFeatures.map((f) => (
+            <FeatureCard
+              key={f.title}
+              variant="compact"
+              icon={techIcons[f.icon]}
+              title={f.title}
+              description={f.description}
+            />
+          ))}
+        </div>
+        <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
+          <WhatsAppLink
+            intent="Quero conhecer as soluções e a plataforma CADBrasil."
+            pageLabel={PAGE_LABEL}
+            className={btnPrimary}
+          >
+            Conhecer as soluções CADBrasil <ArrowRight className="h-4 w-4" />
+          </WhatsAppLink>
+          <a href={LEAD_FORM_ANCHOR} className={btnSecondary}>
+            Solicitar diagnóstico
+          </a>
         </div>
       </div>
-    </PageShell>
+    </section>
+  );
+}
+
+function AudienceSection() {
+  return (
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading eyebrow="Para quem é" title="Feito para empresas que querem vender ao governo" />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {audiences.map((a, i) => (
+            <FeatureCard
+              key={a.title}
+              icon={audienceIcons[i] ?? Rocket}
+              title={a.title}
+              description={a.description}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LeadSection() {
+  return (
+    <section
+      id="diagnostico"
+      className="relative scroll-mt-20 overflow-hidden bg-[oklch(0.22_0.08_260)] py-20 sm:py-28"
+    >
+      <div className="absolute inset-0 bg-grid opacity-[0.07]" aria-hidden />
+      <div
+        className="absolute -bottom-40 -left-20 h-[28rem] w-[40rem] rounded-full bg-[oklch(0.42_0.16_258/0.4)] blur-[120px]"
+        aria-hidden
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-[1fr_1.1fr]">
+        <div>
+          <SectionHeading
+            align="left"
+            tone="dark"
+            eyebrow="Diagnóstico com especialista"
+            title="Fale com um especialista CADBrasil"
+            description="Conte o momento da sua empresa. Um especialista retorna para entender seus objetivos e indicar o melhor caminho com tecnologia e assessoria."
+          />
+          <ul className="mt-8 space-y-3 text-white/85">
+            {[
+              "Retorno rápido em horário comercial",
+              "Análise do momento da sua empresa no mercado público",
+              "Indicação das soluções CADBrasil mais adequadas",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-success" aria-hidden /> {item}
+              </li>
+            ))}
+          </ul>
+          <WhatsAppLink
+            intent="Prefiro falar com um especialista CADBrasil pelo WhatsApp."
+            pageLabel={PAGE_LABEL}
+            className="mt-8 inline-flex items-center gap-2 font-semibold text-white hover:underline"
+          >
+            <MessageCircle className="h-4 w-4 text-success" /> Prefere WhatsApp? Fale agora
+          </WhatsAppLink>
+        </div>
+        <LeadForm />
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <section id="faq" className="scroll-mt-20 py-20 sm:py-28">
+      <div className="mx-auto max-w-3xl px-4">
+        <SectionHeading
+          eyebrow="Transparência"
+          title="Perguntas frequentes"
+          description="Clareza sobre quem somos, o que fazemos e como cobramos."
+        />
+        <div className="mt-12">
+          <FaqList items={cadbrasilFaqs} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Conteúdo para buscadores e IA — fora da interface visível. */
+function SeoAiBlock() {
+  return (
+    <div className="hidden" data-seo-ai>
+      <p className="guide-quick-answer ai-summary">{cadbrasilMeta.quickAnswer}</p>
+      <ul className="guide-summary">
+        {resumoInteligente.map((r) => (
+          <li key={r}>{r}</li>
+        ))}
+      </ul>
+      <dl>
+        {factSheetAi.map((f) => (
+          <div key={f.label}>
+            <dt>{f.label}</dt>
+            <dd>{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
   );
 }
