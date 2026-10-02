@@ -2,14 +2,22 @@ import { ArrowRight } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { LEAD_FORM_ANCHOR } from "@/components/site/cadbrasil/styles";
 
-const links = [
+export type LandingNavLink = { href: string; label: string };
+
+const defaultLinks: LandingNavLink[] = [
   { href: "#solucoes", label: "Soluções" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#plataforma", label: "Plataforma" },
   { href: "#faq", label: "Dúvidas" },
 ];
 
-export function LandingHeader() {
+export function LandingHeader({
+  links = defaultLinks,
+  ctaHref = LEAD_FORM_ANCHOR,
+}: {
+  links?: LandingNavLink[];
+  ctaHref?: string;
+}) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4">
@@ -26,7 +34,7 @@ export function LandingHeader() {
           </ul>
         </nav>
         <a
-          href={LEAD_FORM_ANCHOR}
+          href={ctaHref}
           className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-4 py-2 text-sm font-semibold text-brand-foreground shadow-glow transition hover:opacity-95"
         >
           <span className="hidden sm:inline">Falar com um especialista</span>

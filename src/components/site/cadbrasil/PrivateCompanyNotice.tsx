@@ -1,7 +1,13 @@
 import { Building2 } from "lucide-react";
 import { privateNotice } from "@/data/cadbrasilPage";
 
-export function PrivateCompanyNotice() {
+export function PrivateCompanyNotice({
+  title = privateNotice.title,
+  text = privateNotice.text,
+}: {
+  title?: string;
+  text?: string;
+}) {
   return (
     <aside
       aria-labelledby="aviso-empresa-privada"
@@ -20,11 +26,9 @@ export function PrivateCompanyNotice() {
             id="aviso-empresa-privada"
             className="text-sm font-bold uppercase tracking-[0.14em] text-foreground"
           >
-            {privateNotice.title}
+            {title}
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-            {privateNotice.text}
-          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{text}</p>
         </div>
       </div>
     </aside>

@@ -192,18 +192,6 @@ export const audiences = [
   },
 ] as const;
 
-export const leadObjectives = [
-  { id: "comecar", label: "Quero começar a participar de licitações" },
-  { id: "documentacao", label: "Preciso organizar minha documentação" },
-  { id: "sicaf-compras", label: "Tenho dúvidas sobre SICAF/Compras.gov.br" },
-  { id: "oportunidades", label: "Quero encontrar oportunidades" },
-  { id: "edital", label: "Preciso analisar um edital" },
-  { id: "melhorar", label: "Já participo de licitações e quero melhorar minha operação" },
-  { id: "outro", label: "Outro" },
-] as const;
-
-export type LeadObjectiveId = (typeof leadObjectives)[number]["id"];
-
 export const cadbrasilFaqs = [
   {
     question: "O SICAF é gratuito?",

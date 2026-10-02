@@ -138,7 +138,7 @@ export async function sendCadbrasilLeadEmail(data: CadbrasilLeadPayload) {
   }
 
   const clientEmail = data.email.trim().toLowerCase();
-  const teamSubject = `[CADBrasil Especialista] Novo lead — ${data.empresa} (${formatCnpj(data.cnpj)})`;
+  const teamSubject = `[CADBrasil Especialista · ${data.origem}] Novo lead — ${data.empresa} (${formatCnpj(data.cnpj)})`;
 
   const [teamResult, clientResult] = await Promise.all([
     sendMailgunMessage(config, {

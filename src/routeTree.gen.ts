@@ -50,6 +50,7 @@ import { Route as ComoCadastrarNoSicafEVenderParaOGovernoRouteImport } from './r
 import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
 import { Route as ComoAtualizarCertificadosSicafRouteImport } from './routes/como-atualizar-certificados-sicaf'
 import { Route as CertificadoDigitalSicafRouteImport } from './routes/certificado-digital-sicaf'
+import { Route as CaufespRouteImport } from './routes/caufesp'
 import { Route as CadbrasilRouteImport } from './routes/cadbrasil'
 import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-sicaf-passo-a-passo'
 import { Route as CadastroSicafLicitacaoPublicaRouteImport } from './routes/cadastro-sicaf-licitacao-publica'
@@ -57,6 +58,7 @@ import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
 import { Route as CadastroFornecedorGovernoRouteImport } from './routes/cadastro-fornecedor-governo'
 import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as CadastrarNoSicafRouteImport } from './routes/cadastrar-no-sicaf'
+import { Route as BllComprasGuiaParaLicitantesRouteImport } from './routes/bll-compras-guia-para-licitantes'
 import { Route as BeneficiosRouteImport } from './routes/beneficios'
 import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
 import { Route as AssistenteRouteImport } from './routes/assistente'
@@ -286,6 +288,11 @@ const CertificadoDigitalSicafRoute = CertificadoDigitalSicafRouteImport.update({
   path: '/certificado-digital-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaufespRoute = CaufespRouteImport.update({
+  id: '/caufesp',
+  path: '/caufesp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CadbrasilRoute = CadbrasilRouteImport.update({
   id: '/cadbrasil',
   path: '/cadbrasil',
@@ -324,6 +331,12 @@ const CadastrarNoSicafRoute = CadastrarNoSicafRouteImport.update({
   path: '/cadastrar-no-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BllComprasGuiaParaLicitantesRoute =
+  BllComprasGuiaParaLicitantesRouteImport.update({
+    id: '/bll-compras-guia-para-licitantes',
+    path: '/bll-compras-guia-para-licitantes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BeneficiosRoute = BeneficiosRouteImport.update({
   id: '/beneficios',
   path: '/beneficios',
@@ -387,6 +400,7 @@ export interface FileRoutesByFullPath {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/bll-compras-guia-para-licitantes': typeof BllComprasGuiaParaLicitantesRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
   '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
@@ -394,6 +408,7 @@ export interface FileRoutesByFullPath {
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/cadbrasil': typeof CadbrasilRoute
+  '/caufesp': typeof CaufespRoute
   '/certificado-digital-sicaf': typeof CertificadoDigitalSicafRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
@@ -448,6 +463,7 @@ export interface FileRoutesByTo {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/bll-compras-guia-para-licitantes': typeof BllComprasGuiaParaLicitantesRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
   '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
@@ -455,6 +471,7 @@ export interface FileRoutesByTo {
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/cadbrasil': typeof CadbrasilRoute
+  '/caufesp': typeof CaufespRoute
   '/certificado-digital-sicaf': typeof CertificadoDigitalSicafRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
@@ -510,6 +527,7 @@ export interface FileRoutesById {
   '/assistente': typeof AssistenteRoute
   '/autoatendimento-sicaf': typeof AutoatendimentoSicafRoute
   '/beneficios': typeof BeneficiosRoute
+  '/bll-compras-guia-para-licitantes': typeof BllComprasGuiaParaLicitantesRoute
   '/cadastrar-no-sicaf': typeof CadastrarNoSicafRoute
   '/cadastro': typeof CadastroRoute
   '/cadastro-fornecedor-governo': typeof CadastroFornecedorGovernoRoute
@@ -517,6 +535,7 @@ export interface FileRoutesById {
   '/cadastro-sicaf-licitacao-publica': typeof CadastroSicafLicitacaoPublicaRoute
   '/cadastro-sicaf-passo-a-passo': typeof CadastroSicafPassoAPassoRoute
   '/cadbrasil': typeof CadbrasilRoute
+  '/caufesp': typeof CaufespRoute
   '/certificado-digital-sicaf': typeof CertificadoDigitalSicafRoute
   '/como-atualizar-certificados-sicaf': typeof ComoAtualizarCertificadosSicafRoute
   '/como-cadastrar-empresa-sicaf': typeof ComoCadastrarEmpresaSicafRoute
@@ -573,6 +592,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/bll-compras-guia-para-licitantes'
     | '/cadastrar-no-sicaf'
     | '/cadastro'
     | '/cadastro-fornecedor-governo'
@@ -580,6 +600,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-licitacao-publica'
     | '/cadastro-sicaf-passo-a-passo'
     | '/cadbrasil'
+    | '/caufesp'
     | '/certificado-digital-sicaf'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
@@ -634,6 +655,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/bll-compras-guia-para-licitantes'
     | '/cadastrar-no-sicaf'
     | '/cadastro'
     | '/cadastro-fornecedor-governo'
@@ -641,6 +663,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-licitacao-publica'
     | '/cadastro-sicaf-passo-a-passo'
     | '/cadbrasil'
+    | '/caufesp'
     | '/certificado-digital-sicaf'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
@@ -695,6 +718,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/autoatendimento-sicaf'
     | '/beneficios'
+    | '/bll-compras-guia-para-licitantes'
     | '/cadastrar-no-sicaf'
     | '/cadastro'
     | '/cadastro-fornecedor-governo'
@@ -702,6 +726,7 @@ export interface FileRouteTypes {
     | '/cadastro-sicaf-licitacao-publica'
     | '/cadastro-sicaf-passo-a-passo'
     | '/cadbrasil'
+    | '/caufesp'
     | '/certificado-digital-sicaf'
     | '/como-atualizar-certificados-sicaf'
     | '/como-cadastrar-empresa-sicaf'
@@ -757,6 +782,7 @@ export interface RootRouteChildren {
   AssistenteRoute: typeof AssistenteRoute
   AutoatendimentoSicafRoute: typeof AutoatendimentoSicafRoute
   BeneficiosRoute: typeof BeneficiosRoute
+  BllComprasGuiaParaLicitantesRoute: typeof BllComprasGuiaParaLicitantesRoute
   CadastrarNoSicafRoute: typeof CadastrarNoSicafRoute
   CadastroRoute: typeof CadastroRoute
   CadastroFornecedorGovernoRoute: typeof CadastroFornecedorGovernoRoute
@@ -764,6 +790,7 @@ export interface RootRouteChildren {
   CadastroSicafLicitacaoPublicaRoute: typeof CadastroSicafLicitacaoPublicaRoute
   CadastroSicafPassoAPassoRoute: typeof CadastroSicafPassoAPassoRoute
   CadbrasilRoute: typeof CadbrasilRoute
+  CaufespRoute: typeof CaufespRoute
   CertificadoDigitalSicafRoute: typeof CertificadoDigitalSicafRoute
   ComoAtualizarCertificadosSicafRoute: typeof ComoAtualizarCertificadosSicafRoute
   ComoCadastrarEmpresaSicafRoute: typeof ComoCadastrarEmpresaSicafRoute
@@ -1102,6 +1129,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CertificadoDigitalSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/caufesp': {
+      id: '/caufesp'
+      path: '/caufesp'
+      fullPath: '/caufesp'
+      preLoaderRoute: typeof CaufespRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cadbrasil': {
       id: '/cadbrasil'
       path: '/cadbrasil'
@@ -1149,6 +1183,13 @@ declare module '@tanstack/react-router' {
       path: '/cadastrar-no-sicaf'
       fullPath: '/cadastrar-no-sicaf'
       preLoaderRoute: typeof CadastrarNoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bll-compras-guia-para-licitantes': {
+      id: '/bll-compras-guia-para-licitantes'
+      path: '/bll-compras-guia-para-licitantes'
+      fullPath: '/bll-compras-guia-para-licitantes'
+      preLoaderRoute: typeof BllComprasGuiaParaLicitantesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/beneficios': {
@@ -1237,6 +1278,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssistenteRoute: AssistenteRoute,
   AutoatendimentoSicafRoute: AutoatendimentoSicafRoute,
   BeneficiosRoute: BeneficiosRoute,
+  BllComprasGuiaParaLicitantesRoute: BllComprasGuiaParaLicitantesRoute,
   CadastrarNoSicafRoute: CadastrarNoSicafRoute,
   CadastroRoute: CadastroRoute,
   CadastroFornecedorGovernoRoute: CadastroFornecedorGovernoRoute,
@@ -1244,6 +1286,7 @@ const rootRouteChildren: RootRouteChildren = {
   CadastroSicafLicitacaoPublicaRoute: CadastroSicafLicitacaoPublicaRoute,
   CadastroSicafPassoAPassoRoute: CadastroSicafPassoAPassoRoute,
   CadbrasilRoute: CadbrasilRoute,
+  CaufespRoute: CaufespRoute,
   CertificadoDigitalSicafRoute: CertificadoDigitalSicafRoute,
   ComoAtualizarCertificadosSicafRoute: ComoAtualizarCertificadosSicafRoute,
   ComoCadastrarEmpresaSicafRoute: ComoCadastrarEmpresaSicafRoute,

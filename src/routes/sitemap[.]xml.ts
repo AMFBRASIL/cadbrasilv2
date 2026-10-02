@@ -22,6 +22,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/planos", changefreq: "weekly", priority: "0.98" },
           { path: "/o-que-e-sicaf-e-como-se-cadastrar", changefreq: "weekly", priority: "1.0" },
           { path: "/cadbrasil", changefreq: "weekly", priority: "1.0" },
+          { path: "/caufesp", changefreq: "weekly", priority: "0.97" },
+          { path: "/bll-compras-guia-para-licitantes", changefreq: "weekly", priority: "0.97" },
           { path: "/sicaf-niveis", changefreq: "weekly", priority: "0.98" },
           { path: "/servicos-documentacao", changefreq: "weekly", priority: "0.98" },
           { path: "/renovar-sicaf", changefreq: "weekly", priority: "0.98" },

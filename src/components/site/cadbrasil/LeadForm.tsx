@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2, Lock, MessageCircle } from "lucide-r
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
-import { leadObjectives, type LeadObjectiveId } from "@/data/cadbrasilPage";
+import { getLeadObjectives, leadObjectiveLabel, type LeadSource } from "@/data/leadSources";
 import { trackLeadConversion } from "@/lib/analytics";
 import { getStoredTrackingParams } from "@/lib/cadastroUrl";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,7 @@ type FormState = {
   cnpj: string;
   whatsapp: string;
   email: string;
-  objetivo: LeadObjectiveId | "";
+  objetivo: string;
   website: string;
 };
 
@@ -50,7 +50,14 @@ function formatPhoneInput(value: string) {
 
 const fieldClass = "h-12 rounded-xl bg-background";
 
-export function LeadForm() {
+export function LeadForm({
+  source = "cadbrasil",
+  pageLabel = "CADBrasil — Tecnologia e assessoria em licitações",
+}: {
+  source?: LeadSource;
+  pageLabel?: string;
+}) {
+  const objectives = getLeadObjectives(source);
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -72,9 +79,6 @@ export function LeadForm() {
     /\S+@\S+\.\S+/.test(form.email) &&
     form.objetivo !== "";
 
-  const objectiveLabel = (id: FormState["objetivo"]) =>
-    leadObjectives.find((o) => o.id === id)?.label ?? "";
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!isValid || status === "loading") return;
@@ -85,7 +89,7 @@ export function LeadForm() {
       const response = await fetch("/api/cadbrasil-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, tracking: getStoredTrackingParams() }),
+        body: JSON.stringify({ ...form, origem: source, tracking: getStoredTrackingParams() }),
       });
       const data = (await response.json().catch(() => ({}))) as { ok?: boolean; error?: string };
 
@@ -94,7 +98,7 @@ export function LeadForm() {
       }
 
       trackLeadConversion({
-        lead_source: "cadbrasil_landing",
+        lead_source: `${source}_landing`,
         lead_objetivo: form.objetivo,
         form_name: "falar_com_especialista",
       });
@@ -119,8 +123,8 @@ export function LeadForm() {
           confirmação para <strong className="text-foreground">{submitted.email}</strong>.
         </p>
         <WhatsAppLink
-          intent={objectiveLabel(submitted.objetivo)}
-          pageLabel="CADBrasil — Tecnologia e assessoria em licitações"
+          intent={leadObjectiveLabel(source, submitted.objetivo)}
+          pageLabel={pageLabel}
           detail={[
             `Nome: ${submitted.nome}`,
             `Empresa: ${submitted.empresa}`,
@@ -210,7 +214,7 @@ export function LeadForm() {
           <select
             id="lead-objetivo"
             value={form.objetivo}
-            onChange={(e) => update("objetivo", e.target.value as FormState["objetivo"])}
+            onChange={(e) => update("objetivo", e.target.value)}
             required
             className={cn(
               "flex w-full border border-input px-3 text-base md:text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
@@ -221,7 +225,7 @@ export function LeadForm() {
             <option value="" disabled>
               Selecione uma opção
             </option>
-            {leadObjectives.map((o) => (
+            {objectives.map((o) => (
               <option key={o.id} value={o.id} className="text-foreground">
                 {o.label}
               </option>

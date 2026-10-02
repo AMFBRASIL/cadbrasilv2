@@ -7,11 +7,13 @@ export function CtaBand({
   subtitle,
   primary,
   whatsapp,
+  pageLabel = "CADBrasil — Tecnologia e assessoria em licitações",
 }: {
   title: string;
   subtitle?: string;
   primary: { label: string; href: string };
   whatsapp?: { label: string; intent: string };
+  pageLabel?: string;
 }) {
   return (
     <section className="py-12 sm:py-16">
@@ -33,7 +35,7 @@ export function CtaBand({
               {whatsapp && (
                 <WhatsAppLink
                   intent={whatsapp.intent}
-                  pageLabel="CADBrasil — Tecnologia e assessoria em licitações"
+                  pageLabel={pageLabel}
                   className={btnOnDarkSecondary}
                 >
                   <MessageCircle className="h-4 w-4" /> {whatsapp.label}

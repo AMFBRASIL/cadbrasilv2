@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import {
@@ -7,10 +9,40 @@ import {
   COMPRAS_GOV_OFFICIAL_URL,
 } from "@/data/cadbrasilPage";
 
-export function LandingFooter() {
+const defaultOfficialNote: ReactNode = (
+  <>
+    Os procedimentos oficiais de SICAF e Compras.gov.br são realizados diretamente no portal do Governo
+    Federal:{" "}
+    <a
+      href={COMPRAS_GOV_OFFICIAL_URL}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="font-medium text-brand hover:underline"
+    >
+      gov.br/compras
+    </a>
+    .
+  </>
+);
+
+export function LandingFooter({
+  pageLabel = "CADBrasil — Tecnologia e assessoria em licitações",
+  officialTitle = "Plataformas oficiais",
+  officialNote = defaultOfficialNote,
+  relatedLinks,
+}: {
+  pageLabel?: string;
+  officialTitle?: string;
+  officialNote?: ReactNode;
+  relatedLinks?: { to: string; label: string }[];
+}) {
   return (
     <footer className="border-t border-border bg-card/50">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div
+        className={`mx-auto grid max-w-7xl gap-10 px-4 py-14 ${
+          relatedLinks?.length ? "md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]" : "md:grid-cols-[1.4fr_1fr_1fr]"
+        }`}
+      >
         <div>
           <BrandLogo />
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -18,13 +50,27 @@ export function LandingFooter() {
             licitações públicas.
           </p>
         </div>
+        {relatedLinks && relatedLinks.length > 0 && (
+          <div>
+            <div className="mb-3 text-sm font-semibold">Conteúdos</div>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {relatedLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="hover:text-foreground">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div>
           <div className="mb-3 text-sm font-semibold">Contato</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
               <WhatsAppLink
-                intent="Quero falar com um especialista (rodapé da página CADBrasil)."
-                pageLabel="CADBrasil — Tecnologia e assessoria em licitações"
+                intent="Quero falar com um especialista (rodapé)."
+                pageLabel={pageLabel}
                 className="hover:text-foreground"
               >
                 WhatsApp (11) 2122-0202
@@ -39,20 +85,8 @@ export function LandingFooter() {
           </ul>
         </div>
         <div>
-          <div className="mb-3 text-sm font-semibold">Plataformas oficiais</div>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Os procedimentos oficiais de SICAF e Compras.gov.br são realizados diretamente no portal do
-            Governo Federal:{" "}
-            <a
-              href={COMPRAS_GOV_OFFICIAL_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="font-medium text-brand hover:underline"
-            >
-              gov.br/compras
-            </a>
-            .
-          </p>
+          <div className="mb-3 text-sm font-semibold">{officialTitle}</div>
+          <p className="text-sm leading-relaxed text-muted-foreground">{officialNote}</p>
         </div>
       </div>
       <div className="border-t border-border">
@@ -62,8 +96,9 @@ export function LandingFooter() {
           </p>
           <p>
             A CADBrasil é uma empresa privada e independente, sem vínculo ou afiliação com órgãos
-            governamentais. Não comercializamos acesso a plataformas oficiais; nossos valores correspondem
-            exclusivamente aos serviços privados de tecnologia, assessoria, suporte e conteúdo.
+            governamentais ou plataformas de licitação. Não comercializamos acesso a plataformas oficiais;
+            nossos valores correspondem exclusivamente aos serviços privados de tecnologia, assessoria, suporte
+            e conteúdo.
           </p>
         </div>
       </div>
