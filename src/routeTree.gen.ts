@@ -9,326 +9,91 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Versao2RouteImport } from './routes/versao2'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SicafNiveisRouteImport } from './routes/sicaf-niveis'
-import { Route as SicafMeiRouteImport } from './routes/sicaf-mei'
-import { Route as SicafIrregularRouteImport } from './routes/sicaf-irregular'
-import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
-import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
-import { Route as ServicosDocumentacaoRouteImport } from './routes/servicos-documentacao'
-import { Route as RenovarSicafRouteImport } from './routes/renovar-sicaf'
-import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
-import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
-import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
-import { Route as QuantoCustaSicafRouteImport } from './routes/quanto-custa-sicaf'
-import { Route as PropostaRouteImport } from './routes/proposta'
-import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
-import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
-import { Route as PlanosRouteImport } from './routes/planos'
-import { Route as OQueESicafEComoSeCadastrarRouteImport } from './routes/o-que-e-sicaf-e-como-se-cadastrar'
-import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
-import { Route as LicitacoesCadastroRouteImport } from './routes/licitacoes-cadastro'
-import { Route as LicitacoesRouteImport } from './routes/licitacoes'
-import { Route as LayoutClassicoRouteImport } from './routes/layout-classico'
-import { Route as GovBrSicafRouteImport } from './routes/gov-br-sicaf'
-import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
-import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
-import { Route as DocumentosNecessariosCadastroSicafRouteImport } from './routes/documentos-necessarios-cadastro-sicaf'
-import { Route as DocumentacaoSicafRouteImport } from './routes/documentacao-sicaf'
-import { Route as DocumentacaoLicitacaoRouteImport } from './routes/documentacao-licitacao'
-import { Route as CredenciamentoSicafDigitalRouteImport } from './routes/credenciamento-sicaf-digital'
-import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
-import { Route as ComprasnetRouteImport } from './routes/comprasnet'
-import { Route as ComprasGovBrRouteImport } from './routes/compras-gov-br'
-import { Route as ComoRegularizarSicafEmpresaRouteImport } from './routes/como-regularizar-sicaf-empresa'
-import { Route as ComoParticiparDeLicitacaoResumoRouteImport } from './routes/como-participar-de-licitacao-resumo'
-import { Route as ComoParticiparDeLicitacaoRouteImport } from './routes/como-participar-de-licitacao'
-import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
-import { Route as ComoFazerCadastroNoSicafRouteImport } from './routes/como-fazer-cadastro-no-sicaf'
-import { Route as ComoCadastrarNoSicafEVenderParaOGovernoRouteImport } from './routes/como-cadastrar-no-sicaf-e-vender-para-o-governo'
-import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
-import { Route as ComoAtualizarCertificadosSicafRouteImport } from './routes/como-atualizar-certificados-sicaf'
-import { Route as CertificadoDigitalSicafRouteImport } from './routes/certificado-digital-sicaf'
-import { Route as CaufespRouteImport } from './routes/caufesp'
-import { Route as CadbrasilRouteImport } from './routes/cadbrasil'
-import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-sicaf-passo-a-passo'
-import { Route as CadastroSicafLicitacaoPublicaRouteImport } from './routes/cadastro-sicaf-licitacao-publica'
-import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
-import { Route as CadastroFornecedorGovernoRouteImport } from './routes/cadastro-fornecedor-governo'
-import { Route as CadastroRouteImport } from './routes/cadastro'
-import { Route as CadastrarNoSicafRouteImport } from './routes/cadastrar-no-sicaf'
-import { Route as BllComprasGuiaParaLicitantesRouteImport } from './routes/bll-compras-guia-para-licitantes'
-import { Route as BeneficiosRouteImport } from './routes/beneficios'
-import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
-import { Route as AssistenteRouteImport } from './routes/assistente'
-import { Route as AcessoRemotoRouteImport } from './routes/acesso-remoto'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as FaqIndexRouteImport } from './routes/faq.index'
-import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/cadastro-sicaf-passo-passo'
-import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
-import { Route as ApiLicitacoesLeadRouteImport } from './routes/api/licitacoes-lead'
-import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as AcessoRemotoRouteImport } from './routes/acesso-remoto'
+import { Route as AssistenteRouteImport } from './routes/assistente'
+import { Route as AutoatendimentoSicafRouteImport } from './routes/autoatendimento-sicaf'
+import { Route as BeneficiosRouteImport } from './routes/beneficios'
+import { Route as BllComprasGuiaParaLicitantesRouteImport } from './routes/bll-compras-guia-para-licitantes'
+import { Route as CadastrarNoSicafRouteImport } from './routes/cadastrar-no-sicaf'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as CadastroFornecedorGovernoRouteImport } from './routes/cadastro-fornecedor-governo'
+import { Route as CadastroSicafRouteImport } from './routes/cadastro-sicaf'
+import { Route as CadastroSicafLicitacaoPublicaRouteImport } from './routes/cadastro-sicaf-licitacao-publica'
+import { Route as CadastroSicafPassoAPassoRouteImport } from './routes/cadastro-sicaf-passo-a-passo'
+import { Route as CadbrasilRouteImport } from './routes/cadbrasil'
+import { Route as CaufespRouteImport } from './routes/caufesp'
+import { Route as CertificadoDigitalSicafRouteImport } from './routes/certificado-digital-sicaf'
+import { Route as ComoAtualizarCertificadosSicafRouteImport } from './routes/como-atualizar-certificados-sicaf'
+import { Route as ComoCadastrarEmpresaSicafRouteImport } from './routes/como-cadastrar-empresa-sicaf'
+import { Route as ComoCadastrarNoSicafEVenderParaOGovernoRouteImport } from './routes/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+import { Route as ComoFazerCadastroNoSicafRouteImport } from './routes/como-fazer-cadastro-no-sicaf'
+import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ComoParticiparDeLicitacaoRouteImport } from './routes/como-participar-de-licitacao'
+import { Route as ComoParticiparDeLicitacaoResumoRouteImport } from './routes/como-participar-de-licitacao-resumo'
+import { Route as ComoRegularizarSicafEmpresaRouteImport } from './routes/como-regularizar-sicaf-empresa'
+import { Route as ComprasGovBrRouteImport } from './routes/compras-gov-br'
+import { Route as ComprasnetRouteImport } from './routes/comprasnet'
+import { Route as CredenciamentoRouteImport } from './routes/credenciamento'
+import { Route as CredenciamentoSicafDigitalRouteImport } from './routes/credenciamento-sicaf-digital'
+import { Route as DocumentacaoLicitacaoRouteImport } from './routes/documentacao-licitacao'
+import { Route as DocumentacaoSicafRouteImport } from './routes/documentacao-sicaf'
+import { Route as DocumentosNecessariosCadastroSicafRouteImport } from './routes/documentos-necessarios-cadastro-sicaf'
+import { Route as EmitirCrcRouteImport } from './routes/emitir-crc'
+import { Route as EmpresaInaptaRouteImport } from './routes/empresa-inapta'
+import { Route as GovBrSicafRouteImport } from './routes/gov-br-sicaf'
+import { Route as LayoutClassicoRouteImport } from './routes/layout-classico'
+import { Route as LicitacoesRouteImport } from './routes/licitacoes'
+import { Route as LicitacoesCadastroRouteImport } from './routes/licitacoes-cadastro'
+import { Route as OQueESicafRouteImport } from './routes/o-que-e-sicaf'
+import { Route as OQueESicafEComoSeCadastrarRouteImport } from './routes/o-que-e-sicaf-e-como-se-cadastrar'
+import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as PlataformaDigitalRouteImport } from './routes/plataforma-digital'
+import { Route as PregaoEletronicoRouteImport } from './routes/pregao-eletronico'
+import { Route as PropostaRouteImport } from './routes/proposta'
+import { Route as QuantoCustaSicafRouteImport } from './routes/quanto-custa-sicaf'
+import { Route as QuemPodeSeCadastrarNoSicafRouteImport } from './routes/quem-pode-se-cadastrar-no-sicaf'
+import { Route as RegularidadeFiscalRouteImport } from './routes/regularidade-fiscal'
+import { Route as RenovacaoSicafRouteImport } from './routes/renovacao-sicaf'
+import { Route as RenovarSicafRouteImport } from './routes/renovar-sicaf'
+import { Route as ServicosDocumentacaoRouteImport } from './routes/servicos-documentacao'
+import { Route as SicafCadastroUnificadoDeFornecedoresRouteImport } from './routes/sicaf-cadastro-unificado-de-fornecedores'
+import { Route as SicafDigitalRouteImport } from './routes/sicaf-digital'
+import { Route as SicafIrregularRouteImport } from './routes/sicaf-irregular'
+import { Route as SicafMeiRouteImport } from './routes/sicaf-mei'
+import { Route as SicafNiveisRouteImport } from './routes/sicaf-niveis'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as Versao2RouteImport } from './routes/versao2'
 import { Route as ApiCadbrasilLeadRouteImport } from './routes/api/cadbrasil-lead'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ApiLicitacoesLeadRouteImport } from './routes/api/licitacoes-lead'
+import { Route as FaqIndexRouteImport } from './routes/faq.index'
+import { Route as FaqSlugRouteImport } from './routes/faq.$slug'
+import { Route as GuiaCadastroSicafPassoPassoRouteImport } from './routes/guia/cadastro-sicaf-passo-passo'
 
-const Versao2Route = Versao2RouteImport.update({
-  id: '/versao2',
-  path: '/versao2',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const AcessoRemotoRoute = AcessoRemotoRouteImport.update({
+  id: '/acesso-remoto',
+  path: '/acesso-remoto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SicafNiveisRoute = SicafNiveisRouteImport.update({
-  id: '/sicaf-niveis',
-  path: '/sicaf-niveis',
+const AssistenteRoute = AssistenteRouteImport.update({
+  id: '/assistente',
+  path: '/assistente',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SicafMeiRoute = SicafMeiRouteImport.update({
-  id: '/sicaf-mei',
-  path: '/sicaf-mei',
+const AutoatendimentoSicafRoute = AutoatendimentoSicafRouteImport.update({
+  id: '/autoatendimento-sicaf',
+  path: '/autoatendimento-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SicafIrregularRoute = SicafIrregularRouteImport.update({
-  id: '/sicaf-irregular',
-  path: '/sicaf-irregular',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SicafDigitalRoute = SicafDigitalRouteImport.update({
-  id: '/sicaf-digital',
-  path: '/sicaf-digital',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SicafCadastroUnificadoDeFornecedoresRoute =
-  SicafCadastroUnificadoDeFornecedoresRouteImport.update({
-    id: '/sicaf-cadastro-unificado-de-fornecedores',
-    path: '/sicaf-cadastro-unificado-de-fornecedores',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicosDocumentacaoRoute = ServicosDocumentacaoRouteImport.update({
-  id: '/servicos-documentacao',
-  path: '/servicos-documentacao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RenovarSicafRoute = RenovarSicafRouteImport.update({
-  id: '/renovar-sicaf',
-  path: '/renovar-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RenovacaoSicafRoute = RenovacaoSicafRouteImport.update({
-  id: '/renovacao-sicaf',
-  path: '/renovacao-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegularidadeFiscalRoute = RegularidadeFiscalRouteImport.update({
-  id: '/regularidade-fiscal',
-  path: '/regularidade-fiscal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuemPodeSeCadastrarNoSicafRoute =
-  QuemPodeSeCadastrarNoSicafRouteImport.update({
-    id: '/quem-pode-se-cadastrar-no-sicaf',
-    path: '/quem-pode-se-cadastrar-no-sicaf',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const QuantoCustaSicafRoute = QuantoCustaSicafRouteImport.update({
-  id: '/quanto-custa-sicaf',
-  path: '/quanto-custa-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PropostaRoute = PropostaRouteImport.update({
-  id: '/proposta',
-  path: '/proposta',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PregaoEletronicoRoute = PregaoEletronicoRouteImport.update({
-  id: '/pregao-eletronico',
-  path: '/pregao-eletronico',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
-  id: '/plataforma-digital',
-  path: '/plataforma-digital',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanosRoute = PlanosRouteImport.update({
-  id: '/planos',
-  path: '/planos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OQueESicafEComoSeCadastrarRoute =
-  OQueESicafEComoSeCadastrarRouteImport.update({
-    id: '/o-que-e-sicaf-e-como-se-cadastrar',
-    path: '/o-que-e-sicaf-e-como-se-cadastrar',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const OQueESicafRoute = OQueESicafRouteImport.update({
-  id: '/o-que-e-sicaf',
-  path: '/o-que-e-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LicitacoesCadastroRoute = LicitacoesCadastroRouteImport.update({
-  id: '/licitacoes-cadastro',
-  path: '/licitacoes-cadastro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LicitacoesRoute = LicitacoesRouteImport.update({
-  id: '/licitacoes',
-  path: '/licitacoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LayoutClassicoRoute = LayoutClassicoRouteImport.update({
-  id: '/layout-classico',
-  path: '/layout-classico',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GovBrSicafRoute = GovBrSicafRouteImport.update({
-  id: '/gov-br-sicaf',
-  path: '/gov-br-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EmpresaInaptaRoute = EmpresaInaptaRouteImport.update({
-  id: '/empresa-inapta',
-  path: '/empresa-inapta',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EmitirCrcRoute = EmitirCrcRouteImport.update({
-  id: '/emitir-crc',
-  path: '/emitir-crc',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocumentosNecessariosCadastroSicafRoute =
-  DocumentosNecessariosCadastroSicafRouteImport.update({
-    id: '/documentos-necessarios-cadastro-sicaf',
-    path: '/documentos-necessarios-cadastro-sicaf',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DocumentacaoSicafRoute = DocumentacaoSicafRouteImport.update({
-  id: '/documentacao-sicaf',
-  path: '/documentacao-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocumentacaoLicitacaoRoute = DocumentacaoLicitacaoRouteImport.update({
-  id: '/documentacao-licitacao',
-  path: '/documentacao-licitacao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CredenciamentoSicafDigitalRoute =
-  CredenciamentoSicafDigitalRouteImport.update({
-    id: '/credenciamento-sicaf-digital',
-    path: '/credenciamento-sicaf-digital',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CredenciamentoRoute = CredenciamentoRouteImport.update({
-  id: '/credenciamento',
-  path: '/credenciamento',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComprasnetRoute = ComprasnetRouteImport.update({
-  id: '/comprasnet',
-  path: '/comprasnet',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComprasGovBrRoute = ComprasGovBrRouteImport.update({
-  id: '/compras-gov-br',
-  path: '/compras-gov-br',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComoRegularizarSicafEmpresaRoute =
-  ComoRegularizarSicafEmpresaRouteImport.update({
-    id: '/como-regularizar-sicaf-empresa',
-    path: '/como-regularizar-sicaf-empresa',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoParticiparDeLicitacaoResumoRoute =
-  ComoParticiparDeLicitacaoResumoRouteImport.update({
-    id: '/como-participar-de-licitacao-resumo',
-    path: '/como-participar-de-licitacao-resumo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoParticiparDeLicitacaoRoute =
-  ComoParticiparDeLicitacaoRouteImport.update({
-    id: '/como-participar-de-licitacao',
-    path: '/como-participar-de-licitacao',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
-  id: '/como-funciona',
-  path: '/como-funciona',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComoFazerCadastroNoSicafRoute =
-  ComoFazerCadastroNoSicafRouteImport.update({
-    id: '/como-fazer-cadastro-no-sicaf',
-    path: '/como-fazer-cadastro-no-sicaf',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoCadastrarNoSicafEVenderParaOGovernoRoute =
-  ComoCadastrarNoSicafEVenderParaOGovernoRouteImport.update({
-    id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
-    path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoCadastrarEmpresaSicafRoute =
-  ComoCadastrarEmpresaSicafRouteImport.update({
-    id: '/como-cadastrar-empresa-sicaf',
-    path: '/como-cadastrar-empresa-sicaf',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComoAtualizarCertificadosSicafRoute =
-  ComoAtualizarCertificadosSicafRouteImport.update({
-    id: '/como-atualizar-certificados-sicaf',
-    path: '/como-atualizar-certificados-sicaf',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CertificadoDigitalSicafRoute = CertificadoDigitalSicafRouteImport.update({
-  id: '/certificado-digital-sicaf',
-  path: '/certificado-digital-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CaufespRoute = CaufespRouteImport.update({
-  id: '/caufesp',
-  path: '/caufesp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CadbrasilRoute = CadbrasilRouteImport.update({
-  id: '/cadbrasil',
-  path: '/cadbrasil',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CadastroSicafPassoAPassoRoute =
-  CadastroSicafPassoAPassoRouteImport.update({
-    id: '/cadastro-sicaf-passo-a-passo',
-    path: '/cadastro-sicaf-passo-a-passo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CadastroSicafLicitacaoPublicaRoute =
-  CadastroSicafLicitacaoPublicaRouteImport.update({
-    id: '/cadastro-sicaf-licitacao-publica',
-    path: '/cadastro-sicaf-licitacao-publica',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CadastroSicafRoute = CadastroSicafRouteImport.update({
-  id: '/cadastro-sicaf',
-  path: '/cadastro-sicaf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CadastroFornecedorGovernoRoute =
-  CadastroFornecedorGovernoRouteImport.update({
-    id: '/cadastro-fornecedor-governo',
-    path: '/cadastro-fornecedor-governo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CadastroRoute = CadastroRouteImport.update({
-  id: '/cadastro',
-  path: '/cadastro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CadastrarNoSicafRoute = CadastrarNoSicafRouteImport.update({
-  id: '/cadastrar-no-sicaf',
-  path: '/cadastrar-no-sicaf',
+const BeneficiosRoute = BeneficiosRouteImport.update({
+  id: '/beneficios',
+  path: '/beneficios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BllComprasGuiaParaLicitantesRoute =
@@ -337,34 +102,289 @@ const BllComprasGuiaParaLicitantesRoute =
     path: '/bll-compras-guia-para-licitantes',
     getParentRoute: () => rootRouteImport,
   } as any)
-const BeneficiosRoute = BeneficiosRouteImport.update({
-  id: '/beneficios',
-  path: '/beneficios',
+const CadastrarNoSicafRoute = CadastrarNoSicafRouteImport.update({
+  id: '/cadastrar-no-sicaf',
+  path: '/cadastrar-no-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AutoatendimentoSicafRoute = AutoatendimentoSicafRouteImport.update({
-  id: '/autoatendimento-sicaf',
-  path: '/autoatendimento-sicaf',
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AssistenteRoute = AssistenteRouteImport.update({
-  id: '/assistente',
-  path: '/assistente',
+const CadastroFornecedorGovernoRoute =
+  CadastroFornecedorGovernoRouteImport.update({
+    id: '/cadastro-fornecedor-governo',
+    path: '/cadastro-fornecedor-governo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CadastroSicafRoute = CadastroSicafRouteImport.update({
+  id: '/cadastro-sicaf',
+  path: '/cadastro-sicaf',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AcessoRemotoRoute = AcessoRemotoRouteImport.update({
-  id: '/acesso-remoto',
-  path: '/acesso-remoto',
+const CadastroSicafLicitacaoPublicaRoute =
+  CadastroSicafLicitacaoPublicaRouteImport.update({
+    id: '/cadastro-sicaf-licitacao-publica',
+    path: '/cadastro-sicaf-licitacao-publica',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CadastroSicafPassoAPassoRoute =
+  CadastroSicafPassoAPassoRouteImport.update({
+    id: '/cadastro-sicaf-passo-a-passo',
+    path: '/cadastro-sicaf-passo-a-passo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CadbrasilRoute = CadbrasilRouteImport.update({
+  id: '/cadbrasil',
+  path: '/cadbrasil',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CaufespRoute = CaufespRouteImport.update({
+  id: '/caufesp',
+  path: '/caufesp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificadoDigitalSicafRoute = CertificadoDigitalSicafRouteImport.update({
+  id: '/certificado-digital-sicaf',
+  path: '/certificado-digital-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComoAtualizarCertificadosSicafRoute =
+  ComoAtualizarCertificadosSicafRouteImport.update({
+    id: '/como-atualizar-certificados-sicaf',
+    path: '/como-atualizar-certificados-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoCadastrarEmpresaSicafRoute =
+  ComoCadastrarEmpresaSicafRouteImport.update({
+    id: '/como-cadastrar-empresa-sicaf',
+    path: '/como-cadastrar-empresa-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoCadastrarNoSicafEVenderParaOGovernoRoute =
+  ComoCadastrarNoSicafEVenderParaOGovernoRouteImport.update({
+    id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
+    path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoFazerCadastroNoSicafRoute =
+  ComoFazerCadastroNoSicafRouteImport.update({
+    id: '/como-fazer-cadastro-no-sicaf',
+    path: '/como-fazer-cadastro-no-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
+  id: '/como-funciona',
+  path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComoParticiparDeLicitacaoRoute =
+  ComoParticiparDeLicitacaoRouteImport.update({
+    id: '/como-participar-de-licitacao',
+    path: '/como-participar-de-licitacao',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoParticiparDeLicitacaoResumoRoute =
+  ComoParticiparDeLicitacaoResumoRouteImport.update({
+    id: '/como-participar-de-licitacao-resumo',
+    path: '/como-participar-de-licitacao-resumo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComoRegularizarSicafEmpresaRoute =
+  ComoRegularizarSicafEmpresaRouteImport.update({
+    id: '/como-regularizar-sicaf-empresa',
+    path: '/como-regularizar-sicaf-empresa',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComprasGovBrRoute = ComprasGovBrRouteImport.update({
+  id: '/compras-gov-br',
+  path: '/compras-gov-br',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComprasnetRoute = ComprasnetRouteImport.update({
+  id: '/comprasnet',
+  path: '/comprasnet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CredenciamentoRoute = CredenciamentoRouteImport.update({
+  id: '/credenciamento',
+  path: '/credenciamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CredenciamentoSicafDigitalRoute =
+  CredenciamentoSicafDigitalRouteImport.update({
+    id: '/credenciamento-sicaf-digital',
+    path: '/credenciamento-sicaf-digital',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DocumentacaoLicitacaoRoute = DocumentacaoLicitacaoRouteImport.update({
+  id: '/documentacao-licitacao',
+  path: '/documentacao-licitacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentacaoSicafRoute = DocumentacaoSicafRouteImport.update({
+  id: '/documentacao-sicaf',
+  path: '/documentacao-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentosNecessariosCadastroSicafRoute =
+  DocumentosNecessariosCadastroSicafRouteImport.update({
+    id: '/documentos-necessarios-cadastro-sicaf',
+    path: '/documentos-necessarios-cadastro-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EmitirCrcRoute = EmitirCrcRouteImport.update({
+  id: '/emitir-crc',
+  path: '/emitir-crc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmpresaInaptaRoute = EmpresaInaptaRouteImport.update({
+  id: '/empresa-inapta',
+  path: '/empresa-inapta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovBrSicafRoute = GovBrSicafRouteImport.update({
+  id: '/gov-br-sicaf',
+  path: '/gov-br-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoutClassicoRoute = LayoutClassicoRouteImport.update({
+  id: '/layout-classico',
+  path: '/layout-classico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicitacoesRoute = LicitacoesRouteImport.update({
+  id: '/licitacoes',
+  path: '/licitacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicitacoesCadastroRoute = LicitacoesCadastroRouteImport.update({
+  id: '/licitacoes-cadastro',
+  path: '/licitacoes-cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OQueESicafRoute = OQueESicafRouteImport.update({
+  id: '/o-que-e-sicaf',
+  path: '/o-que-e-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OQueESicafEComoSeCadastrarRoute =
+  OQueESicafEComoSeCadastrarRouteImport.update({
+    id: '/o-que-e-sicaf-e-como-se-cadastrar',
+    path: '/o-que-e-sicaf-e-como-se-cadastrar',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlataformaDigitalRoute = PlataformaDigitalRouteImport.update({
+  id: '/plataforma-digital',
+  path: '/plataforma-digital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PregaoEletronicoRoute = PregaoEletronicoRouteImport.update({
+  id: '/pregao-eletronico',
+  path: '/pregao-eletronico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropostaRoute = PropostaRouteImport.update({
+  id: '/proposta',
+  path: '/proposta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuantoCustaSicafRoute = QuantoCustaSicafRouteImport.update({
+  id: '/quanto-custa-sicaf',
+  path: '/quanto-custa-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemPodeSeCadastrarNoSicafRoute =
+  QuemPodeSeCadastrarNoSicafRouteImport.update({
+    id: '/quem-pode-se-cadastrar-no-sicaf',
+    path: '/quem-pode-se-cadastrar-no-sicaf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RegularidadeFiscalRoute = RegularidadeFiscalRouteImport.update({
+  id: '/regularidade-fiscal',
+  path: '/regularidade-fiscal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RenovacaoSicafRoute = RenovacaoSicafRouteImport.update({
+  id: '/renovacao-sicaf',
+  path: '/renovacao-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RenovarSicafRoute = RenovarSicafRouteImport.update({
+  id: '/renovar-sicaf',
+  path: '/renovar-sicaf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosDocumentacaoRoute = ServicosDocumentacaoRouteImport.update({
+  id: '/servicos-documentacao',
+  path: '/servicos-documentacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SicafCadastroUnificadoDeFornecedoresRoute =
+  SicafCadastroUnificadoDeFornecedoresRouteImport.update({
+    id: '/sicaf-cadastro-unificado-de-fornecedores',
+    path: '/sicaf-cadastro-unificado-de-fornecedores',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SicafDigitalRoute = SicafDigitalRouteImport.update({
+  id: '/sicaf-digital',
+  path: '/sicaf-digital',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SicafIrregularRoute = SicafIrregularRouteImport.update({
+  id: '/sicaf-irregular',
+  path: '/sicaf-irregular',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SicafMeiRoute = SicafMeiRouteImport.update({
+  id: '/sicaf-mei',
+  path: '/sicaf-mei',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SicafNiveisRoute = SicafNiveisRouteImport.update({
+  id: '/sicaf-niveis',
+  path: '/sicaf-niveis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Versao2Route = Versao2RouteImport.update({
+  id: '/versao2',
+  path: '/versao2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCadbrasilLeadRoute = ApiCadbrasilLeadRouteImport.update({
+  id: '/api/cadbrasil-lead',
+  path: '/api/cadbrasil-lead',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiLicitacoesLeadRoute = ApiLicitacoesLeadRouteImport.update({
+  id: '/api/licitacoes-lead',
+  path: '/api/licitacoes-lead',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqIndexRoute = FaqIndexRouteImport.update({
   id: '/faq/',
   path: '/faq/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqSlugRoute = FaqSlugRouteImport.update({
+  id: '/faq/$slug',
+  path: '/faq/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuiaCadastroSicafPassoPassoRoute =
@@ -373,26 +393,6 @@ const GuiaCadastroSicafPassoPassoRoute =
     path: '/guia/cadastro-sicaf-passo-passo',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FaqSlugRoute = FaqSlugRouteImport.update({
-  id: '/faq/$slug',
-  path: '/faq/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiLicitacoesLeadRoute = ApiLicitacoesLeadRouteImport.update({
-  id: '/api/licitacoes-lead',
-  path: '/api/licitacoes-lead',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiContactRoute = ApiContactRouteImport.update({
-  id: '/api/contact',
-  path: '/api/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiCadbrasilLeadRoute = ApiCadbrasilLeadRouteImport.update({
-  id: '/api/cadbrasil-lead',
-  path: '/api/cadbrasil-lead',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -842,375 +842,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/versao2': {
-      id: '/versao2'
-      path: '/versao2'
-      fullPath: '/versao2'
-      preLoaderRoute: typeof Versao2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sicaf-niveis': {
-      id: '/sicaf-niveis'
-      path: '/sicaf-niveis'
-      fullPath: '/sicaf-niveis'
-      preLoaderRoute: typeof SicafNiveisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sicaf-mei': {
-      id: '/sicaf-mei'
-      path: '/sicaf-mei'
-      fullPath: '/sicaf-mei'
-      preLoaderRoute: typeof SicafMeiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sicaf-irregular': {
-      id: '/sicaf-irregular'
-      path: '/sicaf-irregular'
-      fullPath: '/sicaf-irregular'
-      preLoaderRoute: typeof SicafIrregularRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sicaf-digital': {
-      id: '/sicaf-digital'
-      path: '/sicaf-digital'
-      fullPath: '/sicaf-digital'
-      preLoaderRoute: typeof SicafDigitalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sicaf-cadastro-unificado-de-fornecedores': {
-      id: '/sicaf-cadastro-unificado-de-fornecedores'
-      path: '/sicaf-cadastro-unificado-de-fornecedores'
-      fullPath: '/sicaf-cadastro-unificado-de-fornecedores'
-      preLoaderRoute: typeof SicafCadastroUnificadoDeFornecedoresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/servicos-documentacao': {
-      id: '/servicos-documentacao'
-      path: '/servicos-documentacao'
-      fullPath: '/servicos-documentacao'
-      preLoaderRoute: typeof ServicosDocumentacaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/renovar-sicaf': {
-      id: '/renovar-sicaf'
-      path: '/renovar-sicaf'
-      fullPath: '/renovar-sicaf'
-      preLoaderRoute: typeof RenovarSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/renovacao-sicaf': {
-      id: '/renovacao-sicaf'
-      path: '/renovacao-sicaf'
-      fullPath: '/renovacao-sicaf'
-      preLoaderRoute: typeof RenovacaoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/regularidade-fiscal': {
-      id: '/regularidade-fiscal'
-      path: '/regularidade-fiscal'
-      fullPath: '/regularidade-fiscal'
-      preLoaderRoute: typeof RegularidadeFiscalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quem-pode-se-cadastrar-no-sicaf': {
-      id: '/quem-pode-se-cadastrar-no-sicaf'
-      path: '/quem-pode-se-cadastrar-no-sicaf'
-      fullPath: '/quem-pode-se-cadastrar-no-sicaf'
-      preLoaderRoute: typeof QuemPodeSeCadastrarNoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quanto-custa-sicaf': {
-      id: '/quanto-custa-sicaf'
-      path: '/quanto-custa-sicaf'
-      fullPath: '/quanto-custa-sicaf'
-      preLoaderRoute: typeof QuantoCustaSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/proposta': {
-      id: '/proposta'
-      path: '/proposta'
-      fullPath: '/proposta'
-      preLoaderRoute: typeof PropostaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pregao-eletronico': {
-      id: '/pregao-eletronico'
-      path: '/pregao-eletronico'
-      fullPath: '/pregao-eletronico'
-      preLoaderRoute: typeof PregaoEletronicoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plataforma-digital': {
-      id: '/plataforma-digital'
-      path: '/plataforma-digital'
-      fullPath: '/plataforma-digital'
-      preLoaderRoute: typeof PlataformaDigitalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/planos': {
-      id: '/planos'
-      path: '/planos'
-      fullPath: '/planos'
-      preLoaderRoute: typeof PlanosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/o-que-e-sicaf-e-como-se-cadastrar': {
-      id: '/o-que-e-sicaf-e-como-se-cadastrar'
-      path: '/o-que-e-sicaf-e-como-se-cadastrar'
-      fullPath: '/o-que-e-sicaf-e-como-se-cadastrar'
-      preLoaderRoute: typeof OQueESicafEComoSeCadastrarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/o-que-e-sicaf': {
-      id: '/o-que-e-sicaf'
-      path: '/o-que-e-sicaf'
-      fullPath: '/o-que-e-sicaf'
-      preLoaderRoute: typeof OQueESicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/licitacoes-cadastro': {
-      id: '/licitacoes-cadastro'
-      path: '/licitacoes-cadastro'
-      fullPath: '/licitacoes-cadastro'
-      preLoaderRoute: typeof LicitacoesCadastroRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/licitacoes': {
-      id: '/licitacoes'
-      path: '/licitacoes'
-      fullPath: '/licitacoes'
-      preLoaderRoute: typeof LicitacoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/layout-classico': {
-      id: '/layout-classico'
-      path: '/layout-classico'
-      fullPath: '/layout-classico'
-      preLoaderRoute: typeof LayoutClassicoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gov-br-sicaf': {
-      id: '/gov-br-sicaf'
-      path: '/gov-br-sicaf'
-      fullPath: '/gov-br-sicaf'
-      preLoaderRoute: typeof GovBrSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/empresa-inapta': {
-      id: '/empresa-inapta'
-      path: '/empresa-inapta'
-      fullPath: '/empresa-inapta'
-      preLoaderRoute: typeof EmpresaInaptaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/emitir-crc': {
-      id: '/emitir-crc'
-      path: '/emitir-crc'
-      fullPath: '/emitir-crc'
-      preLoaderRoute: typeof EmitirCrcRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/documentos-necessarios-cadastro-sicaf': {
-      id: '/documentos-necessarios-cadastro-sicaf'
-      path: '/documentos-necessarios-cadastro-sicaf'
-      fullPath: '/documentos-necessarios-cadastro-sicaf'
-      preLoaderRoute: typeof DocumentosNecessariosCadastroSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/documentacao-sicaf': {
-      id: '/documentacao-sicaf'
-      path: '/documentacao-sicaf'
-      fullPath: '/documentacao-sicaf'
-      preLoaderRoute: typeof DocumentacaoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/documentacao-licitacao': {
-      id: '/documentacao-licitacao'
-      path: '/documentacao-licitacao'
-      fullPath: '/documentacao-licitacao'
-      preLoaderRoute: typeof DocumentacaoLicitacaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/credenciamento-sicaf-digital': {
-      id: '/credenciamento-sicaf-digital'
-      path: '/credenciamento-sicaf-digital'
-      fullPath: '/credenciamento-sicaf-digital'
-      preLoaderRoute: typeof CredenciamentoSicafDigitalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/credenciamento': {
-      id: '/credenciamento'
-      path: '/credenciamento'
-      fullPath: '/credenciamento'
-      preLoaderRoute: typeof CredenciamentoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comprasnet': {
-      id: '/comprasnet'
-      path: '/comprasnet'
-      fullPath: '/comprasnet'
-      preLoaderRoute: typeof ComprasnetRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compras-gov-br': {
-      id: '/compras-gov-br'
-      path: '/compras-gov-br'
-      fullPath: '/compras-gov-br'
-      preLoaderRoute: typeof ComprasGovBrRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-regularizar-sicaf-empresa': {
-      id: '/como-regularizar-sicaf-empresa'
-      path: '/como-regularizar-sicaf-empresa'
-      fullPath: '/como-regularizar-sicaf-empresa'
-      preLoaderRoute: typeof ComoRegularizarSicafEmpresaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-participar-de-licitacao-resumo': {
-      id: '/como-participar-de-licitacao-resumo'
-      path: '/como-participar-de-licitacao-resumo'
-      fullPath: '/como-participar-de-licitacao-resumo'
-      preLoaderRoute: typeof ComoParticiparDeLicitacaoResumoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-participar-de-licitacao': {
-      id: '/como-participar-de-licitacao'
-      path: '/como-participar-de-licitacao'
-      fullPath: '/como-participar-de-licitacao'
-      preLoaderRoute: typeof ComoParticiparDeLicitacaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-funciona': {
-      id: '/como-funciona'
-      path: '/como-funciona'
-      fullPath: '/como-funciona'
-      preLoaderRoute: typeof ComoFuncionaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-fazer-cadastro-no-sicaf': {
-      id: '/como-fazer-cadastro-no-sicaf'
-      path: '/como-fazer-cadastro-no-sicaf'
-      fullPath: '/como-fazer-cadastro-no-sicaf'
-      preLoaderRoute: typeof ComoFazerCadastroNoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-cadastrar-no-sicaf-e-vender-para-o-governo': {
-      id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
-      path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
-      fullPath: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
-      preLoaderRoute: typeof ComoCadastrarNoSicafEVenderParaOGovernoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-cadastrar-empresa-sicaf': {
-      id: '/como-cadastrar-empresa-sicaf'
-      path: '/como-cadastrar-empresa-sicaf'
-      fullPath: '/como-cadastrar-empresa-sicaf'
-      preLoaderRoute: typeof ComoCadastrarEmpresaSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-atualizar-certificados-sicaf': {
-      id: '/como-atualizar-certificados-sicaf'
-      path: '/como-atualizar-certificados-sicaf'
-      fullPath: '/como-atualizar-certificados-sicaf'
-      preLoaderRoute: typeof ComoAtualizarCertificadosSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificado-digital-sicaf': {
-      id: '/certificado-digital-sicaf'
-      path: '/certificado-digital-sicaf'
-      fullPath: '/certificado-digital-sicaf'
-      preLoaderRoute: typeof CertificadoDigitalSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/caufesp': {
-      id: '/caufesp'
-      path: '/caufesp'
-      fullPath: '/caufesp'
-      preLoaderRoute: typeof CaufespRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadbrasil': {
-      id: '/cadbrasil'
-      path: '/cadbrasil'
-      fullPath: '/cadbrasil'
-      preLoaderRoute: typeof CadbrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro-sicaf-passo-a-passo': {
-      id: '/cadastro-sicaf-passo-a-passo'
-      path: '/cadastro-sicaf-passo-a-passo'
-      fullPath: '/cadastro-sicaf-passo-a-passo'
-      preLoaderRoute: typeof CadastroSicafPassoAPassoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro-sicaf-licitacao-publica': {
-      id: '/cadastro-sicaf-licitacao-publica'
-      path: '/cadastro-sicaf-licitacao-publica'
-      fullPath: '/cadastro-sicaf-licitacao-publica'
-      preLoaderRoute: typeof CadastroSicafLicitacaoPublicaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro-sicaf': {
-      id: '/cadastro-sicaf'
-      path: '/cadastro-sicaf'
-      fullPath: '/cadastro-sicaf'
-      preLoaderRoute: typeof CadastroSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro-fornecedor-governo': {
-      id: '/cadastro-fornecedor-governo'
-      path: '/cadastro-fornecedor-governo'
-      fullPath: '/cadastro-fornecedor-governo'
-      preLoaderRoute: typeof CadastroFornecedorGovernoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro': {
-      id: '/cadastro'
-      path: '/cadastro'
-      fullPath: '/cadastro'
-      preLoaderRoute: typeof CadastroRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastrar-no-sicaf': {
-      id: '/cadastrar-no-sicaf'
-      path: '/cadastrar-no-sicaf'
-      fullPath: '/cadastrar-no-sicaf'
-      preLoaderRoute: typeof CadastrarNoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bll-compras-guia-para-licitantes': {
-      id: '/bll-compras-guia-para-licitantes'
-      path: '/bll-compras-guia-para-licitantes'
-      fullPath: '/bll-compras-guia-para-licitantes'
-      preLoaderRoute: typeof BllComprasGuiaParaLicitantesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/beneficios': {
-      id: '/beneficios'
-      path: '/beneficios'
-      fullPath: '/beneficios'
-      preLoaderRoute: typeof BeneficiosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/autoatendimento-sicaf': {
-      id: '/autoatendimento-sicaf'
-      path: '/autoatendimento-sicaf'
-      fullPath: '/autoatendimento-sicaf'
-      preLoaderRoute: typeof AutoatendimentoSicafRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/assistente': {
-      id: '/assistente'
-      path: '/assistente'
-      fullPath: '/assistente'
-      preLoaderRoute: typeof AssistenteRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/acesso-remoto': {
@@ -1220,39 +856,382 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcessoRemotoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/assistente': {
+      id: '/assistente'
+      path: '/assistente'
+      fullPath: '/assistente'
+      preLoaderRoute: typeof AssistenteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/faq/': {
-      id: '/faq/'
-      path: '/faq'
-      fullPath: '/faq/'
-      preLoaderRoute: typeof FaqIndexRouteImport
+    '/autoatendimento-sicaf': {
+      id: '/autoatendimento-sicaf'
+      path: '/autoatendimento-sicaf'
+      fullPath: '/autoatendimento-sicaf'
+      preLoaderRoute: typeof AutoatendimentoSicafRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guia/cadastro-sicaf-passo-passo': {
-      id: '/guia/cadastro-sicaf-passo-passo'
-      path: '/guia/cadastro-sicaf-passo-passo'
-      fullPath: '/guia/cadastro-sicaf-passo-passo'
-      preLoaderRoute: typeof GuiaCadastroSicafPassoPassoRouteImport
+    '/beneficios': {
+      id: '/beneficios'
+      path: '/beneficios'
+      fullPath: '/beneficios'
+      preLoaderRoute: typeof BeneficiosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/faq/$slug': {
-      id: '/faq/$slug'
-      path: '/faq/$slug'
-      fullPath: '/faq/$slug'
-      preLoaderRoute: typeof FaqSlugRouteImport
+    '/bll-compras-guia-para-licitantes': {
+      id: '/bll-compras-guia-para-licitantes'
+      path: '/bll-compras-guia-para-licitantes'
+      fullPath: '/bll-compras-guia-para-licitantes'
+      preLoaderRoute: typeof BllComprasGuiaParaLicitantesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/licitacoes-lead': {
-      id: '/api/licitacoes-lead'
-      path: '/api/licitacoes-lead'
-      fullPath: '/api/licitacoes-lead'
-      preLoaderRoute: typeof ApiLicitacoesLeadRouteImport
+    '/cadastrar-no-sicaf': {
+      id: '/cadastrar-no-sicaf'
+      path: '/cadastrar-no-sicaf'
+      fullPath: '/cadastrar-no-sicaf'
+      preLoaderRoute: typeof CadastrarNoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro-fornecedor-governo': {
+      id: '/cadastro-fornecedor-governo'
+      path: '/cadastro-fornecedor-governo'
+      fullPath: '/cadastro-fornecedor-governo'
+      preLoaderRoute: typeof CadastroFornecedorGovernoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro-sicaf': {
+      id: '/cadastro-sicaf'
+      path: '/cadastro-sicaf'
+      fullPath: '/cadastro-sicaf'
+      preLoaderRoute: typeof CadastroSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro-sicaf-licitacao-publica': {
+      id: '/cadastro-sicaf-licitacao-publica'
+      path: '/cadastro-sicaf-licitacao-publica'
+      fullPath: '/cadastro-sicaf-licitacao-publica'
+      preLoaderRoute: typeof CadastroSicafLicitacaoPublicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro-sicaf-passo-a-passo': {
+      id: '/cadastro-sicaf-passo-a-passo'
+      path: '/cadastro-sicaf-passo-a-passo'
+      fullPath: '/cadastro-sicaf-passo-a-passo'
+      preLoaderRoute: typeof CadastroSicafPassoAPassoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadbrasil': {
+      id: '/cadbrasil'
+      path: '/cadbrasil'
+      fullPath: '/cadbrasil'
+      preLoaderRoute: typeof CadbrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/caufesp': {
+      id: '/caufesp'
+      path: '/caufesp'
+      fullPath: '/caufesp'
+      preLoaderRoute: typeof CaufespRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificado-digital-sicaf': {
+      id: '/certificado-digital-sicaf'
+      path: '/certificado-digital-sicaf'
+      fullPath: '/certificado-digital-sicaf'
+      preLoaderRoute: typeof CertificadoDigitalSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-atualizar-certificados-sicaf': {
+      id: '/como-atualizar-certificados-sicaf'
+      path: '/como-atualizar-certificados-sicaf'
+      fullPath: '/como-atualizar-certificados-sicaf'
+      preLoaderRoute: typeof ComoAtualizarCertificadosSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-cadastrar-empresa-sicaf': {
+      id: '/como-cadastrar-empresa-sicaf'
+      path: '/como-cadastrar-empresa-sicaf'
+      fullPath: '/como-cadastrar-empresa-sicaf'
+      preLoaderRoute: typeof ComoCadastrarEmpresaSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-cadastrar-no-sicaf-e-vender-para-o-governo': {
+      id: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      path: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      fullPath: '/como-cadastrar-no-sicaf-e-vender-para-o-governo'
+      preLoaderRoute: typeof ComoCadastrarNoSicafEVenderParaOGovernoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-fazer-cadastro-no-sicaf': {
+      id: '/como-fazer-cadastro-no-sicaf'
+      path: '/como-fazer-cadastro-no-sicaf'
+      fullPath: '/como-fazer-cadastro-no-sicaf'
+      preLoaderRoute: typeof ComoFazerCadastroNoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-funciona': {
+      id: '/como-funciona'
+      path: '/como-funciona'
+      fullPath: '/como-funciona'
+      preLoaderRoute: typeof ComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-participar-de-licitacao': {
+      id: '/como-participar-de-licitacao'
+      path: '/como-participar-de-licitacao'
+      fullPath: '/como-participar-de-licitacao'
+      preLoaderRoute: typeof ComoParticiparDeLicitacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-participar-de-licitacao-resumo': {
+      id: '/como-participar-de-licitacao-resumo'
+      path: '/como-participar-de-licitacao-resumo'
+      fullPath: '/como-participar-de-licitacao-resumo'
+      preLoaderRoute: typeof ComoParticiparDeLicitacaoResumoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/como-regularizar-sicaf-empresa': {
+      id: '/como-regularizar-sicaf-empresa'
+      path: '/como-regularizar-sicaf-empresa'
+      fullPath: '/como-regularizar-sicaf-empresa'
+      preLoaderRoute: typeof ComoRegularizarSicafEmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compras-gov-br': {
+      id: '/compras-gov-br'
+      path: '/compras-gov-br'
+      fullPath: '/compras-gov-br'
+      preLoaderRoute: typeof ComprasGovBrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comprasnet': {
+      id: '/comprasnet'
+      path: '/comprasnet'
+      fullPath: '/comprasnet'
+      preLoaderRoute: typeof ComprasnetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credenciamento': {
+      id: '/credenciamento'
+      path: '/credenciamento'
+      fullPath: '/credenciamento'
+      preLoaderRoute: typeof CredenciamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credenciamento-sicaf-digital': {
+      id: '/credenciamento-sicaf-digital'
+      path: '/credenciamento-sicaf-digital'
+      fullPath: '/credenciamento-sicaf-digital'
+      preLoaderRoute: typeof CredenciamentoSicafDigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentacao-licitacao': {
+      id: '/documentacao-licitacao'
+      path: '/documentacao-licitacao'
+      fullPath: '/documentacao-licitacao'
+      preLoaderRoute: typeof DocumentacaoLicitacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentacao-sicaf': {
+      id: '/documentacao-sicaf'
+      path: '/documentacao-sicaf'
+      fullPath: '/documentacao-sicaf'
+      preLoaderRoute: typeof DocumentacaoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documentos-necessarios-cadastro-sicaf': {
+      id: '/documentos-necessarios-cadastro-sicaf'
+      path: '/documentos-necessarios-cadastro-sicaf'
+      fullPath: '/documentos-necessarios-cadastro-sicaf'
+      preLoaderRoute: typeof DocumentosNecessariosCadastroSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emitir-crc': {
+      id: '/emitir-crc'
+      path: '/emitir-crc'
+      fullPath: '/emitir-crc'
+      preLoaderRoute: typeof EmitirCrcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/empresa-inapta': {
+      id: '/empresa-inapta'
+      path: '/empresa-inapta'
+      fullPath: '/empresa-inapta'
+      preLoaderRoute: typeof EmpresaInaptaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gov-br-sicaf': {
+      id: '/gov-br-sicaf'
+      path: '/gov-br-sicaf'
+      fullPath: '/gov-br-sicaf'
+      preLoaderRoute: typeof GovBrSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/layout-classico': {
+      id: '/layout-classico'
+      path: '/layout-classico'
+      fullPath: '/layout-classico'
+      preLoaderRoute: typeof LayoutClassicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licitacoes': {
+      id: '/licitacoes'
+      path: '/licitacoes'
+      fullPath: '/licitacoes'
+      preLoaderRoute: typeof LicitacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licitacoes-cadastro': {
+      id: '/licitacoes-cadastro'
+      path: '/licitacoes-cadastro'
+      fullPath: '/licitacoes-cadastro'
+      preLoaderRoute: typeof LicitacoesCadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-que-e-sicaf': {
+      id: '/o-que-e-sicaf'
+      path: '/o-que-e-sicaf'
+      fullPath: '/o-que-e-sicaf'
+      preLoaderRoute: typeof OQueESicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-que-e-sicaf-e-como-se-cadastrar': {
+      id: '/o-que-e-sicaf-e-como-se-cadastrar'
+      path: '/o-que-e-sicaf-e-como-se-cadastrar'
+      fullPath: '/o-que-e-sicaf-e-como-se-cadastrar'
+      preLoaderRoute: typeof OQueESicafEComoSeCadastrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plataforma-digital': {
+      id: '/plataforma-digital'
+      path: '/plataforma-digital'
+      fullPath: '/plataforma-digital'
+      preLoaderRoute: typeof PlataformaDigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pregao-eletronico': {
+      id: '/pregao-eletronico'
+      path: '/pregao-eletronico'
+      fullPath: '/pregao-eletronico'
+      preLoaderRoute: typeof PregaoEletronicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proposta': {
+      id: '/proposta'
+      path: '/proposta'
+      fullPath: '/proposta'
+      preLoaderRoute: typeof PropostaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quanto-custa-sicaf': {
+      id: '/quanto-custa-sicaf'
+      path: '/quanto-custa-sicaf'
+      fullPath: '/quanto-custa-sicaf'
+      preLoaderRoute: typeof QuantoCustaSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-pode-se-cadastrar-no-sicaf': {
+      id: '/quem-pode-se-cadastrar-no-sicaf'
+      path: '/quem-pode-se-cadastrar-no-sicaf'
+      fullPath: '/quem-pode-se-cadastrar-no-sicaf'
+      preLoaderRoute: typeof QuemPodeSeCadastrarNoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regularidade-fiscal': {
+      id: '/regularidade-fiscal'
+      path: '/regularidade-fiscal'
+      fullPath: '/regularidade-fiscal'
+      preLoaderRoute: typeof RegularidadeFiscalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renovacao-sicaf': {
+      id: '/renovacao-sicaf'
+      path: '/renovacao-sicaf'
+      fullPath: '/renovacao-sicaf'
+      preLoaderRoute: typeof RenovacaoSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renovar-sicaf': {
+      id: '/renovar-sicaf'
+      path: '/renovar-sicaf'
+      fullPath: '/renovar-sicaf'
+      preLoaderRoute: typeof RenovarSicafRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos-documentacao': {
+      id: '/servicos-documentacao'
+      path: '/servicos-documentacao'
+      fullPath: '/servicos-documentacao'
+      preLoaderRoute: typeof ServicosDocumentacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-cadastro-unificado-de-fornecedores': {
+      id: '/sicaf-cadastro-unificado-de-fornecedores'
+      path: '/sicaf-cadastro-unificado-de-fornecedores'
+      fullPath: '/sicaf-cadastro-unificado-de-fornecedores'
+      preLoaderRoute: typeof SicafCadastroUnificadoDeFornecedoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-digital': {
+      id: '/sicaf-digital'
+      path: '/sicaf-digital'
+      fullPath: '/sicaf-digital'
+      preLoaderRoute: typeof SicafDigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-irregular': {
+      id: '/sicaf-irregular'
+      path: '/sicaf-irregular'
+      fullPath: '/sicaf-irregular'
+      preLoaderRoute: typeof SicafIrregularRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-mei': {
+      id: '/sicaf-mei'
+      path: '/sicaf-mei'
+      fullPath: '/sicaf-mei'
+      preLoaderRoute: typeof SicafMeiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sicaf-niveis': {
+      id: '/sicaf-niveis'
+      path: '/sicaf-niveis'
+      fullPath: '/sicaf-niveis'
+      preLoaderRoute: typeof SicafNiveisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/versao2': {
+      id: '/versao2'
+      path: '/versao2'
+      fullPath: '/versao2'
+      preLoaderRoute: typeof Versao2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cadbrasil-lead': {
+      id: '/api/cadbrasil-lead'
+      path: '/api/cadbrasil-lead'
+      fullPath: '/api/cadbrasil-lead'
+      preLoaderRoute: typeof ApiCadbrasilLeadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/contact': {
@@ -1262,11 +1241,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/cadbrasil-lead': {
-      id: '/api/cadbrasil-lead'
-      path: '/api/cadbrasil-lead'
-      fullPath: '/api/cadbrasil-lead'
-      preLoaderRoute: typeof ApiCadbrasilLeadRouteImport
+    '/api/licitacoes-lead': {
+      id: '/api/licitacoes-lead'
+      path: '/api/licitacoes-lead'
+      fullPath: '/api/licitacoes-lead'
+      preLoaderRoute: typeof ApiLicitacoesLeadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq/': {
+      id: '/faq/'
+      path: '/faq'
+      fullPath: '/faq/'
+      preLoaderRoute: typeof FaqIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq/$slug': {
+      id: '/faq/$slug'
+      path: '/faq/$slug'
+      fullPath: '/faq/$slug'
+      preLoaderRoute: typeof FaqSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guia/cadastro-sicaf-passo-passo': {
+      id: '/guia/cadastro-sicaf-passo-passo'
+      path: '/guia/cadastro-sicaf-passo-passo'
+      fullPath: '/guia/cadastro-sicaf-passo-passo'
+      preLoaderRoute: typeof GuiaCadastroSicafPassoPassoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
