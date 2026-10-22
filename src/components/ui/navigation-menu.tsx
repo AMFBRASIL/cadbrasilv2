@@ -7,15 +7,19 @@ import { cn } from "@/lib/utils";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> & {
+    viewportClassName?: string;
+    /** Centraliza o painel sob o menu (útil para mega menus largos). */
+    centerViewport?: boolean;
+  }
+>(({ className, children, viewportClassName, centerViewport, ...props }, ref) => (
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn("relative z-10 flex max-w-max flex-1 items-center justify-center", className)}
     {...props}
   >
     {children}
-    <NavigationMenuViewport />
+    <NavigationMenuViewport className={viewportClassName} center={centerViewport} />
   </NavigationMenuPrimitive.Root>
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
@@ -75,12 +79,17 @@ const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
->(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center")}>
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> & { center?: boolean }
+>(({ className, center, ...props }, ref) => (
+  <div
+    className={cn(
+      "absolute top-full flex justify-center",
+      center ? "left-1/2 -translate-x-1/2" : "left-0",
+    )}
+  >
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-2xl border bg-popover text-popover-foreground shadow-soft data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
         className,
       )}
       ref={ref}
